@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import VideoPlayer from "@/app/components/VideoPlayer";
 
 const workItems = [
   {
@@ -40,10 +41,10 @@ const classroomItems = [
       "Reducing classroom confusion",
       "Making assignments easier to track and access",
     ],
-    media: { type: "image", src: "/Assignments.png", alt: "Assignments screen" },
+    media: { type: "video", src: "/Assignments.mov", fullWidth: true },
   },
   {
-    title: "Live Quizzes & Polls",
+    title: "Live Quizzes",
     description:
       "Created interactive classroom experiences that made classroom participation feel more active and engaging during lessons.",
     focusedOn: [
@@ -52,7 +53,7 @@ const classroomItems = [
       "Clear participation states",
       "Keeping students engaged during sessions",
     ],
-    media: { type: "video", src: "/Practice on demand sound updated.mp4" },
+    media: { type: "video", src: "/Practice on demand sound updated.mp4", tablet: true },
   },
 ];
 
@@ -91,49 +92,49 @@ export default function SuperrbookCaseStudy() {
         {/* ── TLDR ── */}
         <section className="mb-16">
           <div className="space-y-5 text-[16px] leading-relaxed" style={{ color: "var(--muted)" }}>
-            <p>
-              Superrbook is a tablet-first classroom platform built for schools –
-              bringing together assignments, notebooks, whiteboards, assessments,
-              and classroom collaboration into one connected experience.
+            <p className="text-[22px] font-semibold tracking-[-0.01em]" style={{ color: "var(--foreground)", lineHeight: "1.6" }}>
+              How might we design classroom tools that feel intuitive for teachers
+              and engaging for students?
             </p>
             <p>
-              Most classroom tools are built for administration, not for learning.
-              Superrbook set out to change that – making every interaction feel
-              intentional, every workflow feel light, and every experience feel
-              built for students first.
+              Most classroom platforms today are built around management and
+              operations, not around how learning actually happens inside
+              classrooms.
             </p>
             <p>
-              I worked across the full product ecosystem – simplifying workflows,
-              designing interaction-heavy features, improving information
-              architecture, and prototyping complex systems to test usability
-              before engineering effort was committed.
+              Teachers constantly switch between tools to manage assignments,
+              files, whiteboards, assessments and student progress, while
+              students often end up navigating experiences that feel overwhelming
+              and disconnected.
+            </p>
+            <p>
+              Superrbook was designed to bring these workflows into one connected
+              system that feels simpler, lighter and more engaging for both
+              students and teachers.
+            </p>
+            <p>
+              I worked across different parts of the product including classroom
+              workflows and the admin portal, focusing on simplifying complex
+              systems, improving usability and designing interaction heavy
+              experiences that feel intuitive to use.
             </p>
           </div>
         </section>
 
         {/* ── FULL-WIDTH MEDIA ── */}
-        <div
-          className="rounded-2xl overflow-hidden relative mb-16"
-          style={{ height: "400px", background: "var(--hover-bg)" }}
-        >
-          <div className="absolute" style={{ inset: "20px" }}>
-            <div className="relative w-full h-full">
-              <Image
-                src="/My notes superrbook.png"
-                alt="Superrbook My Notes"
-                fill
-                className="object-contain"
-                sizes="640px"
-              />
-            </div>
-          </div>
+        <div className="mb-16 rounded-2xl overflow-hidden">
+          <VideoPlayer
+            src="/Superrbook.mov"
+            className="w-full h-auto block"
+            style={{ transform: "scale(1.08)", transformOrigin: "center center" }}
+          />
         </div>
 
         {/* ── MY ROLE ── */}
         <section className="mb-16" style={{ borderTop: "1px solid var(--border)", paddingTop: "48px" }}>
           <h2
-            className="text-[11px] font-medium tracking-[0.1em] uppercase mb-6"
-            style={{ color: "var(--muted)" }}
+            className="text-[16px] font-medium mb-6"
+            style={{ color: "var(--foreground)" }}
           >
             My Role
           </h2>
@@ -168,8 +169,8 @@ export default function SuperrbookCaseStudy() {
         {/* ── WHAT I WORKED ON ── */}
         <section className="mb-16" style={{ borderTop: "1px solid var(--border)", paddingTop: "48px" }}>
           <h2
-            className="text-[11px] font-medium tracking-[0.1em] uppercase mb-8"
-            style={{ color: "var(--muted)" }}
+            className="text-[16px] font-medium mb-8"
+            style={{ color: "var(--foreground)" }}
           >
             What I worked on
           </h2>
@@ -208,8 +209,8 @@ export default function SuperrbookCaseStudy() {
         {/* ── HOW I APPROACH DESIGN ── */}
         <section className="mb-16" style={{ borderTop: "1px solid var(--border)", paddingTop: "48px" }}>
           <h2
-            className="text-[11px] font-medium tracking-[0.1em] uppercase mb-6"
-            style={{ color: "var(--muted)" }}
+            className="text-[16px] font-medium mb-6"
+            style={{ color: "var(--foreground)" }}
           >
             How I approach design
           </h2>
@@ -287,13 +288,45 @@ export default function SuperrbookCaseStudy() {
                     </li>
                   ))}
                 </ul>
-                <div
-                  className="rounded-2xl overflow-hidden relative"
-                  style={{ height: "360px", background: "var(--hover-bg)" }}
-                >
-                  <div className="absolute" style={{ inset: "20px" }}>
-                    <div className="relative w-full h-full">
-                      {item.media.type === "image" ? (
+                {/* fullWidth: end-to-end video (Assignments) */}
+                {item.media.fullWidth && (
+                  <div className="rounded-2xl overflow-hidden">
+                    <VideoPlayer
+                      src={item.media.src}
+                      className="w-full h-auto block"
+                      style={{ transform: "scale(1.08)", transformOrigin: "center center" }}
+                    />
+                  </div>
+                )}
+
+                {/* tablet: centered iPad border (Live Quizzes) */}
+                {item.media.tablet && (
+                  <div
+                    className="rounded-2xl flex items-center justify-center"
+                    style={{ background: "var(--hover-bg)", padding: "32px 24px" }}
+                  >
+                    <div
+                      style={{
+                        border: "10px solid #111",
+                        borderRadius: "20px",
+                        overflow: "hidden",
+                        boxShadow: "0 20px 60px rgba(0,0,0,0.18), 0 4px 16px rgba(0,0,0,0.10)",
+                        width: "60%",
+                      }}
+                    >
+                      <VideoPlayer src={item.media.src} className="w-full h-auto block" />
+                    </div>
+                  </div>
+                )}
+
+                {/* image */}
+                {item.media.type === "image" && (
+                  <div
+                    className="rounded-2xl overflow-hidden relative"
+                    style={{ height: "360px", background: "var(--hover-bg)" }}
+                  >
+                    <div className="absolute" style={{ inset: "20px" }}>
+                      <div className="relative w-full h-full">
                         <Image
                           src={item.media.src}
                           alt={item.media.alt ?? item.title}
@@ -301,30 +334,10 @@ export default function SuperrbookCaseStudy() {
                           className="object-contain"
                           sizes="640px"
                         />
-                      ) : (
-                        <div className="w-full h-full flex items-center justify-center">
-                          <div
-                            className="h-full overflow-hidden"
-                            style={{
-                              border: "10px solid #111",
-                              borderRadius: "20px",
-                              boxShadow: "0 20px 60px rgba(0,0,0,0.18), 0 4px 16px rgba(0,0,0,0.10)",
-                            }}
-                          >
-                            <video
-                              src={item.media.src}
-                              autoPlay
-                              loop
-                              muted
-                              playsInline
-                              className="h-full w-auto"
-                            />
-                          </div>
-                        </div>
-                      )}
+                      </div>
                     </div>
                   </div>
-                </div>
+                )}
               </div>
             ))}
           </div>
@@ -404,19 +417,19 @@ export default function SuperrbookCaseStudy() {
 
             {/* Visuals */}
             <div
-              className="rounded-2xl overflow-hidden relative"
-              style={{ height: "360px", background: "var(--hover-bg)" }}
+              className="rounded-2xl flex items-center justify-center"
+              style={{ background: "var(--hover-bg)", padding: "32px 24px" }}
             >
-              <div className="absolute" style={{ inset: "20px" }}>
-                <div className="relative w-full h-full">
-                  <Image
-                    src="/Geometry tool.png"
-                    alt="Geometry tool"
-                    fill
-                    className="object-contain"
-                    sizes="640px"
-                  />
-                </div>
+              <div
+                style={{
+                  border: "10px solid #111",
+                  borderRadius: "20px",
+                  overflow: "hidden",
+                  boxShadow: "0 20px 60px rgba(0,0,0,0.18), 0 4px 16px rgba(0,0,0,0.10)",
+                  width: "60%",
+                }}
+              >
+                <VideoPlayer src="/Geometry tools video.mp4" className="w-full h-auto block" />
               </div>
             </div>
           </div>
@@ -513,44 +526,26 @@ export default function SuperrbookCaseStudy() {
               </ul>
             </div>
 
-            {/* Media */}
+            {/* Media — desktop frame */}
             <div
               className="rounded-2xl flex items-center justify-center"
-              style={{ background: "var(--hover-bg)", padding: "24px 20px" }}
+              style={{ background: "var(--hover-bg)", padding: "40px 32px 32px 32px" }}
             >
-              <div style={{ width: "92%", filter: "drop-shadow(0 16px 40px rgba(0,0,0,0.18))" }}>
-                {/* Screen */}
-                <div
-                  style={{
-                    background: "#1a1a1a",
-                    borderRadius: "8px 8px 0 0",
-                    padding: "6px 6px 0 6px",
-                  }}
-                >
+              <div style={{ width: "100%", filter: "drop-shadow(0 16px 40px rgba(0,0,0,0.2))" }}>
+                {/* Screen bezel */}
+                <div style={{ background: "#1a1a1a", borderRadius: "10px 10px 0 0", padding: "8px 8px 0 8px" }}>
                   <div style={{ borderRadius: "4px 4px 0 0", overflow: "hidden" }}>
-                    <Image
-                      src="/Admin Portal.png"
-                      alt="Admin Portal"
-                      width={900}
-                      height={560}
-                      className="block w-full h-auto"
+                    <VideoPlayer
+                      src="/Admin Portal.mov"
+                      className="w-full h-auto block"
                     />
                   </div>
                 </div>
-                {/* Hinge bar */}
-                <div style={{ background: "#2a2a2a", height: "10px" }} />
+                {/* Hinge */}
+                <div style={{ background: "#2a2a2a", height: "12px" }} />
                 {/* Base */}
-                <div
-                  style={{
-                    background: "#242424",
-                    height: "18px",
-                    borderRadius: "0 0 6px 6px",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                >
-                  <div style={{ width: "48px", height: "6px", background: "#333", borderRadius: "3px" }} />
+                <div style={{ background: "#242424", height: "20px", borderRadius: "0 0 8px 8px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <div style={{ width: "56px", height: "6px", background: "#333", borderRadius: "3px" }} />
                 </div>
               </div>
             </div>
@@ -560,8 +555,8 @@ export default function SuperrbookCaseStudy() {
         {/* ── REFLECTION ── */}
         <section className="mb-16" style={{ borderTop: "1px solid var(--border)", paddingTop: "48px" }}>
           <p
-            className="text-[11px] font-medium tracking-[0.1em] uppercase mb-6"
-            style={{ color: "var(--muted)" }}
+            className="text-[16px] font-medium mb-6"
+            style={{ color: "var(--foreground)" }}
           >
             Reflection
           </p>

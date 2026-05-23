@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import VideoPlayer from "@/app/components/VideoPlayer";
 
 const approachItems = [
   {
@@ -21,31 +22,32 @@ const featureSections = [
     title: "My Notes",
     description:
       "A unified space where notebooks and folders come together in one place. Designed to help users quickly organize, search, and manage classroom content with minimal friction.",
-    image: "/My notes LMS.png",
+    video: "/My notes.mov",
   },
   {
     title: "My Classes",
     description:
       "A central workspace for managing students, assignments, files, and classroom activities. Focused on giving teachers better visibility and structured classroom management.",
     image: "/Classes LMS.png",
+    desktopImage: true,
   },
   {
     title: "Whiteboards",
     description:
       "A shared whiteboard system where teachers can access and revisit classroom boards easily. Explored preview interactions for PDFs, images, and videos to improve content browsing.",
-    image: "/Whiteboards LMS.png",
+    video: "/Whiteboard LMS.mov",
   },
   {
     title: "Assignments",
     description:
       "Designed assignment workflows that help teachers quickly track submissions, reviews, and pending tasks across classrooms. Focused on visibility, hierarchy, and reducing operational friction.",
-    image: "/Assignment List Page LMS.png",
+    video: "/Assignments LMS.mov",
   },
   {
     title: "Files",
     description:
       "A centralized space for teaching materials and classroom resources. Designed to make content easier to upload, organize, preview, and access quickly.",
-    image: "/Files LMS.png",
+    video: "/Files LMS.mov",
   },
 ];
 
@@ -65,6 +67,27 @@ const reflectionItems = [
       "Building interactions directly in code helped surface usability gaps and edge cases much earlier.",
   },
 ];
+
+function DesktopFrame({ src }: { src: string }) {
+  return (
+    <div
+      className="rounded-2xl flex items-center justify-center"
+      style={{ background: "var(--hover-bg)", padding: "40px 32px 32px 32px" }}
+    >
+      <div style={{ width: "100%", filter: "drop-shadow(0 16px 40px rgba(0,0,0,0.2))" }}>
+        <div style={{ background: "#1a1a1a", borderRadius: "10px 10px 0 0", padding: "8px 8px 0 8px" }}>
+          <div style={{ borderRadius: "4px 4px 0 0", overflow: "hidden" }}>
+            <VideoPlayer src={src} className="w-full h-auto block" />
+          </div>
+        </div>
+        <div style={{ background: "#2a2a2a", height: "12px" }} />
+        <div style={{ background: "#242424", height: "20px", borderRadius: "0 0 8px 8px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <div style={{ width: "56px", height: "6px", background: "#333", borderRadius: "3px" }} />
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function LMSCaseStudy() {
   return (
@@ -98,59 +121,41 @@ export default function LMSCaseStudy() {
 
         {/* ── TLDR ── */}
         <section className="mb-16">
-          <p
-            className="text-[16px] leading-relaxed"
-            style={{ color: "var(--muted)" }}
-          >
-            Built a web-based learning management system that brings assignments,
-            notes, files, and classroom workflows into one place for teachers
-            and students.
-          </p>
+          <div className="space-y-5 text-[16px] leading-relaxed" style={{ color: "var(--muted)" }}>
+            <p className="text-[22px] font-semibold tracking-[-0.01em]" style={{ color: "var(--foreground)", lineHeight: "1.6" }}>
+              How might we simplify classroom management through one centralized platform?
+            </p>
+            <p>
+              Teachers often manage classrooms across multiple tools, where
+              assignments, notes, files and student data stay scattered and
+              difficult to track. A lot of teaching material also lives on
+              personal laptops, making classroom workflows slower and harder
+              to manage.
+            </p>
+            <p>
+              This project focused on designing a centralised web based LMS
+              where teachers can upload files directly from their laptops,
+              manage classroom activities, track assignments and access
+              everything from one place.
+            </p>
+            <p>
+              The goal was to simplify everyday classroom workflows while
+              making the experience feel clean, intuitive and easy to use
+              for both teachers and students.
+            </p>
+          </div>
         </section>
 
-        {/* ── FULL-WIDTH MEDIA ── */}
-        <div
-          className="rounded-2xl overflow-hidden relative mb-16"
-          style={{ height: "440px", background: "var(--hover-bg)" }}
-        >
-          <div className="absolute" style={{ inset: "20px" }}>
-            <div className="relative w-full h-full">
-              <Image
-                src="/My notes LMS.png"
-                alt="LMS My Notes"
-                fill
-                className="object-contain"
-                sizes="640px"
-              />
-            </div>
-          </div>
+        {/* ── FULL-WIDTH HERO VIDEO ── */}
+        <div className="mb-16">
+          <DesktopFrame src="/LMS Intro.mov" />
         </div>
-
-        {/* ── THE PROBLEM ── */}
-        <section className="mb-16" style={{ borderTop: "1px solid var(--border)", paddingTop: "48px" }}>
-          <h2
-            className="text-[11px] font-medium tracking-[0.1em] uppercase mb-6"
-            style={{ color: "var(--muted)" }}
-          >
-            The Problem
-          </h2>
-          <div className="space-y-4 text-[15px] leading-relaxed" style={{ color: "var(--muted)" }}>
-            <p>
-              Teachers often manage classrooms across scattered tools, making
-              assignments, files, and student management difficult to track.
-            </p>
-            <p>
-              The goal was to design a centralized system that simplifies
-              classroom workflows while keeping the experience easy to use.
-            </p>
-          </div>
-        </section>
 
         {/* ── MY ROLE ── */}
         <section className="mb-16" style={{ borderTop: "1px solid var(--border)", paddingTop: "48px" }}>
           <h2
-            className="text-[11px] font-medium tracking-[0.1em] uppercase mb-6"
-            style={{ color: "var(--muted)" }}
+            className="text-[16px] font-medium mb-6"
+            style={{ color: "var(--foreground)" }}
           >
             My Role
           </h2>
@@ -170,8 +175,8 @@ export default function LMSCaseStudy() {
         {/* ── APPROACH ── */}
         <section className="mb-16" style={{ borderTop: "1px solid var(--border)", paddingTop: "48px" }}>
           <h2
-            className="text-[11px] font-medium tracking-[0.1em] uppercase mb-8"
-            style={{ color: "var(--muted)" }}
+            className="text-[16px] font-medium mb-8"
+            style={{ color: "var(--foreground)" }}
           >
             Approach
           </h2>
@@ -206,8 +211,8 @@ export default function LMSCaseStudy() {
         {/* ── FEATURE SECTIONS ── */}
         <section className="mb-16" style={{ borderTop: "1px solid var(--border)", paddingTop: "48px" }}>
           <h2
-            className="text-[11px] font-medium tracking-[0.1em] uppercase mb-12"
-            style={{ color: "var(--muted)" }}
+            className="text-[16px] font-medium mb-12"
+            style={{ color: "var(--foreground)" }}
           >
             What I designed
           </h2>
@@ -234,22 +239,50 @@ export default function LMSCaseStudy() {
                 >
                   {item.description}
                 </p>
-                <div
-                  className="rounded-2xl overflow-hidden relative"
-                  style={{ height: "360px", background: "var(--hover-bg)" }}
-                >
-                  <div className="absolute" style={{ inset: "20px" }}>
-                    <div className="relative w-full h-full">
-                      <Image
-                        src={item.image}
-                        alt={item.title}
-                        fill
-                        className="object-contain"
-                        sizes="640px"
-                      />
+
+                {"video" in item && item.video ? (
+                  <DesktopFrame src={item.video} />
+                ) : "desktopImage" in item && item.desktopImage ? (
+                  <div
+                    className="rounded-2xl flex items-center justify-center"
+                    style={{ background: "var(--hover-bg)", padding: "40px 32px 32px 32px" }}
+                  >
+                    <div style={{ width: "100%", filter: "drop-shadow(0 16px 40px rgba(0,0,0,0.2))" }}>
+                      <div style={{ background: "#1a1a1a", borderRadius: "10px 10px 0 0", padding: "8px 8px 0 8px" }}>
+                        <div style={{ borderRadius: "4px 4px 0 0", overflow: "hidden" }}>
+                          <Image
+                            src={(item as any).image}
+                            alt={item.title}
+                            width={900}
+                            height={560}
+                            className="block w-full h-auto"
+                          />
+                        </div>
+                      </div>
+                      <div style={{ background: "#2a2a2a", height: "12px" }} />
+                      <div style={{ background: "#242424", height: "20px", borderRadius: "0 0 8px 8px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                        <div style={{ width: "56px", height: "6px", background: "#333", borderRadius: "3px" }} />
+                      </div>
                     </div>
                   </div>
-                </div>
+                ) : (
+                  <div
+                    className="rounded-2xl overflow-hidden relative"
+                    style={{ height: "360px", background: "var(--hover-bg)" }}
+                  >
+                    <div className="absolute" style={{ inset: "20px" }}>
+                      <div className="relative w-full h-full">
+                        <Image
+                          src={(item as any).image}
+                          alt={item.title}
+                          fill
+                          className="object-contain"
+                          sizes="640px"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -258,8 +291,8 @@ export default function LMSCaseStudy() {
         {/* ── REFLECTION ── */}
         <section className="mb-16" style={{ borderTop: "1px solid var(--border)", paddingTop: "48px" }}>
           <p
-            className="text-[11px] font-medium tracking-[0.1em] uppercase mb-6"
-            style={{ color: "var(--muted)" }}
+            className="text-[16px] font-medium mb-6"
+            style={{ color: "var(--foreground)" }}
           >
             Reflection
           </p>

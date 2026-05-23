@@ -44,22 +44,22 @@ const experience = [
   {
     company: "Superr",
     role: "Product Designer (Design Engineer)",
-    duration: "Mar 2025 – Present",
+    duration: "Mar 2025 - Present",
   },
   {
     company: "ConnectWise",
     role: "UI/UX Design Intern",
-    duration: "Jan 2025 – Mar 2025",
+    duration: "Jan 2025 - Mar 2025",
   },
   {
     company: "Zoop.One",
     role: "Product Design Intern",
-    duration: "May 2023 – Jul 2023",
+    duration: "May 2023 - Jul 2023",
   },
   {
     company: "Madideations",
     role: "Graphic Design Intern",
-    duration: "Jun 2022 – Aug 2022",
+    duration: "Jun 2022 - Aug 2022",
   },
 ];
 
@@ -83,10 +83,11 @@ export default function Home() {
             </div>
             <div>
               <h1
-                className="text-[16px] font-semibold leading-tight tracking-[-0.01em]"
+                className="relative cursor-default group/name text-[16px] font-semibold leading-tight tracking-[-0.01em]"
                 style={{ color: "var(--foreground)" }}
               >
-                Aditi Shinde
+                <span className="transition-opacity duration-300 group-hover/name:opacity-0">Aditi Shinde</span>
+                <span className="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover/name:opacity-100 whitespace-nowrap">Hey there :)</span>
               </h1>
               <p className="text-[16px] leading-tight mt-0.5" style={{ color: "var(--muted)" }}>
                 Product designer who builds
@@ -120,7 +121,7 @@ export default function Home() {
           </p>
           <p>
             Lately, I&rsquo;ve been exploring the space between design and code
-            – experimenting with AI tools, prototyping ideas and shipping
+            - experimenting with AI tools, prototyping ideas and shipping
             experiences using Cursor, Claude Code, Antigravity and v0.
           </p>
           <p>
