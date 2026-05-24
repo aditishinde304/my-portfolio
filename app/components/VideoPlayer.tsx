@@ -18,12 +18,13 @@ export default function VideoPlayer({ src, className, style }: VideoPlayerProps)
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
+          video.load();
           video.play().catch(() => {});
         } else {
           video.pause();
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.2 }
     );
 
     observer.observe(video);
@@ -37,6 +38,7 @@ export default function VideoPlayer({ src, className, style }: VideoPlayerProps)
       loop
       muted
       playsInline
+      preload="none"
       className={className}
       style={style}
     />
