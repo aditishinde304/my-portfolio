@@ -22,7 +22,7 @@ const featureSections = [
     title: "My Notes",
     description:
       "A unified space where notebooks and folders come together in one place. Designed to help users quickly organize, search, and manage classroom content with minimal friction.",
-    video: "/My notes.mov",
+    video: "/My notes.mp4",
   },
   {
     title: "My Classes",
@@ -35,19 +35,19 @@ const featureSections = [
     title: "Whiteboards",
     description:
       "A shared whiteboard system where teachers can access and revisit classroom boards easily. Explored preview interactions for PDFs, images, and videos to improve content browsing.",
-    video: "/Whiteboard LMS.mov",
+    video: "/Whiteboard LMS.mp4",
   },
   {
     title: "Assignments",
     description:
       "Designed assignment workflows that help teachers quickly track submissions, reviews, and pending tasks across classrooms. Focused on visibility, hierarchy, and reducing operational friction.",
-    video: "/Assignments LMS.mov",
+    video: "/Assignments LMS.mp4",
   },
   {
     title: "Files",
     description:
       "A centralized space for teaching materials and classroom resources. Designed to make content easier to upload, organize, preview, and access quickly.",
-    video: "/Files LMS.mov",
+    video: "/Files LMS.mp4",
   },
 ];
 
@@ -148,7 +148,7 @@ export default function LMSCaseStudy() {
 
         {/* ── FULL-WIDTH HERO VIDEO ── */}
         <div className="mb-16">
-          <DesktopFrame src="/LMS Intro.mov" />
+          <DesktopFrame src="/LMS Intro.mp4" />
         </div>
 
         {/* ── MY ROLE ── */}

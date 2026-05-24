@@ -41,7 +41,7 @@ const classroomItems = [
       "Reducing classroom confusion",
       "Making assignments easier to track and access",
     ],
-    media: { type: "video", src: "/Assignments.mov", fullWidth: true },
+    media: { type: "video", src: "/Assignments.mp4", fullWidth: true },
   },
   {
     title: "Live Quizzes",
@@ -124,7 +124,7 @@ export default function SuperrbookCaseStudy() {
         {/* ── FULL-WIDTH MEDIA ── */}
         <div className="mb-16 rounded-2xl overflow-hidden">
           <VideoPlayer
-            src="/Superrbook.mov"
+            src="/Superrbook.mp4"
             className="w-full h-auto block"
             style={{ transform: "scale(1.08)", transformOrigin: "center center" }}
           />
@@ -536,7 +536,7 @@ export default function SuperrbookCaseStudy() {
                 <div style={{ background: "#1a1a1a", borderRadius: "10px 10px 0 0", padding: "8px 8px 0 8px" }}>
                   <div style={{ borderRadius: "4px 4px 0 0", overflow: "hidden" }}>
                     <VideoPlayer
-                      src="/Admin Portal.mov"
+                      src="/Admin Portal.mp4"
                       className="w-full h-auto block"
                     />
                   </div>
