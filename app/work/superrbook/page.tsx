@@ -329,7 +329,7 @@ export default function SuperrbookCaseStudy() {
                       <div className="relative w-full h-full">
                         <Image
                           src={item.media.src}
-                          alt={item.media.alt ?? item.title}
+                          alt={(item.media as any).alt ?? item.title}
                           fill
                           className="object-contain"
                           sizes="640px"
