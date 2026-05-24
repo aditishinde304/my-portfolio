@@ -369,7 +369,7 @@ export default function LMSCaseStudy() {
               X
             </a>
             <a
-              href="https://www.linkedin.com/in/aditi-shinde"
+              href="https://www.linkedin.com/in/aditi-shinde-5415681b7/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[13px] link-dashed"
