@@ -311,7 +311,7 @@ export default function SuperrbookCaseStudy() {
                         borderRadius: "20px",
                         overflow: "hidden",
                         boxShadow: "0 20px 60px rgba(0,0,0,0.18), 0 4px 16px rgba(0,0,0,0.10)",
-                        width: "60%",
+                        width: "min(60%, 320px)",
                       }}
                     >
                       <VideoPlayer src={item.media.src} className="w-full h-auto block" />
@@ -426,7 +426,7 @@ export default function SuperrbookCaseStudy() {
                   borderRadius: "20px",
                   overflow: "hidden",
                   boxShadow: "0 20px 60px rgba(0,0,0,0.18), 0 4px 16px rgba(0,0,0,0.10)",
-                  width: "60%",
+                  width: "min(60%, 320px)",
                 }}
               >
                 <VideoPlayer src="/Geometry tools video.mp4" className="w-full h-auto block" />
@@ -529,7 +529,7 @@ export default function SuperrbookCaseStudy() {
             {/* Media — desktop frame */}
             <div
               className="rounded-2xl flex items-center justify-center"
-              style={{ background: "var(--hover-bg)", padding: "40px 32px 32px 32px" }}
+              style={{ background: "var(--hover-bg)", padding: "24px 16px 16px 16px" }}
             >
               <div style={{ width: "100%", filter: "drop-shadow(0 16px 40px rgba(0,0,0,0.2))" }}>
                 {/* Screen bezel */}
@@ -566,7 +566,7 @@ export default function SuperrbookCaseStudy() {
           >
             What I learned
           </h2>
-          <div className="grid grid-cols-2 gap-8 mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-8">
             <div>
               <p
                 className="text-[15px] font-medium leading-snug mb-3"

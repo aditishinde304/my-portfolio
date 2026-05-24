@@ -72,7 +72,7 @@ function DesktopFrame({ src }: { src: string }) {
   return (
     <div
       className="rounded-2xl flex items-center justify-center"
-      style={{ background: "var(--hover-bg)", padding: "40px 32px 32px 32px" }}
+      style={{ background: "var(--hover-bg)", padding: "24px 16px 16px 16px" }}
     >
       <div style={{ width: "100%", filter: "drop-shadow(0 16px 40px rgba(0,0,0,0.2))" }}>
         <div style={{ background: "#1a1a1a", borderRadius: "10px 10px 0 0", padding: "8px 8px 0 8px" }}>
@@ -245,7 +245,7 @@ export default function LMSCaseStudy() {
                 ) : "desktopImage" in item && item.desktopImage ? (
                   <div
                     className="rounded-2xl flex items-center justify-center"
-                    style={{ background: "var(--hover-bg)", padding: "40px 32px 32px 32px" }}
+                    style={{ background: "var(--hover-bg)", padding: "24px 16px 16px 16px" }}
                   >
                     <div style={{ width: "100%", filter: "drop-shadow(0 16px 40px rgba(0,0,0,0.2))" }}>
                       <div style={{ background: "#1a1a1a", borderRadius: "10px 10px 0 0", padding: "8px 8px 0 8px" }}>
@@ -302,7 +302,7 @@ export default function LMSCaseStudy() {
           >
             What I learned
           </h2>
-          <div className="grid grid-cols-2 gap-8 mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-8">
             <div>
               <p
                 className="text-[15px] font-medium leading-snug mb-3"

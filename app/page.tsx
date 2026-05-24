@@ -252,7 +252,7 @@ export default function Home() {
 
         <div className="flex flex-col gap-5">
           {experience.map((job, i) => (
-            <div key={i} className="flex items-baseline justify-between gap-4">
+            <div key={i} className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-0.5 sm:gap-4">
               <div>
                 <span
                   className="text-[16px] font-medium block"
@@ -264,7 +264,7 @@ export default function Home() {
                   {job.role}
                 </span>
               </div>
-              <span className="text-[15px] shrink-0 tabular-nums" style={{ color: "var(--muted)" }}>
+              <span className="text-[15px] shrink-0 tabular-nums mt-1 sm:mt-0" style={{ color: "var(--muted)" }}>
                 {job.duration}
               </span>
             </div>
