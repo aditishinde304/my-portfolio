@@ -615,7 +615,7 @@ export default function SuperrbookCaseStudy() {
 
         {/* ── FOOTER ── */}
         <footer
-          className="flex items-center justify-between pt-6"
+          className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-0 pt-6"
           style={{ borderTop: "1px solid var(--border)" }}
         >
           <span className="text-[13px]" style={{ color: "var(--muted)" }}>
