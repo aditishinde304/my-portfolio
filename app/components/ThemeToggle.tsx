@@ -9,9 +9,10 @@ export default function ThemeToggle() {
     const stored = localStorage.getItem("theme");
     if (stored === "dark" || stored === "light") {
       setTheme(stored);
+      document.documentElement.setAttribute("data-theme", stored);
     } else {
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      setTheme(prefersDark ? "dark" : "light");
+      setTheme("light");
+      document.documentElement.setAttribute("data-theme", "light");
     }
   }, []);
 

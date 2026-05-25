@@ -142,7 +142,7 @@ export default function Home() {
             x.com
           </a>
           .{" "}
-          <a href="https://drive.google.com/file/d/1fDolKcgoSsSM7DQS2Pba_QHu_gH_6fTY/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="link-dashed">
+          <a href="https://drive.google.com/file/d/1mbuBG-T9t_Rxmam4UcLlDq3tveGxfSit/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="link-dashed">
             View my resume
           </a>
           .
@@ -161,7 +161,7 @@ export default function Home() {
         <div className="flex flex-col" style={{ gap: "56px" }}>
           {work.map((project) => (
             <a key={project.name} href={project.href} className="group block">
-              <div className="w-full rounded-2xl overflow-hidden mb-4" style={{ height: "300px", background: "var(--hover-bg)", position: "relative" }}>
+              <div className="w-full rounded-2xl overflow-hidden mb-4 h-[220px] md:h-[300px]" style={{ background: "var(--hover-bg)", position: "relative" }}>
                 <div className="absolute" style={{ inset: project.inset, position: "absolute" }}>
                   <div className="relative w-full h-full">
                     <Image
@@ -175,19 +175,19 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex items-baseline justify-between gap-4 mb-1">
-                <div className="flex items-center gap-2.5">
+                <div>
                   <p className="text-[16px] leading-snug" style={{ color: "var(--foreground)" }}>
                     {project.name}
+                    {project.comingSoon && (
+                      <span className="inline-flex items-center gap-1.5 ml-2 align-baseline">
+                        <span
+                          className="rounded-full shrink-0"
+                          style={{ width: "3px", height: "3px", background: "var(--muted)", display: "inline-block", verticalAlign: "middle" }}
+                        />
+                        <span className="text-[15px]" style={{ color: "var(--muted)", fontFamily: "var(--font-shantell)" }}>Coming soon</span>
+                      </span>
+                    )}
                   </p>
-                  {project.comingSoon && (
-                    <span className="flex items-center gap-1.5 shrink-0">
-                      <span
-                        className="rounded-full shrink-0"
-                        style={{ width: "3px", height: "3px", background: "var(--muted)", display: "inline-block" }}
-                      />
-                      <span className="text-[15px]" style={{ color: "var(--muted)", fontFamily: "var(--font-shantell)" }}>Coming soon</span>
-                    </span>
-                  )}
                 </div>
                 <span className="text-[14px] shrink-0 tabular-nums" style={{ color: "var(--muted)" }}>
                   {project.year}
@@ -220,8 +220,8 @@ export default function Home() {
             <a
               key={exp.name}
               href={exp.href}
-              className="group block rounded-2xl overflow-hidden relative"
-              style={{ height: "180px", background: "var(--hover-bg)" }}
+              className="group block rounded-2xl overflow-hidden relative h-[130px] md:h-[180px]"
+              style={{ background: "var(--hover-bg)" }}
             >
               {exp.image && (
                 <div className="absolute" style={{ inset: "12px" }}>
@@ -274,7 +274,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer
-        className="flex items-center justify-between pt-6"
+        className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-0 pt-6"
         style={{ borderTop: "1px solid var(--border)" }}
       >
         <span className="text-[13px]" style={{ color: "var(--muted)" }}>
