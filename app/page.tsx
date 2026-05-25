@@ -310,6 +310,15 @@ export default function Home() {
           >
             LinkedIn
           </a>
+          <a
+            href="https://drive.google.com/file/d/1mbuBG-T9t_Rxmam4UcLlDq3tveGxfSit/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[13px] link-dashed"
+            style={{ color: "var(--muted)" }}
+          >
+            Resume
+          </a>
         </div>
       </footer>
 
