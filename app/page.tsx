@@ -206,6 +206,16 @@ export default function Home() {
             </a>
           ))}
         </div>
+
+        <a
+          href="https://aditishinde.framer.website/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block mt-8 text-[15px] link-dashed"
+          style={{ color: "var(--muted)" }}
+        >
+          See everything I've worked on →
+        </a>
       </section>
 
       {/* Experiments */}
