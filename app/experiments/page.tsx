@@ -66,13 +66,15 @@ export default function Experiments() {
         {experiments.map((exp) => (
           <a key={exp.name} href={exp.href} target={exp.href !== "#" ? "_blank" : undefined} rel="noopener noreferrer" className="group block">
             <div
-              className="w-full rounded-2xl overflow-hidden mb-5"
-              style={{ background: "var(--hover-bg)", position: "relative" }}
+              className="w-full rounded-2xl mb-5 p-3"
+              style={{ background: "var(--hover-bg)" }}
             >
-              <VideoPlayer
-                src={exp.video}
-                className="w-full h-auto block"
-              />
+              <div className="rounded-xl overflow-hidden">
+                <VideoPlayer
+                  src={exp.video}
+                  className="w-full h-auto block"
+                />
+              </div>
             </div>
             <p className="text-[16px] font-medium leading-snug mb-2 flex items-center gap-2">
               <span

@@ -238,13 +238,15 @@ export default function Home() {
             <a
               key={exp.name}
               href={exp.href}
-              className="group block rounded-2xl overflow-hidden relative"
+              className="group block rounded-2xl p-2"
               style={{ background: "var(--hover-bg)" }}
             >
-              <VideoPlayer
-                src={exp.video}
-                className="w-full h-auto block transition-transform duration-500 group-hover:scale-[1.02]"
-              />
+              <div className="rounded-xl overflow-hidden">
+                <VideoPlayer
+                  src={exp.video}
+                  className="w-full h-auto block transition-transform duration-500 group-hover:scale-[1.02]"
+                />
+              </div>
             </a>
           ))}
         </div>
