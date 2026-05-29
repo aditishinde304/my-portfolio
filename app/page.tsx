@@ -34,10 +34,10 @@ const work = [
 ];
 
 const experiments = [
-  { name: "Game", image: "/Game design.png", href: "#" },
-  { name: "Postcard", image: "/Postcard.png", href: "#" },
-  { name: "Focus Mode", image: "/Focus mode.png", href: "#" },
-  { name: "To Do Interaction", image: "/Cursor to do.png", href: "#" },
+  { name: "Game", image: "/Game design.png", href: "/experiments" },
+  { name: "Postcard", image: "/Postcard.png", href: "/experiments" },
+  { name: "Focus Mode", image: "/Focus mode.png", href: "/experiments" },
+  { name: "To Do Interaction", image: "/Cursor to do.png", href: "/experiments" },
 ];
 
 const experience = [
