@@ -1,6 +1,7 @@
 import Image from "next/image";
 import ThemeToggle from "./components/ThemeToggle";
 import CopyButton from "./components/CopyButton";
+import VideoPlayer from "./components/VideoPlayer";
 
 const work = [
   {
@@ -34,10 +35,10 @@ const work = [
 ];
 
 const experiments = [
-  { name: "Game", image: "/Game design.png", href: "/experiments" },
-  { name: "Postcard", image: "/Postcard.png", href: "/experiments" },
-  { name: "Focus Mode", image: "/Focus mode.png", href: "/experiments" },
-  { name: "To Do Interaction", image: "/Cursor to do.png", href: "/experiments" },
+  { name: "Game", image: "/Game design.png", video: "/Pixel Game Portfolio.mp4", href: "/experiments" },
+  { name: "Postcard", image: "/Postcard.png", video: "/Postcard.mp4", href: "/experiments" },
+  { name: "Focus Mode", image: "/Focus mode.png", video: "/Focus Mode.mp4", href: "/experiments" },
+  { name: "To Do Interaction", image: "/Cursor to do.png", video: "/To Do portfolio.mp4", href: "/experiments" },
 ];
 
 const experience = [
@@ -237,22 +238,13 @@ export default function Home() {
             <a
               key={exp.name}
               href={exp.href}
-              className="group block rounded-2xl overflow-hidden relative h-[130px] md:h-[180px]"
+              className="group block rounded-2xl overflow-hidden relative"
               style={{ background: "var(--hover-bg)" }}
             >
-              {exp.image && (
-                <div className="absolute" style={{ inset: "12px" }}>
-                  <div className="relative w-full h-full">
-                    <Image
-                      src={exp.image}
-                      alt={exp.name}
-                      fill
-                      className="object-contain transition-transform duration-500 group-hover:scale-[1.02]"
-                      sizes="280px"
-                    />
-                  </div>
-                </div>
-              )}
+              <VideoPlayer
+                src={exp.video}
+                className="w-full h-auto block transition-transform duration-500 group-hover:scale-[1.02]"
+              />
             </a>
           ))}
         </div>
