@@ -178,10 +178,10 @@ export default function Home() {
                 <p className="text-[16px] leading-snug" style={{ color: "var(--foreground)" }}>
                   {project.name}
                   {project.comingSoon && (
-                    <span className="hidden sm:inline-flex items-center gap-1.5 ml-2">
+                    <span className="hidden sm:inline-flex items-center gap-1.5 ml-2" style={{ verticalAlign: "middle" }}>
                       <span
                         className="rounded-full shrink-0"
-                        style={{ width: "3px", height: "3px", background: "var(--muted)", display: "inline-block", verticalAlign: "middle" }}
+                        style={{ width: "3px", height: "3px", background: "var(--muted)", display: "inline-block" }}
                       />
                       <span className="text-[15px]" style={{ color: "var(--muted)", fontFamily: "var(--font-shantell)" }}>Coming soon</span>
                     </span>
@@ -211,10 +211,11 @@ export default function Home() {
           href="https://aditishinde.framer.website/"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block mt-8 text-[15px] link-dashed"
-          style={{ color: "var(--muted)" }}
+          className="inline-flex items-center gap-1.5 mt-8 text-[15px] font-medium transition-opacity duration-150 hover:opacity-60"
+          style={{ color: "var(--foreground)" }}
         >
-          See everything I've worked on →
+          See everything I've worked on
+          <span style={{ display: "inline-block", transform: "rotate(-45deg)" }}>↑</span>
         </a>
       </section>
 
