@@ -211,11 +211,10 @@ export default function Home() {
           href="https://aditishinde.framer.website/"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 mt-8 text-[15px] font-medium transition-opacity duration-150 hover:opacity-60"
-          style={{ color: "var(--foreground)" }}
+          className="inline-flex items-center gap-1.5 mt-8 text-[15px] font-medium link-dashed"
         >
           See everything I've worked on
-          <span style={{ display: "inline-block", transform: "rotate(-45deg)" }}>↑</span>
+          <span style={{ display: "inline-block", transform: "rotate(45deg)" }}>↑</span>
         </a>
       </section>
 
