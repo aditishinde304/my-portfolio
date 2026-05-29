@@ -175,24 +175,31 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex items-baseline justify-between gap-4 mb-1">
-                <div>
-                  <p className="text-[16px] leading-snug" style={{ color: "var(--foreground)" }}>
-                    {project.name}
-                  </p>
+                <p className="text-[16px] leading-snug" style={{ color: "var(--foreground)" }}>
+                  {project.name}
                   {project.comingSoon && (
-                    <span className="flex items-center gap-1.5 mt-1">
+                    <span className="hidden sm:inline-flex items-center gap-1.5 ml-2">
                       <span
                         className="rounded-full shrink-0"
-                        style={{ width: "3px", height: "3px", background: "var(--muted)", display: "inline-block" }}
+                        style={{ width: "3px", height: "3px", background: "var(--muted)", display: "inline-block", verticalAlign: "middle" }}
                       />
                       <span className="text-[15px]" style={{ color: "var(--muted)", fontFamily: "var(--font-shantell)" }}>Coming soon</span>
                     </span>
                   )}
-                </div>
+                </p>
                 <span className="text-[14px] shrink-0 tabular-nums" style={{ color: "var(--muted)" }}>
                   {project.year}
                 </span>
               </div>
+              {project.comingSoon && (
+                <span className="flex sm:hidden items-center gap-1.5 mb-1">
+                  <span
+                    className="rounded-full shrink-0"
+                    style={{ width: "3px", height: "3px", background: "var(--muted)", display: "inline-block" }}
+                  />
+                  <span className="text-[15px]" style={{ color: "var(--muted)", fontFamily: "var(--font-shantell)" }}>Coming soon</span>
+                </span>
+              )}
               <p className="text-[16px] leading-relaxed whitespace-pre-line" style={{ color: "var(--muted)" }}>
                 {project.subheading}
               </p>
