@@ -135,10 +135,11 @@ export default function SuperrbookCaseStudy() {
           </h2>
           <ul className="flex flex-col gap-3">
             {[
-              "Worked across student, teacher, and admin experiences",
-              "Designed and shipped multiple classroom workflows and interaction-heavy features",
-              "Collaborated closely with PMs and engineers",
-              "Explored interaction prototyping using Cursor and AI-assisted workflows",
+              "Designed and shipped experiences across Superrbook and the Admin Portal for students, teachers, and school administrators.",
+              "Simplified classroom workflows through navigation, information architecture and interaction design.",
+              "Designed learning experiences including assignments, quizzes, notebooks, whiteboards and collaborative classroom tools.",
+              "Created operational workflows and dashboards for school device management and administration.",
+              "Collaborated closely with product managers and engineers from concept to implementation.",
             ].map((item) => (
               <li
                 key={item}
@@ -161,16 +162,22 @@ export default function SuperrbookCaseStudy() {
           </ul>
         </section>
 
-        {/* ── WHAT I WORKED ON ── */}
+        {/* ── AREAS OF OWNERSHIP ── */}
         <section className="mb-16" style={{ borderTop: "1px solid var(--border)", paddingTop: "48px" }}>
           <h2
             className="text-[16px] font-medium mb-8"
             style={{ color: "var(--foreground)" }}
           >
-            What I worked on
+            Areas of Ownership
           </h2>
           <ul className="flex flex-col gap-4">
-            {workItems.map((item) => (
+            {[
+              { title: "Learning Experiences", description: "Assignments, quizzes, notebooks, whiteboards, reports and classroom collaboration." },
+              { title: "Systems & Information Architecture", description: "Navigation structures, content organisation and workflow simplification across the platform." },
+              { title: "Interaction Design", description: "Geometry tools, stickers, drawing experiences, tool behaviors and micro-interactions." },
+              { title: "Admin Operations", description: "Device management, operational dashboards, monitoring workflows and quick action systems." },
+              { title: "Prototyping", description: "Cursor based prototypes used to test interaction logic, usability edge cases and motion before implementation." },
+            ].map((item) => (
               <li key={item.title} className="flex items-start gap-3">
                 <span
                   className="shrink-0 rounded-full"
