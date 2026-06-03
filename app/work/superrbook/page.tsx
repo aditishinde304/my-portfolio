@@ -92,31 +92,26 @@ export default function SuperrbookCaseStudy() {
         {/* ── TLDR ── */}
         <section className="mb-16">
           <div className="space-y-5 text-[16px] leading-relaxed" style={{ color: "var(--muted)" }}>
-            <p className="text-[22px] font-semibold tracking-[-0.01em]" style={{ color: "var(--foreground)", lineHeight: "1.6" }}>
-              How might we design classroom tools that feel intuitive for teachers
-              and engaging for students?
+            <p>
+              Superr is an edtech company building tools that support teaching,
+              learning and classroom operations for schools.
             </p>
             <p>
-              Most classroom platforms today are built around management and
-              operations, not around how learning actually happens inside
-              classrooms.
+              Over my time at Superr, I worked across Superrbook and the Admin
+              Portal, designing experiences for students, teachers, and school
+              administrators. My focus was on simplifying complex classroom
+              workflows, improving information architecture and creating intuitive
+              experiences across the platform.
             </p>
             <p>
-              Teachers constantly switch between tools to manage assignments,
-              files, whiteboards, assessments and student progress, while
-              students often end up navigating experiences that feel overwhelming
-              and disconnected.
+              For interaction heavy features, I often used Cursor to prototype
+              behaviors, validate edge cases, refine motion and micro-interactions
+              directly in code before development.
             </p>
             <p>
-              Superrbook was designed to bring these workflows into one connected
-              system that feels simpler, lighter and more engaging for both
-              students and teachers.
-            </p>
-            <p>
-              I worked across different parts of the product including classroom
-              workflows and the admin portal, focusing on simplifying complex
-              systems, improving usability and designing interaction heavy
-              experiences that feel intuitive to use.
+              This case study highlights a collection of the features, systems
+              and interaction patterns I helped design and ship while building a
+              more connected digital classroom experience.
             </p>
           </div>
         </section>
