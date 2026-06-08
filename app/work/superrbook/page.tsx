@@ -1,3 +1,4 @@
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import VideoPlayer from "@/app/components/VideoPlayer";
@@ -30,32 +31,18 @@ const workItems = [
   },
 ];
 
-const classroomItems = [
-  {
-    title: "Assignments",
-    description:
-      "Designed assignment workflows that helped students stay organized and teachers manage classroom tasks more efficiently. Below are a few screens from the teacher experience.",
-    focusedOn: [
-      "Better task visibility",
-      "Simpler submission flows",
-      "Reducing classroom confusion",
-      "Making assignments easier to track and access",
-    ],
-    media: { type: "video", src: "/Assignments.mp4", fullWidth: true },
-  },
-  {
-    title: "Live Quizzes",
-    description:
-      "Created interactive classroom experiences that made classroom participation feel more active and engaging during lessons.",
-    focusedOn: [
-      "Real-time classroom interaction",
-      "Faster teacher controls",
-      "Clear participation states",
-      "Keeping students engaged during sessions",
-    ],
-    media: { type: "video", src: "/Practice on demand sound updated.mp4", tablet: true },
-  },
-];
+const liveQuizItem = {
+  title: "Live Quizzes",
+  description:
+    "Created interactive classroom experiences that made classroom participation feel more active and engaging during lessons.",
+  focusedOn: [
+    "Real-time classroom interaction",
+    "Faster teacher controls",
+    "Clear participation states",
+    "Keeping students engaged during sessions",
+  ],
+  media: { type: "video", src: "/Practice on demand sound updated.mp4", tablet: true },
+};
 
 const TOTAL_SECTIONS = 3;
 
@@ -231,14 +218,14 @@ export default function SuperrbookCaseStudy() {
           </div>
         </section>
 
-        {/* ── SECTION 01: MAKING CLASSROOM LEARNING MORE INTERACTIVE ── */}
+        {/* ── SECTION 01: CONTEXT SWITCHING ── */}
         <section className="mb-16" style={{ borderTop: "1px solid var(--border)", paddingTop: "48px" }}>
           <div className="flex items-baseline justify-between mb-12">
             <h2
               className="text-[16px] font-medium"
               style={{ color: "var(--foreground)" }}
             >
-              Making classroom learning more interactive
+              Context Switching Between Learning Resources
             </h2>
             <span
               className="text-[13px] tabular-nums shrink-0 ml-6"
@@ -248,100 +235,314 @@ export default function SuperrbookCaseStudy() {
             </span>
           </div>
 
-          <div className="flex flex-col gap-16">
-            {classroomItems.map((item) => (
-              <div key={item.title}>
-                <h3
-                  className="text-[16px] font-medium mb-4"
-                  style={{ color: "var(--foreground)" }}
-                >
-                  {item.title}
-                </h3>
-                <p
-                  className="text-[15px] leading-relaxed mb-6"
-                  style={{ color: "var(--muted)" }}
-                >
-                  {item.description}
-                </p>
-                <p
-                  className="text-[13px] font-medium mb-3"
-                  style={{ color: "var(--foreground)" }}
-                >
-                  Focused on
-                </p>
-                <ul className="flex flex-col gap-2 mb-8">
-                  {item.focusedOn.map((point) => (
-                    <li
-                      key={point}
-                      className="text-[15px] leading-relaxed flex items-start gap-3"
-                      style={{ color: "var(--muted)" }}
-                    >
+          <div className="flex flex-col gap-12">
+
+            {/* Overview */}
+            <div>
+              <p className="text-[15px] font-medium mb-4" style={{ color: "var(--foreground)" }}>Overview</p>
+              <div className="space-y-4 text-[15px] leading-relaxed" style={{ color: "var(--muted)" }}>
+                <p>One of the most common learning behaviors in Superrbook is switching between textbooks and notebooks. Students frequently read from a textbook, write notes in a notebook, and then return to continue reading. This simple workflow can happen multiple times within a single study session.</p>
+                <p>However, the existing experience made switching unnecessarily difficult. To move between resources, students had to leave their current content, navigate back through modules, browse directories, and manually find what they were looking for again.</p>
+                <p>The challenge wasn&rsquo;t helping students open another textbook or notebook. It was helping them stay focused while moving between resources.</p>
+              </div>
+            </div>
+
+            {/* Current Flow */}
+            <div>
+              <p className="text-[15px] font-medium mb-4" style={{ color: "var(--foreground)" }}>Existing Experience</p>
+              <div className="rounded-2xl p-6" style={{ background: "var(--hover-bg)" }}>
+                {/* Horizontal flow */}
+                <div className="flex items-center w-full mb-5">
+                  {["Textbook", "Go back", "Browse files", "Find notebook", "Open notebook"].map((step, i, arr) => (
+                    <React.Fragment key={step}>
                       <span
-                        className="shrink-0 rounded-full"
-                        style={{
-                          width: "4px",
-                          height: "4px",
-                          background: "var(--muted)",
-                          display: "inline-block",
-                          marginTop: "9px",
-                        }}
-                      />
-                      {point}
+                        className="text-[12px] font-medium px-2.5 py-1 rounded-full whitespace-nowrap shrink-0"
+                        style={{ background: "var(--background)", border: "1px solid var(--border)", color: "var(--foreground)" }}
+                      >
+                        {step}
+                      </span>
+                      {i < arr.length - 1 && (
+                        <div style={{ flex: 1 }}>
+                          <svg width="100%" height="10" fill="none" preserveAspectRatio="none">
+                            <line x1="0" y1="5" x2="100%" y2="5" stroke="var(--muted)" strokeWidth="1.5" strokeDasharray="4 4"/>
+                          </svg>
+                        </div>
+                      )}
+                    </React.Fragment>
+                  ))}
+                </div>
+                {/* Caption */}
+                <p className="text-[14px] leading-relaxed" style={{ color: "var(--muted)" }}>
+                  Students often switched between textbooks and notebooks while studying. Each switch required multiple steps, breaking their focus and slowing down note-taking.
+                </p>
+              </div>
+            </div>
+
+            {/* Why It Matters */}
+            <div>
+              <p className="text-[15px] font-medium mb-4" style={{ color: "var(--foreground)" }}>Why It Matters</p>
+              <div className="space-y-4 text-[15px] leading-relaxed" style={{ color: "var(--muted)" }}>
+                <p>Switching between resources is not an occasional behavior. It&rsquo;s a high-frequency interaction that sits at the center of how students learn. The most common pattern looked like:</p>
+                <div className="flex items-center gap-2 py-3 px-4 rounded-xl" style={{ background: "var(--hover-bg)" }}>
+                  {["Textbook", "Notebook", "Textbook"].map((step, i, arr) => (
+                    <span key={i} className="flex items-center gap-2">
+                      <span className="text-[15px] font-medium" style={{ color: "var(--foreground)" }}>{step}</span>
+                      {i < arr.length - 1 && <span style={{ color: "var(--muted)" }}>→</span>}
+                    </span>
+                  ))}
+                </div>
+                <p>Students wanted to quickly capture a thought and immediately return to where they left off. When switching became difficult:</p>
+                <ul className="flex flex-col gap-2">
+                  {["Students lost their train of thought","Note-taking became less frequent","Learning sessions felt fragmented","Valuable context was lost between reading and writing"].map((point) => (
+                    <li key={point} className="flex items-start gap-3">
+                      <span className="shrink-0 rounded-full mt-[9px]" style={{ width: "4px", height: "4px", background: "var(--muted)", display: "inline-block" }} />{point}
                     </li>
                   ))}
                 </ul>
-                {/* fullWidth: end-to-end video (Assignments) */}
-                {item.media.fullWidth && (
-                  <div className="rounded-2xl overflow-hidden">
-                    <VideoPlayer
-                      src={item.media.src}
-                      className="w-full h-auto block"
-                      style={{ transform: "scale(1.08)", transformOrigin: "center center" }}
-                    />
-                  </div>
-                )}
-
-                {/* tablet: centered iPad border (Live Quizzes) */}
-                {item.media.tablet && (
-                  <div
-                    className="rounded-2xl flex items-center justify-center"
-                    style={{ background: "var(--hover-bg)", padding: "32px 24px" }}
-                  >
-                    <div
-                      style={{
-                        border: "10px solid #111",
-                        borderRadius: "20px",
-                        overflow: "hidden",
-                        boxShadow: "0 20px 60px rgba(0,0,0,0.18), 0 4px 16px rgba(0,0,0,0.10)",
-                        width: "min(60%, 320px)",
-                      }}
-                    >
-                      <VideoPlayer src={item.media.src} className="w-full h-auto block" />
-                    </div>
-                  </div>
-                )}
-
-                {/* image */}
-                {item.media.type === "image" && (
-                  <div
-                    className="rounded-2xl overflow-hidden relative"
-                    style={{ height: "360px", background: "var(--hover-bg)" }}
-                  >
-                    <div className="absolute" style={{ inset: "20px" }}>
-                      <div className="relative w-full h-full">
-                        <Image
-                          src={item.media.src}
-                          alt={(item.media as any).alt ?? item.title}
-                          fill
-                          className="object-contain"
-                          sizes="640px"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                )}
+                <p>The ideal experience should feel almost invisible. Students should be able to move between resources without interrupting their learning flow.</p>
               </div>
-            ))}
+            </div>
+
+            {/* Defining Success */}
+            <div>
+              <p className="text-[15px] font-medium mb-4" style={{ color: "var(--foreground)" }}>Defining Success</p>
+              <ul className="flex flex-col gap-3">
+                {[
+                  "Enable students to switch resources in as few steps as possible.",
+                  "Support the most common workflow, reading and note taking side by side.",
+                  "Make returning to previous resources effortless.",
+                  "Reduce context loss during study sessions.",
+                  "Avoid interfering with writing and drawing interactions.",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-[15px] leading-relaxed" style={{ color: "var(--muted)" }}>
+                    <span className="shrink-0 rounded-full mt-[9px]" style={{ width: "4px", height: "4px", background: "var(--muted)", display: "inline-block" }} />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Exploration */}
+            <div>
+              <p className="text-[15px] font-medium mb-4" style={{ color: "var(--foreground)" }}>Exploration</p>
+              <p className="text-[15px] leading-relaxed mb-8" style={{ color: "var(--muted)" }}>The trigger became the most debated part of the feature. The solution needed to be fast, discoverable, accessible, compatible with writing and drawing experiences, and flexible enough to work across textbooks and notebooks. I explored multiple directions before arriving at the final solution.</p>
+              <div className="flex flex-col gap-6">
+
+                {/* Option 01 — custom layout */}
+                <div className="rounded-2xl">
+                  {/* Header */}
+                  <div className="pb-4">
+                    <p className="text-[15px] font-medium" style={{ color: "var(--foreground)" }}>01  Single Pull-Down Swipe From Top</p>
+                  </div>
+
+                  {/* Image */}
+                  <div className="mb-5 rounded-2xl overflow-hidden p-4" style={{ background: "var(--hover-bg)" }}>
+                    <Image src="/Context Switching 1.png" alt="Swipe from top gesture exploration" width={800} height={1120} quality={100} className="w-full h-auto block rounded-xl" />
+                  </div>
+
+                  {/* Cons + Pros */}
+                  <div className="grid grid-cols-2 mb-5">
+                    <div className="pr-4">
+                      <p className="text-[15px] font-medium mb-3" style={{ color: "var(--muted)" }}>Cons</p>
+                      <ul className="flex flex-col gap-2">
+                        {["Conflicted with system gestures", "Difficult to own consistently across the OS"].map((c) => (
+                          <li key={c} className="text-[15px] leading-relaxed flex items-start gap-2" style={{ color: "var(--muted)" }}>
+                            <span className="shrink-0 rounded-full mt-[7px]" style={{ width: "3px", height: "3px", background: "var(--muted)", display: "inline-block" }} />{c}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="pl-4">
+                      <p className="text-[15px] font-medium mb-3" style={{ color: "var(--muted)" }}>Pros</p>
+                      <ul className="flex flex-col gap-2">
+                        {["Familiar interaction", "Quick access"].map((p) => (
+                          <li key={p} className="text-[15px] leading-relaxed flex items-start gap-2" style={{ color: "var(--muted)" }}>
+                            <span className="shrink-0 rounded-full mt-[7px]" style={{ width: "3px", height: "3px", background: "var(--muted)", display: "inline-block" }} />{p}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+
+                  {/* Decision card */}
+                  <div className="mb-5 rounded-xl p-4" style={{ background: "#FEF2F2", border: "1px solid #FECACA" }}>
+                    <p className="text-[15px] font-medium mb-2" style={{ color: "#DC2626" }}>Decision: Rejected</p>
+                    <p className="text-[15px] leading-relaxed" style={{ color: "#7F1D1D" }}>
+                      The gesture competed directly with operating system interactions and could not be reliably controlled within the product.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Option 02 */}
+                <div key="Option 02  Toolbar Action" className="rounded-2xl">
+                  <div className="pb-4">
+                    <p className="text-[15px] font-medium" style={{ color: "var(--foreground)" }}>02  Toolbar Action</p>
+                  </div>
+                  <div className="mb-5 rounded-2xl overflow-hidden p-4" style={{ background: "var(--hover-bg)" }}>
+                    <Image src="/Context Switching 02.png" alt="Toolbar action exploration" width={800} height={1120} quality={100} className="w-full h-auto block rounded-xl" />
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
+                    <div>
+                      <p className="text-[15px] font-medium mb-2" style={{ color: "var(--muted)" }}>Cons</p>
+                      <ul className="flex flex-col gap-1.5">{["Slower for frequent usage","Added additional UI controls","Increased interaction cost for a high-frequency action"].map((c) => (<li key={c} className="text-[15px] leading-relaxed flex items-start gap-2" style={{ color: "var(--muted)" }}><span className="shrink-0 rounded-full mt-[7px]" style={{ width: "3px", height: "3px", background: "var(--muted)", display: "inline-block" }} />{c}</li>))}</ul>
+                    </div>
+                    <div>
+                      <p className="text-[15px] font-medium mb-2" style={{ color: "var(--muted)" }}>Pros</p>
+                      <ul className="flex flex-col gap-1.5">{["Easy to discover","Familiar interaction pattern"].map((p) => (<li key={p} className="text-[15px] leading-relaxed flex items-start gap-2" style={{ color: "var(--muted)" }}><span className="shrink-0 rounded-full mt-[7px]" style={{ width: "3px", height: "3px", background: "var(--muted)", display: "inline-block" }} />{p}</li>))}</ul>
+                    </div>
+                  </div>
+                  <div className="mb-5 rounded-xl p-4" style={{ background: "#FEF2F2", border: "1px solid #FECACA" }}>
+                    <p className="text-[15px] font-medium mb-2" style={{ color: "#DC2626" }}>Decision: Rejected</p>
+                    <p className="text-[15px] leading-relaxed" style={{ color: "#7F1D1D" }}>The interaction felt too heavy for a workflow students perform repeatedly throughout a study session.</p>
+                  </div>
+                </div>
+
+                {/* Option 03 */}
+                <div key="Option 03  Handle + Pull Gesture" className="rounded-2xl">
+                  <div className="pb-4">
+                    <p className="text-[15px] font-medium" style={{ color: "var(--foreground)" }}>03  Handle + Pull Gesture</p>
+                  </div>
+                  <div className="mb-5 rounded-2xl overflow-hidden p-4" style={{ background: "var(--hover-bg)" }}>
+                    <Image src="/Context Switching 03.png" alt="Handle and pull gesture exploration" width={800} height={1120} quality={100} className="w-full h-auto block rounded-xl" />
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
+                    <div>
+                      <p className="text-[15px] font-medium mb-2" style={{ color: "var(--muted)" }}>Cons</p>
+                      <ul className="flex flex-col gap-1.5">{["Required persistent UI across the entire product","Valuable top-of-screen space lost in notebooks","Added visual clutter to focused reading and writing surfaces"].map((c) => (<li key={c} className="text-[15px] leading-relaxed flex items-start gap-2" style={{ color: "var(--muted)" }}><span className="shrink-0 rounded-full mt-[7px]" style={{ width: "3px", height: "3px", background: "var(--muted)", display: "inline-block" }} />{c}</li>))}</ul>
+                    </div>
+                    <div>
+                      <p className="text-[15px] font-medium mb-2" style={{ color: "var(--muted)" }}>Pros</p>
+                      <ul className="flex flex-col gap-1.5">{["Discoverable","Fast for repeat usage","Easy to understand"].map((p) => (<li key={p} className="text-[15px] leading-relaxed flex items-start gap-2" style={{ color: "var(--muted)" }}><span className="shrink-0 rounded-full mt-[7px]" style={{ width: "3px", height: "3px", background: "var(--muted)", display: "inline-block" }} />{p}</li>))}</ul>
+                    </div>
+                  </div>
+                  <div className="mb-5 rounded-xl p-4" style={{ background: "#FEF2F2", border: "1px solid #FECACA" }}>
+                    <p className="text-[15px] font-medium mb-2" style={{ color: "#DC2626" }}>Decision: Rejected</p>
+                    <p className="text-[15px] leading-relaxed" style={{ color: "#7F1D1D" }}>While the handle improved discoverability, the tradeoff of adding permanent interface chrome across the product felt too expensive for a feature intended to stay lightweight.</p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            {/* Designing the Switcher */}
+            <div>
+              <p className="text-[15px] font-medium mb-4" style={{ color: "var(--foreground)" }}>Designing the Switcher</p>
+              <div className="space-y-4 text-[15px] leading-relaxed mb-6" style={{ color: "var(--muted)" }}>
+                <p>Once I decided the entry point for the switcher, the next challenge was determining what should happen after it opened.</p>
+                <p>Students primarily switched resources for two reasons:</p>
+              </div>
+              <ul className="flex flex-col gap-2 mb-6">
+                {[
+                  "Returning to something they had recently used (Recents)",
+                  "Accessing resources they intentionally wanted to keep close (Favorites)",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-[15px] leading-relaxed" style={{ color: "var(--muted)" }}>
+                    <span className="shrink-0 rounded-full mt-[9px]" style={{ width: "4px", height: "4px", background: "var(--muted)", display: "inline-block" }} />{item}
+                  </li>
+                ))}
+              </ul>
+              <p className="text-[15px] leading-relaxed mb-6" style={{ color: "var(--muted)" }}>This led to exploring different ways of organizing content within the switcher.</p>
+
+              {/* Modal Explorations */}
+              <div className="rounded-2xl mb-6 p-4" style={{ background: "var(--hover-bg)" }}>
+                <div className="grid grid-cols-3 gap-3">
+                  {[
+                    "/Context Switching Explo 1 .png",
+                    "/Context Switching Explo 2.png",
+                    "/Context Switching Explo 3.png",
+                  ].map((src, i) => (
+                    <div key={i} className="overflow-hidden">
+                      <Image
+                        src={src}
+                        alt={`Modal exploration ${i + 1}`}
+                        width={600}
+                        height={840}
+                        quality={100}
+                        className="w-full h-auto block"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="space-y-4 text-[15px] leading-relaxed mb-6" style={{ color: "var(--muted)" }}>
+                <p>While these explorations helped validate the information architecture, they didn&rsquo;t feel quite right as a final solution.</p>
+                <p>The switcher was triggered through a top-down gesture, but center modals and bottom sheets felt disconnected from that interaction. The experience lacked a sense of continuity between the gesture and the resulting UI.</p>
+                <p>The tabbed explorations also felt overly app-like and borrowed patterns commonly found in web products. Since Superrbook is built around notebooks, textbooks, and paper-based learning, I wanted the interaction to feel closer to how students naturally organize physical resources.</p>
+              </div>
+
+              <div className="rounded-2xl p-5 mb-6" style={{ background: "#EFF6FF", border: "1px solid #BFDBFE" }}>
+                <p className="text-[15px] leading-relaxed font-medium" style={{ color: "#1E3A8A" }}>
+                  This led to an approach inspired by physical file folders, where Recents and Favorites tabs felt like sections within the same collection rather than separate screens.
+                </p>
+              </div>
+
+              <p className="text-[15px] leading-relaxed mb-6" style={{ color: "var(--muted)" }}>These explorations helped clarify not only what content should appear inside the switcher, but also how the switcher should feel.</p>
+
+              {/* Final Direction sub-section */}
+              <p className="text-[15px] font-medium mb-4 mt-8" style={{ color: "var(--foreground)" }}>Final Direction</p>
+              <div className="space-y-4 text-[15px] leading-relaxed" style={{ color: "var(--muted)" }}>
+                <p>After exploring multiple approaches, I landed on a switcher that could be accessed through a two finger swipe down gesture or directly from the Control Center.</p>
+              </div>
+
+              {/* Final Context Switching Video */}
+              <div className="my-6 rounded-2xl overflow-hidden">
+                <VideoPlayer src="/Final Context Switching.mov" className="w-full h-auto block" />
+              </div>
+
+              <div className="space-y-4 text-[15px] leading-relaxed" style={{ color: "var(--muted)" }}>
+                <p>Together, these interactions balanced speed and discoverability without introducing persistent UI into textbooks and notebooks. Students could quickly move between resources when needed, while the learning experience remained focused and distraction-free.</p>
+                <p>The final solution combined Recents and Favorites within a single surface, allowing students to return to recently used resources or access intentionally saved content from one place.</p>
+              </div>
+            </div>
+
+            {/* Edge Cases */}
+            <div>
+              <p className="text-[15px] font-medium mb-4" style={{ color: "var(--foreground)" }}>Designing for Edge Cases</p>
+              <p className="text-[15px] leading-relaxed mb-4" style={{ color: "var(--muted)" }}>A significant part of the project involved defining behavior beyond the happy path. Questions included:</p>
+              <ul className="flex flex-col gap-2">
+                {["Should the currently open resource appear in Recents?","What happens when a notebook is deleted?","How should duplicate entries behave?","What happens during active writing?","Should reading position be preserved?","Should tool states be remembered when returning?"].map((q) => (
+                  <li key={q} className="flex items-start gap-3 text-[15px] leading-relaxed" style={{ color: "var(--muted)" }}>
+                    <span className="shrink-0 rounded-full mt-[9px]" style={{ width: "4px", height: "4px", background: "var(--muted)", display: "inline-block" }} />{q}
+                  </li>
+                ))}
+              </ul>
+              <p className="text-[15px] leading-relaxed mt-4" style={{ color: "var(--muted)" }}>Each decision was documented and evaluated to ensure the system remained predictable, scalable, and reliable as usage increased.</p>
+            </div>
+
+            {/* Looking Ahead */}
+            <div style={{ display: "none" }}>
+              <p className="text-[15px] font-medium mb-4" style={{ color: "var(--foreground)" }}>Looking Ahead</p>
+              <p className="text-[15px] leading-relaxed mb-4" style={{ color: "var(--muted)" }}>The switching system was intentionally designed as a foundation for future workflows. One direction explored was split-screen learning — students could drag a resource from the switcher and open it alongside their current content.</p>
+              <div className="rounded-2xl p-5 flex flex-col gap-3" style={{ background: "var(--hover-bg)" }}>
+                {[["Textbook","Notebook"],["Notebook","Notebook"],["Textbook","Textbook"]].map((pair, i) => (
+                  <div key={i} className="flex items-center gap-2">
+                    {pair.map((step, j) => (<span key={j} className="flex items-center gap-2"><span className="text-[13px] font-medium" style={{ color: "var(--foreground)" }}>{step}</span>{j < pair.length - 1 && <span className="text-[13px]" style={{ color: "var(--muted)" }}>+</span>}</span>))}
+                  </div>
+                ))}
+              </div>
+              <p className="text-[15px] leading-relaxed mt-4" style={{ color: "var(--muted)" }}>This would allow students to compare, reference, and take notes simultaneously without repeatedly switching contexts.</p>
+            </div>
+
+            {/* Live Quizzes */}
+            <div style={{ borderTop: "1px solid var(--border)", paddingTop: "48px" }}>
+              <h3 className="text-[16px] font-medium mb-4" style={{ color: "var(--foreground)" }}>{liveQuizItem.title}</h3>
+              <p className="text-[15px] leading-relaxed mb-6" style={{ color: "var(--muted)" }}>{liveQuizItem.description}</p>
+              <p className="text-[13px] font-medium mb-3" style={{ color: "var(--foreground)" }}>Focused on</p>
+              <ul className="flex flex-col gap-2 mb-8">
+                {liveQuizItem.focusedOn.map((point) => (
+                  <li key={point} className="text-[15px] leading-relaxed flex items-start gap-3" style={{ color: "var(--muted)" }}>
+                    <span className="shrink-0 rounded-full" style={{ width: "4px", height: "4px", background: "var(--muted)", display: "inline-block", marginTop: "9px" }} />{point}
+                  </li>
+                ))}
+              </ul>
+              <div className="rounded-2xl flex items-center justify-center" style={{ background: "var(--hover-bg)", padding: "32px 24px" }}>
+                <div style={{ border: "10px solid #111", borderRadius: "20px", overflow: "hidden", boxShadow: "0 20px 60px rgba(0,0,0,0.18), 0 4px 16px rgba(0,0,0,0.10)", width: "min(60%, 320px)" }}>
+                  <VideoPlayer src={liveQuizItem.media.src} className="w-full h-auto block" />
+                </div>
+              </div>
+            </div>
+
           </div>
         </section>
 

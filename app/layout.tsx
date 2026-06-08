@@ -3,6 +3,7 @@ import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import { Shantell_Sans } from "next/font/google";
 import "./globals.css";
+import NavBar from "./components/NavBar";
 
 const shantellSans = Shantell_Sans({
   subsets: ["latin"],
@@ -44,7 +45,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-full">{children}</body>
+      <body className="min-h-full">
+        <NavBar />
+        {children}
+      </body>
     </html>
   );
 }
