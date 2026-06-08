@@ -501,13 +501,13 @@ export default function SuperrbookCaseStudy() {
               <p className="text-[15px] font-medium mb-4" style={{ color: "var(--foreground)" }}>Designing for Edge Cases</p>
               <p className="text-[15px] leading-relaxed mb-4" style={{ color: "var(--muted)" }}>A significant part of the project involved defining behavior beyond the happy path. Questions included:</p>
               <ul className="flex flex-col gap-2">
-                {["Should the currently open resource appear in Recents?","What happens when a notebook is deleted?","How should duplicate entries behave?","What happens during active writing?","Should reading position be preserved?","Should tool states be remembered when returning?"].map((q) => (
+                {["Should the currently open resource appear in Recents?","What happens when a notebook is deleted?","What happens when there are no recent or favourite resources?","Should reading position be preserved?"].map((q) => (
                   <li key={q} className="flex items-start gap-3 text-[15px] leading-relaxed" style={{ color: "var(--muted)" }}>
                     <span className="shrink-0 rounded-full mt-[9px]" style={{ width: "4px", height: "4px", background: "var(--muted)", display: "inline-block" }} />{q}
                   </li>
                 ))}
               </ul>
-              <p className="text-[15px] leading-relaxed mt-4" style={{ color: "var(--muted)" }}>Each decision was documented and evaluated to ensure the system remained predictable, scalable, and reliable as usage increased.</p>
+              <p className="text-[15px] leading-relaxed mt-4" style={{ color: "var(--muted)" }}>Every edge case was intentionally defined to ensure the switcher behaved consistently, remained easy to understand, and could scale across future learning workflows.</p>
             </div>
 
             {/* Looking Ahead */}
