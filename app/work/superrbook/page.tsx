@@ -355,7 +355,7 @@ export default function SuperrbookCaseStudy() {
                     <div className="pl-4">
                       <p className="text-[15px] font-medium mb-3" style={{ color: "var(--muted)" }}>Pros</p>
                       <ul className="flex flex-col gap-2">
-                        {["Familiar interaction", "Quick access"].map((p) => (
+                        {["Quick access"].map((p) => (
                           <li key={p} className="text-[15px] leading-relaxed flex items-start gap-2" style={{ color: "var(--muted)" }}>
                             <span className="shrink-0 rounded-full mt-[7px]" style={{ width: "3px", height: "3px", background: "var(--muted)", display: "inline-block" }} />{p}
                           </li>
@@ -384,11 +384,11 @@ export default function SuperrbookCaseStudy() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
                     <div>
                       <p className="text-[15px] font-medium mb-2" style={{ color: "var(--muted)" }}>Cons</p>
-                      <ul className="flex flex-col gap-1.5">{["Slower for frequent usage","Added additional UI controls","Increased interaction cost for a high-frequency action"].map((c) => (<li key={c} className="text-[15px] leading-relaxed flex items-start gap-2" style={{ color: "var(--muted)" }}><span className="shrink-0 rounded-full mt-[7px]" style={{ width: "3px", height: "3px", background: "var(--muted)", display: "inline-block" }} />{c}</li>))}</ul>
+                      <ul className="flex flex-col gap-1.5">{["Slower for frequent usage","Added additional UI controls","Extra interaction steps required"].map((c) => (<li key={c} className="text-[15px] leading-relaxed flex items-start gap-2" style={{ color: "var(--muted)" }}><span className="shrink-0 rounded-full mt-[7px]" style={{ width: "3px", height: "3px", background: "var(--muted)", display: "inline-block" }} />{c}</li>))}</ul>
                     </div>
                     <div>
                       <p className="text-[15px] font-medium mb-2" style={{ color: "var(--muted)" }}>Pros</p>
-                      <ul className="flex flex-col gap-1.5">{["Easy to discover","Familiar interaction pattern"].map((p) => (<li key={p} className="text-[15px] leading-relaxed flex items-start gap-2" style={{ color: "var(--muted)" }}><span className="shrink-0 rounded-full mt-[7px]" style={{ width: "3px", height: "3px", background: "var(--muted)", display: "inline-block" }} />{p}</li>))}</ul>
+                      <ul className="flex flex-col gap-1.5">{["Familiar interaction pattern"].map((p) => (<li key={p} className="text-[15px] leading-relaxed flex items-start gap-2" style={{ color: "var(--muted)" }}><span className="shrink-0 rounded-full mt-[7px]" style={{ width: "3px", height: "3px", background: "var(--muted)", display: "inline-block" }} />{p}</li>))}</ul>
                     </div>
                   </div>
                   <div className="mb-5 rounded-xl p-4" style={{ background: "#FEF2F2", border: "1px solid #FECACA" }}>
