@@ -341,8 +341,8 @@ export default function SuperrbookCaseStudy() {
                   </div>
 
                   {/* Cons + Pros */}
-                  <div className="grid grid-cols-2 mb-5">
-                    <div className="pr-4">
+                  <div className="grid grid-cols-2 gap-8 mb-5">
+                    <div>
                       <p className="text-[15px] font-medium mb-3" style={{ color: "var(--muted)" }}>Cons</p>
                       <ul className="flex flex-col gap-2">
                         {["Conflicted with system gestures", "Difficult to own consistently across the OS"].map((c) => (
@@ -352,7 +352,7 @@ export default function SuperrbookCaseStudy() {
                         ))}
                       </ul>
                     </div>
-                    <div className="pl-4">
+                    <div>
                       <p className="text-[15px] font-medium mb-3" style={{ color: "var(--muted)" }}>Pros</p>
                       <ul className="flex flex-col gap-2">
                         {["Quick access"].map((p) => (
@@ -381,7 +381,7 @@ export default function SuperrbookCaseStudy() {
                   <div className="mb-5 rounded-2xl overflow-hidden p-4" style={{ background: "var(--hover-bg)" }}>
                     <Image src="/Context Switching 02.png" alt="Toolbar action exploration" width={800} height={1120} quality={100} className="w-full h-auto block rounded-xl" />
                   </div>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-5">
                     <div>
                       <p className="text-[15px] font-medium mb-2" style={{ color: "var(--muted)" }}>Cons</p>
                       <ul className="flex flex-col gap-1.5">{["Slower for frequent usage","Added additional UI controls","Extra interaction steps required"].map((c) => (<li key={c} className="text-[15px] leading-relaxed flex items-start gap-2" style={{ color: "var(--muted)" }}><span className="shrink-0 rounded-full mt-[7px]" style={{ width: "3px", height: "3px", background: "var(--muted)", display: "inline-block" }} />{c}</li>))}</ul>
@@ -405,7 +405,7 @@ export default function SuperrbookCaseStudy() {
                   <div className="mb-5 rounded-2xl overflow-hidden p-4" style={{ background: "var(--hover-bg)" }}>
                     <Image src="/Context Switching 03.png" alt="Handle and pull gesture exploration" width={800} height={1120} quality={100} className="w-full h-auto block rounded-xl" />
                   </div>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-5">
                     <div>
                       <p className="text-[15px] font-medium mb-2" style={{ color: "var(--muted)" }}>Cons</p>
                       <ul className="flex flex-col gap-1.5">{["Required persistent UI across the entire product","Valuable top-of-screen space lost in notebooks","Added visual clutter to focused reading and writing surfaces"].map((c) => (<li key={c} className="text-[15px] leading-relaxed flex items-start gap-2" style={{ color: "var(--muted)" }}><span className="shrink-0 rounded-full mt-[7px]" style={{ width: "3px", height: "3px", background: "var(--muted)", display: "inline-block" }} />{c}</li>))}</ul>
@@ -482,7 +482,7 @@ export default function SuperrbookCaseStudy() {
               {/* Final Direction sub-section */}
               <p className="text-[15px] font-medium mb-4 mt-8" style={{ color: "var(--foreground)" }}>Final Direction</p>
               <div className="space-y-4 text-[15px] leading-relaxed" style={{ color: "var(--muted)" }}>
-                <p>After exploring multiple approaches, I landed on a switcher that could be accessed through a two finger swipe down gesture or directly from the Control Center.</p>
+                <p>After exploring multiple approaches, I landed on a switcher that could be accessed through <span style={{ fontWeight: "600" }}>a two finger swipe down gesture or directly from the Control Center</span>.</p>
               </div>
 
               {/* Final Context Switching Video */}
