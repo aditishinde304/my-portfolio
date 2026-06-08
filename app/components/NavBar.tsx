@@ -14,7 +14,7 @@ export default function NavBar() {
   const pathname = usePathname();
 
   return (
-    <div className="fixed top-5 left-0 right-0 z-50 flex justify-center pointer-events-none">
+    <div className="fixed top-5 left-0 right-0 z-50 flex justify-center pointer-events-none" style={{ display: "none" }}>
       <nav
         className="flex items-center gap-1 px-1.5 py-1.5 pointer-events-auto"
         style={{
