@@ -776,7 +776,7 @@ export default function SuperrbookCaseStudy() {
             {/* Problem */}
             <div>
               <p
-                className="text-[13px] font-medium mb-3"
+                className="text-[15px] font-medium mb-3"
                 style={{ color: "var(--foreground)" }}
               >
                 Problem
@@ -794,7 +794,7 @@ export default function SuperrbookCaseStudy() {
             {/* Approach */}
             <div>
               <p
-                className="text-[13px] font-medium mb-3"
+                className="text-[15px] font-medium mb-3"
                 style={{ color: "var(--foreground)" }}
               >
                 Approach
@@ -812,7 +812,7 @@ export default function SuperrbookCaseStudy() {
             {/* Focus Areas */}
             <div>
               <p
-                className="text-[13px] font-medium mb-3"
+                className="text-[15px] font-medium mb-3"
                 style={{ color: "var(--foreground)" }}
               >
                 Focus Areas
