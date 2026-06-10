@@ -528,7 +528,7 @@ export default function SuperrbookCaseStudy() {
             <div style={{ borderTop: "1px solid var(--border)", paddingTop: "48px" }}>
               <h3 className="text-[16px] font-medium mb-4" style={{ color: "var(--foreground)" }}>{liveQuizItem.title}</h3>
               <p className="text-[15px] leading-relaxed mb-6" style={{ color: "var(--muted)" }}>{liveQuizItem.description}</p>
-              <p className="text-[13px] font-medium mb-3" style={{ color: "var(--foreground)" }}>Focused on</p>
+              <p className="text-[15px] font-medium mb-3" style={{ color: "var(--foreground)" }}>Focused on</p>
               <ul className="flex flex-col gap-2 mb-8">
                 {liveQuizItem.focusedOn.map((point) => (
                   <li key={point} className="text-[15px] leading-relaxed flex items-start gap-3" style={{ color: "var(--muted)" }}>
@@ -566,7 +566,7 @@ export default function SuperrbookCaseStudy() {
           <div className="flex flex-col gap-8">
             {/* The Challenge */}
             <div>
-              <p className="text-[13px] font-medium mb-3" style={{ color: "var(--foreground)" }}>
+              <p className="text-[15px] font-medium mb-3" style={{ color: "var(--foreground)" }}>
                 The Challenge
               </p>
               <div className="space-y-3">
@@ -584,7 +584,7 @@ export default function SuperrbookCaseStudy() {
 
             {/* Understanding Existing Patterns */}
             <div>
-              <p className="text-[13px] font-medium mb-3" style={{ color: "var(--foreground)" }}>
+              <p className="text-[15px] font-medium mb-3" style={{ color: "var(--foreground)" }}>
                 Understanding Existing Patterns
               </p>
               <div className="space-y-3">
@@ -599,7 +599,7 @@ export default function SuperrbookCaseStudy() {
 
             {/* Designing Around Physical Behaviors */}
             <div>
-              <p className="text-[13px] font-medium mb-3" style={{ color: "var(--foreground)" }}>
+              <p className="text-[15px] font-medium mb-3" style={{ color: "var(--foreground)" }}>
                 Designing Around Physical Behaviors
               </p>
               <div className="space-y-3">
@@ -632,7 +632,7 @@ export default function SuperrbookCaseStudy() {
 
             {/* Prototyping Interactions in Code */}
             <div>
-              <p className="text-[13px] font-medium mb-3" style={{ color: "var(--foreground)" }}>
+              <p className="text-[15px] font-medium mb-3" style={{ color: "var(--foreground)" }}>
                 Prototyping Interactions in Code
               </p>
               <div className="space-y-3">
@@ -666,7 +666,7 @@ export default function SuperrbookCaseStudy() {
 
             {/* Designing for Edge Cases */}
             <div>
-              <p className="text-[13px] font-medium mb-3" style={{ color: "var(--foreground)" }}>
+              <p className="text-[15px] font-medium mb-3" style={{ color: "var(--foreground)" }}>
                 Designing for Edge Cases
               </p>
               <div className="space-y-3">
