@@ -121,8 +121,8 @@ export default function Home() {
             systems and making complex workflows feel intuitive and engaging.
           </p>
           <p>
-            Lately, I&rsquo;ve been exploring the space between design and code
-            - experimenting with AI tools, prototyping ideas and shipping
+            Lately, I&rsquo;ve been exploring the space between design and code,
+            experimenting with AI tools, prototyping ideas and shipping
             experiences using Cursor, Claude Code, Antigravity and v0.
           </p>
           <p>
