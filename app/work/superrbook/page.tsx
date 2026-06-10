@@ -553,7 +553,7 @@ export default function SuperrbookCaseStudy() {
               className="text-[16px] font-medium"
               style={{ color: "var(--foreground)" }}
             >
-              Geometry Tools — Making Digital Tools Feel Physical
+              Geometry Tools: Making Digital Tools Feel Physical
             </h2>
             <span
               className="text-[13px] tabular-nums shrink-0 ml-6"
@@ -574,7 +574,7 @@ export default function SuperrbookCaseStudy() {
                   Geometry tools are familiar in the physical world. Students already know how a ruler, protractor, or compass behaves on paper.
                 </p>
                 <p className="text-[15px] leading-relaxed" style={{ color: "var(--muted)" }}>
-                  The challenge wasn't just adding these tools digitally—it was making them feel intuitive enough that students could use them without learning a completely new system.
+                  The challenge wasn't just adding these tools digitally, it was making them feel intuitive enough that students could use them without learning a completely new system.
                 </p>
                 <p className="text-[15px] leading-relaxed" style={{ color: "var(--muted)" }}>
                   The experience needed to support drawing, measuring, rotating, and positioning tools while remaining approachable for students across different age groups.
