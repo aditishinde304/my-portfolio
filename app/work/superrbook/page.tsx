@@ -636,7 +636,7 @@ export default function SuperrbookCaseStudy() {
                 <p className="text-[15px] leading-relaxed" style={{ color: "var(--muted)" }}>
                   The goal wasn't to replicate physical tools exactly, but to preserve the mental models students already had while taking advantage of digital capabilities.
                 </p>
-                <p className="text-[15px] leading-relaxed" style={{ color: "var(--muted)" }}>
+                <p className="text-[15px] leading-relaxed" style={{ color: "var(--foreground)" }}>
                   As a result, interactions were designed around direct manipulation, allowing students to move, rotate, measure and draw directly from the tool itself without relying on separate control panels or complex menus.
                 </p>
               </div>
