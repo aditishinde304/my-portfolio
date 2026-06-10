@@ -683,16 +683,16 @@ export default function SuperrbookCaseStudy() {
               </p>
               <div className="space-y-3">
                 <p className="text-[15px] leading-relaxed" style={{ color: "var(--muted)" }}>
-                  A significant part of the project involved defining behavior beyond the happy path. As tools became movable and interactive a number of questions emerged:
+                  As the tools became movable and interactive, many edge cases had to be considered:
                 </p>
                 <ul className="flex flex-col gap-2">
                   {[
-                    "What happens when a tool is dragged partially off screen?",
-                    "How far can a ruler, protractor or compass move before becoming inaccessible?",
-                    "If action buttons reach the edge of the screen, where should they reposition?",
+                    "What happens when a tool is dragged partially off-screen?",
+                    "How far can each tool move before becoming hard to access?",
+                    "Where should action buttons move when they reach the screen edge?",
                     "What should be the default size of each tool?",
-                    "How can students discover advanced actions without requiring onboarding?",
-                    "How should tools behave across different screen sizes and orientations?",
+                    "How can students discover advanced features naturally?",
+                    "How should the tools adapt across different screen sizes?",
                   ].map((q) => (
                     <li key={q} className="flex items-start gap-3 text-[15px] leading-relaxed" style={{ color: "var(--muted)" }}>
                       <span className="shrink-0 rounded-full mt-[9px]" style={{ width: "4px", height: "4px", background: "var(--muted)", display: "inline-block" }} />{q}
@@ -700,10 +700,7 @@ export default function SuperrbookCaseStudy() {
                   ))}
                 </ul>
                 <p className="text-[15px] leading-relaxed" style={{ color: "var(--muted)" }}>
-                  Each of these scenarios required clear interaction rules to ensure the experience remained predictable, flexible and easy to use.
-                </p>
-                <p className="text-[15px] leading-relaxed" style={{ color: "var(--muted)" }}>
-                  Prototyping helped surface many of these edge cases early, allowing me to refine behaviors before development and reduce ambiguity during implementation.
+                  Prototyping helped uncover these scenarios early, making it easier to define clear behaviors before development and reduce implementation ambiguity.
                 </p>
               </div>
             </div>
