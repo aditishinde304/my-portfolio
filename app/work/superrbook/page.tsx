@@ -598,12 +598,12 @@ export default function SuperrbookCaseStudy() {
               {/* Design Principle — callout card */}
               <div
                 className="rounded-2xl px-5 py-4 flex flex-col gap-2 mt-4"
-                style={{ background: "var(--callout-bg)" }}
+                style={{ background: "#EFF6FF", border: "1px solid #BFDBFE" }}
               >
-                <p className="text-[12px] font-medium uppercase tracking-[0.06em]" style={{ color: "var(--callout-label)" }}>
+                <p className="text-[12px] font-medium uppercase tracking-[0.06em]" style={{ color: "#3B82F6" }}>
                   Design Principle
                 </p>
-                <p className="text-[15px] leading-relaxed" style={{ color: "var(--callout-text)" }}>
+                <p className="text-[15px] leading-relaxed font-medium" style={{ color: "#1E3A8A" }}>
                   If a student already knows how the tool works on paper, the digital version should behave as closely as possible to that mental model.
                 </p>
               </div>
