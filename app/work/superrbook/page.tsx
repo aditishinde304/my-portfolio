@@ -597,6 +597,105 @@ export default function SuperrbookCaseStudy() {
               </div>
             </div>
 
+            {/* Designing Around Physical Behaviors */}
+            <div>
+              <p className="text-[13px] font-medium mb-3" style={{ color: "var(--foreground)" }}>
+                Designing Around Physical Behaviors
+              </p>
+              <div className="space-y-3">
+                <p className="text-[15px] leading-relaxed" style={{ color: "var(--muted)" }}>
+                  Geometry tools are something students already understand from the physical world. Instead of introducing entirely new interaction patterns, I wanted the digital experience to build on behaviors students were already familiar with.
+                </p>
+                <p className="text-[15px] leading-relaxed" style={{ color: "var(--muted)" }}>
+                  This meant constantly asking:
+                </p>
+                <ul className="flex flex-col gap-2">
+                  {[
+                    "How would a student expect a ruler to move?",
+                    "How would they rotate a protractor?",
+                    "Where would they look to start drawing an arc or circle?",
+                    "What feedback should appear while measuring?",
+                  ].map((q) => (
+                    <li key={q} className="flex items-start gap-3 text-[15px] leading-relaxed" style={{ color: "var(--muted)" }}>
+                      <span className="shrink-0 rounded-full mt-[9px]" style={{ width: "4px", height: "4px", background: "var(--muted)", display: "inline-block" }} />{q}
+                    </li>
+                  ))}
+                </ul>
+                <p className="text-[15px] leading-relaxed" style={{ color: "var(--muted)" }}>
+                  The goal wasn't to replicate physical tools exactly, but to preserve the mental models students already had while taking advantage of digital capabilities.
+                </p>
+                <p className="text-[15px] leading-relaxed" style={{ color: "var(--muted)" }}>
+                  As a result, interactions were designed around direct manipulation, allowing students to move, rotate, measure and draw directly from the tool itself without relying on separate control panels or complex menus.
+                </p>
+              </div>
+            </div>
+
+            {/* Prototyping Interactions in Code */}
+            <div>
+              <p className="text-[13px] font-medium mb-3" style={{ color: "var(--foreground)" }}>
+                Prototyping Interactions in Code
+              </p>
+              <div className="space-y-3">
+                <p className="text-[15px] leading-relaxed" style={{ color: "var(--muted)" }}>
+                  Many of these behaviors were difficult to evaluate through static Figma screens alone.
+                </p>
+                <p className="text-[15px] leading-relaxed" style={{ color: "var(--muted)" }}>
+                  To better understand how the tools would feel in use, we prototyped interactions directly in Cursor and tested different approaches for movement, rotation, drawing and tool states.
+                </p>
+                <p className="text-[15px] leading-relaxed" style={{ color: "var(--muted)" }}>
+                  Working in code allowed me to validate interactions much earlier, uncover usability issues and collaborate more effectively with engineers around implementation details and constraints.
+                </p>
+              </div>
+              <div
+                className="rounded-2xl flex items-center justify-center mt-6"
+                style={{ background: "var(--hover-bg)", padding: "32px 24px" }}
+              >
+                <div
+                  style={{
+                    border: "10px solid #111",
+                    borderRadius: "20px",
+                    overflow: "hidden",
+                    boxShadow: "0 20px 60px rgba(0,0,0,0.18), 0 4px 16px rgba(0,0,0,0.10)",
+                    width: "min(60%, 320px)",
+                  }}
+                >
+                  <VideoPlayer src="/Geometry tools video.mp4" className="w-full h-auto block" />
+                </div>
+              </div>
+            </div>
+
+            {/* Designing for Edge Cases */}
+            <div>
+              <p className="text-[13px] font-medium mb-3" style={{ color: "var(--foreground)" }}>
+                Designing for Edge Cases
+              </p>
+              <div className="space-y-3">
+                <p className="text-[15px] leading-relaxed" style={{ color: "var(--muted)" }}>
+                  A significant part of the project involved defining behavior beyond the happy path. As tools became movable and interactive a number of questions emerged:
+                </p>
+                <ul className="flex flex-col gap-2">
+                  {[
+                    "What happens when a tool is dragged partially off screen?",
+                    "How far can a ruler, protractor or compass move before becoming inaccessible?",
+                    "If action buttons reach the edge of the screen, where should they reposition?",
+                    "What should be the default size of each tool?",
+                    "How can students discover advanced actions without requiring onboarding?",
+                    "How should tools behave across different screen sizes and orientations?",
+                  ].map((q) => (
+                    <li key={q} className="flex items-start gap-3 text-[15px] leading-relaxed" style={{ color: "var(--muted)" }}>
+                      <span className="shrink-0 rounded-full mt-[9px]" style={{ width: "4px", height: "4px", background: "var(--muted)", display: "inline-block" }} />{q}
+                    </li>
+                  ))}
+                </ul>
+                <p className="text-[15px] leading-relaxed" style={{ color: "var(--muted)" }}>
+                  Each of these scenarios required clear interaction rules to ensure the experience remained predictable, flexible and easy to use.
+                </p>
+                <p className="text-[15px] leading-relaxed" style={{ color: "var(--muted)" }}>
+                  Prototyping helped surface many of these edge cases early, allowing me to refine behaviors before development and reduce ambiguity during implementation.
+                </p>
+              </div>
+            </div>
+
             {/* Design Principle — callout card */}
             <div
               className="rounded-2xl px-5 py-4 flex flex-col gap-2"
@@ -610,23 +709,6 @@ export default function SuperrbookCaseStudy() {
               </p>
             </div>
 
-            {/* Visuals */}
-            <div
-              className="rounded-2xl flex items-center justify-center"
-              style={{ background: "var(--hover-bg)", padding: "32px 24px" }}
-            >
-              <div
-                style={{
-                  border: "10px solid #111",
-                  borderRadius: "20px",
-                  overflow: "hidden",
-                  boxShadow: "0 20px 60px rgba(0,0,0,0.18), 0 4px 16px rgba(0,0,0,0.10)",
-                  width: "min(60%, 320px)",
-                }}
-              >
-                <VideoPlayer src="/Geometry tools video.mp4" className="w-full h-auto block" />
-              </div>
-            </div>
           </div>
         </section>
 
