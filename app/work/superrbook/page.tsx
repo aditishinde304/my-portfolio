@@ -714,25 +714,15 @@ export default function SuperrbookCaseStudy() {
                 {[
                   {
                     title: "1. Tool Actions Stay Close to the Tool",
-                    body: [
-                      "Instead of placing controls in a separate toolbar, contextual actions were attached directly to the active tool.",
-                      "This reduced visual scanning and kept interactions close to where students were working, making the experience feel more direct and intuitive.",
-                    ],
+                    body: ["Contextual actions were attached directly to the active tool instead of a separate toolbar, reducing visual scanning and making interactions more intuitive."],
                   },
                   {
                     title: "2. Discovery Through Use",
-                    body: [
-                      "Rather than relying on tutorials or onboarding flows, interactions were designed to reveal themselves naturally as students explored the tools.",
-                      "For example, selecting a protractor exposed drawing points and controls that hinted at additional capabilities such as creating arcs and measuring angles. This allowed students to learn the tool while using it.",
-                    ],
+                    body: ["Interactions were designed to reveal themselves naturally during use. Selecting a tool exposed relevant controls, helping students learn by exploring rather than through onboarding."],
                   },
                   {
                     title: "3. Familiar Gestures Over Custom Controls",
-                    body: [
-                      "Instead of introducing dedicated rotate buttons or complex controls, interactions were based on gestures students already understood.",
-                    ],
-                    bullets: ["One finger to move.", "Two fingers to rotate.", "Direct touch points for drawing and measuring."],
-                    footer: "This reduced the learning curve and helped the digital tools feel closer to their physical counterparts.",
+                    body: ["Common touch gestures replaced custom controls — one finger to move, two fingers to rotate, and direct touch points for drawing and measuring — making the experience feel natural and easy to learn."],
                   },
                 ].map((item) => (
                   <div key={item.title}>
@@ -741,18 +731,6 @@ export default function SuperrbookCaseStudy() {
                       {item.body.map((p) => (
                         <p key={p} className="text-[15px] leading-relaxed" style={{ color: "var(--muted)" }}>{p}</p>
                       ))}
-                      {item.bullets && (
-                        <ul className="flex flex-col gap-1">
-                          {item.bullets.map((b) => (
-                            <li key={b} className="flex items-start gap-3 text-[15px] leading-relaxed" style={{ color: "var(--muted)" }}>
-                              <span className="shrink-0 rounded-full mt-[9px]" style={{ width: "4px", height: "4px", background: "var(--muted)", display: "inline-block" }} />{b}
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                      {item.footer && (
-                        <p className="text-[15px] leading-relaxed" style={{ color: "var(--muted)" }}>{item.footer}</p>
-                      )}
                     </div>
                   </div>
                 ))}
