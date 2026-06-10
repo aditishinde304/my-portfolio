@@ -1,6 +1,9 @@
 @import "tailwindcss";
 
 :root {
+  --callout-bg: #EFF6FF;
+  --callout-text: #1D4ED8;
+  --callout-label: #3B82F6;
   --background: #ffffff;
   --foreground: #1a1a1a;
   --muted: #5F5F5F;
@@ -25,6 +28,9 @@
     --muted: #888884;
     --border: #2a2a28;
     --hover-bg: #1c1c1a;
+    --callout-bg: #1a2035;
+    --callout-text: #7a9cc9;
+    --callout-label: #4a6fa5;
   }
 }
 
@@ -34,6 +40,9 @@
   --muted: #888884;
   --border: #2a2a28;
   --hover-bg: #1c1c1a;
+  --callout-bg: #1a2035;
+  --callout-text: #7a9cc9;
+  --callout-label: #4a6fa5;
 }
 
 html {
