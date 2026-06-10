@@ -595,6 +595,18 @@ export default function SuperrbookCaseStudy() {
                   While most products provided similar toolsets, many interactions felt overly technical, hidden behind controls, or disconnected from how physical tools behave.
                 </p>
               </div>
+              {/* Design Principle — callout card */}
+              <div
+                className="rounded-2xl px-5 py-4 flex flex-col gap-2 mt-4"
+                style={{ background: "var(--callout-bg)" }}
+              >
+                <p className="text-[12px] font-medium uppercase tracking-[0.06em]" style={{ color: "var(--callout-label)" }}>
+                  Design Principle
+                </p>
+                <p className="text-[15px] leading-relaxed" style={{ color: "var(--callout-text)" }}>
+                  If a student already knows how the tool works on paper, the digital version should behave as closely as possible to that mental model.
+                </p>
+              </div>
             </div>
 
             {/* Designing Around Physical Behaviors */}
@@ -696,17 +708,73 @@ export default function SuperrbookCaseStudy() {
               </div>
             </div>
 
-            {/* Design Principle — callout card */}
-            <div
-              className="rounded-2xl px-5 py-4 flex flex-col gap-2"
-              style={{ background: "var(--callout-bg)" }}
-            >
-              <p className="text-[12px] font-medium uppercase tracking-[0.06em]" style={{ color: "var(--callout-label)" }}>
-                Design Principle
+            {/* Key Decisions */}
+            <div>
+              <p className="text-[15px] font-medium mb-5" style={{ color: "var(--foreground)" }}>
+                Key Decisions
               </p>
-              <p className="text-[15px] leading-relaxed" style={{ color: "var(--callout-text)" }}>
-                If a student already knows how the tool works on paper, the digital version should behave as closely as possible to that mental model.
+              <div className="flex flex-col gap-6">
+                {[
+                  {
+                    title: "1. Tool Actions Stay Close to the Tool",
+                    body: [
+                      "Instead of placing controls in a separate toolbar, contextual actions were attached directly to the active tool.",
+                      "This reduced visual scanning and kept interactions close to where students were working, making the experience feel more direct and intuitive.",
+                    ],
+                  },
+                  {
+                    title: "2. Discovery Through Use",
+                    body: [
+                      "Rather than relying on tutorials or onboarding flows, interactions were designed to reveal themselves naturally as students explored the tools.",
+                      "For example, selecting a protractor exposed drawing points and controls that hinted at additional capabilities such as creating arcs and measuring angles. This allowed students to learn the tool while using it.",
+                    ],
+                  },
+                  {
+                    title: "3. Familiar Gestures Over Custom Controls",
+                    body: [
+                      "Instead of introducing dedicated rotate buttons or complex controls, interactions were based on gestures students already understood.",
+                    ],
+                    bullets: ["One finger to move.", "Two fingers to rotate.", "Direct touch points for drawing and measuring."],
+                    footer: "This reduced the learning curve and helped the digital tools feel closer to their physical counterparts.",
+                  },
+                ].map((item) => (
+                  <div key={item.title}>
+                    <p className="text-[14px] font-medium mb-2" style={{ color: "var(--foreground)" }}>{item.title}</p>
+                    <div className="space-y-2">
+                      {item.body.map((p) => (
+                        <p key={p} className="text-[15px] leading-relaxed" style={{ color: "var(--muted)" }}>{p}</p>
+                      ))}
+                      {item.bullets && (
+                        <ul className="flex flex-col gap-1">
+                          {item.bullets.map((b) => (
+                            <li key={b} className="flex items-start gap-3 text-[15px] leading-relaxed" style={{ color: "var(--muted)" }}>
+                              <span className="shrink-0 rounded-full mt-[9px]" style={{ width: "4px", height: "4px", background: "var(--muted)", display: "inline-block" }} />{b}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                      {item.footer && (
+                        <p className="text-[15px] leading-relaxed" style={{ color: "var(--muted)" }}>{item.footer}</p>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Outcome */}
+            <div>
+              <p className="text-[15px] font-medium mb-3" style={{ color: "var(--foreground)" }}>
+                Outcome
               </p>
+              <div className="space-y-3">
+                <p className="text-[15px] leading-relaxed" style={{ color: "var(--muted)" }}>
+                  The final experience balanced familiarity and flexibility by borrowing behaviors from physical geometry tools while adapting them for touch interactions.
+                </p>
+                <p className="text-[15px] leading-relaxed" style={{ color: "var(--muted)" }}>
+                  Prototyping the interactions in code helped validate complex behaviors, uncover edge cases early and refine the experience before implementation.
+                </p>
+              </div>
             </div>
 
           </div>
