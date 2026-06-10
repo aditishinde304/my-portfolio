@@ -44,7 +44,7 @@ const experiments = [
 const experience = [
   {
     company: "Superr",
-    role: "Product Designer (Design Engineer)",
+    role: "Product Designer",
     duration: "Mar 2025 - Present",
   },
   {
