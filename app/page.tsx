@@ -38,7 +38,7 @@ const experiments = [
   { name: "Game", image: "/Game design.png", video: "/Pixel Game Portfolio.mp4", href: "/experiments" },
   { name: "Postcard", image: "/Postcard.png", video: "/Postcard.mp4", href: "/experiments" },
   { name: "Focus Mode", image: "/Focus mode.png", video: "/Focus Mode.mp4", href: "/experiments" },
-  { name: "Interactive Project Carousel", image: "/Cursor to do.png", video: "/Scroll animation architecture website.mp4", href: "/experiments" },
+  { name: "Interactive Project Carousel", image: "/Cursor to do.png", video: "/Scroll animation architecture website (2).mp4", href: "/experiments" },
 ];
 
 const experience = [
