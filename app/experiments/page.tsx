@@ -7,7 +7,7 @@ const experiments = [
     name: "Interactive Project Carousel",
     description: "A premium interactive hero that transforms scrolling into a project exploration experience. Created using Claude to experiment with AI powered prototyping and frontend interactions.",
     image: "/Cursor to do.png",
-    video: "/Scroll animation architecture website.mp4",
+    video: "/Scroll animation architecture website (2).mp4",
     href: "#",
   },
   {
