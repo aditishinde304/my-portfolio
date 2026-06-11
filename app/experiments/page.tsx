@@ -4,6 +4,13 @@ import Image from "next/image";
 
 const experiments = [
   {
+    name: "Interactive Project Carousel",
+    description: "A premium interactive hero that transforms scrolling into a project exploration experience. Created using Claude to experiment with AI powered prototyping and frontend interactions.",
+    image: "/Cursor to do.png",
+    video: "/Scroll animation architecture website.mp4",
+    href: "#",
+  },
+  {
     name: "Postcard",
     description: "A digital keepsake experience built with love, exploring how travel memories can feel more personal and emotional online. Focused on tactile interactions, paper-like textures, soft motion, and nostalgic visual craft using Vercel v0. (Currently in progress.)",
     image: "/Postcard.png",
@@ -24,13 +31,6 @@ const experiments = [
     image: "/Focus mode.png",
     video: "/Focus Mode.mp4",
     href: "https://v0-focus-widget-design-imou032sn.vercel.app/",
-  },
-  {
-    name: "To-Do Interaction",
-    description: "A tiny interaction experiment built with Cursor to explore micro-interactions, states, and motion details in everyday tools.",
-    image: "/Cursor to do.png",
-    video: "/To Do portfolio.mp4",
-    href: "#",
   },
 ];
 
