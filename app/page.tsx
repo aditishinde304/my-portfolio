@@ -11,7 +11,8 @@ const work = [
     href: "/work/superrbook",
     image: "/Superrbook mockup.png",
     alt: "Superrbook mockup",
-    inset: "4px",
+    inset: "0px",
+    cover: true,
   },
   {
     name: "A platform for managing classrooms better",
@@ -169,7 +170,7 @@ export default function Home() {
                       src={project.image}
                       alt={project.alt}
                       fill
-                      className="object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                      className={`${(project as any).cover ? "object-cover" : "object-contain"} transition-transform duration-500 group-hover:scale-[1.02]`}
                       sizes="560px"
                     />
                   </div>
