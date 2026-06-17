@@ -32,6 +32,8 @@ const work = [
     image: "/Poll Project.png",
     alt: "Poll Design mockup",
     inset: "0px",
+    cover: true,
+    tallCard: true,
     comingSoon: true,
   },
 ];
@@ -164,7 +166,7 @@ export default function Home() {
         <div className="flex flex-col" style={{ gap: "56px" }}>
           {work.map((project) => (
             <a key={project.name} href={project.href} className="group block">
-              <div className="w-full rounded-2xl overflow-hidden mb-4 h-[220px] md:h-[300px]" style={{ background: "var(--hover-bg)", position: "relative" }}>
+              <div className={`w-full rounded-2xl overflow-hidden mb-4 ${(project as any).tallCard ? "h-[280px] md:h-[390px]" : "h-[220px] md:h-[300px]"}`} style={{ background: "var(--hover-bg)", position: "relative" }}>
                 <div className="absolute" style={{ inset: project.inset, position: "absolute" }}>
                   <div className="relative w-full h-full">
                     <Image
