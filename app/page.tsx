@@ -171,8 +171,9 @@ export default function Home() {
                       src={project.image}
                       alt={project.alt}
                       fill
+                      quality={95}
                       className={`${(project as any).cover ? "object-cover" : "object-contain"} transition-transform duration-500 group-hover:scale-[1.02]`}
-                      sizes="560px"
+                      sizes="(max-width: 680px) 100vw, 680px"
                     />
                   </div>
                 </div>
