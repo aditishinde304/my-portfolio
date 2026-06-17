@@ -19,9 +19,10 @@ const work = [
     subheading: "Built a centralized system for assignments, notebooks, and\nclassroom workflows.",
     year: "2025",
     href: "/work/lms",
-    image: "/LMS Mockup.png",
+    image: "/LMS mockup.png",
     alt: "LMS mockup",
-    inset: "24px",
+    inset: "0px",
+    cover: true,
   },
   {
     name: "Designing engaging poll experiences",
