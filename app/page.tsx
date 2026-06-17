@@ -31,7 +31,8 @@ const work = [
     href: "#",
     image: "/Poll Project.png",
     alt: "Poll Design mockup",
-    inset: "16px",
+    inset: "0px",
+    cover: true,
     comingSoon: true,
   },
 ];
