@@ -32,7 +32,6 @@ const work = [
     image: "/Poll Project.png",
     alt: "Poll Design mockup",
     inset: "0px",
-    cover: true,
     comingSoon: true,
   },
 ];
