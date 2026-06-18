@@ -21,18 +21,6 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --background: #111110;
-    --foreground: #e8e8e6;
-    --muted: #888884;
-    --border: #2a2a28;
-    --hover-bg: #1c1c1a;
-    --callout-bg: #1a2035;
-    --callout-text: #7a9cc9;
-    --callout-label: #4a6fa5;
-  }
-}
 
 [data-theme="dark"] {
   --background: #111110;
