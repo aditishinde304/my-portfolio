@@ -166,7 +166,7 @@ export default function Home() {
         <div className="flex flex-col" style={{ gap: "56px" }}>
           {work.map((project) => (
             <a key={project.name} href={project.href} className="group block">
-              <div className={`w-full rounded-2xl overflow-hidden mb-4 ${(project as any).tallCard ? "h-[280px] md:h-[390px]" : "h-[220px] md:h-[300px]"}`} style={{ background: "var(--hover-bg)", position: "relative" }}>
+              <div className={`w-full rounded-2xl overflow-hidden mb-4 ${(project as any).tallCard ? "aspect-[4/3]" : "h-[220px] md:h-[300px]"}`} style={{ background: "var(--hover-bg)", position: "relative" }}>
                 <div className="absolute" style={{ inset: project.inset, position: "absolute" }}>
                   <div className="relative w-full h-full">
                     <Image
@@ -269,20 +269,20 @@ export default function Home() {
 
         <div className="flex flex-col gap-5">
           {experience.map((job, i) => (
-            <div key={i} className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-0.5 sm:gap-4">
-              <div>
+            <div key={i} className="flex flex-col gap-0.5">
+              <div className="flex items-baseline justify-between gap-4">
                 <span
-                  className="text-[16px] font-medium block"
+                  className="text-[16px] font-medium"
                   style={{ color: "var(--foreground)" }}
                 >
                   {job.company}
                 </span>
-                <span className="text-[16px] block mt-1" style={{ color: "var(--muted)" }}>
-                  {job.role}
+                <span className="text-[15px] shrink-0 tabular-nums" style={{ color: "var(--muted)" }}>
+                  {job.duration}
                 </span>
               </div>
-              <span className="text-[15px] shrink-0 tabular-nums mt-1 sm:mt-0" style={{ color: "var(--muted)" }}>
-                {job.duration}
+              <span className="text-[16px]" style={{ color: "var(--muted)" }}>
+                {job.role}
               </span>
             </div>
           ))}
