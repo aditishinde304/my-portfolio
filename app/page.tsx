@@ -5,8 +5,8 @@ import VideoPlayer from "./components/VideoPlayer";
 
 const work = [
   {
-    name: "Designing better digital classroom experiences",
-    subheading: "Focused on making learning more interactive, collaborative, and\nengaging for students.",
+    name: "Making learning more interactive through thoughtful design",
+    subheading: "Owned and shipped product experiences that helped teachers and students collaborate, learn, and engage more effectively.",
     year: "2025",
     href: "/work/superrbook",
     image: "/Superrbook mockup.png",
