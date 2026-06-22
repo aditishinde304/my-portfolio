@@ -267,7 +267,7 @@ export default function Home() {
           Experience
         </h2>
 
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-8">
           {experience.map((job, i) => (
             <div key={i} className="flex flex-col gap-0.5">
               <div className="flex items-baseline justify-between gap-4">
