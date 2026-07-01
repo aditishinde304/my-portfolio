@@ -77,7 +77,7 @@ export default function Home() {
         >
           aditi
         </Link>
-        <nav className="hidden sm:flex items-center gap-7">
+        <nav className="hidden sm:flex items-center gap-7 ml-auto mr-6">
           {[
             { label: "Projects",     href: "#projects"     },
             { label: "About",        href: "#about"        },
@@ -201,21 +201,25 @@ export default function Home() {
             {/* Heading */}
             <h1 className="mb-8 mx-auto" style={{ maxWidth: "720px" }}>
               <span
-                className="block leading-[1.15] tracking-[-0.02em]"
+                className="block leading-[1.15]"
                 style={{
                   fontSize: "clamp(2rem, 5vw, 3.25rem)",
                   color: "var(--muted)",
-                  fontWeight: 300,
+                  fontFamily: "var(--font-crimson), Georgia, serif",
+                  fontStyle: "italic",
+                  fontWeight: 400,
                 }}
               >
                 I design and build products
               </span>
               <span
-                className="block leading-[1.15] tracking-[-0.02em]"
+                className="block leading-[1.15]"
                 style={{
                   fontSize: "clamp(2rem, 5vw, 3.25rem)",
                   color: "var(--muted)",
-                  fontWeight: 300,
+                  fontFamily: "var(--font-crimson), Georgia, serif",
+                  fontStyle: "italic",
+                  fontWeight: 400,
                 }}
               >
                 that are{" "}
@@ -257,30 +261,6 @@ export default function Home() {
               .
             </p>
 
-            {/* CTAs */}
-            <div className="flex items-center justify-center gap-3 mt-10">
-              <a
-                href="#projects"
-                className="text-[13px] font-medium px-5 py-2.5 rounded-full transition-all duration-150"
-                style={{ background: "var(--foreground)", color: "var(--background)" }}
-                onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.85")}
-                onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
-              >
-                View my work
-              </a>
-              <a
-                href="mailto:aditi.shinde304@gmail.com"
-                className="text-[13px] font-medium px-5 py-2.5 rounded-full transition-all duration-150"
-                style={{
-                  border: "1px solid var(--border)",
-                  color: "var(--muted)",
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "var(--foreground)")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "var(--muted)")}
-              >
-                Say hi
-              </a>
-            </div>
           </div>
         </div>
       </main>
