@@ -31,7 +31,7 @@ function Keyword({ word, serif }: { word: string; serif?: boolean }) {
     >
       <span
         style={{
-          fontFamily: serif ? "var(--font-fraunces), Georgia, serif" : undefined,
+          fontFamily: serif ? "var(--font-crimson), Georgia, serif" : undefined,
           fontStyle: serif ? "italic" : undefined,
           fontWeight: serif ? 500 : undefined,
           borderBottom: "1.5px dotted currentColor",
@@ -73,7 +73,7 @@ export default function Home() {
         <Link
           href="/"
           className="text-[15px] font-semibold tracking-[-0.02em]"
-          style={{ color: "var(--foreground)", fontFamily: "var(--font-fraunces), Georgia, serif", fontStyle: "italic" }}
+          style={{ color: "var(--foreground)", fontFamily: "var(--font-crimson), Georgia, serif", fontStyle: "italic" }}
         >
           aditi
         </Link>
@@ -227,13 +227,13 @@ export default function Home() {
                 style={{
                   fontSize: "clamp(2rem, 5vw, 3.25rem)",
                   color: "var(--foreground)",
-                  fontFamily: "var(--font-fraunces), Georgia, serif",
+                  fontFamily: "var(--font-crimson), Georgia, serif",
                   fontStyle: "italic",
                   fontWeight: 400,
                 }}
               >
                 and a little <Keyword word="delightful" />
-                <span style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>.</span>
+                <span style={{ fontFamily: "var(--font-crimson), Georgia, serif" }}>.</span>
               </span>
             </h1>
 

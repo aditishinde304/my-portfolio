@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
-import { Shantell_Sans, Fraunces } from "next/font/google";
+import { Shantell_Sans, Fraunces, Crimson_Pro } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import NavBar from "./components/NavBar";
@@ -15,6 +15,14 @@ const shantellSans = Shantell_Sans({
 const fraunces = Fraunces({
   subsets: ["latin"],
   variable: "--font-fraunces",
+  weight: ["300", "400", "500", "600"],
+  style: ["normal", "italic"],
+  display: "swap",
+});
+
+const crimsonPro = Crimson_Pro({
+  subsets: ["latin"],
+  variable: "--font-crimson",
   weight: ["300", "400", "500", "600"],
   style: ["normal", "italic"],
   display: "swap",
@@ -34,7 +42,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${GeistSans.variable} ${GeistMono.variable} ${shantellSans.variable} ${fraunces.variable} h-full antialiased`}
+      className={`${GeistSans.variable} ${GeistMono.variable} ${shantellSans.variable} ${fraunces.variable} ${crimsonPro.variable} h-full antialiased`}
     >
       <head>
         <script
