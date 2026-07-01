@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
-import { Shantell_Sans, Fraunces, Crimson_Pro } from "next/font/google";
+import { Shantell_Sans, Fraunces, Crimson_Pro, Playfair_Display } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import NavBar from "./components/NavBar";
@@ -28,6 +28,14 @@ const crimsonPro = Crimson_Pro({
   display: "swap",
 });
 
+const playfairDisplay = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Aditi Shinde – Product Designer",
   description:
@@ -42,7 +50,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${GeistSans.variable} ${GeistMono.variable} ${shantellSans.variable} ${fraunces.variable} ${crimsonPro.variable} h-full antialiased`}
+      className={`${GeistSans.variable} ${GeistMono.variable} ${shantellSans.variable} ${fraunces.variable} ${crimsonPro.variable} ${playfairDisplay.variable} h-full antialiased`}
     >
       <head>
         <script
