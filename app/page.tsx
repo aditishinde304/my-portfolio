@@ -1,344 +1,290 @@
+"use client";
+
+import { useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import ThemeToggle from "./components/ThemeToggle";
-import CopyButton from "./components/CopyButton";
-import VideoPlayer from "./components/VideoPlayer";
 
-const work = [
-  {
-    name: "Making learning more interactive through thoughtful design",
-    subheading: "Owned and shipped product experiences that helped teachers and students collaborate, learn, and engage more effectively.",
-    year: "2025",
-    href: "/work/superrbook",
-    image: "/Superrbook mockup.png",
-    alt: "Superrbook mockup",
-    inset: "0px",
-    cover: true,
-  },
-  {
-    name: "A platform for managing classrooms better",
-    subheading: "Built a centralized system for assignments, notebooks, and\nclassroom workflows.",
-    year: "2025",
-    href: "/work/lms",
-    image: "/LMS mockup.png",
-    alt: "LMS mockup",
-    inset: "0px",
-    cover: true,
-  },
-  {
-    name: "Designing engaging poll experiences",
-    subheading: "Exploring how voting and feedback interactions can feel\nmore intuitive and expressive.",
-    year: "2026",
-    href: "#",
-    image: "/Poll Project.png",
-    alt: "Poll Design mockup",
-    inset: "0px",
-    cover: true,
-    tallCard: true,
-    comingSoon: true,
-  },
+const tabs = [
+  { id: "figma",    label: "Figma",               badge: "28 drafts",     emoji: "🎨" },
+  { id: "claude",   label: "Claude Code",          badge: "4 agents",      emoji: "◆"  },
+  { id: "github",   label: "GitHub",                                       emoji: "🐙" },
+  { id: "pinterest",label: "Pinterest",            badge: "1,203 saves",   emoji: "📌" },
+  { id: "spotify",  label: "Spotify",              badge: "Lo-fi",         emoji: "🎵" },
+  { id: "ideas",    label: "37 unfinished ideas",                          emoji: "🧠", active: true },
 ];
 
-const experiments = [
-  { name: "Game", image: "/Game design.png", video: "/Pixel Game Portfolio.mp4", href: "/experiments" },
-  { name: "Postcard", image: "/Postcard.png", video: "/Postcard.mp4", href: "/experiments" },
-  { name: "Focus Mode", image: "/Focus mode.png", video: "/Focus Mode.mp4", href: "/experiments" },
-  { name: "Interactive Project Carousel", image: "/Cursor to do.png", video: "/Scroll animation architecture website (2).mp4", href: "/experiments" },
-];
+const keywordMeta: Record<string, { popup: string }> = {
+  thoughtful: { popup: "🧠" },
+  useful:     { popup: "✅" },
+  delightful: { popup: "✨" },
+};
 
-const experience = [
-  {
-    company: "Superr",
-    role: "Product Designer",
-    duration: "Mar 2025 - Present",
-  },
-  {
-    company: "ConnectWise",
-    role: "UI/UX Design Intern",
-    duration: "Jan 2025 - Mar 2025",
-  },
-  {
-    company: "Zoop.One",
-    role: "Product Design Intern",
-    duration: "May 2023 - Jul 2023",
-  },
-  {
-    company: "Madideations",
-    role: "Graphic Design Intern",
-    duration: "Jun 2022 - Aug 2022",
-  },
-];
+function Keyword({ word, serif }: { word: string; serif?: boolean }) {
+  const [hovered, setHovered] = useState(false);
+  const meta = keywordMeta[word];
+  return (
+    <span
+      className="relative inline-block cursor-default"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      <span
+        style={{
+          fontFamily: serif ? "var(--font-fraunces), Georgia, serif" : undefined,
+          fontStyle: serif ? "italic" : undefined,
+          fontWeight: serif ? 500 : undefined,
+          borderBottom: "1.5px dotted currentColor",
+          opacity: hovered ? 1 : undefined,
+          transition: "opacity 150ms ease",
+        }}
+      >
+        {word}
+      </span>
+      {meta && (
+        <span
+          aria-hidden
+          style={{
+            position: "absolute",
+            top: "-2.2rem",
+            left: "50%",
+            transform: `translateX(-50%) translateY(${hovered ? "0px" : "6px"})`,
+            opacity: hovered ? 1 : 0,
+            transition: "opacity 180ms ease, transform 180ms ease",
+            fontSize: "1.35rem",
+            lineHeight: 1,
+            pointerEvents: "none",
+            userSelect: "none",
+          }}
+        >
+          {meta.popup}
+        </span>
+      )}
+    </span>
+  );
+}
 
 export default function Home() {
   return (
-    <main className="max-w-[680px] mx-auto px-8 py-20 md:py-28">
+    <div className="min-h-screen" style={{ background: "var(--background)", color: "var(--foreground)" }}>
 
-      {/* Introduction */}
-      <section className="mb-20">
-        <div className="flex items-start justify-between mb-12">
-          <div className="flex items-center gap-3.5">
-            <div className="w-14 h-14 rounded-full shrink-0 overflow-hidden" style={{ background: "var(--border)" }}>
-              <Image
-                src="/New Avatar.png"
-                alt="Aditi Shinde"
-                width={112}
-                height={112}
-                className="w-full h-full object-cover"
-                style={{ objectPosition: "center 45%" }}
-              />
+      {/* ── Nav ── */}
+      <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-5" style={{ background: "transparent" }}>
+        <Link
+          href="/"
+          className="text-[15px] font-semibold tracking-[-0.02em]"
+          style={{ color: "var(--foreground)", fontFamily: "var(--font-fraunces), Georgia, serif", fontStyle: "italic" }}
+        >
+          aditi
+        </Link>
+        <nav className="hidden sm:flex items-center gap-7">
+          {[
+            { label: "Projects",     href: "#projects"     },
+            { label: "About",        href: "#about"        },
+            { label: "Experiments",  href: "/experiments"  },
+            { label: "Say hi",       href: "mailto:aditi.shinde304@gmail.com" },
+          ].map((item) => (
+            <a
+              key={item.label}
+              href={item.href}
+              className="text-[13px] transition-colors duration-150"
+              style={{ color: "var(--muted)" }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "var(--foreground)")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "var(--muted)")}
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
+        <div className="flex items-center gap-4">
+          <ThemeToggle />
+        </div>
+      </header>
+
+      {/* ── Hero ── */}
+      <main className="px-5 sm:px-8 pt-28 pb-0 max-w-5xl mx-auto">
+
+        {/* Label above browser */}
+        <p
+          className="text-center text-[11px] uppercase tracking-[0.12em] mb-5"
+          style={{ color: "var(--muted)" }}
+        >
+          Currently open tabs in Aditi&rsquo;s brain
+        </p>
+
+        {/* Browser window */}
+        <div
+          className="w-full rounded-t-2xl overflow-hidden"
+          style={{
+            border: "1px solid var(--border)",
+            borderBottom: "none",
+            boxShadow: "0 2px 0 0 var(--border), 0 8px 40px rgba(0,0,0,0.05), 0 1px 3px rgba(0,0,0,0.04)",
+          }}
+        >
+          {/* Browser chrome */}
+          <div style={{ borderBottom: "1px solid var(--border)", background: "var(--hover-bg)" }}>
+
+            {/* Traffic lights */}
+            <div className="flex items-center gap-1.5 px-4 pt-3.5 pb-2.5">
+              <div className="w-3 h-3 rounded-full" style={{ background: "#FF5F57" }} />
+              <div className="w-3 h-3 rounded-full" style={{ background: "#FFBD2E" }} />
+              <div className="w-3 h-3 rounded-full" style={{ background: "#28CA41" }} />
             </div>
-            <div>
-              <h1
-                className="relative cursor-default group/name text-[16px] font-semibold leading-tight tracking-[-0.01em]"
-                style={{ color: "var(--foreground)" }}
-              >
-                <span className="transition-opacity duration-300 group-hover/name:opacity-0">Aditi Shinde</span>
-                <span className="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover/name:opacity-100 whitespace-nowrap">Hey there :)</span>
-              </h1>
-              <p className="text-[16px] leading-tight mt-0.5" style={{ color: "var(--muted)" }}>
-                Product designer who builds
-              </p>
+
+            {/* Tab bar */}
+            <div className="flex items-end gap-1 px-3 overflow-x-auto" style={{ scrollbarWidth: "none" }}>
+              {tabs.map((tab) => (
+                <div
+                  key={tab.id}
+                  className="flex items-center gap-1.5 px-3 py-2 rounded-t-lg shrink-0 select-none"
+                  style={{
+                    background: tab.active ? "var(--background)" : "transparent",
+                    border: tab.active ? "1px solid var(--border)" : "1px solid transparent",
+                    borderBottom: tab.active ? "1px solid var(--background)" : "none",
+                    marginBottom: tab.active ? "-1px" : undefined,
+                    position: "relative",
+                    zIndex: tab.active ? 1 : 0,
+                  }}
+                >
+                  <span className="text-[11px]">{tab.emoji}</span>
+                  <span
+                    className="text-[11px] whitespace-nowrap"
+                    style={{
+                      color: tab.active ? "var(--foreground)" : "var(--muted)",
+                      fontWeight: tab.active ? 500 : 400,
+                    }}
+                  >
+                    {tab.label}
+                    {tab.badge && (
+                      <span
+                        className="ml-1.5 px-1.5 py-0.5 rounded-full text-[9px]"
+                        style={{
+                          background: tab.active ? "var(--hover-bg)" : "var(--border)",
+                          color: "var(--muted)",
+                        }}
+                      >
+                        {tab.badge}
+                      </span>
+                    )}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
-          <div style={{ marginTop: "4px" }}><ThemeToggle /></div>
-        </div>
 
-        <div className="space-y-4 text-[16px] leading-relaxed" style={{ color: "var(--muted)" }}>
-          <p>
-            I&rsquo;m a product designer currently building education products
-            at{" "}
-            <a href="https://www.superr.ai/" target="_blank" rel="noopener noreferrer" className="link-dashed font-medium">
-              Superr
-            </a>
-            . Previously at{" "}
-            <a href="https://www.zoop.one/" target="_blank" rel="noopener noreferrer" className="link-dashed font-medium">
-              Zoop.one
-            </a>
-            {" "}and{" "}
-            <a href="https://www.connectwise.com/" target="_blank" rel="noopener noreferrer" className="link-dashed font-medium">
-              ConnectWise
-            </a>
-            .
-          </p>
-          <p>
-            I care deeply about crafting experiences that feel simple, playful
-            and human. I obsess over small interaction details, thoughtful
-            systems and making complex workflows feel intuitive and engaging.
-          </p>
-          <p>
-            Lately, I&rsquo;ve been exploring the space between design and code,
-            experimenting with AI tools, prototyping ideas and shipping
-            experiences using Cursor, Claude Code, Antigravity and v0.
-          </p>
-          <p>
-            I enjoy building things fast, testing ideas and learning through
-            experimentation. Beyond designing, I also love painting, sketching
-            and exploring visual craft.
-          </p>
-        </div>
+          {/* Browser body – hero content */}
+          <div className="px-8 sm:px-16 py-20 sm:py-28 text-center" style={{ background: "var(--background)" }}>
 
-        <p className="text-[16px] leading-relaxed mt-8" style={{ color: "var(--muted)" }}>
-          Reach me at{" "}
-          <a href="mailto:aditi.shinde304@gmail.com" className="link-dashed">
-            aditi.shinde304@gmail.com
-          </a>
-          <CopyButton text="aditi.shinde304@gmail.com" />
-          {" "}or dm me on{" "}
-          <a href="https://x.com/AditiShinde30" target="_blank" rel="noopener noreferrer" className="link-dashed">
-            x.com
-          </a>
-          .{" "}
-          <a href="https://drive.google.com/file/d/1mbuBG-T9t_Rxmam4UcLlDq3tveGxfSit/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="link-dashed">
-            View my resume
-          </a>
-          .
-        </p>
-      </section>
-
-      {/* Work */}
-      <section className="mb-20">
-        <h2
-          className="text-[12px] font-medium tracking-[0.06em] uppercase mb-5"
-          style={{ color: "var(--foreground)" }}
-        >
-          Projects
-        </h2>
-
-        <div className="flex flex-col" style={{ gap: "56px" }}>
-          {work.map((project) => (
-            <a key={project.name} href={project.href} className="group block">
-              <div className={`w-full rounded-2xl overflow-hidden mb-4 ${(project as any).tallCard ? "aspect-[4/3]" : "h-[220px] md:h-[300px]"}`} style={{ background: "var(--hover-bg)", position: "relative" }}>
-                <div className="absolute" style={{ inset: project.inset, position: "absolute" }}>
-                  <div className="relative w-full h-full">
-                    <Image
-                      src={project.image}
-                      alt={project.alt}
-                      fill
-                      quality={95}
-                      className={`${(project as any).cover ? "object-cover" : "object-contain"} transition-transform duration-500 group-hover:scale-[1.02]`}
-                      sizes="(max-width: 680px) 100vw, 680px"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className="flex items-baseline justify-between gap-4 mb-1">
-                <p className="text-[16px] leading-snug" style={{ color: "var(--foreground)" }}>
-                  {project.name}
-                  {project.comingSoon && (
-                    <span className="hidden sm:inline-flex items-center gap-1.5 ml-2" style={{ verticalAlign: "middle" }}>
-                      <span
-                        className="rounded-full shrink-0"
-                        style={{ width: "3px", height: "3px", background: "var(--muted)", display: "inline-block" }}
-                      />
-                      <span className="text-[15px]" style={{ color: "var(--muted)", fontFamily: "var(--font-shantell)" }}>Coming soon</span>
-                    </span>
-                  )}
-                </p>
-                <span className="text-[14px] shrink-0 tabular-nums" style={{ color: "var(--muted)" }}>
-                  {project.year}
-                </span>
-              </div>
-              {project.comingSoon && (
-                <span className="flex sm:hidden items-center gap-1.5 mb-1">
-                  <span
-                    className="rounded-full shrink-0"
-                    style={{ width: "3px", height: "3px", background: "var(--muted)", display: "inline-block" }}
-                  />
-                  <span className="text-[15px]" style={{ color: "var(--muted)", fontFamily: "var(--font-shantell)" }}>Coming soon</span>
-                </span>
-              )}
-              <p className="text-[16px] leading-relaxed whitespace-pre-line" style={{ color: "var(--muted)" }}>
-                {project.subheading}
-              </p>
-            </a>
-          ))}
-        </div>
-
-        <a
-          href="https://aditishinde.framer.website/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 mt-8 text-[15px] font-medium"
-        >
-          <span className="link-dashed">See everything I&apos;ve worked on</span>
-          <span style={{ display: "inline-block", transform: "rotate(45deg)" }}>↑</span>
-        </a>
-      </section>
-
-      {/* Experiments */}
-      <section className="mb-20">
-        <div className="flex items-baseline justify-between mb-5">
-          <h2
-            className="text-[12px] font-medium tracking-[0.06em] uppercase"
-            style={{ color: "var(--foreground)" }}
-          >
-            Experiments
-          </h2>
-          <a href="/experiments" className="text-[14px] link-dashed" style={{ color: "var(--muted)" }}>
-            View more
-          </a>
-        </div>
-
-        <div className="grid grid-cols-2 gap-3">
-          {experiments.map((exp) => (
-            <a
-              key={exp.name}
-              href={exp.href}
-              className="group block rounded-2xl p-2 flex items-center justify-center"
-              style={{ background: "var(--hover-bg)" }}
-            >
-              <div className="rounded-xl overflow-hidden">
-                <VideoPlayer
-                  src={exp.video}
-                  className="h-auto block mx-auto transition-transform duration-500 group-hover:scale-[1.02]"
-                  style={{ maxWidth: "100%" }}
+            {/* Avatar + eyebrow */}
+            <div className="flex flex-col items-center gap-4 mb-10">
+              <div
+                className="w-12 h-12 rounded-full overflow-hidden shrink-0"
+                style={{ border: "2px solid var(--border)" }}
+              >
+                <Image
+                  src="/New Avatar.png"
+                  alt="Aditi Shinde"
+                  width={96}
+                  height={96}
+                  className="w-full h-full object-cover"
+                  style={{ objectPosition: "center 45%" }}
                 />
               </div>
-            </a>
-          ))}
-        </div>
-      </section>
-
-      {/* Experience */}
-      <section className="mb-20">
-        <h2
-          className="text-[12px] font-medium tracking-[0.06em] uppercase mb-6"
-          style={{ color: "var(--foreground)" }}
-        >
-          Experience
-        </h2>
-
-        <div className="flex flex-col gap-8">
-          {experience.map((job, i) => (
-            <div key={i} className="flex flex-col gap-0.5">
-              <div className="flex items-baseline justify-between gap-4">
-                <span
-                  className="text-[16px] font-medium"
-                  style={{ color: "var(--foreground)" }}
-                >
-                  {job.company}
-                </span>
-                <span className="text-[15px] shrink-0 tabular-nums" style={{ color: "var(--muted)" }}>
-                  {job.duration}
-                </span>
-              </div>
-              <span className="text-[16px]" style={{ color: "var(--muted)" }}>
-                {job.role}
-              </span>
+              <p
+                className="text-[15px]"
+                style={{ color: "var(--muted)" }}
+              >
+                Hi, I&rsquo;m Aditi. 👋
+              </p>
             </div>
-          ))}
-        </div>
-      </section>
 
-      {/* Footer */}
-      <footer
-        className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-0 pt-6"
-        style={{ borderTop: "1px solid var(--border)" }}
-      >
-        <span className="text-[13px]" style={{ color: "var(--muted)" }}>
-          Designed + Coded with{" "}
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="12" height="12" fill="currentColor" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ display: "inline", verticalAlign: "middle", marginBottom: "1px" }}>
-            <path d="M10.4107 19.9677C7.58942 17.858 2 13.0348 2 8.69444C2 5.82563 4.10526 3.5 7 3.5C8.5 3.5 10 4 12 6C14 4 15.5 3.5 17 3.5C19.8947 3.5 22 5.82563 22 8.69444C22 13.0348 16.4106 17.858 13.5893 19.9677C12.6399 20.6776 11.3601 20.6776 10.4107 19.9677Z" />
-          </svg>
-          {" "}by Aditi
-        </span>
-        <div className="flex items-center gap-5">
-          <a
-            href="mailto:aditi.shinde304@gmail.com"
-            className="text-[13px] link-dashed"
-            style={{ color: "var(--muted)" }}
-          >
-            Email
-          </a>
-          <a
-            href="https://x.com/AditiShinde30"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[13px] link-dashed"
-            style={{ color: "var(--muted)" }}
-          >
-            X
-          </a>
-          <a
-            href="https://www.linkedin.com/in/aditi-shinde-5415681b7/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[13px] link-dashed"
-            style={{ color: "var(--muted)" }}
-          >
-            LinkedIn
-          </a>
-          <a
-            href="https://drive.google.com/file/d/1mbuBG-T9t_Rxmam4UcLlDq3tveGxfSit/view?usp=sharing"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[13px] link-dashed"
-            style={{ color: "var(--muted)" }}
-          >
-            Resume
-          </a>
-        </div>
-      </footer>
+            {/* Heading */}
+            <h1 className="mb-8 mx-auto" style={{ maxWidth: "720px" }}>
+              <span
+                className="block leading-[1.15] tracking-[-0.02em]"
+                style={{
+                  fontSize: "clamp(2rem, 5vw, 3.25rem)",
+                  color: "var(--muted)",
+                  fontWeight: 300,
+                }}
+              >
+                I design and build products
+              </span>
+              <span
+                className="block leading-[1.15] tracking-[-0.02em]"
+                style={{
+                  fontSize: "clamp(2rem, 5vw, 3.25rem)",
+                  color: "var(--muted)",
+                  fontWeight: 300,
+                }}
+              >
+                that are{" "}
+                <Keyword word="thoughtful" serif />,{" "}
+                <Keyword word="useful" serif />,
+              </span>
+              <span
+                className="block leading-[1.2] tracking-[-0.02em]"
+                style={{
+                  fontSize: "clamp(2rem, 5vw, 3.25rem)",
+                  color: "var(--foreground)",
+                  fontFamily: "var(--font-fraunces), Georgia, serif",
+                  fontStyle: "italic",
+                  fontWeight: 400,
+                }}
+              >
+                and a little <Keyword word="delightful" />
+                <span style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>.</span>
+              </span>
+            </h1>
 
-    </main>
+            {/* Subheading */}
+            <p
+              className="mx-auto text-[15px] leading-relaxed"
+              style={{ maxWidth: "520px", color: "var(--muted)" }}
+            >
+              Currently building education products at{" "}
+              <a href="https://www.superr.ai/" target="_blank" rel="noopener noreferrer" className="link-dashed font-medium">
+                Superr
+              </a>
+              , where I design and ship experiences for students, teachers, and school administrators across digital classrooms and learning workflows. Previously at{" "}
+              <a href="https://www.connectwise.com/" target="_blank" rel="noopener noreferrer" className="link-dashed font-medium">
+                ConnectWise
+              </a>
+              {" "}and{" "}
+              <a href="https://www.zoop.one/" target="_blank" rel="noopener noreferrer" className="link-dashed font-medium">
+                Zoop.one
+              </a>
+              .
+            </p>
+
+            {/* CTAs */}
+            <div className="flex items-center justify-center gap-3 mt-10">
+              <a
+                href="#projects"
+                className="text-[13px] font-medium px-5 py-2.5 rounded-full transition-all duration-150"
+                style={{ background: "var(--foreground)", color: "var(--background)" }}
+                onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.85")}
+                onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
+              >
+                View my work
+              </a>
+              <a
+                href="mailto:aditi.shinde304@gmail.com"
+                className="text-[13px] font-medium px-5 py-2.5 rounded-full transition-all duration-150"
+                style={{
+                  border: "1px solid var(--border)",
+                  color: "var(--muted)",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "var(--foreground)")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "var(--muted)")}
+              >
+                Say hi
+              </a>
+            </div>
+          </div>
+        </div>
+      </main>
+
+    </div>
   );
 }
