@@ -205,8 +205,8 @@ export default function Home() {
                 style={{
                   fontSize: "clamp(2rem, 5vw, 3.25rem)",
                   color: "var(--muted)",
-                  fontFamily: "var(--font-crimson), Georgia, serif",
-                  fontWeight: 400,
+                  fontFamily: "var(--font-geist-sans), system-ui, sans-serif",
+                  fontWeight: 300,
                 }}
               >
                 I design and build products
@@ -216,8 +216,8 @@ export default function Home() {
                 style={{
                   fontSize: "clamp(2rem, 5vw, 3.25rem)",
                   color: "var(--muted)",
-                  fontFamily: "var(--font-crimson), Georgia, serif",
-                  fontWeight: 400,
+                  fontFamily: "var(--font-geist-sans), system-ui, sans-serif",
+                  fontWeight: 300,
                 }}
               >
                 that are{" "}
@@ -225,16 +225,18 @@ export default function Home() {
                 <Keyword word="useful" serif />,
               </span>
               <span
-                className="block leading-[1.2] tracking-[-0.02em]"
+                className="block leading-[1.2]"
                 style={{
                   fontSize: "clamp(2rem, 5vw, 3.25rem)",
                   color: "var(--foreground)",
-                  fontFamily: "var(--font-crimson), Georgia, serif",
-                  fontWeight: 400,
+                  fontFamily: "var(--font-geist-sans), system-ui, sans-serif",
+                  fontWeight: 300,
                 }}
               >
-                and a little <Keyword word="delightful" serif />
-                <span style={{ fontFamily: "var(--font-crimson), Georgia, serif" }}>.</span>
+                and a little{" "}
+                <span style={{ fontFamily: "var(--font-crimson), Georgia, serif", fontWeight: 400 }}>
+                  <Keyword word="delightful" serif />.
+                </span>
               </span>
             </h1>
 
