@@ -32,8 +32,7 @@ function Keyword({ word, serif }: { word: string; serif?: boolean }) {
       <span
         style={{
           fontFamily: serif ? "var(--font-crimson), Georgia, serif" : undefined,
-          fontStyle: serif ? "italic" : undefined,
-          fontWeight: serif ? 500 : undefined,
+          fontWeight: serif ? 400 : undefined,
           borderBottom: "1.5px dotted currentColor",
           opacity: hovered ? 1 : undefined,
           transition: "opacity 150ms ease",
@@ -206,7 +205,6 @@ export default function Home() {
                   fontSize: "clamp(2rem, 5vw, 3.25rem)",
                   color: "var(--muted)",
                   fontFamily: "var(--font-crimson), Georgia, serif",
-                  fontStyle: "italic",
                   fontWeight: 400,
                 }}
               >
@@ -218,7 +216,6 @@ export default function Home() {
                   fontSize: "clamp(2rem, 5vw, 3.25rem)",
                   color: "var(--muted)",
                   fontFamily: "var(--font-crimson), Georgia, serif",
-                  fontStyle: "italic",
                   fontWeight: 400,
                 }}
               >
@@ -232,7 +229,6 @@ export default function Home() {
                   fontSize: "clamp(2rem, 5vw, 3.25rem)",
                   color: "var(--foreground)",
                   fontFamily: "var(--font-crimson), Georgia, serif",
-                  fontStyle: "italic",
                   fontWeight: 400,
                 }}
               >
