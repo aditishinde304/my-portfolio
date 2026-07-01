@@ -72,3 +72,8 @@ body {
   color: #3b82f6;
   text-decoration-color: #3b82f6;
 }
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-7px); }
+}
