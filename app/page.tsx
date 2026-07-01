@@ -32,6 +32,7 @@ function Keyword({ word, serif }: { word: string; serif?: boolean }) {
       <span
         style={{
           fontFamily: serif ? "var(--font-crimson), Georgia, serif" : undefined,
+          fontStyle: serif ? "italic" : undefined,
           fontWeight: serif ? 400 : undefined,
           borderBottom: "1.5px dotted currentColor",
           opacity: hovered ? 1 : undefined,
@@ -232,7 +233,7 @@ export default function Home() {
                   fontWeight: 400,
                 }}
               >
-                and a little <Keyword word="delightful" />
+                and a little <Keyword word="delightful" serif />
                 <span style={{ fontFamily: "var(--font-crimson), Georgia, serif" }}>.</span>
               </span>
             </h1>
