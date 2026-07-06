@@ -1,17 +1,20 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import ThemeToggle from "./components/ThemeToggle";
 
+const BORDER = "#e4e4e7";
+
 // ─── Tabs ──────────────────────────────────────────────────────────────────
 const tabs = [
-  { id: "figma",     label: "Figma",       emoji: "🎨" },
-  { id: "claude",    label: "Claude Code", emoji: "◆"  },
-  { id: "github",    label: "GitHub",      emoji: "🐙" },
-  { id: "pinterest", label: "Pinterest",   emoji: "📌" },
-  { id: "spotify",   label: "Spotify",     emoji: "🎵" },
-  { id: "ideas",     label: "37 ideas",    emoji: "🧠", active: true },
+  { id: "figma",     emoji: "🎨", label: "Figma",                sub: "28 drafts"   },
+  { id: "claude",    emoji: "◆",  label: "Claude Code",           sub: "4 agents"   },
+  { id: "github",    emoji: "🐙", label: "GitHub"                                   },
+  { id: "pinterest", emoji: "📌", label: "Pinterest",             sub: "1,203 saves" },
+  { id: "spotify",   emoji: "🎵", label: "Spotify",               sub: "Lo-fi"       },
+  { id: "ideas",     emoji: "🧠", label: "37 unfinished ideas",                      active: true },
 ];
 
 // ─── SVG illustrations ─────────────────────────────────────────────────────
@@ -24,7 +27,6 @@ function PencilSVG() {
     </svg>
   );
 }
-
 function CodeSVG() {
   return (
     <svg width="46" height="26" viewBox="0 0 46 26" fill="none">
@@ -33,7 +35,6 @@ function CodeSVG() {
     </svg>
   );
 }
-
 function SparkleSVG() {
   return (
     <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
@@ -43,7 +44,6 @@ function SparkleSVG() {
     </svg>
   );
 }
-
 function NotebookSVG() {
   return (
     <svg width="24" height="28" viewBox="0 0 24 28" fill="none">
@@ -58,7 +58,6 @@ function NotebookSVG() {
     </svg>
   );
 }
-
 function CoffeeSVG() {
   return (
     <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
@@ -69,7 +68,6 @@ function CoffeeSVG() {
     </svg>
   );
 }
-
 function BrushSVG() {
   return (
     <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
@@ -79,7 +77,6 @@ function BrushSVG() {
     </svg>
   );
 }
-
 function StickySVG() {
   return (
     <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
@@ -92,7 +89,6 @@ function StickySVG() {
   );
 }
 
-// Floating element positions within the 240×240 photo container
 const floatingItems = [
   { id: "pencil",   el: <PencilSVG />,   pos: { top: "0px",    left: "162px" }, rotate: "18deg",  delay: "0s"   },
   { id: "code",     el: <CodeSVG />,     pos: { top: "94px",   left: "-14px" }, rotate: "-8deg",  delay: "0.5s" },
@@ -103,7 +99,100 @@ const floatingItems = [
   { id: "sticky",   el: <StickySVG />,  pos: { bottom: "6px", left: "70px"  }, rotate: "6deg",   delay: "0.6s" },
 ];
 
+// ─── Browser Tab component ─────────────────────────────────────────────────
+function BrowserTab({
+  tab,
+  hovered,
+  onEnter,
+  onLeave,
+}: {
+  tab: typeof tabs[number];
+  hovered: boolean;
+  onEnter: () => void;
+  onLeave: () => void;
+}) {
+  const fullLabel = tab.sub ? `${tab.label} · ${tab.sub}` : tab.label;
+
+  return (
+    <div
+      onMouseEnter={onEnter}
+      onMouseLeave={onLeave}
+      style={{
+        display: "flex",
+        alignItems: "center",
+        gap: "5px",
+        padding: "5px 10px 5px 8px",
+        borderRadius: "8px 8px 0 0",
+        border: `1px solid ${tab.active ? BORDER : "transparent"}`,
+        borderBottom: tab.active ? "1px solid var(--background)" : "none",
+        background: tab.active
+          ? "var(--background)"
+          : hovered
+          ? "rgba(0,0,0,0.035)"
+          : "transparent",
+        marginBottom: tab.active ? "-1px" : "0",
+        position: "relative",
+        zIndex: tab.active ? 2 : 1,
+        cursor: "default",
+        flexShrink: 1,
+        minWidth: 0,
+        transition: "background 120ms ease",
+        userSelect: "none",
+      }}
+    >
+      {/* Emoji / × icon — same slot, crossfade */}
+      <div style={{ position: "relative", width: "13px", height: "13px", flexShrink: 0 }}>
+        <span
+          style={{
+            position: "absolute",
+            inset: 0,
+            fontSize: "11px",
+            lineHeight: "13px",
+            textAlign: "center",
+            opacity: hovered ? 0 : 1,
+            transition: "opacity 120ms ease",
+          }}
+        >
+          {tab.emoji}
+        </span>
+        <span
+          style={{
+            position: "absolute",
+            inset: 0,
+            fontSize: "12px",
+            lineHeight: "13px",
+            textAlign: "center",
+            color: "var(--muted)",
+            opacity: hovered ? 1 : 0,
+            transition: "opacity 120ms ease",
+          }}
+        >
+          ×
+        </span>
+      </div>
+
+      {/* Label */}
+      <span
+        style={{
+          fontSize: "11px",
+          lineHeight: "1.3",
+          whiteSpace: "nowrap",
+          color: tab.active ? "var(--foreground)" : "var(--muted)",
+          fontWeight: tab.active ? 500 : 400,
+          overflow: "hidden",
+          textOverflow: "ellipsis",
+        }}
+      >
+        {fullLabel}
+      </span>
+    </div>
+  );
+}
+
+// ─── Page ──────────────────────────────────────────────────────────────────
 export default function Home() {
+  const [hoveredTab, setHoveredTab] = useState<string | null>(null);
+
   return (
     <div className="min-h-screen" style={{ background: "var(--background)", color: "var(--foreground)" }}>
 
@@ -114,7 +203,7 @@ export default function Home() {
       >
         <Link
           href="/"
-          className="text-[15px] font-semibold tracking-[-0.01em]"
+          className="text-[15px] font-semibold"
           style={{ color: "var(--foreground)", fontFamily: "var(--font-playfair), Georgia, serif", fontStyle: "italic" }}
         >
           aditi
@@ -142,9 +231,9 @@ export default function Home() {
       </header>
 
       {/* ── Main ── */}
-      <main className="px-5 sm:px-8 pt-28 pb-0 max-w-4xl mx-auto">
+      <main className="px-5 sm:px-8 pt-28 pb-0 max-w-5xl mx-auto">
 
-        {/* Label above browser */}
+        {/* Label */}
         <p
           className="text-center text-[11px] uppercase tracking-[0.12em] mb-4"
           style={{ color: "var(--muted)" }}
@@ -154,81 +243,104 @@ export default function Home() {
 
         {/* ── Browser window ── */}
         <div
-          className="w-full overflow-hidden"
           style={{
-            borderRadius: "16px 16px 0 0",
-            border: "1px solid var(--border)",
+            borderRadius: "14px 14px 0 0",
+            border: `1px solid ${BORDER}`,
             borderBottom: "none",
-            boxShadow: "0 1px 2px rgba(0,0,0,0.04), 0 8px 32px rgba(0,0,0,0.06)",
+            overflow: "hidden",
+            /* no box-shadow */
           }}
         >
 
-          {/* Chrome bar */}
+          {/* ── Title bar (traffic lights + URL bar) ── */}
           <div
             style={{
-              background: "var(--hover-bg)",
-              borderBottom: "1px solid var(--border)",
+              background: "#f5f5f3",
+              borderBottom: `1px solid ${BORDER}`,
+              display: "flex",
+              alignItems: "center",
+              gap: "12px",
+              padding: "10px 14px",
             }}
           >
             {/* Traffic lights */}
-            <div className="flex items-center gap-1.5 px-4 pt-3 pb-2">
-              <div className="w-2.5 h-2.5 rounded-full" style={{ background: "#FF5F57" }} />
-              <div className="w-2.5 h-2.5 rounded-full" style={{ background: "#FFBD2E" }} />
-              <div className="w-2.5 h-2.5 rounded-full" style={{ background: "#28CA41" }} />
+            <div style={{ display: "flex", gap: "6px", alignItems: "center", flexShrink: 0 }}>
+              <div style={{ width: "11px", height: "11px", borderRadius: "50%", background: "#FF5F57" }} />
+              <div style={{ width: "11px", height: "11px", borderRadius: "50%", background: "#FFBD2E" }} />
+              <div style={{ width: "11px", height: "11px", borderRadius: "50%", background: "#28CA41" }} />
             </div>
 
-            {/* Tab row — all tabs in one line, no overflow */}
-            <div className="flex items-end px-2" style={{ gap: "2px" }}>
-              {tabs.map((tab) => (
-                <div
-                  key={tab.id}
-                  className="flex items-center shrink min-w-0"
-                  style={{
-                    gap: "5px",
-                    padding: "6px 10px",
-                    borderRadius: "8px 8px 0 0",
-                    background: tab.active ? "var(--background)" : "transparent",
-                    border: tab.active ? "1px solid var(--border)" : "1px solid transparent",
-                    borderBottom: tab.active ? "1px solid var(--background)" : "none",
-                    marginBottom: tab.active ? "-1px" : "0",
-                    position: "relative",
-                    zIndex: tab.active ? 2 : 1,
-                    flex: tab.active ? "0 0 auto" : "1 1 0",
-                    maxWidth: tab.active ? "140px" : "110px",
-                  }}
-                >
-                  <span style={{ fontSize: "11px", lineHeight: 1, flexShrink: 0 }}>{tab.emoji}</span>
-                  <span
-                    className="truncate"
-                    style={{
-                      fontSize: "11px",
-                      lineHeight: "1.3",
-                      color: tab.active ? "var(--foreground)" : "var(--muted)",
-                      fontWeight: tab.active ? 500 : 400,
-                    }}
-                  >
-                    {tab.label}
-                  </span>
-                </div>
-              ))}
+            {/* URL bar */}
+            <div
+              style={{
+                flex: 1,
+                maxWidth: "320px",
+                margin: "0 auto",
+                background: "rgba(0,0,0,0.055)",
+                border: `1px solid ${BORDER}`,
+                borderRadius: "6px",
+                padding: "3px 10px",
+                display: "flex",
+                alignItems: "center",
+                gap: "6px",
+              }}
+            >
+              {/* Lock icon */}
+              <svg width="10" height="11" viewBox="0 0 10 11" fill="none">
+                <rect x="1.5" y="4.5" width="7" height="5.5" rx="1" fill="none" stroke="#9CA3AF" strokeWidth="1"/>
+                <path d="M3 4.5V3a2 2 0 014 0v1.5" stroke="#9CA3AF" strokeWidth="1" strokeLinecap="round"/>
+              </svg>
+              <span style={{ fontSize: "11px", color: "#6B7280", letterSpacing: "0.01em" }}>
+                aditishinde.com
+              </span>
             </div>
+
+            {/* Right spacer (mirrors traffic lights width for centering) */}
+            <div style={{ width: "41px", flexShrink: 0 }} />
           </div>
 
-          {/* Browser content — hero lives here */}
+          {/* ── Tab strip ── */}
           <div
-            className="px-8 sm:px-16 py-16 sm:py-20 text-center"
+            style={{
+              background: "#f5f5f3",
+              borderBottom: `1px solid ${BORDER}`,
+              display: "flex",
+              alignItems: "flex-end",
+              padding: "6px 8px 0",
+              gap: "2px",
+              overflowX: "hidden",
+            }}
+          >
+            {tabs.map((tab) => (
+              <BrowserTab
+                key={tab.id}
+                tab={tab}
+                hovered={hoveredTab === tab.id}
+                onEnter={() => setHoveredTab(tab.id)}
+                onLeave={() => setHoveredTab(null)}
+              />
+            ))}
+          </div>
+
+          {/* ── Browser content (hero) ── */}
+          <div
+            className="px-8 sm:px-20 py-16 sm:py-20 text-center"
             style={{ background: "var(--background)" }}
           >
 
             {/* Photo with floating illustrations */}
-            <div className="flex justify-center mb-8">
-              <div className="relative" style={{ width: "240px", height: "240px" }}>
+            <div style={{ display: "flex", justifyContent: "center", marginBottom: "2rem" }}>
+              <div style={{ position: "relative", width: "240px", height: "240px" }}>
 
                 {floatingItems.map((item) => (
                   <div
                     key={item.id}
-                    className="absolute"
-                    style={{ ...item.pos, transform: `rotate(${item.rotate})`, zIndex: 2 }}
+                    style={{
+                      position: "absolute",
+                      ...item.pos,
+                      transform: `rotate(${item.rotate})`,
+                      zIndex: 2,
+                    }}
                   >
                     <div style={{ animation: `floatY 3.5s ease-in-out ${item.delay} infinite` }}>
                       {item.el}
@@ -236,13 +348,19 @@ export default function Home() {
                   </div>
                 ))}
 
+                {/* Photo */}
                 <div
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full overflow-hidden"
                   style={{
+                    position: "absolute",
+                    top: "50%",
+                    left: "50%",
+                    transform: "translate(-50%, -50%)",
                     width: "120px",
                     height: "120px",
-                    border: "3px solid white",
-                    boxShadow: "0 8px 32px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.08)",
+                    borderRadius: "50%",
+                    overflow: "hidden",
+                    border: "3px solid #fff",
+                    boxShadow: "0 4px 24px rgba(0,0,0,0.10), 0 1px 6px rgba(0,0,0,0.06)",
                     zIndex: 3,
                   }}
                 >
@@ -261,12 +379,13 @@ export default function Home() {
 
             {/* Heading */}
             <h1
-              className="mb-5 leading-tight"
               style={{
-                fontSize: "clamp(1.8rem, 4vw, 2.6rem)",
+                fontSize: "clamp(1.75rem, 3.8vw, 2.5rem)",
                 fontWeight: 500,
                 letterSpacing: "-0.01em",
+                lineHeight: 1.2,
                 color: "var(--foreground)",
+                marginBottom: "1.1rem",
               }}
             >
               Hi, I&rsquo;m Aditi! 👋
@@ -274,8 +393,13 @@ export default function Home() {
 
             {/* Subheading */}
             <p
-              className="mx-auto text-[15px] sm:text-[16px] leading-relaxed"
-              style={{ maxWidth: "480px", color: "var(--muted)" }}
+              style={{
+                maxWidth: "480px",
+                margin: "0 auto",
+                fontSize: "15px",
+                lineHeight: "1.7",
+                color: "var(--muted)",
+              }}
             >
               I&rsquo;m a designer who enjoys turning ideas into useful products through design, code, and an eye for detail. Currently building education products at{" "}
               <a href="https://www.superr.ai/" target="_blank" rel="noopener noreferrer" className="link-dashed font-medium">
