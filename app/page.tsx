@@ -6,12 +6,12 @@ import ThemeToggle from "./components/ThemeToggle";
 
 // ─── Tabs ──────────────────────────────────────────────────────────────────
 const tabs = [
-  { id: "figma",     label: "Figma",              badge: "28 drafts",   emoji: "🎨" },
-  { id: "claude",    label: "Claude Code",         badge: "4 agents",    emoji: "◆"  },
-  { id: "github",    label: "GitHub",                                    emoji: "🐙" },
-  { id: "pinterest", label: "Pinterest",           badge: "1,203 saves", emoji: "📌" },
-  { id: "spotify",   label: "Spotify",             badge: "Lo-fi",       emoji: "🎵" },
-  { id: "ideas",     label: "37 unfinished ideas",                       emoji: "🧠", active: true },
+  { id: "figma",     label: "Figma",       emoji: "🎨" },
+  { id: "claude",    label: "Claude Code", emoji: "◆"  },
+  { id: "github",    label: "GitHub",      emoji: "🐙" },
+  { id: "pinterest", label: "Pinterest",   emoji: "📌" },
+  { id: "spotify",   label: "Spotify",     emoji: "🎵" },
+  { id: "ideas",     label: "37 ideas",    emoji: "🧠", active: true },
 ];
 
 // ─── SVG illustrations ─────────────────────────────────────────────────────
@@ -92,16 +92,15 @@ function StickySVG() {
   );
 }
 
-// ─── Floating element layout (positions within 240×240 container) ──────────
-// Photo is centered at (120, 120), radius 60px
+// Floating element positions within the 240×240 photo container
 const floatingItems = [
-  { id: "pencil",   el: <PencilSVG />,   style: { top: "0px",    left: "162px" }, rotate: "18deg",  delay: "0s"    },
-  { id: "code",     el: <CodeSVG />,     style: { top: "94px",   left: "-14px" }, rotate: "-8deg",  delay: "0.5s"  },
-  { id: "sparkle",  el: <SparkleSVG />, style: { top: "8px",    left: "22px"  }, rotate: "12deg",  delay: "1.0s"  },
-  { id: "notebook", el: <NotebookSVG />, style: { bottom: "0px", left: "160px" }, rotate: "-12deg", delay: "0.3s"  },
-  { id: "coffee",   el: <CoffeeSVG />,  style: { bottom: "24px",left: "-6px"  }, rotate: "14deg",  delay: "0.8s"  },
-  { id: "brush",    el: <BrushSVG />,   style: { top: "78px",   right: "-14px"}, rotate: "-22deg", delay: "1.3s"  },
-  { id: "sticky",   el: <StickySVG />,  style: { bottom: "6px", left: "70px"  }, rotate: "6deg",   delay: "0.6s"  },
+  { id: "pencil",   el: <PencilSVG />,   pos: { top: "0px",    left: "162px" }, rotate: "18deg",  delay: "0s"   },
+  { id: "code",     el: <CodeSVG />,     pos: { top: "94px",   left: "-14px" }, rotate: "-8deg",  delay: "0.5s" },
+  { id: "sparkle",  el: <SparkleSVG />, pos: { top: "8px",    left: "22px"  }, rotate: "12deg",  delay: "1.0s" },
+  { id: "notebook", el: <NotebookSVG />, pos: { bottom: "0px", left: "160px" }, rotate: "-12deg", delay: "0.3s" },
+  { id: "coffee",   el: <CoffeeSVG />,  pos: { bottom: "24px",left: "-6px"  }, rotate: "14deg",  delay: "0.8s" },
+  { id: "brush",    el: <BrushSVG />,   pos: { top: "78px",   right: "-14px"}, rotate: "-22deg", delay: "1.3s" },
+  { id: "sticky",   el: <StickySVG />,  pos: { bottom: "6px", left: "70px"  }, rotate: "6deg",   delay: "0.6s" },
 ];
 
 export default function Home() {
@@ -142,155 +141,159 @@ export default function Home() {
         <ThemeToggle />
       </header>
 
-      {/* ── Hero ── */}
-      <main className="px-6 sm:px-8 pt-24 max-w-3xl mx-auto text-center">
+      {/* ── Main ── */}
+      <main className="px-5 sm:px-8 pt-28 pb-0 max-w-4xl mx-auto">
 
-        {/* Photo with floating illustrations */}
-        <div className="flex justify-center mb-8 mt-10">
-          <div className="relative" style={{ width: "240px", height: "240px" }}>
-
-            {/* Floating elements */}
-            {floatingItems.map((item) => (
-              <div
-                key={item.id}
-                className="absolute"
-                style={{ ...item.style, transform: `rotate(${item.rotate})`, zIndex: 2 }}
-              >
-                <div style={{ animation: `floatY 3.5s ease-in-out ${item.delay} infinite` }}>
-                  {item.el}
-                </div>
-              </div>
-            ))}
-
-            {/* Photo */}
-            <div
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full overflow-hidden"
-              style={{
-                width: "120px",
-                height: "120px",
-                border: "3px solid white",
-                boxShadow: "0 8px 32px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.08)",
-                zIndex: 3,
-              }}
-            >
-              <Image
-                src="/New Avatar.png"
-                alt="Aditi Shinde"
-                width={240}
-                height={240}
-                className="w-full h-full object-cover"
-                style={{ objectPosition: "center 45%" }}
-                priority
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* Heading */}
-        <h1
-          className="mb-5 tracking-[-0.01em] leading-tight"
-          style={{
-            fontSize: "clamp(1.8rem, 4.5vw, 2.75rem)",
-            fontFamily: "var(--font-geist-sans), system-ui, sans-serif",
-            fontWeight: 500,
-            color: "var(--foreground)",
-          }}
-        >
-          Hi, I&rsquo;m Aditi! 👋
-        </h1>
-
-        {/* Subheading */}
+        {/* Label above browser */}
         <p
-          className="mx-auto text-[15px] sm:text-[16px] leading-relaxed"
-          style={{ maxWidth: "500px", color: "var(--muted)" }}
+          className="text-center text-[11px] uppercase tracking-[0.12em] mb-4"
+          style={{ color: "var(--muted)" }}
         >
-          I&rsquo;m a designer who enjoys turning ideas into useful products through design, code, and an eye for detail. Currently building education products at{" "}
-          <a href="https://www.superr.ai/" target="_blank" rel="noopener noreferrer" className="link-dashed font-medium">
-            Superr
-          </a>
-          , previously at{" "}
-          <a href="https://www.connectwise.com/" target="_blank" rel="noopener noreferrer" className="link-dashed font-medium">
-            ConnectWise
-          </a>
-          {" "}and{" "}
-          <a href="https://www.zoop.one/" target="_blank" rel="noopener noreferrer" className="link-dashed font-medium">
-            Zoop.one
-          </a>
-          .
+          Currently open tabs in Aditi&rsquo;s brain
         </p>
 
-        {/* ── Tabs section ── */}
-        <div className="mt-14">
-          <p
-            className="text-[11px] uppercase tracking-[0.12em] mb-5"
-            style={{ color: "var(--muted)" }}
-          >
-            Currently open tabs in Aditi&rsquo;s brain
-          </p>
+        {/* ── Browser window ── */}
+        <div
+          className="w-full overflow-hidden"
+          style={{
+            borderRadius: "16px 16px 0 0",
+            border: "1px solid var(--border)",
+            borderBottom: "none",
+            boxShadow: "0 1px 2px rgba(0,0,0,0.04), 0 8px 32px rgba(0,0,0,0.06)",
+          }}
+        >
 
-          {/* Browser chrome — tab bar only, bottom bleeds into page */}
+          {/* Chrome bar */}
           <div
-            className="w-full rounded-t-2xl overflow-hidden"
             style={{
-              border: "1px solid var(--border)",
-              borderBottom: "none",
-              boxShadow: "0 -1px 0 var(--border), 0 8px 40px rgba(0,0,0,0.04)",
+              background: "var(--hover-bg)",
+              borderBottom: "1px solid var(--border)",
             }}
           >
-            <div style={{ background: "var(--hover-bg)" }}>
-              {/* Traffic lights */}
-              <div className="flex items-center gap-1.5 px-4 pt-3.5 pb-2">
-                <div className="w-2.5 h-2.5 rounded-full" style={{ background: "#FF5F57" }} />
-                <div className="w-2.5 h-2.5 rounded-full" style={{ background: "#FFBD2E" }} />
-                <div className="w-2.5 h-2.5 rounded-full" style={{ background: "#28CA41" }} />
-              </div>
+            {/* Traffic lights */}
+            <div className="flex items-center gap-1.5 px-4 pt-3 pb-2">
+              <div className="w-2.5 h-2.5 rounded-full" style={{ background: "#FF5F57" }} />
+              <div className="w-2.5 h-2.5 rounded-full" style={{ background: "#FFBD2E" }} />
+              <div className="w-2.5 h-2.5 rounded-full" style={{ background: "#28CA41" }} />
+            </div>
 
-              {/* Tabs */}
-              <div
-                className="flex items-end gap-1 px-3 overflow-x-auto"
-                style={{ scrollbarWidth: "none" }}
-              >
-                {tabs.map((tab) => (
-                  <div
-                    key={tab.id}
-                    className="flex items-center gap-1.5 px-3 py-2 rounded-t-lg shrink-0 select-none"
+            {/* Tab row — all tabs in one line, no overflow */}
+            <div className="flex items-end px-2" style={{ gap: "2px" }}>
+              {tabs.map((tab) => (
+                <div
+                  key={tab.id}
+                  className="flex items-center shrink min-w-0"
+                  style={{
+                    gap: "5px",
+                    padding: "6px 10px",
+                    borderRadius: "8px 8px 0 0",
+                    background: tab.active ? "var(--background)" : "transparent",
+                    border: tab.active ? "1px solid var(--border)" : "1px solid transparent",
+                    borderBottom: tab.active ? "1px solid var(--background)" : "none",
+                    marginBottom: tab.active ? "-1px" : "0",
+                    position: "relative",
+                    zIndex: tab.active ? 2 : 1,
+                    flex: tab.active ? "0 0 auto" : "1 1 0",
+                    maxWidth: tab.active ? "140px" : "110px",
+                  }}
+                >
+                  <span style={{ fontSize: "11px", lineHeight: 1, flexShrink: 0 }}>{tab.emoji}</span>
+                  <span
+                    className="truncate"
                     style={{
-                      background: tab.active ? "var(--background)" : "transparent",
-                      border: tab.active ? "1px solid var(--border)" : "1px solid transparent",
-                      borderBottom: tab.active ? "1px solid var(--background)" : "none",
-                      marginBottom: tab.active ? "-1px" : undefined,
-                      position: "relative",
-                      zIndex: tab.active ? 1 : 0,
+                      fontSize: "11px",
+                      lineHeight: "1.3",
+                      color: tab.active ? "var(--foreground)" : "var(--muted)",
+                      fontWeight: tab.active ? 500 : 400,
                     }}
                   >
-                    <span className="text-[11px]">{tab.emoji}</span>
-                    <span
-                      className="text-[11px] whitespace-nowrap"
-                      style={{
-                        color: tab.active ? "var(--foreground)" : "var(--muted)",
-                        fontWeight: tab.active ? 500 : 400,
-                      }}
-                    >
-                      {tab.label}
-                      {tab.badge && (
-                        <span
-                          className="ml-1.5 px-1.5 py-0.5 rounded-full text-[9px]"
-                          style={{
-                            background: tab.active ? "var(--hover-bg)" : "var(--border)",
-                            color: "var(--muted)",
-                          }}
-                        >
-                          {tab.badge}
-                        </span>
-                      )}
-                    </span>
-                  </div>
-                ))}
-              </div>
+                    {tab.label}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
-        </div>
 
+          {/* Browser content — hero lives here */}
+          <div
+            className="px-8 sm:px-16 py-16 sm:py-20 text-center"
+            style={{ background: "var(--background)" }}
+          >
+
+            {/* Photo with floating illustrations */}
+            <div className="flex justify-center mb-8">
+              <div className="relative" style={{ width: "240px", height: "240px" }}>
+
+                {floatingItems.map((item) => (
+                  <div
+                    key={item.id}
+                    className="absolute"
+                    style={{ ...item.pos, transform: `rotate(${item.rotate})`, zIndex: 2 }}
+                  >
+                    <div style={{ animation: `floatY 3.5s ease-in-out ${item.delay} infinite` }}>
+                      {item.el}
+                    </div>
+                  </div>
+                ))}
+
+                <div
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full overflow-hidden"
+                  style={{
+                    width: "120px",
+                    height: "120px",
+                    border: "3px solid white",
+                    boxShadow: "0 8px 32px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.08)",
+                    zIndex: 3,
+                  }}
+                >
+                  <Image
+                    src="/New Avatar.png"
+                    alt="Aditi Shinde"
+                    width={240}
+                    height={240}
+                    className="w-full h-full object-cover"
+                    style={{ objectPosition: "center 45%" }}
+                    priority
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Heading */}
+            <h1
+              className="mb-5 leading-tight"
+              style={{
+                fontSize: "clamp(1.8rem, 4vw, 2.6rem)",
+                fontWeight: 500,
+                letterSpacing: "-0.01em",
+                color: "var(--foreground)",
+              }}
+            >
+              Hi, I&rsquo;m Aditi! 👋
+            </h1>
+
+            {/* Subheading */}
+            <p
+              className="mx-auto text-[15px] sm:text-[16px] leading-relaxed"
+              style={{ maxWidth: "480px", color: "var(--muted)" }}
+            >
+              I&rsquo;m a designer who enjoys turning ideas into useful products through design, code, and an eye for detail. Currently building education products at{" "}
+              <a href="https://www.superr.ai/" target="_blank" rel="noopener noreferrer" className="link-dashed font-medium">
+                Superr
+              </a>
+              , previously at{" "}
+              <a href="https://www.connectwise.com/" target="_blank" rel="noopener noreferrer" className="link-dashed font-medium">
+                ConnectWise
+              </a>
+              {" "}and{" "}
+              <a href="https://www.zoop.one/" target="_blank" rel="noopener noreferrer" className="link-dashed font-medium">
+                Zoop.one
+              </a>
+              .
+            </p>
+
+          </div>
+        </div>
       </main>
 
     </div>
