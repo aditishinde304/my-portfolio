@@ -13,7 +13,7 @@ const shantellSans = Shantell_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Aditi Shinde – Product Designer",
+  title: "Aditi Shinde, Product Designer",
   description:
     "Product designer building education products at Superr. Focused on experiences that feel simple, playful, and human.",
 };

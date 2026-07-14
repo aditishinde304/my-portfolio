@@ -513,7 +513,7 @@ export default function SuperrbookCaseStudy() {
             {/* Looking Ahead */}
             <div style={{ display: "none" }}>
               <p className="text-[15px] font-medium mb-4" style={{ color: "var(--foreground)" }}>Looking Ahead</p>
-              <p className="text-[15px] leading-relaxed mb-4" style={{ color: "var(--muted)" }}>The switching system was intentionally designed as a foundation for future workflows. One direction explored was split-screen learning — students could drag a resource from the switcher and open it alongside their current content.</p>
+              <p className="text-[15px] leading-relaxed mb-4" style={{ color: "var(--muted)" }}>The switching system was intentionally designed as a foundation for future workflows. One direction explored was split-screen learning, where students could drag a resource from the switcher and open it alongside their current content.</p>
               <div className="rounded-2xl p-5 flex flex-col gap-3" style={{ background: "var(--hover-bg)" }}>
                 {[["Textbook","Notebook"],["Notebook","Notebook"],["Textbook","Textbook"]].map((pair, i) => (
                   <div key={i} className="flex items-center gap-2">
@@ -722,7 +722,7 @@ export default function SuperrbookCaseStudy() {
                   },
                   {
                     title: "3. Familiar Gestures Over Custom Controls",
-                    body: ["Common touch gestures replaced custom controls — one finger to move, two fingers to rotate, and direct touch points for drawing and measuring — making the experience feel natural and easy to learn."],
+                    body: ["Common touch gestures replaced custom controls: one finger to move, two fingers to rotate, and direct touch points for drawing and measuring, making the experience feel natural and easy to learn."],
                   },
                 ].map((item) => (
                   <div key={item.title}>
