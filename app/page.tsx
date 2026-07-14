@@ -2,6 +2,7 @@ import Image from "next/image";
 import ThemeToggle from "./components/ThemeToggle";
 import CopyButton from "./components/CopyButton";
 import VideoPlayer from "./components/VideoPlayer";
+import Playground from "./components/Playground";
 
 const work = [
   {
@@ -257,6 +258,8 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      <Playground />
 
       {/* Experience */}
       <section className="mb-20">
