@@ -138,11 +138,11 @@ export default function Playground() {
           className="text-[12px] font-medium tracking-[0.06em] uppercase"
           style={{ color: "var(--foreground)" }}
         >
-          Playground
+          My Creative Play
         </h2>
       </div>
       <p className="text-[15px] leading-relaxed mb-5" style={{ color: "var(--muted)" }}>
-        Small interaction explorations, motion studies, and quick builds. Not case studies, just craft.
+        While product design is my main gig, I love experimenting with motion design and 3D.
       </p>
 
       <div className="playground-marquee-viewport -mx-8 px-8 sm:mx-0 sm:px-0">
