@@ -113,7 +113,7 @@ body {
   display: flex;
   gap: 16px;
   width: max-content;
-  animation: playground-marquee 70s linear infinite;
+  animation: playground-marquee 45s linear infinite;
 }
 
 .playground-marquee-viewport:hover .playground-marquee-track {
