@@ -81,11 +81,11 @@ function PlaygroundCard({ item, keyPrefix }: { item: PlaygroundItem; keyPrefix: 
   const Card = (
     <div
       className="rounded-2xl overflow-hidden mb-2.5 flex items-center justify-center"
-      style={{ width: "260px", height: "195px", background: "var(--hover-bg)", position: "relative" }}
+      style={{ width: "300px", height: "170px", background: "var(--hover-bg)", position: "relative" }}
     >
       <div className="absolute inset-0 transition-transform duration-500 group-hover:scale-[1.04]">
         {item.type === "image" && item.src && (
-          <Image src={item.src} alt={item.title ?? ""} fill className="object-cover" sizes="260px" />
+          <Image src={item.src} alt={item.title ?? ""} fill className="object-cover" sizes="300px" />
         )}
         {item.type === "video" && item.src && (
           <VideoPlayer src={item.src} className="w-full h-full object-cover" />
@@ -116,7 +116,7 @@ function PlaygroundCard({ item, keyPrefix }: { item: PlaygroundItem; keyPrefix: 
   );
 
   const className = "group shrink-0";
-  const style: React.CSSProperties = { width: "260px" };
+  const style: React.CSSProperties = { width: "300px" };
   const key = `${keyPrefix}-${item.id}`;
 
   return item.href ? (
