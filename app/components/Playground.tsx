@@ -81,7 +81,7 @@ function PlaygroundCard({ item, keyPrefix }: { item: PlaygroundItem; keyPrefix: 
   const Card = (
     <div
       className="rounded-2xl overflow-hidden mb-2.5 flex items-center justify-center"
-      style={{ width: "260px", height: "280px", background: "var(--hover-bg)", position: "relative" }}
+      style={{ width: "260px", height: "195px", background: "var(--hover-bg)", position: "relative" }}
     >
       <div className="absolute inset-0 transition-transform duration-500 group-hover:scale-[1.04]">
         {item.type === "image" && item.src && (
