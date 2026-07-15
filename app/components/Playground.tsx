@@ -150,24 +150,9 @@ export default function Playground() {
           {playgroundItems.map((item) => (
             <PlaygroundCard key={`a-${item.id}`} item={item} keyPrefix="a" />
           ))}
-          <div
-            className="shrink-0 rounded-2xl flex flex-col items-center justify-center gap-1.5"
-            style={{ width: "260px", height: "160px", border: "1px dashed var(--border)", color: "var(--muted)" }}
-          >
-            <span className="text-[18px]">+</span>
-            <span className="text-[12px]">More soon</span>
-          </div>
           {playgroundItems.map((item) => (
             <PlaygroundCard key={`b-${item.id}`} item={item} keyPrefix="b" />
           ))}
-          <div
-            aria-hidden="true"
-            className="shrink-0 rounded-2xl flex flex-col items-center justify-center gap-1.5"
-            style={{ width: "260px", height: "160px", border: "1px dashed var(--border)", color: "var(--muted)" }}
-          >
-            <span className="text-[18px]">+</span>
-            <span className="text-[12px]">More soon</span>
-          </div>
         </div>
       </div>
     </section>
