@@ -3,8 +3,8 @@ import VideoPlayer from "./VideoPlayer";
 
 export type PlaygroundItem = {
   id: string;
-  title: string;
-  tag: string;
+  title?: string;
+  tag?: string;
   type: "image" | "video" | "placeholder";
   src?: string;
   href?: string;
@@ -14,8 +14,10 @@ export type PlaygroundItem = {
 /**
  * Add new cards here. type: "placeholder" renders a simple icon until real
  * media (image/video) is ready — just swap type to "image"/"video" and set src.
+ * title/tag are optional — omit them to show the media only.
  */
 export const playgroundItems: PlaygroundItem[] = [
+  { id: "screen-recording-1", type: "video", src: "/Screen Recording.mp4" },
   { id: "sticker-dnd", title: "Drag & drop stickers", tag: "Superr · Interaction", type: "placeholder", icon: "sticker" },
   { id: "motion-superr", title: "Motion interactions", tag: "Superr · Motion", type: "placeholder", icon: "motion" },
   { id: "creative-coding", title: "Creative coding", tag: "Experiment · Code", type: "placeholder", icon: "code" },
@@ -103,7 +105,7 @@ export default function Playground() {
             >
               <div className="absolute inset-0 transition-transform duration-500 group-hover:scale-[1.04]">
                 {item.type === "image" && item.src && (
-                  <Image src={item.src} alt={item.title} fill className="object-cover" sizes="168px" />
+                  <Image src={item.src} alt={item.title ?? ""} fill className="object-cover" sizes="168px" />
                 )}
                 {item.type === "video" && item.src && (
                   <VideoPlayer src={item.src} className="w-full h-full object-cover" />
@@ -120,12 +122,16 @@ export default function Playground() {
           const inner = (
             <>
               {Card}
-              <p className="text-[13.5px] leading-snug" style={{ color: "var(--foreground)" }}>
-                {item.title}
-              </p>
-              <p className="text-[12px] mt-0.5" style={{ color: "var(--muted)" }}>
-                {item.tag}
-              </p>
+              {item.title && (
+                <p className="text-[13.5px] leading-snug" style={{ color: "var(--foreground)" }}>
+                  {item.title}
+                </p>
+              )}
+              {item.tag && (
+                <p className="text-[12px] mt-0.5" style={{ color: "var(--muted)" }}>
+                  {item.tag}
+                </p>
+              )}
             </>
           );
 
