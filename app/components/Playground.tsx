@@ -18,6 +18,7 @@ export type PlaygroundItem = {
  */
 export const playgroundItems: PlaygroundItem[] = [
   { id: "screen-recording-1", type: "video", src: "/Screen Recording.mp4" },
+  { id: "screen-recording-2", type: "video", src: "/Screen Recording 2.mp4" },
   { id: "sticker-dnd", title: "Drag & drop stickers", tag: "Superr · Interaction", type: "placeholder", icon: "sticker" },
   { id: "motion-superr", title: "Motion interactions", tag: "Superr · Motion", type: "placeholder", icon: "motion" },
   { id: "creative-coding", title: "Creative coding", tag: "Experiment · Code", type: "placeholder", icon: "code" },
