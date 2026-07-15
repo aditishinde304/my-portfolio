@@ -82,3 +82,31 @@ body {
 .playground-scroll::-webkit-scrollbar {
   display: none;
 }
+
+.playground-marquee-viewport {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 32px, #000 calc(100% - 32px), transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0, #000 32px, #000 calc(100% - 32px), transparent 100%);
+}
+
+.playground-marquee-track {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  animation: playground-marquee 34s linear infinite;
+}
+
+.playground-marquee-viewport:hover .playground-marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes playground-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .playground-marquee-track {
+    animation: none;
+  }
+}

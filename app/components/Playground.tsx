@@ -20,6 +20,7 @@ export const playgroundItems: PlaygroundItem[] = [
   { id: "screen-recording-1", type: "video", src: "/Screen Recording.mp4" },
   { id: "screen-recording-2", type: "video", src: "/Screen Recording 2.mp4" },
   { id: "screen-recording-3", type: "video", src: "/Screen Recording 3.mp4" },
+  { id: "screen-recording-4", type: "video", src: "/Screen Recording 4.mp4" },
   { id: "sticker-dnd", title: "Drag & drop stickers", tag: "Superr · Interaction", type: "placeholder", icon: "sticker" },
   { id: "motion-superr", title: "Motion interactions", tag: "Superr · Motion", type: "placeholder", icon: "motion" },
   { id: "creative-coding", title: "Creative coding", tag: "Experiment · Code", type: "placeholder", icon: "code" },
@@ -80,6 +81,59 @@ function PlaceholderIcon({ icon }: { icon: PlaygroundItem["icon"] }) {
   }
 }
 
+function PlaygroundCard({ item, keyPrefix }: { item: PlaygroundItem; keyPrefix: string }) {
+  const Card = (
+    <div
+      className="rounded-2xl overflow-hidden mb-2.5 flex items-center justify-center"
+      style={{ width: "260px", height: "160px", background: "var(--hover-bg)", position: "relative" }}
+    >
+      <div className="absolute inset-0 transition-transform duration-500 group-hover:scale-[1.04]">
+        {item.type === "image" && item.src && (
+          <Image src={item.src} alt={item.title ?? ""} fill className="object-cover" sizes="260px" />
+        )}
+        {item.type === "video" && item.src && (
+          <VideoPlayer src={item.src} className="w-full h-full object-cover" />
+        )}
+        {item.type === "placeholder" && (
+          <div className="w-full h-full flex items-center justify-center">
+            <PlaceholderIcon icon={item.icon} />
+          </div>
+        )}
+      </div>
+    </div>
+  );
+
+  const inner = (
+    <>
+      {Card}
+      {item.title && (
+        <p className="text-[13.5px] leading-snug" style={{ color: "var(--foreground)" }}>
+          {item.title}
+        </p>
+      )}
+      {item.tag && (
+        <p className="text-[12px] mt-0.5" style={{ color: "var(--muted)" }}>
+          {item.tag}
+        </p>
+      )}
+    </>
+  );
+
+  const className = "group shrink-0";
+  const style: React.CSSProperties = { width: "260px" };
+  const key = `${keyPrefix}-${item.id}`;
+
+  return item.href ? (
+    <a key={key} href={item.href} className={className} style={style}>
+      {inner}
+    </a>
+  ) : (
+    <div key={key} className={className} style={style}>
+      {inner}
+    </div>
+  );
+}
+
 export default function Playground() {
   return (
     <section className="mb-20">
@@ -95,69 +149,29 @@ export default function Playground() {
         Small interaction explorations, motion studies, and quick builds. Not case studies, just craft.
       </p>
 
-      <div
-        className="playground-scroll flex gap-4 overflow-x-auto -mx-8 px-8 sm:mx-0 sm:px-0 pb-1"
-        style={{ scrollSnapType: "x proximity" }}
-      >
-        {playgroundItems.map((item) => {
-          const Card = (
-            <div
-              className="rounded-2xl overflow-hidden mb-2.5 flex items-center justify-center"
-              style={{ width: "260px", height: "160px", background: "var(--hover-bg)", position: "relative" }}
-            >
-              <div className="absolute inset-0 transition-transform duration-500 group-hover:scale-[1.04]">
-                {item.type === "image" && item.src && (
-                  <Image src={item.src} alt={item.title ?? ""} fill className="object-cover" sizes="260px" />
-                )}
-                {item.type === "video" && item.src && (
-                  <VideoPlayer src={item.src} className="w-full h-full object-cover" />
-                )}
-                {item.type === "placeholder" && (
-                  <div className="w-full h-full flex items-center justify-center">
-                    <PlaceholderIcon icon={item.icon} />
-                  </div>
-                )}
-              </div>
-            </div>
-          );
-
-          const inner = (
-            <>
-              {Card}
-              {item.title && (
-                <p className="text-[13.5px] leading-snug" style={{ color: "var(--foreground)" }}>
-                  {item.title}
-                </p>
-              )}
-              {item.tag && (
-                <p className="text-[12px] mt-0.5" style={{ color: "var(--muted)" }}>
-                  {item.tag}
-                </p>
-              )}
-            </>
-          );
-
-          const className = "group shrink-0";
-          const style: React.CSSProperties = { width: "260px", scrollSnapAlign: "start" };
-
-          return item.href ? (
-            <a key={item.id} href={item.href} className={className} style={style}>
-              {inner}
-            </a>
-          ) : (
-            <div key={item.id} className={className} style={style}>
-              {inner}
-            </div>
-          );
-        })}
-
-        {/* Affordance for future cards */}
-        <div
-          className="shrink-0 rounded-2xl flex flex-col items-center justify-center gap-1.5"
-          style={{ width: "260px", height: "160px", border: "1px dashed var(--border)", color: "var(--muted)", scrollSnapAlign: "start" }}
-        >
-          <span className="text-[18px]">+</span>
-          <span className="text-[12px]">More soon</span>
+      <div className="playground-marquee-viewport -mx-8 px-8 sm:mx-0 sm:px-0">
+        <div className="playground-marquee-track">
+          {playgroundItems.map((item) => (
+            <PlaygroundCard key={`a-${item.id}`} item={item} keyPrefix="a" />
+          ))}
+          <div
+            className="shrink-0 rounded-2xl flex flex-col items-center justify-center gap-1.5"
+            style={{ width: "260px", height: "160px", border: "1px dashed var(--border)", color: "var(--muted)" }}
+          >
+            <span className="text-[18px]">+</span>
+            <span className="text-[12px]">More soon</span>
+          </div>
+          {playgroundItems.map((item) => (
+            <PlaygroundCard key={`b-${item.id}`} item={item} keyPrefix="b" />
+          ))}
+          <div
+            aria-hidden="true"
+            className="shrink-0 rounded-2xl flex flex-col items-center justify-center gap-1.5"
+            style={{ width: "260px", height: "160px", border: "1px dashed var(--border)", color: "var(--muted)" }}
+          >
+            <span className="text-[18px]">+</span>
+            <span className="text-[12px]">More soon</span>
+          </div>
         </div>
       </div>
     </section>
