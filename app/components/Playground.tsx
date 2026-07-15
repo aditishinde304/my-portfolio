@@ -101,11 +101,11 @@ export default function Playground() {
           const Card = (
             <div
               className="rounded-2xl overflow-hidden mb-2.5 flex items-center justify-center"
-              style={{ width: "168px", height: "220px", background: "var(--hover-bg)", position: "relative" }}
+              style={{ width: "260px", height: "160px", background: "var(--hover-bg)", position: "relative" }}
             >
               <div className="absolute inset-0 transition-transform duration-500 group-hover:scale-[1.04]">
                 {item.type === "image" && item.src && (
-                  <Image src={item.src} alt={item.title ?? ""} fill className="object-cover" sizes="168px" />
+                  <Image src={item.src} alt={item.title ?? ""} fill className="object-cover" sizes="260px" />
                 )}
                 {item.type === "video" && item.src && (
                   <VideoPlayer src={item.src} className="w-full h-full object-cover" />
@@ -136,7 +136,7 @@ export default function Playground() {
           );
 
           const className = "group shrink-0";
-          const style: React.CSSProperties = { width: "168px", scrollSnapAlign: "start" };
+          const style: React.CSSProperties = { width: "260px", scrollSnapAlign: "start" };
 
           return item.href ? (
             <a key={item.id} href={item.href} className={className} style={style}>
@@ -152,7 +152,7 @@ export default function Playground() {
         {/* Affordance for future cards */}
         <div
           className="shrink-0 rounded-2xl flex flex-col items-center justify-center gap-1.5"
-          style={{ width: "168px", height: "220px", border: "1px dashed var(--border)", color: "var(--muted)", scrollSnapAlign: "start" }}
+          style={{ width: "260px", height: "160px", border: "1px dashed var(--border)", color: "var(--muted)", scrollSnapAlign: "start" }}
         >
           <span className="text-[18px]">+</span>
           <span className="text-[12px]">More soon</span>
