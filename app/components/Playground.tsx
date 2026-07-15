@@ -23,12 +23,6 @@ export const playgroundItems: PlaygroundItem[] = [
   { id: "screen-recording-4", type: "video", src: "/Screen Recording 4.mp4" },
   { id: "screen-recording-5", type: "video", src: "/Screen Recording 5.mp4" },
   { id: "screen-recording-6", type: "video", src: "/Screen Recording 6.mp4" },
-  { id: "sticker-dnd", title: "Drag & drop stickers", tag: "Superr · Interaction", type: "placeholder", icon: "sticker" },
-  { id: "motion-superr", title: "Motion interactions", tag: "Superr · Motion", type: "placeholder", icon: "motion" },
-  { id: "creative-coding", title: "Creative coding", tag: "Experiment · Code", type: "placeholder", icon: "code" },
-  { id: "3d-renders", title: "3D renders", tag: "Craft · 3D", type: "placeholder", icon: "cube" },
-  { id: "ui-motion", title: "UI motion studies", tag: "Craft · Motion", type: "placeholder", icon: "frames" },
-  { id: "cursor-prototypes", title: "Built with Cursor & Claude Code", tag: "Prototype · AI", type: "placeholder", icon: "cursor" },
 ];
 
 function PlaceholderIcon({ icon }: { icon: PlaygroundItem["icon"] }) {
