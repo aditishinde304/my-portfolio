@@ -82,8 +82,11 @@ export function ScribbleUnderline({ className, color = "#7C3AED", style }: { cla
 export function FlowerScribble({ className, color = "#3B82F6", style }: { className?: string; color?: string; style?: React.CSSProperties }) {
   return (
     <svg className={className} style={style} width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="20" cy="20" r="3.2" fill="#111" />
-      <path d="M20 17 C 14 12, 10 14, 12 20 C 14 26, 18 24, 20 20 C 22 24, 28 27, 30 21 C 32 15, 26 12, 20 17 Z" stroke={color} strokeWidth="2" strokeLinejoin="round" />
+      <path d="M20 18 C 16 14, 12 15, 13 19 C 14 22, 18 21, 20 18 Z" stroke={color} strokeWidth="2" strokeLinejoin="round" fill="none" />
+      <path d="M20 18 C 24 14, 28 15, 27 19 C 26 22, 22 21, 20 18 Z" stroke={color} strokeWidth="2" strokeLinejoin="round" fill="none" />
+      <path d="M20 18 C 16 22, 15 26, 19 25 C 22 24, 21 20, 20 18 Z" stroke={color} strokeWidth="2" strokeLinejoin="round" fill="none" />
+      <path d="M20 18 C 24 22, 25 26, 21 25 C 18 24, 19 20, 20 18 Z" stroke={color} strokeWidth="2" strokeLinejoin="round" fill="none" />
+      <circle cx="20" cy="18" r="2.6" fill="#111" />
     </svg>
   );
 }
@@ -92,6 +95,28 @@ export function CursorArrowDoodle({ className, style }: { className?: string; st
   return (
     <svg className={className} style={style} width="18" height="24" viewBox="0 0 18 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M2 2 L16 12 L9.5 13.5 L7 21 Z" fill="#111" />
+    </svg>
+  );
+}
+
+export function AvatarDoodle({ className, style }: { className?: string; style?: React.CSSProperties }) {
+  return (
+    <svg className={className} style={style} width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {/* shoulders / top */}
+      <path d="M14 58 C14 46 22 40 32 40 C42 40 50 46 50 58" fill="#111" />
+      {/* hair back */}
+      <path d="M18 32 C16 20 22 8 32 8 C42 8 48 20 46 32 L46 40 C46 40 40 44 32 44 C24 44 18 40 18 40 Z" fill="#111" />
+      {/* face */}
+      <path d="M23 27 C23 18 27 12 32 12 C37 12 41 18 41 27 C41 35 37 40 32 40 C27 40 23 35 23 27 Z" fill="#F4C9A0" />
+      {/* fringe */}
+      <path d="M23 25 C23 16 27 10 32 10 C37 10 41 16 41 25 C38 21 35 19 32 19 C29 19 26 21 23 25 Z" fill="#111" />
+      {/* side strand */}
+      <path d="M21 28 C19 34 19 40 22 46" stroke="#111" strokeWidth="2.4" strokeLinecap="round" fill="none" />
+      {/* eyes */}
+      <circle cx="28.5" cy="28" r="1.5" fill="#111" />
+      <circle cx="35.5" cy="28" r="1.5" fill="#111" />
+      {/* smile */}
+      <path d="M28 33 C 29.5 35.5 34.5 35.5 36 33" stroke="#111" strokeWidth="1.6" strokeLinecap="round" fill="none" />
     </svg>
   );
 }
