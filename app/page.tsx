@@ -7,7 +7,7 @@ import Workspace from "./components/v2/Workspace";
 
 export default function Home() {
   return (
-    <div style={{ background: "#fcfcfb", color: "#111", minHeight: "100vh" }}>
+    <div style={{ background: "#fcfcfb", color: "#111", minHeight: "100vh", overflowX: "clip" }}>
       {/* Nav */}
       <header className="mx-auto" style={{ maxWidth: "1014px", padding: "38px 0" }}>
         <div className="flex items-center justify-between px-6 sm:px-0">
