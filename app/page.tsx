@@ -75,23 +75,22 @@ export default function Home() {
           </p>
 
           <h1
-            className="relative"
+            className="relative w-full md:w-[540px]"
             style={{
               fontFamily: "var(--font-fraunces), Georgia, serif",
               fontWeight: 500,
-              fontSize: "clamp(1.6rem, 3.4vw, 2rem)",
+              fontSize: "clamp(2.4rem, 6vw, 4rem)",
               lineHeight: "1.375",
               letterSpacing: "-0.01em",
               color: "#111",
             }}
           >
-            I design, build
+            I design, build &
             <FlowerScribble
               className="absolute hero-flower hidden sm:block"
-              style={{ width: "24px", height: "22px", left: "205px", top: "-2px" }}
+              style={{ width: "36px", height: "32px", left: "478px", top: "-6px" }}
             />
             <br />
-            &amp;{" "}
             <span className="relative inline-block" style={{ lineHeight: 1 }}>
               make
               <ScribbleUnderline
