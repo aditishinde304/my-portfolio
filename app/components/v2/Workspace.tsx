@@ -11,7 +11,6 @@ type Folder = {
   note: string;
   rotate: number;
   pos: React.CSSProperties;     // folder position within the stage
-  labelPos: React.CSSProperties; // label chip position
   noteAbove?: boolean;           // reveal note above instead of below
   noteShift: string;             // horizontal translate to keep note in bounds
 };
@@ -25,8 +24,7 @@ const folders: Folder[] = [
     tab: "#F3ADC4",
     note: "half-built repos I swear I'll finish someday",
     rotate: -3,
-    pos: { left: "2%", top: "4%", width: "27%" },
-    labelPos: { left: "14%", top: "70%" },
+    pos: { left: "0%", top: "3%", width: "30%" },
     noteShift: "-30%",
   },
   {
@@ -36,8 +34,7 @@ const folders: Folder[] = [
     tab: "#F2A671",
     note: "shipping features by feel, not by spec",
     rotate: 3,
-    pos: { left: "66%", top: "12%", width: "27%" },
-    labelPos: { left: "34%", top: "72%" },
+    pos: { left: "66%", top: "11%", width: "30%" },
     noteShift: "-72%",
   },
   {
@@ -47,8 +44,7 @@ const folders: Folder[] = [
     tab: "#8FC6EC",
     note: "poking at models to see what sticks",
     rotate: -2,
-    pos: { left: "-1%", top: "46%", width: "27%" },
-    labelPos: { left: "8%", top: "72%" },
+    pos: { left: "-2%", top: "45%", width: "30%" },
     noteAbove: true,
     noteShift: "-30%",
   },
@@ -59,8 +55,7 @@ const folders: Folder[] = [
     tab: "#BADE4F",
     note: "a notes app full of 2am “what if” moments",
     rotate: 2,
-    pos: { left: "64%", top: "50%", width: "27%" },
-    labelPos: { left: "32%", top: "74%" },
+    pos: { left: "64%", top: "48%", width: "30%" },
     noteAbove: true,
     noteShift: "-72%",
   },
@@ -68,13 +63,13 @@ const folders: Folder[] = [
 
 function FolderIcon({ color, tab }: { color: string; tab: string }) {
   return (
-    <svg width="100%" viewBox="0 0 120 96" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ display: "block" }}>
+    <svg width="100%" viewBox="0 0 120 112" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ display: "block" }}>
       {/* tab (top-right) */}
-      <rect x="64" y="8" width="48" height="28" rx="9" fill={tab} />
+      <rect x="62" y="6" width="50" height="28" rx="9" fill={tab} />
       {/* back body */}
-      <rect x="8" y="20" width="108" height="72" rx="12" fill={tab} />
+      <rect x="8" y="18" width="108" height="90" rx="13" fill={tab} />
       {/* front pocket */}
-      <rect className="folder-front" x="2" y="34" width="112" height="58" rx="12" fill={color} />
+      <rect className="folder-front" x="2" y="36" width="112" height="72" rx="13" fill={color} />
     </svg>
   );
 }
@@ -122,22 +117,10 @@ export default function Workspace() {
   return (
     <div
       className="relative mx-auto w-full"
-      style={{ maxWidth: "500px", aspectRatio: "1 / 1.04" }}
+      style={{ maxWidth: "500px", aspectRatio: "1 / 1.02" }}
     >
-      {/* window title bar */}
-      <div className="flex items-center gap-2.5 mb-4">
-        <span className="flex gap-1.5">
-          <span style={{ width: 11, height: 11, borderRadius: "50%", background: "#F3ADC4" }} />
-          <span style={{ width: 11, height: 11, borderRadius: "50%", background: "#F5DE7E" }} />
-          <span style={{ width: 11, height: 11, borderRadius: "50%", background: "#CDE96F" }} />
-        </span>
-        <span style={{ fontFamily: "var(--font-geist-mono), monospace", fontSize: "12px", color: "#9a9a96", letterSpacing: "0.02em" }}>
-          ~/aditi/brain
-        </span>
-      </div>
-
       {/* ── stage ── */}
-      <div className="relative" style={{ width: "100%", height: "calc(100% - 34px)" }}>
+      <div className="relative" style={{ width: "100%", height: "100%" }}>
         {/* decorative doodles */}
         <PixelHeart color="#8FC6EC" style={{ position: "absolute", left: "5%", top: "20%" }} />
         <PixelHeart color="#8FC6EC" style={{ position: "absolute", left: "8%", top: "31%", width: "14px" }} />
@@ -185,7 +168,10 @@ export default function Workspace() {
                 <FolderIcon color={f.color} tab={f.tab} />
               </span>
 
-              <span className="workspace-folder-label" style={{ position: "absolute", ...f.labelPos }}>
+              <span
+                className="workspace-folder-label"
+                style={{ position: "absolute", left: "50%", top: "62%", transform: "translateX(-50%)" }}
+              >
                 {f.name}
               </span>
 
@@ -205,20 +191,24 @@ export default function Workspace() {
           );
         })}
 
-        {/* caption */}
+        {/* caption — tight sticker */}
         <div
-          className="absolute"
-          style={{ left: "26%", top: "72%", width: "52%", zIndex: 20 }}
+          className="absolute flex justify-center"
+          style={{ left: "50%", top: "69%", transform: "translateX(-50%)", zIndex: 20 }}
         >
           <p
             style={{
+              display: "inline-block",
+              maxWidth: "230px",
+              margin: 0,
+              textAlign: "center",
               fontFamily: "var(--font-shantell), cursive",
               fontWeight: 500,
-              fontSize: "clamp(1.05rem, 2.1vw, 1.35rem)",
+              fontSize: "clamp(1.05rem, 2.1vw, 1.3rem)",
               lineHeight: 1.25,
               color: "#F2913E",
               background: "#F9D3DC",
-              padding: "10px 16px",
+              padding: "11px 16px",
               borderRadius: "14px",
               transform: "rotate(-1.5deg)",
               boxShadow: "0 6px 18px rgba(0,0,0,0.06)",
@@ -229,7 +219,7 @@ export default function Workspace() {
         </div>
 
         {/* click cursor */}
-        <ClickCursor style={{ position: "absolute", left: "72%", top: "88%", width: "clamp(38px, 8vw, 50px)", height: "auto", zIndex: 21 }} />
+        <ClickCursor style={{ position: "absolute", left: "74%", top: "90%", width: "clamp(38px, 8vw, 50px)", height: "auto", zIndex: 21 }} />
       </div>
     </div>
   );
