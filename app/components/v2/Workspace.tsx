@@ -137,7 +137,7 @@ export default function Workspace() {
             <button
               key={f.id}
               type="button"
-              className="workspace-folder absolute"
+              className="workspace-folder absolute flex flex-col items-center"
               style={{ ...f.pos, zIndex: isActive ? 30 : 5 }}
               aria-label={`${f.name} — ${f.note}`}
               onMouseEnter={() => setActive(f.id)}
@@ -154,12 +154,8 @@ export default function Workspace() {
               </span>
 
               <span
-                className="workspace-folder-label absolute"
-                style={{
-                  left: "50%",
-                  top: "58%",
-                  transform: `translate(-50%, -50%) rotate(${f.rotate}deg)`,
-                }}
+                className="workspace-folder-label"
+                style={{ transform: `rotate(${f.rotate}deg)` }}
               >
                 {f.name}
               </span>
