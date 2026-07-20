@@ -44,7 +44,7 @@ const folders: Folder[] = [
     tab: "#8FC6EC",
     note: "poking at models to see what sticks",
     rotate: -2,
-    pos: { left: "-1%", top: "60%", width: "24%" },
+    pos: { left: "-1%", top: "68%", width: "24%" },
     noteAbove: true,
     noteShift: "-20%",
   },
@@ -55,7 +55,7 @@ const folders: Folder[] = [
     tab: "#BADE4F",
     note: "a notes app full of 2am “what if” moments",
     rotate: 2,
-    pos: { left: "77%", top: "62%", width: "24%" },
+    pos: { left: "77%", top: "70%", width: "24%" },
     noteAbove: true,
     noteShift: "-80%",
   },
@@ -117,14 +117,14 @@ export default function Workspace() {
   return (
     <div
       className="relative mx-auto w-full"
-      style={{ maxWidth: "500px", aspectRatio: "1 / 1.18" }}
+      style={{ maxWidth: "500px", aspectRatio: "1 / 1.3" }}
     >
       {/* ── stage ── */}
       <div className="relative" style={{ width: "100%", height: "100%" }}>
         {/* decorative doodles — kept clear of the photo */}
         <PixelHeart color="#8FC6EC" style={{ position: "absolute", left: "1%", top: "38%" }} />
         <PlusDoodle color="#F9C4D6" style={{ position: "absolute", left: "48%", top: "0%", width: "24px", height: "24px" }} />
-        <PlusDoodle color="#CDE96F" style={{ position: "absolute", left: "6%", top: "88%", width: "30px", height: "30px" }} />
+        <PlusDoodle color="#CDE96F" style={{ position: "absolute", left: "6%", top: "94%", width: "30px", height: "30px" }} />
         <PixelHeart color="#F2A671" style={{ position: "absolute", left: "95%", top: "42%" }} />
 
         {/* central photo — the hero element, nothing overlaps it */}
@@ -132,7 +132,7 @@ export default function Workspace() {
           className="absolute"
           style={{
             left: "27%",
-            top: "6%",
+            top: "16%",
             width: "46%",
             height: "46%",
             background: "#efefec",
@@ -193,13 +193,13 @@ export default function Workspace() {
         {/* caption — small handwritten annotation with a highlighter mark */}
         <div
           className="absolute flex justify-center"
-          style={{ left: "50%", top: "56%", transform: "translateX(-50%)", zIndex: 20, width: "100%" }}
+          style={{ left: "50%", top: "66%", transform: "translateX(-50%)", zIndex: 20, width: "100%" }}
         >
           <p
             className="workspace-highlight"
             style={{
               display: "inline-block",
-              maxWidth: "200px",
+              maxWidth: "clamp(140px, 34vw, 200px)",
               margin: 0,
               textAlign: "center",
               fontFamily: "var(--font-caveat), cursive",
@@ -215,7 +215,7 @@ export default function Workspace() {
         </div>
 
         {/* click cursor */}
-        <ClickCursor style={{ position: "absolute", left: "62%", top: "63%", width: "clamp(30px, 6vw, 38px)", height: "auto", zIndex: 21 }} />
+        <ClickCursor style={{ position: "absolute", left: "62%", top: "73%", width: "clamp(30px, 6vw, 38px)", height: "auto", zIndex: 21 }} />
       </div>
     </div>
   );
