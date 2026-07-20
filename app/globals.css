@@ -253,13 +253,17 @@ body {
 
 .workspace-folder-label {
   z-index: 4;
-  margin-top: 7px;
-  color: #6b6b66;
+  background: #fff;
+  color: #2a2a28;
   font-family: var(--font-geist-mono), monospace;
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: 500;
+  padding: 3px 7px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
   white-space: nowrap;
   text-align: center;
+  pointer-events: none;
 }
 
 .workspace-note {
@@ -313,7 +317,7 @@ body {
 
 .workspace-highlight-line--b::before {
   border-radius: 225px 15px 255px 15px / 15px 255px 15px 225px;
-  transform: rotate(1.6deg);
+  transform: rotate(-1.4deg);
   top: 14%;
   bottom: 16%;
 }

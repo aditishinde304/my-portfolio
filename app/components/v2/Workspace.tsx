@@ -55,7 +55,7 @@ const folders: Folder[] = [
     tab: "#BADE4F",
     note: "a notes app full of 2am “what if” moments",
     rotate: 6,
-    pos: { left: "83%", top: "67%", width: "16%" },
+    pos: { left: "86%", top: "72%", width: "16%" },
     noteAbove: true,
     noteShift: "-88%",
   },
@@ -126,7 +126,7 @@ export default function Workspace() {
           }}
         >
           <div className="relative w-full h-full overflow-hidden" style={{ borderRadius: "11px" }}>
-            <Image src="/Avatar.jpg" alt="Aditi" fill className="object-cover" style={{ objectPosition: "center 18%" }} priority />
+            <Image src="/Avatar.jpg" alt="Aditi" fill className="object-cover" style={{ objectPosition: "center 38%" }} priority />
           </div>
         </div>
 
@@ -137,7 +137,7 @@ export default function Workspace() {
             <button
               key={f.id}
               type="button"
-              className="workspace-folder absolute flex flex-col items-center"
+              className="workspace-folder absolute"
               style={{ ...f.pos, zIndex: isActive ? 30 : 5 }}
               aria-label={`${f.name} — ${f.note}`}
               onMouseEnter={() => setActive(f.id)}
@@ -154,8 +154,12 @@ export default function Workspace() {
               </span>
 
               <span
-                className="workspace-folder-label"
-                style={{ transform: `rotate(${f.rotate}deg)` }}
+                className="workspace-folder-label absolute"
+                style={{
+                  left: "50%",
+                  top: "58%",
+                  transform: `translate(-50%, -50%) rotate(${f.rotate}deg)`,
+                }}
               >
                 {f.name}
               </span>
@@ -187,7 +191,7 @@ export default function Workspace() {
             width: "100%",
             fontFamily: "var(--font-caveat), cursive",
             fontWeight: 600,
-            fontSize: "clamp(0.95rem, 1.7vw, 1.1rem)",
+            fontSize: "clamp(1rem, 4vw, 1.3rem)",
             lineHeight: 1.9,
             color: "#3a2b12",
           }}
