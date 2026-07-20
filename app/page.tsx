@@ -102,12 +102,13 @@ export default function Home() {
           </h1>
 
           <p className="text-[17px]" style={{ lineHeight: "1.6", color: "#555", marginTop: "32px", maxWidth: "405px" }}>
-            I&rsquo;m a product designer and artist, currently crafting 0&rarr;1
-            experiences at{" "}
+            Product designer at{" "}
             <a href="https://www.superr.ai/" target="_blank" rel="noopener noreferrer" className="font-semibold underline" style={{ color: "#111" }}>
               Superr
-            </a>{" "}
-            to shape the future of education.
+            </a>
+            , crafting thoughtful products and delightful interactions.
+            Currently building, experimenting, and shipping things that excite
+            me. Previously at ConnectWise and Zoop.one.
           </p>
         </div>
 
