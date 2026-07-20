@@ -94,23 +94,6 @@ function PixelHeart({ color, style }: { color: string; style?: React.CSSProperti
   );
 }
 
-function ClickCursor({ style }: { style?: React.CSSProperties }) {
-  return (
-    <svg width="52" height="58" viewBox="0 0 52 58" fill="none" style={style} aria-hidden="true">
-      {/* click sparks */}
-      <path d="M9 12 L4 7 M20 6 L20 -1 M32 12 L37 7" stroke="#111" strokeWidth="2.2" strokeLinecap="round" />
-      {/* hand */}
-      <path
-        d="M18 15 a3 3 0 0 1 6 0 v13 l3 -1 a3 3 0 0 1 4 2.6 l0 1 3 -0.6 a3 3 0 0 1 3.5 2.7 l0 1 2.5 -0.4 a3 3 0 0 1 3 3 v7 a11 11 0 0 1 -11 11 h-6 a10 10 0 0 1 -8.6 -5 l-6 -10 a3 3 0 0 1 5 -3.2 l2.6 3 z"
-        fill="#fff"
-        stroke="#111"
-        strokeWidth="2.2"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
 export default function Workspace() {
   const [active, setActive] = useState<string | null>(null);
 
@@ -154,8 +137,8 @@ export default function Workspace() {
             <button
               key={f.id}
               type="button"
-              className="workspace-folder absolute"
-              style={{ ...f.pos, transform: `rotate(${f.rotate}deg)`, zIndex: isActive ? 30 : 5 }}
+              className="workspace-folder absolute flex flex-col items-center"
+              style={{ ...f.pos, zIndex: isActive ? 30 : 5 }}
               aria-label={`${f.name} — ${f.note}`}
               onMouseEnter={() => setActive(f.id)}
               onMouseLeave={() => setActive((a) => (a === f.id ? null : a))}
@@ -163,21 +146,19 @@ export default function Workspace() {
               onBlur={() => setActive((a) => (a === f.id ? null : a))}
               onClick={() => setActive((a) => (a === f.id ? null : f.id))}
             >
-              <span className="workspace-folder-icon block w-full">
+              <span
+                className="workspace-folder-icon block w-full"
+                style={{ "--folder-rotate": `${f.rotate}deg` } as React.CSSProperties}
+              >
                 <FolderIcon color={f.color} tab={f.tab} />
               </span>
 
-              <span
-                className="workspace-folder-label"
-                style={{ position: "absolute", left: "50%", top: "62%", transform: "translateX(-50%)" }}
-              >
-                {f.name}
-              </span>
+              <span className="workspace-folder-label">{f.name}</span>
 
               <span
                 className="workspace-note"
                 style={{
-                  [f.noteAbove ? "bottom" : "top"]: "94%",
+                  [f.noteAbove ? "bottom" : "top"]: "100%",
                   opacity: isActive ? 1 : 0,
                   transform: isActive
                     ? `translateX(${f.noteShift}) translateY(${f.noteAbove ? "-6px" : "6px"}) rotate(-2deg)`
@@ -190,32 +171,25 @@ export default function Workspace() {
           );
         })}
 
-        {/* caption — small handwritten annotation with a highlighter mark */}
+        {/* caption — small handwritten annotation, highlighter stroke per line */}
         <div
-          className="absolute flex justify-center"
-          style={{ left: "50%", top: "66%", transform: "translateX(-50%)", zIndex: 20, width: "100%" }}
+          className="absolute flex flex-col items-center"
+          style={{
+            left: "50%",
+            top: "68%",
+            transform: "translateX(-50%) rotate(-1deg)",
+            zIndex: 20,
+            width: "100%",
+            fontFamily: "var(--font-caveat), cursive",
+            fontWeight: 600,
+            fontSize: "clamp(0.95rem, 1.7vw, 1.1rem)",
+            lineHeight: 1.9,
+            color: "#3a2b12",
+          }}
         >
-          <p
-            className="workspace-highlight"
-            style={{
-              display: "inline-block",
-              maxWidth: "clamp(140px, 34vw, 200px)",
-              margin: 0,
-              textAlign: "center",
-              fontFamily: "var(--font-caveat), cursive",
-              fontWeight: 600,
-              fontSize: "clamp(0.95rem, 1.7vw, 1.1rem)",
-              lineHeight: 1.3,
-              color: "#3a2b12",
-              transform: "rotate(-1.2deg)",
-            }}
-          >
-            Currently thinking about my next side project.
-          </p>
+          <span className="workspace-highlight-line">Currently thinking about my next</span>
+          <span className="workspace-highlight-line workspace-highlight-line--b">side project.</span>
         </div>
-
-        {/* click cursor */}
-        <ClickCursor style={{ position: "absolute", left: "62%", top: "73%", width: "clamp(30px, 6vw, 38px)", height: "auto", zIndex: 21 }} />
       </div>
     </div>
   );
