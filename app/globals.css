@@ -288,3 +288,25 @@ body {
     transition: none;
   }
 }
+
+/* Hand-highlighter effect for the workspace caption */
+.workspace-highlight {
+  position: relative;
+  padding: 2px 4px;
+  z-index: 1;
+}
+
+.workspace-highlight::before {
+  content: "";
+  position: absolute;
+  left: -3px;
+  right: -3px;
+  top: 12%;
+  bottom: 8%;
+  background: #FCE85C;
+  opacity: 0.65;
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  transform: rotate(-1deg);
+  z-index: -1;
+  mix-blend-mode: multiply;
+}
