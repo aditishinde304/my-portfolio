@@ -106,9 +106,8 @@ export default function Home() {
             <a href="https://www.superr.ai/" target="_blank" rel="noopener noreferrer" className="font-semibold underline" style={{ color: "#111" }}>
               Superr
             </a>
-            , crafting thoughtful products and delightful interactions.
-            Currently building, experimenting, and shipping things that excite
-            me. Previously at ConnectWise and Zoop.one.
+            . Currently building, experimenting, and shipping things that
+            excite me. Previously at ConnectWise and Zoop.one.
           </p>
         </div>
 
