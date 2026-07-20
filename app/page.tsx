@@ -79,7 +79,7 @@ export default function Home() {
             style={{
               fontFamily: "var(--font-fraunces), Georgia, serif",
               fontWeight: 500,
-              fontSize: "clamp(2rem, 4.6vw, 2.75rem)",
+              fontSize: "clamp(1.6rem, 3.4vw, 2rem)",
               lineHeight: "1.375",
               letterSpacing: "-0.01em",
               color: "#111",
@@ -88,7 +88,7 @@ export default function Home() {
             I design, build
             <FlowerScribble
               className="absolute hero-flower hidden sm:block"
-              style={{ width: "30px", height: "27px", left: "292px", top: "-4px" }}
+              style={{ width: "24px", height: "22px", left: "205px", top: "-2px" }}
             />
             <br />
             &amp;{" "}
