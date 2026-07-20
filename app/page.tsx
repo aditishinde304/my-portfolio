@@ -79,27 +79,27 @@ export default function Home() {
             style={{
               fontFamily: "var(--font-fraunces), Georgia, serif",
               fontWeight: 500,
-              fontSize: "clamp(2.4rem, 6vw, 4rem)",
+              fontSize: "clamp(2rem, 4.6vw, 2.75rem)",
               lineHeight: "1.375",
               letterSpacing: "-0.01em",
               color: "#111",
             }}
           >
-            I design, paint
+            I design, build
+            <FlowerScribble
+              className="absolute hero-flower hidden sm:block"
+              style={{ width: "30px", height: "27px", left: "292px", top: "-4px" }}
+            />
             <br />
             &amp;{" "}
             <span className="relative inline-block" style={{ lineHeight: 1 }}>
-              draw
+              make
               <ScribbleUnderline
                 className="absolute"
                 style={{ width: "100%", height: "10px", left: 0, bottom: "-10px" }}
               />
             </span>{" "}
-            stuff.
-            <FlowerScribble
-              className="absolute hero-flower hidden sm:block"
-              style={{ width: "36px", height: "32px", left: "349px", top: "-6px" }}
-            />
+            products a little more delightful.
           </h1>
 
           <p className="text-[17px]" style={{ lineHeight: "1.6", color: "#555", marginTop: "32px", maxWidth: "405px" }}>
