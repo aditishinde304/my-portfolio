@@ -153,7 +153,12 @@ export default function Workspace() {
                 <FolderIcon color={f.color} tab={f.tab} />
               </span>
 
-              <span className="workspace-folder-label">{f.name}</span>
+              <span
+                className="workspace-folder-label"
+                style={{ transform: `rotate(${f.rotate}deg)` }}
+              >
+                {f.name}
+              </span>
 
               <span
                 className="workspace-note"
