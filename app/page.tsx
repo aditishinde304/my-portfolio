@@ -1,27 +1,9 @@
-import Image from "next/image";
 import {
   AvatarDoodle,
-  CameraDoodle,
-  SunSparkleDoodle,
-  TagDoodle,
-  PaletteDoodle,
   ScribbleUnderline,
   FlowerScribble,
-  CursorArrowDoodle,
-  MusicNotesDoodle,
 } from "./components/v2/Doodles";
-
-// Second "scissors/tool" doodle mirroring PaletteDoodle on the right side
-function ToolDoodle({ className, style }: { className?: string; style?: React.CSSProperties }) {
-  return (
-    <svg className={className} style={style} width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="10" cy="10" r="5" stroke="#111" strokeWidth="1.6" />
-      <circle cx="10" cy="30" r="5" stroke="#111" strokeWidth="1.6" />
-      <path d="M14 13 L34 34" stroke="#111" strokeWidth="1.6" strokeLinecap="round" />
-      <path d="M14 27 L34 6" stroke="#111" strokeWidth="1.6" strokeLinecap="round" />
-    </svg>
-  );
-}
+import Workspace from "./components/v2/Workspace";
 
 export default function Home() {
   return (
@@ -111,79 +93,9 @@ export default function Home() {
           </p>
         </div>
 
-        {/* Right: polaroid + doodles */}
-        <div
-          className="hidden md:block relative mx-auto"
-          style={{ width: "397px", height: "486px" }}
-        >
-          <SunSparkleDoodle
-            className="absolute hero-doodle-float"
-            style={{ left: "196px", top: "0px", width: "47px", height: "28px", animationDelay: "0s" }}
-          />
-          <CameraDoodle
-            className="absolute hero-doodle-float"
-            style={{ left: "0px", top: "111px", width: "36px", height: "45px", transform: "rotate(-14deg)", animationDelay: "0.6s" }}
-          />
-          <TagDoodle
-            className="absolute hero-doodle-float"
-            style={{ left: "352px", top: "105px", width: "30px", height: "43px", transform: "rotate(12deg)", animationDelay: "1.1s" }}
-          />
-          <PaletteDoodle
-            className="absolute hero-doodle-float"
-            style={{ left: "2px", top: "296px", width: "34px", height: "34px", animationDelay: "0.3s" }}
-          />
-          <ToolDoodle
-            className="absolute hero-doodle-float"
-            style={{ left: "352px", top: "296px", width: "34px", height: "34px", transform: "rotate(-8deg)", animationDelay: "0.9s" }}
-          />
-          <MusicNotesDoodle
-            className="absolute hero-doodle-float"
-            style={{ left: "117px", top: "418px", width: "38px", height: "23px", animationDelay: "1.4s" }}
-          />
-
-          <div
-            className="hero-polaroid absolute"
-            style={{
-              left: "36px",
-              top: "28px",
-              width: "317px",
-              background: "#fff",
-              padding: "14px 14px 0",
-              borderRadius: "6px",
-              boxShadow: "0 18px 40px rgba(0,0,0,0.14), 0 3px 10px rgba(0,0,0,0.07)",
-              zIndex: 2,
-            }}
-          >
-            <div className="relative overflow-hidden" style={{ width: "289px", height: "317px", borderRadius: "2px" }}>
-              <Image src="/Avatar.jpg" alt="This is me" fill className="object-cover" style={{ objectPosition: "center 20%" }} />
-            </div>
-            <p
-              className="text-center"
-              style={{ fontFamily: "var(--font-caveat), cursive", fontSize: "19px", color: "#111", padding: "10px 0 14px" }}
-            >
-              This is me :)
-            </p>
-          </div>
-
-          <div className="absolute" style={{ left: "247px", top: "438px", zIndex: 3 }}>
-            <CursorArrowDoodle style={{ width: "18px", height: "24px" }} />
-          </div>
-          <a
-            href="#"
-            className="hero-tag-pill absolute text-[14px] font-medium"
-            style={{
-              left: "258px",
-              top: "455px",
-              background: "#9DC3B8",
-              color: "#0f2e26",
-              padding: "9px 20px",
-              borderRadius: "999px",
-              whiteSpace: "nowrap",
-              zIndex: 3,
-            }}
-          >
-            product designer
-          </a>
+        {/* Right: workspace folders */}
+        <div className="w-full mt-6 md:mt-2">
+          <Workspace />
         </div>
       </section>
     </div>
