@@ -336,3 +336,12 @@ body {
 .projects-row:hover .projects-card-img {
   transform: scale(1.02);
 }
+
+.projects-cta {
+  transition: transform 200ms ease, opacity 200ms ease;
+}
+
+.projects-cta:hover {
+  transform: translateY(-2px);
+  opacity: 0.85;
+}

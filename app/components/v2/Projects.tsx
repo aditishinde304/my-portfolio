@@ -2,43 +2,55 @@ import Image from "next/image";
 
 type Project = {
   id: string;
-  eyebrow: string;
-  meta: string;
   title: string;
+  description: React.ReactNode;
   image: string;
   alt: string;
   href: string;
-  tall?: boolean;
+  comingSoon?: boolean;
 };
 
 const projects: Project[] = [
   {
     id: "superrbook",
-    eyebrow: "PRODUCT DESIGN / 0 → 1 EXPERIENCE",
-    meta: "SUPERR / 2025",
     title: "Making learning more interactive through thoughtful design",
+    description: (
+      <>
+        Owned and shipped <strong>product experiences</strong> that helped
+        teachers and students collaborate, learn, and engage more
+        effectively.
+      </>
+    ),
     image: "/Superrbook mockup.png",
     alt: "Superrbook product mockup",
     href: "/work/superrbook",
   },
   {
     id: "lms",
-    eyebrow: "PRODUCT DESIGN / PLATFORM",
-    meta: "SUPERR / 2025",
     title: "A platform for managing classrooms better",
+    description: (
+      <>
+        Built a <strong>centralized system</strong> for assignments,
+        notebooks, and classroom workflows.
+      </>
+    ),
     image: "/LMS mockup.png",
     alt: "LMS platform mockup",
     href: "/work/lms",
   },
   {
     id: "poll",
-    eyebrow: "PRODUCT DESIGN / EXPLORATION",
-    meta: "SUPERR / 2026",
     title: "Designing engaging poll experiences",
+    description: (
+      <>
+        Exploring how <strong>voting and feedback interactions</strong> can
+        feel more intuitive and expressive.
+      </>
+    ),
     image: "/Poll Project.png",
     alt: "Poll experience mockup",
     href: "#",
-    tall: true,
+    comingSoon: true,
   },
 ];
 
@@ -46,62 +58,75 @@ export default function Projects() {
   return (
     <section id="work" className="mx-auto px-6 sm:px-0" style={{ maxWidth: "1014px", paddingTop: "20px", paddingBottom: "100px" }}>
       <h2
-        className="flex items-center gap-2"
-        style={{ fontFamily: "var(--font-geist-mono), monospace", fontSize: "13px", fontWeight: 500, letterSpacing: "0.02em", color: "#111", textTransform: "uppercase" }}
+        style={{
+          fontFamily: "var(--font-fraunces), Georgia, serif",
+          fontWeight: 500,
+          fontSize: "clamp(1.9rem, 3.6vw, 2.5rem)",
+          color: "#111",
+        }}
       >
-        Key projects I have worked on
-        <span style={{ color: "#999" }}>+</span>
+        My Latest Creations
       </h2>
+      <p className="text-[17px]" style={{ color: "#666", marginTop: "8px" }}>
+        A showcase of my recent projects and exploration
+      </p>
 
-      <div className="flex flex-col" style={{ gap: "96px", marginTop: "64px" }}>
+      <div className="flex flex-col" style={{ gap: "112px", marginTop: "72px" }}>
         {projects.map((project) => (
-          <a key={project.id} href={project.href} className="projects-row group block">
-            <div className="flex items-baseline justify-between flex-wrap gap-2 mb-4">
-              <span
-                style={{ fontFamily: "var(--font-geist-mono), monospace", fontSize: "12.5px", fontWeight: 600, letterSpacing: "0.02em", color: "#E8873A" }}
+          <div key={project.id} className="grid grid-cols-1 md:grid-cols-2 items-center" style={{ gap: "56px" }}>
+            <div>
+              <h3
+                style={{
+                  fontFamily: "var(--font-fraunces), Georgia, serif",
+                  fontWeight: 500,
+                  fontSize: "clamp(1.5rem, 2.8vw, 1.9rem)",
+                  lineHeight: 1.25,
+                  color: "#111",
+                  marginBottom: "20px",
+                }}
               >
-                {project.eyebrow}
-              </span>
-              <span
-                style={{ fontFamily: "var(--font-geist-mono), monospace", fontSize: "12.5px", letterSpacing: "0.02em", color: "#9a9a96" }}
-              >
-                {project.meta}
-              </span>
+                {project.title}
+              </h3>
+
+              <p className="text-[16px]" style={{ lineHeight: 1.65, color: "#666", maxWidth: "420px" }}>
+                {project.description}
+              </p>
+
+              {project.comingSoon ? (
+                <span
+                  className="inline-flex items-center gap-1.5 mt-7"
+                  style={{ fontSize: "14px", color: "#999" }}
+                >
+                  <span className="rounded-full shrink-0" style={{ width: "5px", height: "5px", background: "#999" }} />
+                  Coming soon
+                </span>
+              ) : (
+                <a
+                  href={project.href}
+                  className="projects-cta inline-block mt-7 text-[15px] font-medium"
+                  style={{ background: "#111", color: "#fff", padding: "13px 26px", borderRadius: "999px" }}
+                >
+                  View case study
+                </a>
+              )}
             </div>
 
-            <h3
-              style={{
-                fontFamily: "var(--font-fraunces), Georgia, serif",
-                fontWeight: 500,
-                fontSize: "clamp(1.5rem, 3.2vw, 2.15rem)",
-                lineHeight: 1.25,
-                color: "#111",
-                marginBottom: "28px",
-                maxWidth: "820px",
-              }}
-            >
-              {project.title}
-            </h3>
-
-            <div
-              className="projects-card relative w-full overflow-hidden"
-              style={{
-                background: "#eeeeec",
-                borderRadius: "18px",
-                aspectRatio: project.tall ? "4 / 3" : "16 / 10",
-              }}
-            >
-              <Image
-                src={project.image}
-                alt={project.alt}
-                fill
-                quality={95}
-                className="projects-card-img"
-                style={{ objectFit: project.tall ? "contain" : "cover" }}
-                sizes="(max-width: 1014px) 100vw, 1014px"
-              />
-            </div>
-          </a>
+            <a href={project.href} className="projects-row group block">
+              <div
+                className="projects-card relative w-full overflow-hidden"
+                style={{ background: "#eeeeec", borderRadius: "18px", height: "clamp(260px, 32vw, 340px)" }}
+              >
+                <Image
+                  src={project.image}
+                  alt={project.alt}
+                  fill
+                  quality={95}
+                  className="projects-card-img object-cover"
+                  sizes="(max-width: 768px) 100vw, 480px"
+                />
+              </div>
+            </a>
+          </div>
         ))}
       </div>
     </section>
