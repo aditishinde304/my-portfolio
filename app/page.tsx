@@ -99,7 +99,7 @@ export default function Home() {
                 style={{ width: "100%", height: "10px", left: 0, bottom: "-10px" }}
               />
             </span>{" "}
-            products a little more delightful.
+            products delightful.
           </h1>
 
           <p className="text-[17px]" style={{ lineHeight: "1.6", color: "#555", marginTop: "32px", maxWidth: "405px" }}>
