@@ -318,3 +318,21 @@ body {
   top: 14%;
   bottom: 16%;
 }
+
+/* Projects section */
+
+.projects-card {
+  transition: box-shadow 300ms ease;
+}
+
+.projects-row:hover .projects-card {
+  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.10);
+}
+
+.projects-card-img {
+  transition: transform 400ms ease;
+}
+
+.projects-row:hover .projects-card-img {
+  transform: scale(1.02);
+}

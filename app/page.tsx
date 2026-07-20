@@ -4,6 +4,7 @@ import {
   FlowerScribble,
 } from "./components/v2/Doodles";
 import Workspace from "./components/v2/Workspace";
+import Projects from "./components/v2/Projects";
 
 export default function Home() {
   return (
@@ -98,6 +99,8 @@ export default function Home() {
           <Workspace />
         </div>
       </section>
+
+      <Projects />
     </div>
   );
 }
