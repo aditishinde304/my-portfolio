@@ -75,11 +75,11 @@ export default function Home() {
           </p>
 
           <h1
-            className="relative w-full md:w-[540px]"
+            className="relative w-full md:w-[460px]"
             style={{
               fontFamily: "var(--font-fraunces), Georgia, serif",
               fontWeight: 500,
-              fontSize: "clamp(2.4rem, 6vw, 4rem)",
+              fontSize: "clamp(2.2rem, 5vw, 3.375rem)",
               lineHeight: "1.375",
               letterSpacing: "-0.01em",
               color: "#111",
@@ -88,7 +88,7 @@ export default function Home() {
             I design, build &
             <FlowerScribble
               className="absolute hero-flower hidden sm:block"
-              style={{ width: "36px", height: "32px", left: "478px", top: "-6px" }}
+              style={{ width: "30px", height: "27px", left: "404px", top: "-4px" }}
             />
             <br />
             <span className="relative inline-block" style={{ lineHeight: 1 }}>
