@@ -45,7 +45,7 @@ export default function Footer() {
           Always excited to connect!
         </p>
 
-        <div className="relative inline-block" style={{ marginTop: "56px", marginBottom: "56px" }}>
+        <div className="footer-connect-group relative inline-block" style={{ marginTop: "56px", marginBottom: "56px" }}>
           <Sparkle size={12} style={{ position: "absolute", top: "-18px", left: "12%" }} />
           <Sparkle size={16} style={{ position: "absolute", top: "-24px", right: "10%" }} />
           <Sparkle size={10} style={{ position: "absolute", top: "10px", left: "-22px" }} />
@@ -62,7 +62,6 @@ export default function Footer() {
               color: "#fff",
               padding: "16px 38px",
               borderRadius: "999px",
-              transform: "rotate(-4deg)",
             }}
           >
             Let&rsquo;s Connect!

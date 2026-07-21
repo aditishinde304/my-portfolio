@@ -352,35 +352,35 @@ body {
 .footer-connect-btn {
   position: relative;
   border: 1.5px solid #fff;
+  transform: rotate(0deg);
   transition: transform 250ms ease, background-color 250ms ease;
 }
 
-.footer-connect-btn::before {
-  content: "";
-  position: absolute;
-  inset: -6px;
-  border: 1px solid rgba(255, 255, 255, 0.55);
-  border-radius: 999px;
-  pointer-events: none;
-}
-
-.footer-connect-btn:hover {
+.footer-connect-group:hover .footer-connect-btn {
   transform: rotate(-4deg) scale(1.05);
   background-color: rgba(255, 255, 255, 0.08);
 }
 
 .footer-sparkle {
+  opacity: 0;
+  transform: scale(0.6);
+  transition: opacity 300ms ease, transform 300ms ease;
+}
+
+.footer-connect-group:hover .footer-sparkle {
+  opacity: 1;
+  transform: scale(1);
   animation: footer-sparkle-twinkle 2.6s ease-in-out infinite;
 }
 
-.footer-sparkle:nth-child(2) { animation-delay: 0.4s; }
-.footer-sparkle:nth-child(3) { animation-delay: 0.8s; }
-.footer-sparkle:nth-child(4) { animation-delay: 1.2s; }
-.footer-sparkle:nth-child(5) { animation-delay: 1.6s; }
+.footer-connect-group:hover .footer-sparkle:nth-child(2) { animation-delay: 0.4s; }
+.footer-connect-group:hover .footer-sparkle:nth-child(3) { animation-delay: 0.8s; }
+.footer-connect-group:hover .footer-sparkle:nth-child(4) { animation-delay: 1.2s; }
+.footer-connect-group:hover .footer-sparkle:nth-child(5) { animation-delay: 1.6s; }
 
 @keyframes footer-sparkle-twinkle {
-  0%, 100% { opacity: 0.4; transform: scale(0.85); }
-  50%      { opacity: 1;   transform: scale(1.05); }
+  0%, 100% { opacity: 0.5; transform: scale(0.85); }
+  50%      { opacity: 1;   transform: scale(1.1); }
 }
 
 .footer-social-link {
