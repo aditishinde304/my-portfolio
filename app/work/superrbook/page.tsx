@@ -49,7 +49,7 @@ const TOTAL_SECTIONS = 3;
 export default function SuperrbookCaseStudy() {
   return (
     <div style={{ background: "var(--background)", minHeight: "100vh" }}>
-      <main className="max-w-[680px] mx-auto px-8 py-20 md:py-28">
+      <main className="max-w-[1014px] mx-auto px-6 sm:px-10 py-20 md:py-28">
 
         {/* Back */}
         <Link
@@ -252,7 +252,7 @@ export default function SuperrbookCaseStudy() {
               <p className="text-[15px] font-medium mb-4" style={{ color: "var(--foreground)" }}>Existing Experience</p>
               <div className="rounded-2xl p-6" style={{ background: "var(--hover-bg)" }}>
                 {/* Horizontal flow */}
-                <div className="flex items-center w-full mb-5">
+                <div className="flex items-center w-full mb-5 overflow-x-auto" style={{ minWidth: 0 }}>
                   {["Textbook", "Go back", "Browse files", "Find notebook", "Open notebook"].map((step, i, arr) => (
                     <React.Fragment key={step}>
                       <span
@@ -262,7 +262,7 @@ export default function SuperrbookCaseStudy() {
                         {step}
                       </span>
                       {i < arr.length - 1 && (
-                        <div style={{ flex: 1 }}>
+                        <div style={{ flex: "1 0 24px" }}>
                           <svg width="100%" height="10" fill="none" preserveAspectRatio="none">
                             <line x1="0" y1="5" x2="100%" y2="5" stroke="var(--muted)" strokeWidth="1.5" strokeDasharray="4 4"/>
                           </svg>

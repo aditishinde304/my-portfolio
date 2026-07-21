@@ -92,7 +92,7 @@ function DesktopFrame({ src }: { src: string }) {
 export default function LMSCaseStudy() {
   return (
     <div style={{ background: "var(--background)", minHeight: "100vh" }}>
-      <main className="max-w-[680px] mx-auto px-8 py-20 md:py-28">
+      <main className="max-w-[1014px] mx-auto px-6 sm:px-10 py-20 md:py-28">
 
         {/* Back */}
         <Link
