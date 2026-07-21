@@ -135,13 +135,17 @@ export default function Playground() {
     <section className="mb-20">
       <div className="flex items-baseline justify-between mb-1.5">
         <h2
-          className="text-[12px] font-medium tracking-[0.06em] uppercase"
-          style={{ color: "var(--foreground)" }}
+          style={{
+            fontFamily: "var(--font-fraunces), Georgia, serif",
+            fontWeight: 500,
+            fontSize: "clamp(1.4rem, 2.4vw, 1.7rem)",
+            color: "var(--foreground)",
+          }}
         >
           My Creative Play
         </h2>
       </div>
-      <p className="text-[15px] leading-relaxed mb-5" style={{ color: "var(--muted)" }}>
+      <p className="text-[17px] leading-relaxed mb-5" style={{ color: "var(--muted)" }}>
         While product design is my main gig, I love experimenting with motion design and 3D.
       </p>
 
