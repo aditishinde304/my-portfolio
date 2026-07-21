@@ -15,7 +15,7 @@ export default function Experiments() {
           style={{
             fontFamily: "var(--font-fraunces), Georgia, serif",
             fontWeight: 500,
-            fontSize: "clamp(1.9rem, 3.6vw, 2.5rem)",
+            fontSize: "clamp(1.4rem, 2.4vw, 1.7rem)",
             color: "#111",
           }}
         >

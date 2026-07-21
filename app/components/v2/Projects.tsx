@@ -61,7 +61,7 @@ export default function Projects() {
         style={{
           fontFamily: "var(--font-fraunces), Georgia, serif",
           fontWeight: 500,
-          fontSize: "clamp(1.9rem, 3.6vw, 2.5rem)",
+          fontSize: "clamp(1.4rem, 2.4vw, 1.7rem)",
           color: "#111",
         }}
       >
@@ -79,8 +79,8 @@ export default function Projects() {
                 style={{
                   fontFamily: "var(--font-fraunces), Georgia, serif",
                   fontWeight: 500,
-                  fontSize: "clamp(1.5rem, 2.8vw, 1.9rem)",
-                  lineHeight: 1.25,
+                  fontSize: "clamp(1.15rem, 2vw, 1.4rem)",
+                  lineHeight: 1.3,
                   color: "#111",
                   marginBottom: "20px",
                 }}

@@ -28,39 +28,39 @@ const socials = [
 export default function Footer() {
   return (
     <footer id="contact" style={{ background: "#111", overflow: "hidden" }} className="w-full">
-      <div className="mx-auto px-6 sm:px-0 text-center" style={{ maxWidth: "1014px", paddingTop: "88px", paddingBottom: "56px" }}>
+      <div className="mx-auto px-6 sm:px-0 text-center" style={{ maxWidth: "1014px", paddingTop: "56px", paddingBottom: "36px" }}>
         <h2
           style={{
             fontFamily: "var(--font-fraunces), Georgia, serif",
             fontWeight: 600,
-            fontSize: "clamp(1.8rem, 4vw, 2.6rem)",
+            fontSize: "clamp(1.3rem, 2.4vw, 1.6rem)",
             color: "#fff",
           }}
         >
           Thanks for making it this far <span aria-hidden="true">😊</span>
         </h2>
 
-        <p className="text-[17px]" style={{ color: "#9a9a96", marginTop: "16px", lineHeight: 1.6, maxWidth: "460px", marginLeft: "auto", marginRight: "auto" }}>
+        <p className="text-[14.5px]" style={{ color: "#9a9a96", marginTop: "10px", lineHeight: 1.55, maxWidth: "400px", marginLeft: "auto", marginRight: "auto" }}>
           Got cool opportunities or want to chat about design? Hit me up.
           Always excited to connect!
         </p>
 
-        <div className="footer-connect-group relative inline-block" style={{ marginTop: "56px", marginBottom: "56px" }}>
-          <Sparkle size={12} style={{ position: "absolute", top: "-18px", left: "12%" }} />
-          <Sparkle size={16} style={{ position: "absolute", top: "-24px", right: "10%" }} />
-          <Sparkle size={10} style={{ position: "absolute", top: "10px", left: "-22px" }} />
-          <Sparkle size={18} style={{ position: "absolute", bottom: "-16px", right: "-18px" }} />
-          <Sparkle size={9} style={{ position: "absolute", bottom: "-22px", left: "18%" }} />
+        <div className="footer-connect-group relative inline-block" style={{ marginTop: "32px", marginBottom: "32px" }}>
+          <Sparkle size={10} style={{ position: "absolute", top: "-15px", left: "12%" }} />
+          <Sparkle size={13} style={{ position: "absolute", top: "-20px", right: "10%" }} />
+          <Sparkle size={9} style={{ position: "absolute", top: "8px", left: "-18px" }} />
+          <Sparkle size={15} style={{ position: "absolute", bottom: "-13px", right: "-15px" }} />
+          <Sparkle size={8} style={{ position: "absolute", bottom: "-18px", left: "18%" }} />
 
           <a
             href="mailto:aditi.shinde304@gmail.com"
             className="footer-connect-btn inline-flex items-center justify-center"
             style={{
               fontFamily: "var(--font-geist-sans), sans-serif",
-              fontSize: "17px",
+              fontSize: "14px",
               fontWeight: 500,
               color: "#fff",
-              padding: "16px 38px",
+              padding: "11px 26px",
               borderRadius: "999px",
             }}
           >
@@ -68,14 +68,14 @@ export default function Footer() {
           </a>
         </div>
 
-        <div className="flex items-center justify-center flex-wrap" style={{ gap: "40px", marginBottom: "40px" }}>
+        <div className="flex items-center justify-center flex-wrap" style={{ gap: "28px", marginBottom: "28px" }}>
           {socials.map((s) => (
             <a
               key={s.label}
               href={s.href}
               target={s.href.startsWith("http") ? "_blank" : undefined}
               rel="noopener noreferrer"
-              className="footer-social-link text-[15px]"
+              className="footer-social-link text-[13px]"
               style={{ color: "#e4e4e2" }}
             >
               {s.label}
@@ -83,7 +83,7 @@ export default function Footer() {
           ))}
         </div>
 
-        <p className="text-[14px]" style={{ color: "#6b6b68" }}>
+        <p className="text-[12.5px]" style={{ color: "#6b6b68" }}>
           Crafted with dedication, buildspace encouragement and a touch of last-minute tweaks.✨
         </p>
       </div>
