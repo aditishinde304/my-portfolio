@@ -346,3 +346,67 @@ body {
   background-color: #f5f5f3;
   border-color: #bdbdb8;
 }
+
+/* Footer */
+
+.footer-connect-btn {
+  position: relative;
+  border: 1.5px solid #fff;
+  transition: transform 250ms ease, background-color 250ms ease;
+}
+
+.footer-connect-btn::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.footer-connect-btn:hover {
+  transform: rotate(-4deg) scale(1.05);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.footer-sparkle {
+  animation: footer-sparkle-twinkle 2.6s ease-in-out infinite;
+}
+
+.footer-sparkle:nth-child(2) { animation-delay: 0.4s; }
+.footer-sparkle:nth-child(3) { animation-delay: 0.8s; }
+.footer-sparkle:nth-child(4) { animation-delay: 1.2s; }
+.footer-sparkle:nth-child(5) { animation-delay: 1.6s; }
+
+@keyframes footer-sparkle-twinkle {
+  0%, 100% { opacity: 0.4; transform: scale(0.85); }
+  50%      { opacity: 1;   transform: scale(1.05); }
+}
+
+.footer-social-link {
+  position: relative;
+  transition: color 150ms ease;
+}
+
+.footer-social-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 1px;
+  background: #fff;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 200ms ease;
+}
+
+.footer-social-link:hover::after {
+  transform: scaleX(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-sparkle {
+    animation: none;
+  }
+}

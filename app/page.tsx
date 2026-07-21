@@ -7,6 +7,7 @@ import Workspace from "./components/v2/Workspace";
 import Projects from "./components/v2/Projects";
 import Experiments from "./components/v2/Experiments";
 import Playground from "./components/Playground";
+import Footer from "./components/v2/Footer";
 
 export default function Home() {
   return (
@@ -108,6 +109,8 @@ export default function Home() {
       <div className="mx-auto px-6 sm:px-0" style={{ maxWidth: "1014px" }}>
         <Playground />
       </div>
+
+      <Footer />
     </div>
   );
 }
