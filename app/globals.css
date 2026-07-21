@@ -338,10 +338,11 @@ body {
 }
 
 .projects-cta {
-  transition: transform 200ms ease, opacity 200ms ease;
+  transition: transform 200ms ease, background-color 200ms ease, border-color 200ms ease;
 }
 
 .projects-cta:hover {
   transform: translateY(-2px);
-  opacity: 0.85;
+  background-color: #f5f5f3;
+  border-color: #bdbdb8;
 }

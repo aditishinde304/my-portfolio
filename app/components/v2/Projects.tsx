@@ -73,7 +73,7 @@ export default function Projects() {
 
       <div className="flex flex-col" style={{ gap: "112px", marginTop: "72px" }}>
         {projects.map((project) => (
-          <div key={project.id} className="grid grid-cols-1 md:grid-cols-2 items-center" style={{ gap: "56px" }}>
+          <div key={project.id} className="grid grid-cols-1 md:grid-cols-2 items-start" style={{ gap: "56px" }}>
             <div>
               <h3
                 style={{
@@ -104,7 +104,13 @@ export default function Projects() {
                 <a
                   href={project.href}
                   className="projects-cta inline-block mt-7 text-[15px] font-medium"
-                  style={{ background: "#111", color: "#fff", padding: "13px 26px", borderRadius: "999px" }}
+                  style={{
+                    background: "transparent",
+                    color: "#111",
+                    border: "1px solid #d8d8d4",
+                    padding: "12px 25px",
+                    borderRadius: "999px",
+                  }}
                 >
                   View case study
                 </a>
