@@ -120,3 +120,40 @@ export function AvatarDoodle({ className, style }: { className?: string; style?:
     </svg>
   );
 }
+
+export function PencilDoodle({ className, style }: { className?: string; style?: React.CSSProperties }) {
+  return (
+    <svg className={className} style={style} width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8 32 L26 14 L32 20 L14 38 L6 38 Z" stroke="#111" strokeWidth="1.6" strokeLinejoin="round" fill="#fff" />
+      <path d="M26 14 L30 10 L36 16 L32 20" stroke="#111" strokeWidth="1.6" strokeLinejoin="round" fill="#fff" />
+      <path d="M8 32 L14 38" stroke="#111" strokeWidth="1.6" />
+      <path d="M6 38 L9 30 L14 33 Z" fill="#111" />
+    </svg>
+  );
+}
+
+export function CoffeeCupDoodle({ className, style }: { className?: string; style?: React.CSSProperties }) {
+  return (
+    <svg className={className} style={style} width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6 12 H22 V21 C22 25.4 18.4 29 14 29 C9.6 29 6 25.4 6 21 Z" stroke="#111" strokeWidth="1.6" fill="#fff" />
+      <path d="M22 14 H25 C27.2 14 29 15.8 29 18 C29 20.2 27.2 22 25 22 H22" stroke="#111" strokeWidth="1.6" strokeLinecap="round" />
+      <path d="M11 7 C11 7 10 5 11 3" stroke="#111" strokeWidth="1.2" strokeLinecap="round" />
+      <path d="M15 7 C15 7 14 5 15 3" stroke="#111" strokeWidth="1.2" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+export function AirplaneDoodle({ className, style }: { className?: string; style?: React.CSSProperties }) {
+  return (
+    <svg className={className} style={style} width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M4 22 L32 8 L20 22 L23 33 L18 31 L15 24 L6 26 Z"
+        stroke="#111"
+        strokeWidth="1.6"
+        strokeLinejoin="round"
+        fill="#fff"
+      />
+      <path d="M20 22 L4 22" stroke="#111" strokeWidth="1.2" />
+    </svg>
+  );
+}

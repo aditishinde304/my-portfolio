@@ -5,6 +5,7 @@ import {
 } from "./components/v2/Doodles";
 import Workspace from "./components/v2/Workspace";
 import Projects from "./components/v2/Projects";
+import About from "./components/v2/About";
 import Experiments from "./components/v2/Experiments";
 import Playground from "./components/Playground";
 import Footer from "./components/v2/Footer";
@@ -104,6 +105,7 @@ export default function Home() {
       </section>
 
       <Projects />
+      <About />
       <Experiments />
 
       <div className="mx-auto px-6 sm:px-0" style={{ maxWidth: "1014px" }}>
