@@ -25,7 +25,7 @@ const snaps: Snap[] = [
     label: "sketching",
     gradient: "linear-gradient(160deg, #FBD8C4, #F3A98A)",
     icon: <PaletteDoodle style={{ width: "34px", height: "34px" }} />,
-    pos: { right: "-9%", top: "24%", width: "30%" },
+    pos: { right: "-11%", top: "-6%", width: "26%" },
     rotate: 6,
   },
   {
@@ -33,24 +33,24 @@ const snaps: Snap[] = [
     label: "coffee",
     gradient: "linear-gradient(160deg, #E8D9C4, #C9A876)",
     icon: <CoffeeCupDoodle style={{ width: "30px", height: "30px" }} />,
-    pos: { right: "-16%", top: "46%", width: "27%" },
-    rotate: -5,
+    pos: { right: "-2%", top: "16%", width: "23%" },
+    rotate: -6,
   },
   {
     id: "travel",
     label: "solo trips",
     gradient: "linear-gradient(160deg, #C9E0D8, #8FBFAE)",
     icon: <AirplaneDoodle style={{ width: "30px", height: "30px" }} />,
-    pos: { right: "-8%", top: "68%", width: "25%" },
-    rotate: 5,
+    pos: { right: "-22%", top: "20%", width: "25%" },
+    rotate: 4,
   },
   {
     id: "desk",
     label: "desk / camera roll",
     gradient: "linear-gradient(160deg, #D8DEEF, #A6B3DC)",
     icon: <CameraDoodle style={{ width: "34px", height: "30px" }} />,
-    pos: { left: "-9%", top: "32%", width: "26%" },
-    rotate: -6,
+    pos: { left: "-14%", bottom: "-8%", width: "24%" },
+    rotate: -8,
   },
 ];
 
@@ -92,7 +92,7 @@ export default function About() {
             </p>
           </div>
 
-          <div className="relative mx-auto" style={{ width: "100%", maxWidth: "340px", aspectRatio: "3 / 4", borderRadius: "14px", overflow: "hidden" }}>
+          <div className="relative mx-auto" style={{ width: "100%", aspectRatio: "3 / 4", borderRadius: "14px", overflow: "hidden" }}>
             <Image
               src="/Avatar.jpg"
               alt="Aditi outside of work"
