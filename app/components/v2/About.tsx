@@ -19,38 +19,44 @@ type Snap = {
   rotate: number;
 };
 
-const snaps: Snap[] = [
+// zIndex controls stacking within the top-right cluster to mimic the
+// reference's overlapping polaroids.
+const snaps: (Snap & { zIndex: number })[] = [
   {
     id: "painting",
     label: "sketching",
     gradient: "linear-gradient(160deg, #FBD8C4, #F3A98A)",
     icon: <PaletteDoodle style={{ width: "34px", height: "34px" }} />,
-    pos: { right: "-11%", top: "-6%", width: "26%" },
+    pos: { right: "-6%", top: "-8%", width: "25%" },
     rotate: 6,
+    zIndex: 5,
   },
   {
     id: "coffee",
     label: "coffee",
     gradient: "linear-gradient(160deg, #E8D9C4, #C9A876)",
     icon: <CoffeeCupDoodle style={{ width: "30px", height: "30px" }} />,
-    pos: { right: "-2%", top: "16%", width: "23%" },
-    rotate: -6,
+    pos: { right: "4%", top: "14%", width: "23%" },
+    rotate: -7,
+    zIndex: 7,
   },
   {
     id: "travel",
     label: "solo trips",
     gradient: "linear-gradient(160deg, #C9E0D8, #8FBFAE)",
     icon: <AirplaneDoodle style={{ width: "30px", height: "30px" }} />,
-    pos: { right: "-22%", top: "20%", width: "25%" },
-    rotate: 4,
+    pos: { right: "-19%", top: "18%", width: "25%" },
+    rotate: 5,
+    zIndex: 6,
   },
   {
     id: "desk",
     label: "desk / camera roll",
     gradient: "linear-gradient(160deg, #D8DEEF, #A6B3DC)",
     icon: <CameraDoodle style={{ width: "34px", height: "30px" }} />,
-    pos: { left: "-14%", bottom: "-8%", width: "24%" },
+    pos: { left: "-13%", bottom: "-2%", width: "24%" },
     rotate: -8,
+    zIndex: 4,
   },
 ];
 
@@ -108,7 +114,7 @@ export default function About() {
           <div
             key={s.id}
             className="about-snap absolute hidden md:block"
-            style={{ ...s.pos, transform: `rotate(${s.rotate}deg)`, zIndex: 5 }}
+            style={{ ...s.pos, transform: `rotate(${s.rotate}deg)`, zIndex: s.zIndex }}
           >
             <div
               style={{
@@ -128,10 +134,10 @@ export default function About() {
           </div>
         ))}
 
-        {/* sticky note */}
+        {/* sticky note — overlaps the photo's lower-left edge, in front */}
         <div
           className="absolute hidden md:block"
-          style={{ left: "-22%", bottom: "10%", width: "230px", zIndex: 6, transform: "rotate(-3deg)" }}
+          style={{ left: "-11%", bottom: "16%", width: "232px", zIndex: 9, transform: "rotate(-3deg)" }}
         >
           <TackPinDoodle style={{ position: "absolute", top: "-14px", left: "20px", width: "18px", zIndex: 7 }} />
           <div
