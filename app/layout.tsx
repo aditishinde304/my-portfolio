@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
-import { Shantell_Sans, Fraunces, Caveat } from "next/font/google";
+import { Shantell_Sans, Fraunces, Caveat, Domine, Space_Grotesk } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import NavBar from "./components/NavBar";
@@ -27,6 +27,20 @@ const caveat = Caveat({
   display: "swap",
 });
 
+const domine = Domine({
+  subsets: ["latin"],
+  variable: "--font-domine",
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-space-grotesk",
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Aditi Shinde, Product Designer",
   description:
@@ -41,7 +55,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${GeistSans.variable} ${GeistMono.variable} ${shantellSans.variable} ${fraunces.variable} ${caveat.variable} h-full antialiased`}
+      className={`${GeistSans.variable} ${GeistMono.variable} ${shantellSans.variable} ${fraunces.variable} ${caveat.variable} ${domine.variable} ${spaceGrotesk.variable} h-full antialiased`}
     >
       <head>
         <script

@@ -432,3 +432,19 @@ body {
 .about-cta:hover {
   opacity: 0.7;
 }
+
+.figma-about-photo {
+  transition: transform 220ms ease;
+}
+
+.figma-about-photo:hover {
+  transform: rotate(0deg) scale(1.05) !important;
+}
+
+.figma-about-cta {
+  transition: opacity 150ms ease;
+}
+
+.figma-about-cta:hover {
+  opacity: 0.75;
+}
