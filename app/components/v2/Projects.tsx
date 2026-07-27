@@ -16,12 +16,11 @@ const projects: Project[] = [
     title: "Making learning more interactive through thoughtful design",
     description: (
       <>
-        Owned and shipped <strong>product experiences</strong> that helped
-        teachers and students collaborate, learn, and engage more
-        effectively.
+        Owned and shipped product experiences that helped teachers and
+        students collaborate, learn, and engage more effectively.
       </>
     ),
-    image: "/Superrbook mockup.png",
+    image: "/Superr book.png",
     alt: "Superrbook product mockup",
     href: "/work/superrbook",
   },
@@ -30,11 +29,11 @@ const projects: Project[] = [
     title: "A platform for managing classrooms better",
     description: (
       <>
-        Built a <strong>centralized system</strong> for assignments,
-        notebooks, and classroom workflows.
+        Built a centralized system for assignments, notebooks and classroom
+        workflows.
       </>
     ),
-    image: "/LMS mockup.png",
+    image: "/LMS.png",
     alt: "LMS platform mockup",
     href: "/work/lms",
   },
@@ -43,16 +42,24 @@ const projects: Project[] = [
     title: "Designing engaging poll experiences",
     description: (
       <>
-        Exploring how <strong>voting and feedback interactions</strong> can
-        feel more intuitive and expressive.
+        Exploring how voting and feedback interactions can feel more
+        intuitive and expressive.
       </>
     ),
-    image: "/Poll Project.png",
+    image: "/29894143-8e6b-48de-bb1c-4c8536376d0e (1).png",
     alt: "Poll experience mockup",
     href: "#",
     comingSoon: true,
   },
 ];
+
+function ArrowIcon() {
+  return (
+    <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1 1L8 8L1 15" stroke="#111011" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
 
 export default function Projects() {
   return (
@@ -71,30 +78,45 @@ export default function Projects() {
         A showcase of my recent projects and exploration
       </p>
 
-      <div className="flex flex-col" style={{ gap: "112px", marginTop: "72px" }}>
+      <div className="flex flex-col" style={{ gap: "32px", marginTop: "48px" }}>
         {projects.map((project) => (
-          <div key={project.id} className="grid grid-cols-1 md:grid-cols-2 items-start" style={{ gap: "56px" }}>
-            <div>
-              <h3
-                style={{
-                  fontFamily: "var(--font-fraunces), Georgia, serif",
-                  fontWeight: 500,
-                  fontSize: "clamp(1.15rem, 2vw, 1.4rem)",
-                  lineHeight: 1.3,
-                  color: "#111",
-                  marginBottom: "20px",
-                }}
-              >
-                {project.title}
-              </h3>
+          <div
+            key={project.id}
+            className="flex flex-col md:flex-row"
+            style={{
+              border: "2px solid #e0e0e0",
+              borderRadius: "24px",
+              overflow: "hidden",
+              gap: "24px",
+            }}
+          >
+            <div
+              className="flex flex-col justify-between"
+              style={{ padding: "27px 8px 27px 27px", flex: "0 0 auto", width: "100%", maxWidth: "380px" }}
+            >
+              <div>
+                <h3
+                  style={{
+                    fontFamily: "'Inter', sans-serif",
+                    fontWeight: 500,
+                    fontSize: "clamp(1.3rem, 2.2vw, 1.55rem)",
+                    lineHeight: 1.35,
+                    letterSpacing: "-0.02em",
+                    color: "#111011",
+                    marginBottom: "15px",
+                  }}
+                >
+                  {project.title}
+                </h3>
 
-              <p className="text-[16px]" style={{ lineHeight: 1.65, color: "#666", maxWidth: "420px" }}>
-                {project.description}
-              </p>
+                <p className="text-[16px]" style={{ lineHeight: 1.6, color: "rgba(5,5,5,0.6)" }}>
+                  {project.description}
+                </p>
+              </div>
 
               {project.comingSoon ? (
                 <span
-                  className="inline-flex items-center gap-1.5 mt-7"
+                  className="inline-flex items-center gap-1.5 mt-8"
                   style={{ fontSize: "14px", color: "#999" }}
                 >
                   <span className="rounded-full shrink-0" style={{ width: "5px", height: "5px", background: "#999" }} />
@@ -103,24 +125,33 @@ export default function Projects() {
               ) : (
                 <a
                   href={project.href}
-                  className="projects-cta inline-block mt-7 text-[15px] font-medium"
+                  className="projects-cta inline-flex items-center justify-between mt-8"
                   style={{
-                    background: "transparent",
+                    background: "#fff",
                     color: "#111",
-                    border: "1px solid #d8d8d4",
-                    padding: "12px 25px",
-                    borderRadius: "999px",
+                    border: "1px solid #dfdfdf",
+                    borderRadius: "24px",
+                    padding: "12px 16px 12px 20px",
+                    boxShadow: "2px 2px 8px 0px rgba(0,0,0,0.16)",
+                    fontSize: "18px",
+                    fontWeight: 600,
+                    maxWidth: "395px",
                   }}
                 >
-                  View case study
+                  Open case study
+                  <ArrowIcon />
                 </a>
               )}
             </div>
 
-            <a href={project.href} className="projects-row group block">
+            <a
+              href={project.href}
+              className="projects-row group block px-3 pb-3 md:pl-0 md:pr-3 md:py-3"
+              style={{ flex: "1 1 auto" }}
+            >
               <div
                 className="projects-card relative w-full overflow-hidden"
-                style={{ background: "#eeeeec", borderRadius: "18px", height: "clamp(260px, 32vw, 340px)" }}
+                style={{ background: "#eeeeec", borderRadius: "16px", height: "clamp(260px, 32vw, 400px)" }}
               >
                 <Image
                   src={project.image}
@@ -128,7 +159,7 @@ export default function Projects() {
                   fill
                   quality={95}
                   className="projects-card-img object-cover"
-                  sizes="(max-width: 768px) 100vw, 480px"
+                  sizes="(max-width: 768px) 100vw, 748px"
                 />
               </div>
             </a>
