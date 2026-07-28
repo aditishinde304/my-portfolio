@@ -16,18 +16,21 @@ export type PlaygroundItem = {
  * media (image/video) is ready — just swap type to "image"/"video" and set src.
  * title/tag are optional — omit them to show the media only.
  */
-export const playgroundItems: PlaygroundItem[] = [
+export const newCreativeItems: PlaygroundItem[] = [
+  { id: "fashion-design", type: "image", src: "/Fashion design.png" },
+  { id: "loop-mockup", type: "image", src: "/Loop Mockup.png" },
+  { id: "music-player", type: "image", src: "/Music player.png" },
+  { id: "no-news-mockup", type: "image", src: "/No news mockup.png" },
+  { id: "travel-mobile-mockup", type: "image", src: "/Travel mobile mockup.png" },
+];
+
+export const motionWorkItems: PlaygroundItem[] = [
   { id: "screen-recording-1", type: "video", src: "/Screen Recording.mp4" },
   { id: "screen-recording-2", type: "video", src: "/Screen Recording 2.mp4" },
   { id: "screen-recording-3", type: "video", src: "/Screen Recording 3.mp4" },
   { id: "screen-recording-4", type: "video", src: "/Screen Recording 4.mp4" },
   { id: "screen-recording-5", type: "video", src: "/Screen Recording 5.mp4" },
   { id: "screen-recording-6", type: "video", src: "/Screen Recording 6.mp4" },
-  { id: "fashion-design", type: "image", src: "/Fashion design.png" },
-  { id: "loop-mockup", type: "image", src: "/Loop Mockup.png" },
-  { id: "music-player", type: "image", src: "/Music player.png" },
-  { id: "no-news-mockup", type: "image", src: "/No news mockup.png" },
-  { id: "travel-mobile-mockup", type: "image", src: "/Travel mobile mockup.png" },
 ];
 
 function PlaceholderIcon({ icon }: { icon: PlaygroundItem["icon"] }) {
@@ -152,11 +155,22 @@ export default function Playground() {
 
       <div className="playground-marquee-viewport -mx-8 px-8 sm:mx-0 sm:px-0">
         <div className="playground-marquee-track">
-          {playgroundItems.map((item) => (
-            <PlaygroundCard key={`a-${item.id}`} item={item} keyPrefix="a" />
+          {newCreativeItems.map((item) => (
+            <PlaygroundCard key={`top-a-${item.id}`} item={item} keyPrefix="top-a" />
           ))}
-          {playgroundItems.map((item) => (
-            <PlaygroundCard key={`b-${item.id}`} item={item} keyPrefix="b" />
+          {newCreativeItems.map((item) => (
+            <PlaygroundCard key={`top-b-${item.id}`} item={item} keyPrefix="top-b" />
+          ))}
+        </div>
+      </div>
+
+      <div className="playground-marquee-viewport -mx-8 px-8 sm:mx-0 sm:px-0 mt-4">
+        <div className="playground-marquee-track playground-marquee-track--reverse">
+          {motionWorkItems.map((item) => (
+            <PlaygroundCard key={`bottom-a-${item.id}`} item={item} keyPrefix="bottom-a" />
+          ))}
+          {motionWorkItems.map((item) => (
+            <PlaygroundCard key={`bottom-b-${item.id}`} item={item} keyPrefix="bottom-b" />
           ))}
         </div>
       </div>
