@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { preload } from "react-dom";
 import VideoPlayer from "./VideoPlayer";
 
 export type PlaygroundItem = {
@@ -19,8 +20,8 @@ export type PlaygroundItem = {
 export const newCreativeItems: PlaygroundItem[] = [
   { id: "fashion-design", type: "image", src: "/Fashion design.png" },
   { id: "loop-mockup", type: "image", src: "/Loop Mockup.png" },
-  { id: "music-player", type: "image", src: "/Music player.png" },
   { id: "no-news-mockup", type: "image", src: "/No news mockup.png" },
+  { id: "music-player", type: "image", src: "/Music player.png" },
   { id: "travel-mobile-mockup", type: "image", src: "/Travel mobile mockup.png" },
 ];
 
@@ -93,7 +94,7 @@ function PlaygroundCard({ item, keyPrefix }: { item: PlaygroundItem; keyPrefix: 
     >
       <div className="absolute inset-0 transition-transform duration-500 group-hover:scale-[1.04]">
         {item.type === "image" && item.src && (
-          <Image src={item.src} alt={item.title ?? ""} fill className="object-cover" sizes="300px" />
+          <Image src={item.src} alt={item.title ?? ""} fill className="object-cover" sizes="300px" priority />
         )}
         {item.type === "video" && item.src && (
           <VideoPlayer src={item.src} className="w-full h-full object-cover" />
@@ -139,6 +140,17 @@ function PlaygroundCard({ item, keyPrefix }: { item: PlaygroundItem; keyPrefix: 
 }
 
 export default function Playground() {
+  for (const item of newCreativeItems) {
+    if (item.type === "image" && item.src) {
+      preload(item.src, { as: "image" });
+    }
+  }
+  for (const item of motionWorkItems) {
+    if (item.type === "video" && item.src) {
+      preload(item.src, { as: "video" });
+    }
+  }
+
   return (
     <section className="mb-20">
       <div className="flex items-baseline justify-between mb-1.5">
@@ -150,7 +162,7 @@ export default function Playground() {
         </h2>
       </div>
       <p className="text-[15px] leading-relaxed mb-5" style={{ color: "var(--muted)" }}>
-        While product design is my main gig, I love experimenting with motion design and 3D.
+        A collection of things I create, explore and experiment with beyond everyday product work.
       </p>
 
       <div className="playground-marquee-viewport -mx-8 px-8 sm:mx-0 sm:px-0">
