@@ -19,9 +19,11 @@ export type PlaygroundItem = {
  */
 export const newCreativeItems: PlaygroundItem[] = [
   { id: "fashion-design", type: "image", src: "/Fashion design.png" },
-  { id: "loop-mockup", type: "image", src: "/Loop Mockup.png" },
+  { id: "dashboard-design", type: "image", src: "/Dashboard design.png" },
   { id: "no-news-mockup", type: "image", src: "/No news mockup.png" },
+  { id: "landing-page-mockup", type: "image", src: "/Landing page mockup.png" },
   { id: "music-player", type: "image", src: "/Music player.png" },
+  { id: "loop-mockup", type: "image", src: "/Loop Mockup.png" },
   { id: "travel-mobile-mockup", type: "image", src: "/Travel mobile mockup.png" },
 ];
 
