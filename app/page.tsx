@@ -239,23 +239,28 @@ export default function Home() {
           </a>
         </div>
 
-        <div className="grid grid-cols-2 gap-3">
-          {experiments.map((exp) => (
-            <a
-              key={exp.name}
-              href={exp.href}
-              className="group block rounded-2xl p-2 flex items-center justify-center"
-              style={{ background: "var(--hover-bg)" }}
-            >
-              <div className="rounded-xl overflow-hidden">
-                <VideoPlayer
-                  src={exp.video}
-                  className="h-auto block mx-auto transition-transform duration-500 group-hover:scale-[1.02]"
-                  style={{ maxWidth: "100%" }}
-                />
-              </div>
-            </a>
-          ))}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          {experiments.map((exp, index) => {
+            const mobileHidden = index !== 0 && index !== 2;
+            return (
+              <a
+                key={exp.name}
+                href={exp.href}
+                className={`group rounded-2xl p-2 items-center justify-center ${
+                  mobileHidden ? "hidden sm:flex" : "flex"
+                }`}
+                style={{ background: "var(--hover-bg)" }}
+              >
+                <div className="rounded-xl overflow-hidden w-full">
+                  <VideoPlayer
+                    src={exp.video}
+                    className="h-auto block mx-auto w-full transition-transform duration-500 group-hover:scale-[1.02]"
+                    style={{ maxWidth: "100%" }}
+                  />
+                </div>
+              </a>
+            );
+          })}
         </div>
       </section>
 
