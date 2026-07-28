@@ -220,8 +220,8 @@ export default function Home() {
           rel="noopener noreferrer"
           className="inline-flex items-center gap-1.5 mt-8 text-[15px] font-medium"
         >
-          <span className="link-dashed">See everything I&apos;ve worked on</span>
-          <span style={{ display: "inline-block", transform: "rotate(45deg)" }}>↑</span>
+          <span className="link-dashed link-dashed--blue">See everything I&apos;ve worked on</span>
+          <span style={{ display: "inline-block", transform: "rotate(45deg)", color: "#3b82f6" }}>↑</span>
         </a>
       </section>
 

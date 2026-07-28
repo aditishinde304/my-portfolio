@@ -73,6 +73,11 @@ body {
   text-decoration-color: #3b82f6;
 }
 
+.link-dashed--blue {
+  color: #3b82f6;
+  text-decoration-color: #3b82f6;
+}
+
 .playground-scroll {
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
