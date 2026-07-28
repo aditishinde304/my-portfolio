@@ -23,6 +23,11 @@ export const playgroundItems: PlaygroundItem[] = [
   { id: "screen-recording-4", type: "video", src: "/Screen Recording 4.mp4" },
   { id: "screen-recording-5", type: "video", src: "/Screen Recording 5.mp4" },
   { id: "screen-recording-6", type: "video", src: "/Screen Recording 6.mp4" },
+  { id: "fashion-design", type: "image", src: "/Fashion design.png" },
+  { id: "loop-mockup", type: "image", src: "/Loop Mockup.png" },
+  { id: "music-player", type: "image", src: "/Music player.png" },
+  { id: "no-news-mockup", type: "image", src: "/No news mockup.png" },
+  { id: "travel-mobile-mockup", type: "image", src: "/Travel mobile mockup.png" },
 ];
 
 function PlaceholderIcon({ icon }: { icon: PlaygroundItem["icon"] }) {
