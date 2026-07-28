@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useCallback, useEffect, useState } from "react";
 import { preload } from "react-dom";
 import VideoPlayer from "./VideoPlayer";
 
@@ -88,7 +91,15 @@ function PlaceholderIcon({ icon }: { icon: PlaygroundItem["icon"] }) {
   }
 }
 
-function PlaygroundCard({ item, keyPrefix }: { item: PlaygroundItem; keyPrefix: string }) {
+function PlaygroundCard({
+  item,
+  keyPrefix,
+  onOpen,
+}: {
+  item: PlaygroundItem;
+  keyPrefix: string;
+  onOpen: (item: PlaygroundItem) => void;
+}) {
   const Card = (
     <div
       className="rounded-2xl overflow-hidden mb-2.5 flex items-center justify-center"
@@ -129,14 +140,89 @@ function PlaygroundCard({ item, keyPrefix }: { item: PlaygroundItem; keyPrefix: 
   const className = "group shrink-0";
   const style: React.CSSProperties = { width: "300px" };
   const key = `${keyPrefix}-${item.id}`;
+  const isClickable = !item.href && (item.type === "image" || item.type === "video") && !!item.src;
 
-  return item.href ? (
-    <a key={key} href={item.href} className={className} style={style}>
-      {inner}
-    </a>
-  ) : (
+  if (item.href) {
+    return (
+      <a key={key} href={item.href} className={className} style={style}>
+        {inner}
+      </a>
+    );
+  }
+
+  if (isClickable) {
+    return (
+      <button
+        key={key}
+        type="button"
+        onClick={() => onOpen(item)}
+        className={`${className} text-left bg-transparent border-0 p-0 cursor-pointer`}
+        style={style}
+        aria-label={item.title ? `View ${item.title}` : "View creative"}
+      >
+        {inner}
+      </button>
+    );
+  }
+
+  return (
     <div key={key} className={className} style={style}>
       {inner}
+    </div>
+  );
+}
+
+function Lightbox({ item, onClose }: { item: PlaygroundItem; onClose: () => void }) {
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [onClose]);
+
+  return (
+    <div
+      className="fixed inset-0 z-[100] flex items-center justify-center p-6 sm:p-10"
+      style={{ background: "rgba(0, 0, 0, 0.85)" }}
+      onClick={onClose}
+    >
+      <button
+        type="button"
+        onClick={onClose}
+        aria-label="Close"
+        className="fixed top-5 right-5 sm:top-6 sm:right-6 flex items-center justify-center rounded-full bg-transparent border-0 cursor-pointer"
+        style={{ width: "40px", height: "40px", background: "rgba(255, 255, 255, 0.1)", color: "#fff" }}
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+          <path d="M6 6 L18 18 M18 6 L6 18" />
+        </svg>
+      </button>
+
+      <div onClick={(e) => e.stopPropagation()} style={{ maxWidth: "90vw", maxHeight: "85vh" }}>
+        {item.type === "image" && item.src && (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={item.src}
+            alt={item.title ?? ""}
+            style={{ maxWidth: "90vw", maxHeight: "85vh", width: "auto", height: "auto", objectFit: "contain", borderRadius: "12px" }}
+          />
+        )}
+        {item.type === "video" && item.src && (
+          <video
+            src={item.src}
+            controls
+            autoPlay
+            playsInline
+            style={{ maxWidth: "90vw", maxHeight: "85vh", width: "auto", height: "auto", borderRadius: "12px" }}
+          />
+        )}
+      </div>
     </div>
   );
 }
@@ -152,6 +238,10 @@ export default function Playground() {
       preload(item.src, { as: "video" });
     }
   }
+
+  const [activeItem, setActiveItem] = useState<PlaygroundItem | null>(null);
+  const handleOpen = useCallback((item: PlaygroundItem) => setActiveItem(item), []);
+  const handleClose = useCallback(() => setActiveItem(null), []);
 
   return (
     <section className="mb-20">
@@ -170,10 +260,10 @@ export default function Playground() {
       <div className="playground-marquee-viewport -mx-8 px-8 sm:mx-0 sm:px-0">
         <div className="playground-marquee-track">
           {newCreativeItems.map((item) => (
-            <PlaygroundCard key={`top-a-${item.id}`} item={item} keyPrefix="top-a" />
+            <PlaygroundCard key={`top-a-${item.id}`} item={item} keyPrefix="top-a" onOpen={handleOpen} />
           ))}
           {newCreativeItems.map((item) => (
-            <PlaygroundCard key={`top-b-${item.id}`} item={item} keyPrefix="top-b" />
+            <PlaygroundCard key={`top-b-${item.id}`} item={item} keyPrefix="top-b" onOpen={handleOpen} />
           ))}
         </div>
       </div>
@@ -181,13 +271,15 @@ export default function Playground() {
       <div className="playground-marquee-viewport -mx-8 px-8 sm:mx-0 sm:px-0 mt-4">
         <div className="playground-marquee-track playground-marquee-track--reverse">
           {motionWorkItems.map((item) => (
-            <PlaygroundCard key={`bottom-a-${item.id}`} item={item} keyPrefix="bottom-a" />
+            <PlaygroundCard key={`bottom-a-${item.id}`} item={item} keyPrefix="bottom-a" onOpen={handleOpen} />
           ))}
           {motionWorkItems.map((item) => (
-            <PlaygroundCard key={`bottom-b-${item.id}`} item={item} keyPrefix="bottom-b" />
+            <PlaygroundCard key={`bottom-b-${item.id}`} item={item} keyPrefix="bottom-b" onOpen={handleOpen} />
           ))}
         </div>
       </div>
+
+      {activeItem && <Lightbox item={activeItem} onClose={handleClose} />}
     </section>
   );
 }
