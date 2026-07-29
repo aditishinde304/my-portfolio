@@ -13,7 +13,7 @@ const shantellSans = Shantell_Sans({
 });
 
 const description =
-  "I design thoughtful digital products, obsess over the details and also build what I design.";
+  "I design thoughtful digital products, obsess over the details and build what I design.";
 
 export const metadata: Metadata = {
   title: "Aditi Shinde, Product Designer",
