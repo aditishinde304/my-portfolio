@@ -3,7 +3,6 @@ import ThemeToggle from "./components/ThemeToggle";
 import CopyButton from "./components/CopyButton";
 import VideoPlayer from "./components/VideoPlayer";
 import Playground from "./components/Playground";
-import FoldersSection from "./components/FoldersSection";
 
 const work = [
   {
@@ -225,8 +224,6 @@ export default function Home() {
           <span style={{ display: "inline-block", transform: "rotate(45deg)", color: "#3b82f6" }}>↑</span>
         </a>
       </section>
-
-      <FoldersSection />
 
       {/* Experiments */}
       <section className="mb-20">
