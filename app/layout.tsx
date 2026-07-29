@@ -12,10 +12,18 @@ const shantellSans = Shantell_Sans({
   weight: ["400", "500"],
 });
 
+const description =
+  "I design thoughtful digital products, obsess over the details and also build what I design.";
+
 export const metadata: Metadata = {
   title: "Aditi Shinde, Product Designer",
-  description:
-    "Product designer building education products at Superr. Focused on experiences that feel simple, playful, and human.",
+  description,
+  openGraph: {
+    description,
+  },
+  twitter: {
+    description,
+  },
 };
 
 export default function RootLayout({
