@@ -154,12 +154,12 @@ export default function LMSCaseStudy() {
         {/* ── MY ROLE ── */}
         <section className="mb-16" style={{ borderTop: "1px solid var(--border)", paddingTop: "48px" }}>
           <h2
-            className="text-[16px] font-medium mb-6"
+            className="text-[18px] font-medium mb-6"
             style={{ color: "var(--foreground)" }}
           >
             My Role
           </h2>
-          <div className="space-y-4 text-[15px] leading-relaxed" style={{ color: "var(--muted)" }}>
+          <div className="space-y-4 text-[16px] leading-relaxed" style={{ color: "var(--muted)" }}>
             <p>
               Worked closely with PMs, engineers, and designers to shape core
               LMS workflows across notes, assignments, whiteboards, files, and
@@ -175,7 +175,7 @@ export default function LMSCaseStudy() {
         {/* ── APPROACH ── */}
         <section className="mb-16" style={{ borderTop: "1px solid var(--border)", paddingTop: "48px" }}>
           <h2
-            className="text-[16px] font-medium mb-8"
+            className="text-[18px] font-medium mb-8"
             style={{ color: "var(--foreground)" }}
           >
             Approach
@@ -191,13 +191,13 @@ export default function LMSCaseStudy() {
                 </span>
                 <div>
                   <p
-                    className="text-[15px] font-medium mb-1"
+                    className="text-[16px] font-medium mb-1"
                     style={{ color: "var(--foreground)" }}
                   >
                     {item.title}
                   </p>
                   <p
-                    className="text-[15px] leading-relaxed"
+                    className="text-[16px] leading-relaxed"
                     style={{ color: "var(--muted)" }}
                   >
                     {item.description}
@@ -211,7 +211,7 @@ export default function LMSCaseStudy() {
         {/* ── FEATURE SECTIONS ── */}
         <section className="mb-16" style={{ borderTop: "1px solid var(--border)", paddingTop: "48px" }}>
           <h2
-            className="text-[16px] font-medium mb-12"
+            className="text-[18px] font-medium mb-12"
             style={{ color: "var(--foreground)" }}
           >
             What I designed
@@ -221,7 +221,7 @@ export default function LMSCaseStudy() {
               <div key={item.title}>
                 <div className="flex items-baseline justify-between mb-4">
                   <h3
-                    className="text-[16px] font-medium"
+                    className="text-[18px] font-medium"
                     style={{ color: "var(--foreground)" }}
                   >
                     {item.title}
@@ -234,7 +234,7 @@ export default function LMSCaseStudy() {
                   </span>
                 </div>
                 <p
-                  className="text-[15px] leading-relaxed mb-6"
+                  className="text-[16px] leading-relaxed mb-6"
                   style={{ color: "var(--muted)" }}
                 >
                   {item.description}
@@ -291,13 +291,13 @@ export default function LMSCaseStudy() {
         {/* ── REFLECTION ── */}
         <section className="mb-16" style={{ borderTop: "1px solid var(--border)", paddingTop: "48px" }}>
           <p
-            className="text-[16px] font-medium mb-6"
+            className="text-[18px] font-medium mb-6"
             style={{ color: "var(--foreground)" }}
           >
             Reflection
           </p>
           <h2
-            className="text-[20px] font-semibold leading-tight tracking-[-0.01em] mb-10"
+            className="text-[18px] font-semibold leading-tight tracking-[-0.01em] mb-10"
             style={{ color: "var(--foreground)" }}
           >
             What I learned
@@ -305,35 +305,35 @@ export default function LMSCaseStudy() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-8">
             <div>
               <p
-                className="text-[15px] font-medium leading-snug mb-3"
+                className="text-[16px] font-medium leading-snug mb-3"
                 style={{ color: "var(--foreground)" }}
               >
                 {reflectionItems[0].title}
               </p>
-              <p className="text-[15px] leading-relaxed" style={{ color: "var(--muted)" }}>
+              <p className="text-[16px] leading-relaxed" style={{ color: "var(--muted)" }}>
                 {reflectionItems[0].description}
               </p>
             </div>
             <div>
               <p
-                className="text-[15px] font-medium leading-snug mb-3"
+                className="text-[16px] font-medium leading-snug mb-3"
                 style={{ color: "var(--foreground)" }}
               >
                 {reflectionItems[1].title}
               </p>
-              <p className="text-[15px] leading-relaxed" style={{ color: "var(--muted)" }}>
+              <p className="text-[16px] leading-relaxed" style={{ color: "var(--muted)" }}>
                 {reflectionItems[1].description}
               </p>
             </div>
           </div>
           <div>
             <p
-              className="text-[15px] font-medium leading-snug mb-3"
+              className="text-[16px] font-medium leading-snug mb-3"
               style={{ color: "var(--foreground)" }}
             >
               {reflectionItems[2].title}
             </p>
-            <p className="text-[15px] leading-relaxed" style={{ color: "var(--muted)" }}>
+            <p className="text-[16px] leading-relaxed" style={{ color: "var(--muted)" }}>
               {reflectionItems[2].description}
             </p>
           </div>
