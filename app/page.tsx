@@ -109,7 +109,7 @@ export default function Home() {
       </section>
 
       <Projects />
-      <About />
+      {/* <About /> */}
       <Experiments />
 
       <div className="mx-auto px-6 sm:px-0" style={{ maxWidth: "1014px" }}>

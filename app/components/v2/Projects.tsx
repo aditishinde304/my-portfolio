@@ -132,9 +132,9 @@ export default function Projects() {
                     border: "1px solid #dfdfdf",
                     borderRadius: "24px",
                     padding: "12px 16px 12px 20px",
-                    boxShadow: "2px 2px 8px 0px rgba(0,0,0,0.16)",
+                    boxShadow: "0px 1px 4px 0px rgba(0,0,0,0.08)",
                     fontSize: "18px",
-                    fontWeight: 600,
+                    fontWeight: 500,
                     maxWidth: "395px",
                   }}
                 >
@@ -165,6 +165,40 @@ export default function Projects() {
             </a>
           </div>
         ))}
+      </div>
+
+      <div className="flex items-center justify-center" style={{ marginTop: "40px", gap: "10px" }}>
+        <svg width="90" height="60" viewBox="0 0 90 60" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ transform: "scaleY(-1)" }}>
+          <path
+            d="M6 8C34 8 62 24 78 44"
+            stroke="#4b4b4b"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+          />
+          <path
+            d="M60 40L79 45L72 26"
+            stroke="#4b4b4b"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+        <a
+          href="#"
+          className="inline-flex items-center justify-center"
+          style={{
+            border: "1px solid #dbdbdb",
+            borderRadius: "32px",
+            padding: "12px 20px",
+            boxShadow: "2px 2px 6px 0px rgba(0,0,0,0.1)",
+            fontFamily: "'Inter', sans-serif",
+            fontWeight: 600,
+            fontSize: "18px",
+            color: "#111",
+          }}
+        >
+          View all projects
+        </a>
       </div>
     </section>
   );
