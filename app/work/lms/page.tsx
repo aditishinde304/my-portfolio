@@ -1,6 +1,15 @@
 import Link from "next/link";
 import Image from "next/image";
 import VideoPlayer from "@/app/components/VideoPlayer";
+import CaseStudyNav from "@/app/components/CaseStudyNav";
+
+const navSections = [
+  { id: "overview", label: "Overview" },
+  { id: "role", label: "My Role" },
+  { id: "approach", label: "Approach" },
+  { id: "designed", label: "What I designed" },
+  { id: "reflection", label: "Reflection" },
+];
 
 const approachItems = [
   {
@@ -92,19 +101,23 @@ function DesktopFrame({ src }: { src: string }) {
 export default function LMSCaseStudy() {
   return (
     <div style={{ background: "var(--background)", minHeight: "100vh" }}>
-      <main className="max-w-[1014px] mx-auto px-6 sm:px-10 py-20 md:py-28">
+      <div className="mx-auto px-6 sm:px-10 py-20 md:py-28 flex flex-col lg:flex-row gap-16 items-start" style={{ maxWidth: "1214px" }}>
 
-        {/* Back */}
+        <CaseStudyNav sections={navSections} />
+
+        {/* Mobile back link (sidebar handles it on desktop) */}
         <Link
           href="/"
-          className="text-[13px] inline-block mb-16 link-dashed"
+          className="lg:hidden text-[13px] inline-block mb-16 link-dashed"
           style={{ color: "var(--muted)" }}
         >
           ← Back
         </Link>
 
+      <main className="min-w-0 flex-1" style={{ maxWidth: "1014px" }}>
+
         {/* ── HERO ── */}
-        <div className="mb-16">
+        <div className="mb-16" id="overview">
           <h1
             className="text-[32px] md:text-[40px] font-semibold leading-tight tracking-[-0.02em] mb-4"
             style={{ color: "var(--foreground)" }}
@@ -152,7 +165,7 @@ export default function LMSCaseStudy() {
         </div>
 
         {/* ── MY ROLE ── */}
-        <section className="mb-16" style={{ borderTop: "1px solid var(--border)", paddingTop: "48px" }}>
+        <section id="role" className="mb-16" style={{ borderTop: "1px solid var(--border)", paddingTop: "48px" }}>
           <h2
             className="text-[18px] font-medium mb-6"
             style={{ color: "var(--foreground)" }}
@@ -173,7 +186,7 @@ export default function LMSCaseStudy() {
         </section>
 
         {/* ── APPROACH ── */}
-        <section className="mb-16" style={{ borderTop: "1px solid var(--border)", paddingTop: "48px" }}>
+        <section id="approach" className="mb-16" style={{ borderTop: "1px solid var(--border)", paddingTop: "48px" }}>
           <h2
             className="text-[18px] font-medium mb-8"
             style={{ color: "var(--foreground)" }}
@@ -209,7 +222,7 @@ export default function LMSCaseStudy() {
         </section>
 
         {/* ── FEATURE SECTIONS ── */}
-        <section className="mb-16" style={{ borderTop: "1px solid var(--border)", paddingTop: "48px" }}>
+        <section id="designed" className="mb-16" style={{ borderTop: "1px solid var(--border)", paddingTop: "48px" }}>
           <h2
             className="text-[18px] font-medium mb-12"
             style={{ color: "var(--foreground)" }}
@@ -289,7 +302,7 @@ export default function LMSCaseStudy() {
         </section>
 
         {/* ── REFLECTION ── */}
-        <section className="mb-16" style={{ borderTop: "1px solid var(--border)", paddingTop: "48px" }}>
+        <section id="reflection" className="mb-16" style={{ borderTop: "1px solid var(--border)", paddingTop: "48px" }}>
           <p
             className="text-[18px] font-medium mb-6"
             style={{ color: "var(--foreground)" }}
@@ -390,6 +403,8 @@ export default function LMSCaseStudy() {
         </footer>
 
       </main>
+
+      </div>
     </div>
   );
 }

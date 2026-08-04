@@ -2,6 +2,18 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import VideoPlayer from "@/app/components/VideoPlayer";
+import CaseStudyNav from "@/app/components/CaseStudyNav";
+
+const navSections = [
+  { id: "overview", label: "Overview" },
+  { id: "role", label: "My Role" },
+  { id: "ownership", label: "Areas of Ownership" },
+  { id: "approach", label: "Approach" },
+  { id: "context-switching", label: "Context Switching" },
+  { id: "geometry-tools", label: "Geometry Tools" },
+  { id: "admin", label: "Admin Devices" },
+  { id: "reflection", label: "Reflection" },
+];
 
 const workItems = [
   {
@@ -49,19 +61,23 @@ const TOTAL_SECTIONS = 3;
 export default function SuperrbookCaseStudy() {
   return (
     <div style={{ background: "var(--background)", minHeight: "100vh" }}>
-      <main className="max-w-[1014px] mx-auto px-6 sm:px-10 py-20 md:py-28">
+      <div className="mx-auto px-6 sm:px-10 py-20 md:py-28 flex flex-col lg:flex-row gap-16 items-start" style={{ maxWidth: "1214px" }}>
 
-        {/* Back */}
+        <CaseStudyNav sections={navSections} />
+
+        {/* Mobile back link (sidebar handles it on desktop) */}
         <Link
           href="/"
-          className="text-[13px] inline-block mb-16 link-dashed"
+          className="lg:hidden text-[13px] inline-block mb-16 link-dashed"
           style={{ color: "var(--muted)" }}
         >
           ← Back
         </Link>
 
+      <main className="min-w-0 flex-1" style={{ maxWidth: "1014px" }}>
+
         {/* ── HEADING ── */}
-        <div className="mb-16">
+        <div className="mb-16" id="overview">
           <h1
             className="text-[32px] md:text-[40px] font-semibold leading-tight tracking-[-0.02em] mb-4"
             style={{ color: "var(--foreground)" }}
@@ -113,7 +129,7 @@ export default function SuperrbookCaseStudy() {
         </div>
 
         {/* ── MY ROLE ── */}
-        <section className="mb-16" style={{ borderTop: "1px solid var(--border)", paddingTop: "48px" }}>
+        <section id="role" className="mb-16" style={{ borderTop: "1px solid var(--border)", paddingTop: "48px" }}>
           <h2
             className="text-[18px] font-medium mb-6"
             style={{ color: "var(--foreground)" }}
@@ -150,7 +166,7 @@ export default function SuperrbookCaseStudy() {
         </section>
 
         {/* ── AREAS OF OWNERSHIP ── */}
-        <section className="mb-16" style={{ borderTop: "1px solid var(--border)", paddingTop: "48px" }}>
+        <section id="ownership" className="mb-16" style={{ borderTop: "1px solid var(--border)", paddingTop: "48px" }}>
           <h2
             className="text-[18px] font-medium mb-8"
             style={{ color: "var(--foreground)" }}
@@ -196,7 +212,7 @@ export default function SuperrbookCaseStudy() {
         </section>
 
         {/* ── HOW I APPROACH DESIGN ── */}
-        <section className="mb-16" style={{ borderTop: "1px solid var(--border)", paddingTop: "48px" }}>
+        <section id="approach" className="mb-16" style={{ borderTop: "1px solid var(--border)", paddingTop: "48px" }}>
           <h2
             className="text-[18px] font-medium mb-6"
             style={{ color: "var(--foreground)" }}
@@ -219,7 +235,7 @@ export default function SuperrbookCaseStudy() {
         </section>
 
         {/* ── SECTION 01: CONTEXT SWITCHING ── */}
-        <section className="mb-16" style={{ borderTop: "1px solid var(--border)", paddingTop: "48px" }}>
+        <section id="context-switching" className="mb-16" style={{ borderTop: "1px solid var(--border)", paddingTop: "48px" }}>
           <div className="flex items-baseline justify-between mb-12">
             <h2
               className="text-[18px] font-medium"
@@ -547,7 +563,7 @@ export default function SuperrbookCaseStudy() {
         </section>
 
         {/* ── SECTION 02: GEOMETRY TOOLS ── */}
-        <section className="mb-16" style={{ borderTop: "1px solid var(--border)", paddingTop: "48px" }}>
+        <section id="geometry-tools" className="mb-16" style={{ borderTop: "1px solid var(--border)", paddingTop: "48px" }}>
           <div className="flex items-baseline justify-between mb-12">
             <h2
               className="text-[18px] font-medium"
@@ -756,7 +772,7 @@ export default function SuperrbookCaseStudy() {
         </section>
 
         {/* ── SECTION 03: HELPING SCHOOL ADMINS MANAGE DEVICES BETTER ── */}
-        <section className="mb-16" style={{ borderTop: "1px solid var(--border)", paddingTop: "48px" }}>
+        <section id="admin" className="mb-16" style={{ borderTop: "1px solid var(--border)", paddingTop: "48px" }}>
           <div className="flex items-baseline justify-between mb-12">
             <h2
               className="text-[18px] font-medium"
@@ -873,7 +889,7 @@ export default function SuperrbookCaseStudy() {
         </section>
 
         {/* ── REFLECTION ── */}
-        <section className="mb-16" style={{ borderTop: "1px solid var(--border)", paddingTop: "48px" }}>
+        <section id="reflection" className="mb-16" style={{ borderTop: "1px solid var(--border)", paddingTop: "48px" }}>
           <p
             className="text-[18px] font-medium mb-6"
             style={{ color: "var(--foreground)" }}
@@ -984,6 +1000,8 @@ export default function SuperrbookCaseStudy() {
         </footer>
 
       </main>
+
+      </div>
     </div>
   );
 }
