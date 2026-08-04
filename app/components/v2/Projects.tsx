@@ -84,7 +84,7 @@ export default function Projects() {
             key={project.id}
             className="flex flex-col md:flex-row"
             style={{
-              border: "2px solid #e0e0e0",
+              border: "1px solid #ededec",
               borderRadius: "24px",
               overflow: "hidden",
               gap: "24px",
@@ -97,7 +97,7 @@ export default function Projects() {
               <div>
                 <h3
                   style={{
-                    fontFamily: "'Inter', sans-serif",
+                    fontFamily: "var(--font-fraunces), Georgia, serif",
                     fontWeight: 500,
                     fontSize: "clamp(1.3rem, 2.2vw, 1.55rem)",
                     lineHeight: 1.35,
@@ -127,12 +127,12 @@ export default function Projects() {
                   href={project.href}
                   className="projects-cta inline-flex items-center justify-between mt-8"
                   style={{
-                    background: "#fff",
+                    background: "#fcfcfb",
                     color: "#111",
                     border: "1px solid #dfdfdf",
                     borderRadius: "24px",
                     padding: "12px 16px 12px 20px",
-                    boxShadow: "0px 1px 4px 0px rgba(0,0,0,0.08)",
+                    boxShadow: "0px 1px 2px 0px rgba(0,0,0,0.05)",
                     fontSize: "18px",
                     fontWeight: 500,
                     maxWidth: "395px",
