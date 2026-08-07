@@ -279,7 +279,7 @@ export default function SuperrbookCaseStudy() {
                   </p>
                   <div
                     className="flex items-center w-full overflow-x-auto"
-                    style={{ minWidth: 0, marginLeft: "-4px", paddingRight: "48px", paddingBottom: "38px" }}
+                    style={{ minWidth: 0, paddingBottom: "38px" }}
                   >
                     {[
                       { label: "Textbook", icon: "/icons/cs-textbook.svg" },
@@ -302,7 +302,7 @@ export default function SuperrbookCaseStudy() {
                           </p>
                         </div>
                         {i < arr.length - 1 && (
-                          <div className="shrink-0" style={{ flex: "1 1 24px", height: "1px", background: "#C7C7C7" }} />
+                          <div className="shrink-0" style={{ flex: "1 1 40px", height: "1px", background: "#C7C7C7" }} />
                         )}
                       </React.Fragment>
                     ))}
