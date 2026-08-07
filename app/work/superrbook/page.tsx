@@ -264,7 +264,7 @@ export default function SuperrbookCaseStudy() {
             <div>
               <p className="text-[16px] font-medium mb-1" style={{ color: "var(--foreground)" }}>Problem</p>
               <p className="text-[16px] leading-relaxed mb-6" style={{ color: "var(--muted)" }}>
-                Students constantly switched between textbooks and notebooks &mdash; and the existing flow made every switch expensive.
+                Learning often required jumping between different resources. Every switch interrupted focus.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-[2.4fr_0.7fr] gap-14 items-start">
                 <div
@@ -275,18 +275,18 @@ export default function SuperrbookCaseStudy() {
                     className="text-[13px] tracking-[0.04em] uppercase mb-6"
                     style={{ color: "var(--muted)" }}
                   >
-                    The Existing Journey
+                    Current Workflow
                   </p>
                   <div
                     className="flex items-center w-full overflow-x-auto"
                     style={{ minWidth: 0, paddingRight: "26px", paddingBottom: "38px" }}
                   >
                     {[
-                      { label: "Textbook", icon: "/icons/cs-textbook.svg" },
+                      { label: "Read", icon: "/icons/cs-textbook.svg" },
                       { label: "Go back", icon: "/icons/cs-goback.svg" },
-                      { label: "Browse files", icon: "/icons/cs-browsefiles.svg" },
-                      { label: "Find notebook", icon: "/icons/cs-findnotebook.svg" },
-                      { label: "Open notebook", icon: "/icons/cs-opennotebook.svg" },
+                      { label: "Browse", icon: "/icons/cs-browsefiles.svg" },
+                      { label: "Find notes", icon: "/icons/cs-findnotebook.svg" },
+                      { label: "Continue writing", icon: "/icons/cs-opennotebook.svg" },
                     ].map((step, i, arr) => (
                       <React.Fragment key={step.label}>
                         <div
@@ -307,6 +307,12 @@ export default function SuperrbookCaseStudy() {
                       </React.Fragment>
                     ))}
                   </div>
+                  <p
+                    className="text-[13px] text-center"
+                    style={{ color: "var(--muted)", marginTop: "8px" }}
+                  >
+                    Repeated many times during every study session.
+                  </p>
                 </div>
                 <div className="flex flex-col" style={{ paddingTop: "24px", marginLeft: "-20px" }}>
                   <p className="text-[16px] font-semibold mb-5" style={{ color: "var(--foreground)" }}>Pain Points</p>
