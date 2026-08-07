@@ -309,28 +309,29 @@ export default function SuperrbookCaseStudy() {
                   </div>
                   <p
                     className="text-[13px] text-center"
-                    style={{ color: "var(--muted)", marginTop: "8px" }}
+                    style={{ color: "var(--muted)", marginTop: "16px" }}
                   >
                     Repeated many times during every study session.
                   </p>
                 </div>
                 <div className="flex flex-col" style={{ paddingTop: "24px", marginLeft: "-20px" }}>
                   <p className="text-[16px] font-semibold mb-5" style={{ color: "var(--foreground)" }}>Pain Points</p>
-                  <ol className="flex flex-col gap-4" style={{ listStyle: "decimal", paddingLeft: "20px" }}>
+                  <div className="flex flex-col gap-3">
                     {[
-                      "Lost context",
-                      "Interrupted note-taking",
-                      "Too many navigation steps",
+                      { emoji: "⚠️", text: "Lost focus" },
+                      { emoji: "🕒", text: "Time wasted" },
+                      { emoji: "✍️", text: "Interrupted writing" },
                     ].map((point) => (
-                      <li
-                        key={point}
-                        className="text-[15px] whitespace-nowrap"
-                        style={{ color: "var(--foreground)", lineHeight: 1.7 }}
+                      <div
+                        key={point.text}
+                        className="inline-flex items-center gap-2.5 rounded-xl px-4 py-3 whitespace-nowrap"
+                        style={{ background: "var(--hover-bg)" }}
                       >
-                        {point}
-                      </li>
+                        <span className="text-[16px]" aria-hidden>{point.emoji}</span>
+                        <p className="text-[15px]" style={{ color: "var(--foreground)" }}>{point.text}</p>
+                      </div>
                     ))}
-                  </ol>
+                  </div>
                 </div>
               </div>
             </div>
@@ -340,13 +341,13 @@ export default function SuperrbookCaseStudy() {
               <p className="text-[16px] font-medium mb-4" style={{ color: "var(--foreground)" }}>Design Goals</p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {[
-                  { text: "Faster switching", rotate: "-1.5deg" },
-                  { text: "Preserve learning flow", rotate: "1deg" },
-                  { text: "No persistent UI", rotate: "-1deg" },
-                  { text: "Familiar mental model", rotate: "1.5deg" },
+                  { emoji: "⚡", title: "Faster switching", subtitle: "Reduce navigation steps", rotate: "-1.5deg" },
+                  { emoji: "🧠", title: "Preserve learning flow", subtitle: "Keep students focused", rotate: "1deg" },
+                  { emoji: "✨", title: "Minimal interface", subtitle: "Only appears when needed", rotate: "-1deg" },
+                  { emoji: "📚", title: "Familiar mental model", subtitle: "Feels natural to use", rotate: "1.5deg" },
                 ].map((goal) => (
                   <div
-                    key={goal.text}
+                    key={goal.title}
                     className="rounded-xl p-4"
                     style={{
                       background: "#FFF6C7",
@@ -354,7 +355,9 @@ export default function SuperrbookCaseStudy() {
                       transform: `rotate(${goal.rotate})`,
                     }}
                   >
-                    <p className="text-[15px] font-medium leading-snug" style={{ color: "#171717" }}>{goal.text}</p>
+                    <span className="text-[20px]" aria-hidden>{goal.emoji}</span>
+                    <p className="text-[15px] font-medium leading-snug mt-2" style={{ color: "#171717" }}>{goal.title}</p>
+                    <p className="text-[13px] leading-snug mt-1" style={{ color: "#5A4E1F" }}>{goal.subtitle}</p>
                   </div>
                 ))}
               </div>
