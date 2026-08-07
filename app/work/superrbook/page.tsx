@@ -332,19 +332,23 @@ export default function SuperrbookCaseStudy() {
             {/* Design Goals */}
             <div>
               <p className="text-[16px] font-medium mb-4" style={{ color: "var(--foreground)" }}>Design Goals</p>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {[
-                  "Faster switching",
-                  "Preserve learning flow",
-                  "No persistent UI",
-                  "Familiar mental model",
+                  { text: "Faster switching", rotate: "-1.5deg" },
+                  { text: "Preserve learning flow", rotate: "1deg" },
+                  { text: "No persistent UI", rotate: "-1deg" },
+                  { text: "Familiar mental model", rotate: "1.5deg" },
                 ].map((goal) => (
                   <div
-                    key={goal}
+                    key={goal.text}
                     className="rounded-xl p-4"
-                    style={{ border: "1px solid var(--border)" }}
+                    style={{
+                      background: "#FFF6C7",
+                      border: "1.5px solid #E8C93A",
+                      transform: `rotate(${goal.rotate})`,
+                    }}
                   >
-                    <p className="text-[15px] font-medium leading-snug" style={{ color: "var(--foreground)" }}>{goal}</p>
+                    <p className="text-[15px] font-medium leading-snug" style={{ color: "#171717" }}>{goal.text}</p>
                   </div>
                 ))}
               </div>
