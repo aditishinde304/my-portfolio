@@ -266,9 +266,9 @@ export default function SuperrbookCaseStudy() {
               <p className="text-[16px] leading-relaxed mb-6" style={{ color: "var(--muted)" }}>
                 Students constantly switched between textbooks and notebooks &mdash; and the existing flow made every switch expensive.
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-[1.5fr_1fr] gap-10 items-stretch">
+              <div className="grid grid-cols-1 md:grid-cols-[1.5fr_1fr] gap-10 items-start">
                 <div
-                  className="rounded-2xl p-6 flex flex-col justify-center"
+                  className="rounded-2xl p-6"
                   style={{ background: "var(--background)", border: "1px solid var(--border)" }}
                 >
                   <p
@@ -277,7 +277,10 @@ export default function SuperrbookCaseStudy() {
                   >
                     The Existing Journey
                   </p>
-                  <div className="flex items-start w-full overflow-x-auto" style={{ minWidth: 0, marginLeft: "-16px" }}>
+                  <div
+                    className="flex items-center w-full overflow-x-auto"
+                    style={{ minWidth: 0, marginLeft: "-16px", paddingBottom: "38px" }}
+                  >
                     {[
                       { label: "Textbook", icon: "/icons/cs-textbook.svg" },
                       { label: "Go back", icon: "/icons/cs-goback.svg" },
@@ -286,36 +289,38 @@ export default function SuperrbookCaseStudy() {
                       { label: "Open notebook", icon: "/icons/cs-opennotebook.svg" },
                     ].map((step, i, arr) => (
                       <React.Fragment key={step.label}>
-                        <div className="flex flex-col items-center shrink-0" style={{ width: "120px" }}>
-                          <div
-                            className="flex items-center justify-center shrink-0"
-                            style={{ width: "64px", height: "64px" }}
-                          >
-                            <Image src={step.icon} alt="" width={48} height={48} />
-                          </div>
+                        <div
+                          className="relative flex items-center justify-center shrink-0"
+                          style={{ width: "64px", height: "64px" }}
+                        >
+                          <Image src={step.icon} alt="" width={48} height={48} />
                           <p
-                            className="text-[13px] leading-snug text-center mt-2 whitespace-nowrap"
-                            style={{ color: "var(--foreground)" }}
+                            className="absolute text-[13px] leading-snug text-center whitespace-nowrap"
+                            style={{ color: "var(--foreground)", top: "76px", left: "50%", transform: "translateX(-50%)" }}
                           >
                             {step.label}
                           </p>
                         </div>
                         {i < arr.length - 1 && (
-                          <div className="shrink-0" style={{ flex: "1 0 16px", height: "1px", background: "var(--border)", marginTop: "32px" }} />
+                          <div className="shrink-0" style={{ flex: "1 1 24px", height: "1px", background: "#C7C7C7" }} />
                         )}
                       </React.Fragment>
                     ))}
                   </div>
                 </div>
-                <div className="flex flex-col justify-center">
-                  <p className="text-[16px] font-semibold mb-3" style={{ color: "var(--foreground)" }}>Pain Points</p>
-                  <ol className="flex flex-col gap-2.5" style={{ listStyle: "decimal", paddingLeft: "20px" }}>
+                <div className="flex flex-col" style={{ paddingTop: "24px" }}>
+                  <p className="text-[16px] font-semibold mb-5" style={{ color: "var(--foreground)" }}>Pain Points</p>
+                  <ol className="flex flex-col gap-4" style={{ listStyle: "decimal", paddingLeft: "20px" }}>
                     {[
                       "Lost context",
                       "Interrupted note-taking",
                       "Too many navigation steps",
                     ].map((point) => (
-                      <li key={point} className="text-[15px] whitespace-nowrap" style={{ color: "var(--foreground)" }}>
+                      <li
+                        key={point}
+                        className="text-[15px] whitespace-nowrap"
+                        style={{ color: "var(--foreground)", lineHeight: 1.7 }}
+                      >
                         {point}
                       </li>
                     ))}
