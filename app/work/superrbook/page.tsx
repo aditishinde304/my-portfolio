@@ -279,7 +279,7 @@ export default function SuperrbookCaseStudy() {
                   </p>
                   <div
                     className="flex items-center w-full overflow-x-auto"
-                    style={{ minWidth: 0, paddingBottom: "38px" }}
+                    style={{ minWidth: 0, paddingRight: "38px", paddingBottom: "38px" }}
                   >
                     {[
                       { label: "Textbook", icon: "/icons/cs-textbook.svg" },
