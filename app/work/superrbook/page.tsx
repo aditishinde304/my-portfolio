@@ -279,7 +279,7 @@ export default function SuperrbookCaseStudy() {
                   </p>
                   <div
                     className="flex items-center w-full overflow-x-auto"
-                    style={{ minWidth: 0, paddingRight: "38px", paddingBottom: "38px" }}
+                    style={{ minWidth: 0, paddingRight: "26px", paddingBottom: "38px" }}
                   >
                     {[
                       { label: "Textbook", icon: "/icons/cs-textbook.svg" },
@@ -308,7 +308,7 @@ export default function SuperrbookCaseStudy() {
                     ))}
                   </div>
                 </div>
-                <div className="flex flex-col" style={{ paddingTop: "24px" }}>
+                <div className="flex flex-col" style={{ paddingTop: "24px", marginLeft: "-20px" }}>
                   <p className="text-[16px] font-semibold mb-5" style={{ color: "var(--foreground)" }}>Pain Points</p>
                   <ol className="flex flex-col gap-4" style={{ listStyle: "decimal", paddingLeft: "20px" }}>
                     {[
