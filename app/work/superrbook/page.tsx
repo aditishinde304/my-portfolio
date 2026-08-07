@@ -266,7 +266,7 @@ export default function SuperrbookCaseStudy() {
               <p className="text-[16px] leading-relaxed mb-6" style={{ color: "var(--muted)" }}>
                 Students constantly switched between textbooks and notebooks &mdash; and the existing flow made every switch expensive.
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-[2.1fr_0.7fr] gap-14 items-start">
+              <div className="grid grid-cols-1 md:grid-cols-[2.4fr_0.7fr] gap-14 items-start">
                 <div
                   className="rounded-2xl p-6"
                   style={{ background: "var(--background)", border: "1px solid var(--border)" }}
@@ -279,7 +279,7 @@ export default function SuperrbookCaseStudy() {
                   </p>
                   <div
                     className="flex items-center w-full overflow-x-auto"
-                    style={{ minWidth: 0, marginLeft: "-16px", paddingBottom: "38px" }}
+                    style={{ minWidth: 0, marginLeft: "-4px", paddingRight: "48px", paddingBottom: "38px" }}
                   >
                     {[
                       { label: "Textbook", icon: "/icons/cs-textbook.svg" },
