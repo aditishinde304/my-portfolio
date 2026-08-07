@@ -266,7 +266,7 @@ export default function SuperrbookCaseStudy() {
               <p className="text-[16px] leading-relaxed mb-6" style={{ color: "var(--muted)" }}>
                 Students constantly switched between textbooks and notebooks &mdash; and the existing flow made every switch expensive.
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-[1.7fr_0.8fr] gap-10 items-stretch">
+              <div className="grid grid-cols-1 md:grid-cols-[1.5fr_1fr] gap-10 items-stretch">
                 <div
                   className="rounded-2xl p-6 flex flex-col justify-center"
                   style={{ background: "var(--background)", border: "1px solid var(--border)" }}
@@ -277,7 +277,7 @@ export default function SuperrbookCaseStudy() {
                   >
                     The Existing Journey
                   </p>
-                  <div className="flex items-start w-full overflow-x-auto" style={{ minWidth: 0 }}>
+                  <div className="flex items-start w-full overflow-x-auto" style={{ minWidth: 0, marginLeft: "-16px" }}>
                     {[
                       { label: "Textbook", icon: "/icons/cs-textbook.svg" },
                       { label: "Go back", icon: "/icons/cs-goback.svg" },
@@ -315,7 +315,7 @@ export default function SuperrbookCaseStudy() {
                       "Interrupted note-taking",
                       "Too many navigation steps",
                     ].map((point) => (
-                      <li key={point} className="text-[15px]" style={{ color: "var(--foreground)" }}>
+                      <li key={point} className="text-[15px] whitespace-nowrap" style={{ color: "var(--foreground)" }}>
                         {point}
                       </li>
                     ))}
