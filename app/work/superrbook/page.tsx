@@ -288,10 +288,10 @@ export default function SuperrbookCaseStudy() {
                       <React.Fragment key={step.label}>
                         <div className="flex flex-col items-center shrink-0" style={{ width: "88px" }}>
                           <div
-                            className="rounded-full flex items-center justify-center shrink-0"
-                            style={{ width: "48px", height: "48px", border: "1px solid var(--border)" }}
+                            className="flex items-center justify-center shrink-0"
+                            style={{ width: "48px", height: "48px" }}
                           >
-                            <Image src={step.icon} alt="" width={22} height={22} />
+                            <Image src={step.icon} alt="" width={34} height={34} />
                           </div>
                           <p
                             className="text-[13px] leading-snug text-center mt-2"
