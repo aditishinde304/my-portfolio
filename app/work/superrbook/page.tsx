@@ -266,7 +266,7 @@ export default function SuperrbookCaseStudy() {
               <p className="text-[16px] leading-relaxed mb-6" style={{ color: "var(--muted)" }}>
                 Students constantly switched between textbooks and notebooks &mdash; and the existing flow made every switch expensive.
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-[1.3fr_1fr] gap-6 items-stretch">
+              <div className="grid grid-cols-1 md:grid-cols-[1.7fr_0.8fr] gap-10 items-stretch">
                 <div
                   className="rounded-2xl p-6 flex flex-col justify-center"
                   style={{ background: "var(--background)", border: "1px solid var(--border)" }}
@@ -286,22 +286,22 @@ export default function SuperrbookCaseStudy() {
                       { label: "Open notebook", icon: "/icons/cs-opennotebook.svg" },
                     ].map((step, i, arr) => (
                       <React.Fragment key={step.label}>
-                        <div className="flex flex-col items-center shrink-0" style={{ width: "88px" }}>
+                        <div className="flex flex-col items-center shrink-0" style={{ width: "120px" }}>
                           <div
                             className="flex items-center justify-center shrink-0"
-                            style={{ width: "48px", height: "48px" }}
+                            style={{ width: "64px", height: "64px" }}
                           >
-                            <Image src={step.icon} alt="" width={34} height={34} />
+                            <Image src={step.icon} alt="" width={48} height={48} />
                           </div>
                           <p
-                            className="text-[13px] leading-snug text-center mt-2"
+                            className="text-[13px] leading-snug text-center mt-2 whitespace-nowrap"
                             style={{ color: "var(--foreground)" }}
                           >
                             {step.label}
                           </p>
                         </div>
                         {i < arr.length - 1 && (
-                          <div className="shrink-0" style={{ flex: "1 0 16px", height: "1px", background: "var(--border)", marginTop: "24px" }} />
+                          <div className="shrink-0" style={{ flex: "1 0 16px", height: "1px", background: "var(--border)", marginTop: "32px" }} />
                         )}
                       </React.Fragment>
                     ))}
