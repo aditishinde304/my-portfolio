@@ -283,7 +283,7 @@ export default function SuperrbookCaseStudy() {
                   >
                     {[
                       { label: "Read", icon: "/icons/cs-textbook.svg" },
-                      { label: "Go back", icon: "/icons/cs-goback.svg" },
+                      { label: "Go back", icon: "/icons/cs-goback-new.svg" },
                       { label: "Browse", icon: "/icons/cs-browsefiles.svg" },
                       { label: "Find notes", icon: "/icons/cs-findnotebook.svg" },
                       { label: "Continue writing", icon: "/icons/cs-opennotebook.svg" },
@@ -309,7 +309,7 @@ export default function SuperrbookCaseStudy() {
                   </div>
                   <p
                     className="text-[13px] text-center"
-                    style={{ color: "var(--muted)", marginTop: "16px" }}
+                    style={{ color: "var(--muted)", marginTop: "22px" }}
                   >
                     Repeated many times during every study session.
                   </p>
@@ -341,21 +341,17 @@ export default function SuperrbookCaseStudy() {
               <p className="text-[16px] font-medium mb-4" style={{ color: "var(--foreground)" }}>Design Goals</p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {[
-                  { emoji: "⚡", title: "Faster switching", subtitle: "Reduce navigation steps", rotate: "-1.5deg" },
-                  { emoji: "🧠", title: "Preserve learning flow", subtitle: "Keep students focused", rotate: "1deg" },
-                  { emoji: "✨", title: "Minimal interface", subtitle: "Only appears when needed", rotate: "-1deg" },
-                  { emoji: "📚", title: "Familiar mental model", subtitle: "Feels natural to use", rotate: "1.5deg" },
+                  { icon: "/icons/dg-faster-switching.svg", title: "Faster switching", subtitle: "Reduce navigation steps" },
+                  { icon: "/icons/dg-learning-flow.svg", title: "Preserve learning flow", subtitle: "Keep students focused" },
+                  { icon: "/icons/dg-minimal-interface.svg", title: "Minimal interface", subtitle: "Only appears when needed" },
+                  { icon: "/icons/dg-mental-model.svg", title: "Familiar mental model", subtitle: "Feels natural to use" },
                 ].map((goal) => (
                   <div
                     key={goal.title}
                     className="rounded-xl p-4"
-                    style={{
-                      background: "#FFF6C7",
-                      border: "1.5px solid #E8C93A",
-                      transform: `rotate(${goal.rotate})`,
-                    }}
+                    style={{ background: "#FFF6C7", border: "1.5px solid #E8C93A" }}
                   >
-                    <span className="text-[20px]" aria-hidden>{goal.emoji}</span>
+                    <Image src={goal.icon} alt="" width={22} height={22} />
                     <p className="text-[15px] font-medium leading-snug mt-2" style={{ color: "#171717" }}>{goal.title}</p>
                     <p className="text-[13px] leading-snug mt-1" style={{ color: "#5A4E1F" }}>{goal.subtitle}</p>
                   </div>
