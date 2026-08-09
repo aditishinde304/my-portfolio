@@ -255,6 +255,7 @@ export default function SuperrbookCaseStudy() {
 
             {/* TL;DR */}
             <div>
+              <p className="text-[16px] font-medium mb-1" style={{ color: "var(--foreground)" }}>TL;DR</p>
               <p className="text-[16px] leading-relaxed" style={{ color: "var(--muted)" }}>
                 Designed a lightweight resource switcher that lets students move between textbooks and notebooks without breaking their learning flow.
               </p>
@@ -283,7 +284,7 @@ export default function SuperrbookCaseStudy() {
                   >
                     {[
                       { label: "Read", icon: "/icons/cs-textbook.svg" },
-                      { label: "Go back", icon: "/icons/cs-goback-new.svg" },
+                      { label: "Go back", icon: "/icons/cs-goback-v2.svg" },
                       { label: "Browse", icon: "/icons/cs-browsefiles.svg" },
                       { label: "Find notes", icon: "/icons/cs-findnotebook.svg" },
                       { label: "Continue writing", icon: "/icons/cs-opennotebook.svg" },
@@ -314,21 +315,20 @@ export default function SuperrbookCaseStudy() {
                     Repeated many times during every study session.
                   </p>
                 </div>
-                <div className="flex flex-col" style={{ paddingTop: "24px", marginLeft: "-20px" }}>
+                <div className="flex flex-col" style={{ paddingTop: "12px", marginLeft: "-20px" }}>
                   <p className="text-[16px] font-semibold mb-5" style={{ color: "var(--foreground)" }}>Pain Points</p>
                   <div className="flex flex-col gap-3">
                     {[
-                      { emoji: "⚠️", text: "Lost focus" },
-                      { emoji: "🕒", text: "Time wasted" },
-                      { emoji: "✍️", text: "Interrupted writing" },
+                      "Breaks concentration",
+                      "Adds unnecessary steps",
+                      "Interrupts note taking",
                     ].map((point) => (
                       <div
-                        key={point.text}
-                        className="inline-flex items-center gap-2.5 rounded-xl px-4 py-3 whitespace-nowrap"
+                        key={point}
+                        className="rounded-xl px-4 py-3 whitespace-nowrap"
                         style={{ background: "var(--hover-bg)" }}
                       >
-                        <span className="text-[16px]" aria-hidden>{point.emoji}</span>
-                        <p className="text-[15px]" style={{ color: "var(--foreground)" }}>{point.text}</p>
+                        <p className="text-[15px]" style={{ color: "var(--foreground)" }}>{point}</p>
                       </div>
                     ))}
                   </div>
