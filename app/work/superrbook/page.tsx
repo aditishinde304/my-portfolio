@@ -391,8 +391,8 @@ export default function SuperrbookCaseStudy() {
                     {
                       tabLabel: "Iteration 1",
                       image: "/context-switching-iteration-1.png",
-                      imageWidth: 1058,
-                      imageHeight: 1459,
+                      imageWidth: 906,
+                      imageHeight: 1312,
                       alt: "Iteration 1: single pull-down swipe from top, shown on iPad",
                       title: "Single Pull down swipe from top",
                       idea: "Swipe down from the top edge to open the resource switcher.",
@@ -404,8 +404,8 @@ export default function SuperrbookCaseStudy() {
                     {
                       tabLabel: "Iteration 2",
                       image: "/context-switching-iteration-2.png",
-                      imageWidth: 1058,
-                      imageHeight: 1459,
+                      imageWidth: 906,
+                      imageHeight: 1312,
                       alt: "Iteration 2: toolbar action, shown on iPad",
                       title: "Toolbar Action",
                       idea: "Used a dedicated switcher button in the toolbar.",
@@ -417,8 +417,8 @@ export default function SuperrbookCaseStudy() {
                     {
                       tabLabel: "Iteration 3",
                       image: "/context-switching-iteration-3.png",
-                      imageWidth: 1056,
-                      imageHeight: 1459,
+                      imageWidth: 906,
+                      imageHeight: 1313,
                       alt: "Iteration 3: handle and pull gesture, shown on iPad",
                       title: "Handle + Pull Gesture",
                       idea: "Reveal the switcher by pulling a handle from the top edge.",
