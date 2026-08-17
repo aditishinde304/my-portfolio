@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import VideoPlayer from "@/app/components/VideoPlayer";
 import CaseStudyNav from "@/app/components/CaseStudyNav";
+import ExplorationTabs from "@/app/components/ExplorationTabs";
 
 const navSections = [
   { id: "overview", label: "Overview" },
@@ -361,97 +362,64 @@ export default function SuperrbookCaseStudy() {
 
             {/* Exploration */}
             <div>
-              <p className="text-[16px] font-medium mb-2" style={{ color: "var(--foreground)" }}>Exploration</p>
-              <p className="text-[16px] leading-relaxed mb-8" style={{ color: "var(--muted)" }}>
-                I explored multiple interaction patterns for the switcher&rsquo;s entry point before committing to one.
-              </p>
-              <div className="flex flex-col gap-10">
-                {[
-                  {
-                    number: "01",
-                    title: "Single Pull-Down Swipe From Top",
-                    image: "/Context Switching 1.png",
-                    alt: "Swipe from top gesture exploration",
-                    idea: "Swipe down from the top of the screen to reveal the switcher.",
-                    why: "Explored for its speed and quick access.",
-                    pros: ["Quick access"],
-                    cons: ["Conflicted with system gestures", "Difficult to own consistently across the OS"],
-                    decision: "The gesture competed directly with operating system interactions and could not be reliably controlled within the product.",
-                  },
-                  {
-                    number: "02",
-                    title: "Toolbar Action",
-                    image: "/Context Switching 02.png",
-                    alt: "Toolbar action exploration",
-                    idea: "Add a dedicated switcher button to the toolbar.",
-                    why: "Explored for its familiarity as a common interaction pattern.",
-                    pros: ["Familiar interaction pattern"],
-                    cons: ["Slower for frequent usage", "Added additional UI controls", "Extra interaction steps required"],
-                    decision: "The interaction felt too heavy for a workflow students perform repeatedly throughout a study session.",
-                  },
-                  {
-                    number: "03",
-                    title: "Handle + Pull Gesture",
-                    image: "/Context Switching 03.png",
-                    alt: "Handle and pull gesture exploration",
-                    idea: "A persistent handle at the edge of the screen that students pull to open the switcher.",
-                    why: "Explored for its discoverability and ease of understanding.",
-                    pros: ["Discoverable", "Fast for repeat usage", "Easy to understand"],
-                    cons: ["Required persistent UI across the entire product", "Valuable top-of-screen space lost in notebooks", "Added visual clutter to focused reading and writing surfaces"],
-                    decision: "While the handle improved discoverability, the tradeoff of adding permanent interface chrome across the product felt too expensive for a feature intended to stay lightweight.",
-                  },
-                ].map((option) => (
-                  <div key={option.number} className="rounded-2xl">
-                    <p className="text-[13px] tracking-[0.06em] uppercase mb-3" style={{ color: "var(--muted)" }}>
-                      Exploration {option.number}
-                    </p>
+              <p className="text-[16px] font-medium mb-6" style={{ color: "var(--foreground)" }}>Exploration</p>
 
-                    <div className="mb-5 rounded-2xl overflow-hidden p-4" style={{ background: "var(--hover-bg)" }}>
-                      <Image src={option.image} alt={option.alt} width={800} height={1120} quality={100} className="w-full h-auto block rounded-xl" />
-                    </div>
+              {/* Challenge */}
+              <div className="mb-10">
+                <p className="text-[13px] tracking-[0.06em] uppercase mb-2" style={{ color: "var(--muted)" }}>
+                  Challenge
+                </p>
+                <p className="text-[16px] leading-relaxed italic" style={{ color: "var(--foreground)" }}>
+                  &ldquo;Design a lightweight resource switcher that students could access quickly without interrupting their learning flow.&rdquo;
+                </p>
+              </div>
 
-                    <p className="text-[16px] font-medium mb-4" style={{ color: "var(--foreground)" }}>{option.title}</p>
+              {/* Part 1 — Finding the right entry point */}
+              <div>
+                <p className="text-[16px] font-medium mb-1" style={{ color: "var(--foreground)" }}>
+                  Finding the right entry point
+                </p>
+                <p className="text-[15px] leading-relaxed mb-6" style={{ color: "var(--muted)" }}>
+                  How should students open the switcher?
+                </p>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-5">
-                      <div>
-                        <p className="text-[13px] font-medium mb-1" style={{ color: "var(--muted)" }}>Idea</p>
-                        <p className="text-[15px] leading-relaxed" style={{ color: "var(--foreground)" }}>{option.idea}</p>
-                      </div>
-                      <div>
-                        <p className="text-[13px] font-medium mb-1" style={{ color: "var(--muted)" }}>Why I explored it</p>
-                        <p className="text-[15px] leading-relaxed" style={{ color: "var(--foreground)" }}>{option.why}</p>
-                      </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-5">
-                      <div>
-                        <p className="text-[13px] font-medium mb-2" style={{ color: "var(--muted)" }}>Pros</p>
-                        <ul className="flex flex-col gap-1.5">
-                          {option.pros.map((p) => (
-                            <li key={p} className="text-[15px] leading-relaxed flex items-start gap-2" style={{ color: "var(--muted)" }}>
-                              <span className="shrink-0 rounded-full mt-[7px]" style={{ width: "3px", height: "3px", background: "var(--muted)", display: "inline-block" }} />{p}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      <div>
-                        <p className="text-[13px] font-medium mb-2" style={{ color: "var(--muted)" }}>Cons</p>
-                        <ul className="flex flex-col gap-1.5">
-                          {option.cons.map((c) => (
-                            <li key={c} className="text-[15px] leading-relaxed flex items-start gap-2" style={{ color: "var(--muted)" }}>
-                              <span className="shrink-0 rounded-full mt-[7px]" style={{ width: "3px", height: "3px", background: "var(--muted)", display: "inline-block" }} />{c}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-
-                    <div className="rounded-xl p-4" style={{ background: "#FEF2F2", border: "1px solid #FECACA" }}>
-                      <p className="text-[15px] font-medium mb-1" style={{ color: "#DC2626" }}>Decision: Rejected</p>
-                      <p className="text-[15px] leading-relaxed" style={{ color: "#7F1D1D" }}>{option.decision}</p>
-                    </div>
-                  </div>
-                ))}
+                <ExplorationTabs
+                  iterations={[
+                    {
+                      tabLabel: "Iteration 1",
+                      image: "/context-switching-iteration-1.png",
+                      alt: "Iteration 1: single pull-down swipe from top, shown on iPad",
+                      title: "Single Pull down swipe from top",
+                      idea: "Swipe down from the top edge to open the resource switcher.",
+                      whyTitle: "Fast and gesture first access",
+                      why: "Let students access resources quickly without any visible UI taking up space.",
+                      moveAwayTitle: "Conflicted with system gestures.",
+                      moveAway: "It was easy to trigger accidentally and clashed with system gestures.",
+                    },
+                    {
+                      tabLabel: "Iteration 2",
+                      image: "/context-switching-iteration-2.png",
+                      alt: "Iteration 2: toolbar action, shown on iPad",
+                      title: "Toolbar Action",
+                      idea: "Used a dedicated switcher button in the toolbar.",
+                      whyTitle: "Familiar and easy to discover",
+                      why: "Students are already familiar with toolbar actions in productivity tools.",
+                      moveAwayTitle: "Added an extra tap for a frequent action",
+                      moveAway: "Slowed down a workflow students repeat throughout a study session.",
+                    },
+                    {
+                      tabLabel: "Iteration 3",
+                      image: "/context-switching-iteration-3.png",
+                      alt: "Iteration 3: handle and pull gesture, shown on iPad",
+                      title: "Handle + Pull Gesture",
+                      idea: "Reveal the switcher by pulling a handle from the top edge.",
+                      whyTitle: "Easy to discover",
+                      why: "Visible enough to discover and quick to access.",
+                      moveAwayTitle: "Required a persistent handle.",
+                      moveAway: "Takes up canvas space and interrupts focus.",
+                    },
+                  ]}
+                />
               </div>
 
               {/* Key Insight */}
