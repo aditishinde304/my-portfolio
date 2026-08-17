@@ -23,13 +23,13 @@ export default function Experiments() {
         </h2>
         <a
           href="/experiments"
-          className="hero-nav-link text-[15px]"
+          className="hero-nav-link text-[16px]"
           style={{ color: "#666" }}
         >
           View more
         </a>
       </div>
-      <p className="text-[17px]" style={{ color: "#666", marginBottom: "48px" }}>
+      <p className="text-[18px]" style={{ color: "#666", marginBottom: "48px" }}>
         Small builds and interaction explorations outside of work.
       </p>
 

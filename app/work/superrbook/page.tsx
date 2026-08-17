@@ -69,7 +69,7 @@ export default function SuperrbookCaseStudy() {
         {/* Mobile back link (sidebar handles it on desktop) */}
         <Link
           href="/"
-          className="lg:hidden text-[13px] inline-block mb-16 link-dashed"
+          className="lg:hidden text-[14px] inline-block mb-16 link-dashed"
           style={{ color: "var(--muted)" }}
         >
           ← Back
@@ -86,7 +86,7 @@ export default function SuperrbookCaseStudy() {
             Designing better digital<br />classroom experiences
           </h1>
           <p
-            className="text-[13px] tracking-[0.04em]"
+            className="text-[14px] tracking-[0.04em]"
             style={{ color: "var(--muted)" }}
           >
             Superr &nbsp;|&nbsp; 2025
@@ -245,7 +245,7 @@ export default function SuperrbookCaseStudy() {
               Context Switching Between Learning Resources
             </h2>
             <span
-              className="text-[13px] tabular-nums shrink-0 ml-6"
+              className="text-[14px] tabular-nums shrink-0 ml-6"
               style={{ color: "var(--muted)" }}
             >
               01 / {String(TOTAL_SECTIONS).padStart(2, "0")}
@@ -274,7 +274,7 @@ export default function SuperrbookCaseStudy() {
                   style={{ background: "var(--background)", border: "1px solid var(--border)" }}
                 >
                   <p
-                    className="text-[13px] tracking-[0.04em] uppercase mb-6"
+                    className="text-[14px] tracking-[0.04em] uppercase mb-6"
                     style={{ color: "var(--muted)" }}
                   >
                     Current Workflow
@@ -297,7 +297,7 @@ export default function SuperrbookCaseStudy() {
                         >
                           <Image src={step.icon} alt="" width={48} height={48} />
                           <p
-                            className="absolute text-[13px] leading-snug text-center whitespace-nowrap"
+                            className="absolute text-[14px] leading-snug text-center whitespace-nowrap"
                             style={{ color: "var(--foreground)", top: "76px", left: "50%", transform: "translateX(-50%)" }}
                           >
                             {step.label}
@@ -310,7 +310,7 @@ export default function SuperrbookCaseStudy() {
                     ))}
                   </div>
                   <p
-                    className="text-[13px] text-center"
+                    className="text-[14px] text-center"
                     style={{ color: "var(--muted)", marginTop: "22px" }}
                   >
                     Repeated many times during every study session.
@@ -329,7 +329,7 @@ export default function SuperrbookCaseStudy() {
                         className="rounded-xl px-4 py-3 whitespace-nowrap"
                         style={{ background: "var(--hover-bg)" }}
                       >
-                        <p className="text-[15px]" style={{ color: "var(--foreground)" }}>{point}</p>
+                        <p className="text-[16px]" style={{ color: "var(--foreground)" }}>{point}</p>
                       </div>
                     ))}
                   </div>
@@ -353,8 +353,8 @@ export default function SuperrbookCaseStudy() {
                     style={{ background: "#FFF6C7", border: "1.5px solid #E8C93A" }}
                   >
                     <Image src={goal.icon} alt="" width={22} height={22} />
-                    <p className="text-[15px] font-medium leading-snug mt-2" style={{ color: "#171717" }}>{goal.title}</p>
-                    <p className="text-[13px] leading-snug mt-1" style={{ color: "#5A4E1F" }}>{goal.subtitle}</p>
+                    <p className="text-[16px] font-medium leading-snug mt-2" style={{ color: "#171717" }}>{goal.title}</p>
+                    <p className="text-[14px] leading-snug mt-1" style={{ color: "#5A4E1F" }}>{goal.subtitle}</p>
                   </div>
                 ))}
               </div>
@@ -366,7 +366,7 @@ export default function SuperrbookCaseStudy() {
 
               {/* Challenge */}
               <div className="mb-10">
-                <p className="text-[13px] tracking-[0.06em] uppercase mb-2" style={{ color: "var(--muted)" }}>
+                <p className="text-[14px] tracking-[0.06em] uppercase mb-2" style={{ color: "var(--muted)" }}>
                   Challenge
                 </p>
                 <p className="text-[16px] leading-relaxed italic" style={{ color: "var(--foreground)" }}>
@@ -377,12 +377,9 @@ export default function SuperrbookCaseStudy() {
               {/* Part 1 — Finding the right entry point */}
               <div>
                 <p className="text-[16px] font-medium mb-3" style={{ color: "var(--foreground)" }}>
-                  Finding the right entry point
+                  Part 1 — Finding the right entry point
                 </p>
-                <p className="text-[13px] font-medium tracking-[0.06em] uppercase mb-1" style={{ color: "var(--muted)" }}>
-                  Idea 1
-                </p>
-                <p className="text-[15px] leading-relaxed mb-6" style={{ color: "var(--muted)" }}>
+                <p className="text-[16px] leading-relaxed mb-6" style={{ color: "var(--muted)" }}>
                   How should students open the switcher?
                 </p>
 
@@ -493,7 +490,7 @@ export default function SuperrbookCaseStudy() {
                     style={{ background: "var(--hover-bg)" }}
                   >
                     <span className="shrink-0 rounded-full" style={{ width: "4px", height: "4px", background: "var(--muted)", display: "inline-block" }} />
-                    <p className="text-[15px]" style={{ color: "var(--foreground)" }}>{q}</p>
+                    <p className="text-[16px]" style={{ color: "var(--foreground)" }}>{q}</p>
                   </div>
                 ))}
               </div>
@@ -511,7 +508,7 @@ export default function SuperrbookCaseStudy() {
                 ].map((lesson, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <span className="shrink-0 rounded-full mt-[8px]" style={{ width: "4px", height: "4px", background: "var(--muted)", display: "inline-block" }} />
-                    <p className="text-[15px] leading-relaxed" style={{ color: "var(--muted)" }}>{lesson}</p>
+                    <p className="text-[16px] leading-relaxed" style={{ color: "var(--muted)" }}>{lesson}</p>
                   </div>
                 ))}
               </div>
@@ -549,7 +546,7 @@ export default function SuperrbookCaseStudy() {
               Geometry Tools: Making Digital Tools Feel Physical
             </h2>
             <span
-              className="text-[13px] tabular-nums shrink-0 ml-6"
+              className="text-[14px] tabular-nums shrink-0 ml-6"
               style={{ color: "var(--muted)" }}
             >
               02 / {String(TOTAL_SECTIONS).padStart(2, "0")}
@@ -758,7 +755,7 @@ export default function SuperrbookCaseStudy() {
               Helping school admins manage devices better
             </h2>
             <span
-              className="text-[13px] tabular-nums shrink-0 ml-6"
+              className="text-[14px] tabular-nums shrink-0 ml-6"
               style={{ color: "var(--muted)" }}
             >
               03 / {String(TOTAL_SECTIONS).padStart(2, "0")}
@@ -931,7 +928,7 @@ export default function SuperrbookCaseStudy() {
           className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-0 pt-6"
           style={{ borderTop: "1px solid var(--border)" }}
         >
-          <span className="text-[13px]" style={{ color: "var(--muted)" }}>
+          <span className="text-[14px]" style={{ color: "var(--muted)" }}>
             Designed + Coded with{" "}
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="12" height="12" fill="currentColor" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ display: "inline", verticalAlign: "middle", marginBottom: "1px" }}>
               <path d="M10.4107 19.9677C7.58942 17.858 2 13.0348 2 8.69444C2 5.82563 4.10526 3.5 7 3.5C8.5 3.5 10 4 12 6C14 4 15.5 3.5 17 3.5C19.8947 3.5 22 5.82563 22 8.69444C22 13.0348 16.4106 17.858 13.5893 19.9677C12.6399 20.6776 11.3601 20.6776 10.4107 19.9677Z" />
@@ -941,7 +938,7 @@ export default function SuperrbookCaseStudy() {
           <div className="flex items-center gap-5">
             <a
               href="mailto:aditi.shinde304@gmail.com"
-              className="text-[13px] link-dashed"
+              className="text-[14px] link-dashed"
               style={{ color: "var(--muted)" }}
             >
               Email
@@ -950,7 +947,7 @@ export default function SuperrbookCaseStudy() {
               href="https://x.com/AditiShinde30"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[13px] link-dashed"
+              className="text-[14px] link-dashed"
               style={{ color: "var(--muted)" }}
             >
               X
@@ -959,7 +956,7 @@ export default function SuperrbookCaseStudy() {
               href="https://www.linkedin.com/in/aditi-shinde-5415681b7/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[13px] link-dashed"
+              className="text-[14px] link-dashed"
               style={{ color: "var(--muted)" }}
             >
               LinkedIn
@@ -968,7 +965,7 @@ export default function SuperrbookCaseStudy() {
               href="https://drive.google.com/file/d/1mbuBG-T9t_Rxmam4UcLlDq3tveGxfSit/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[13px] link-dashed"
+              className="text-[14px] link-dashed"
               style={{ color: "var(--muted)" }}
             >
               Resume

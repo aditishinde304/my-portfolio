@@ -33,7 +33,7 @@ export default function NavBar() {
               href={item.href}
               target={item.href.startsWith("http") ? "_blank" : undefined}
               rel="noopener noreferrer"
-              className="text-[13px] font-medium px-4 py-1.5 rounded-full transition-all duration-150"
+              className="text-[14px] font-medium px-4 py-1.5 rounded-full transition-all duration-150"
               style={{ color: "var(--muted)" }}
             >
               {item.label}
@@ -42,7 +42,7 @@ export default function NavBar() {
             <Link
               key={item.label}
               href={item.href}
-              className="text-[13px] font-medium px-4 py-1.5 rounded-full transition-all duration-150"
+              className="text-[14px] font-medium px-4 py-1.5 rounded-full transition-all duration-150"
               style={
                 isActive
                   ? { background: "var(--foreground)", color: "var(--background)" }

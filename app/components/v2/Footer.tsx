@@ -75,7 +75,7 @@ export default function Footer() {
               href={s.href}
               target={s.href.startsWith("http") ? "_blank" : undefined}
               rel="noopener noreferrer"
-              className="footer-social-link text-[13px]"
+              className="footer-social-link text-[14px]"
               style={{ color: "#e4e4e2" }}
             >
               {s.label}

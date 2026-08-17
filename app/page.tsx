@@ -28,7 +28,7 @@ export default function Home() {
               <a
                 key={item.label}
                 href={item.href}
-                className="hero-nav-link text-[15px]"
+                className="hero-nav-link text-[16px]"
                 style={{ color: "#333" }}
               >
                 {item.label}
@@ -39,7 +39,7 @@ export default function Home() {
             href="https://drive.google.com/file/d/1mbuBG-T9t_Rxmam4UcLlDq3tveGxfSit/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
-            className="hero-resume-btn text-[15px] font-medium"
+            className="hero-resume-btn text-[16px] font-medium"
             style={{ background: "#111", color: "#fff", padding: "11px 24px", borderRadius: "999px" }}
           >
             Resume
@@ -92,7 +92,7 @@ export default function Home() {
             products delightful.
           </h1>
 
-          <p className="text-[17px]" style={{ lineHeight: "1.6", color: "#555", marginTop: "32px", maxWidth: "405px" }}>
+          <p className="text-[18px]" style={{ lineHeight: "1.6", color: "#555", marginTop: "32px", maxWidth: "405px" }}>
             Product designer at{" "}
             <a href="https://www.superr.ai/" target="_blank" rel="noopener noreferrer" className="font-semibold underline" style={{ color: "#111" }}>
               Superr

@@ -5,7 +5,7 @@ export default function AboutPage() {
   return (
     <div style={{ background: "#fcfcfb", color: "#111", minHeight: "100vh" }}>
       <main className="max-w-[1014px] mx-auto px-6 sm:px-10 py-20 md:py-28">
-        <Link href="/" className="text-[13px] inline-block mb-16 link-dashed" style={{ color: "#666" }}>
+        <Link href="/" className="text-[14px] inline-block mb-16 link-dashed" style={{ color: "#666" }}>
           &larr; Back
         </Link>
 

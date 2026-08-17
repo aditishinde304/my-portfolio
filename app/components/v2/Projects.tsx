@@ -74,7 +74,7 @@ export default function Projects() {
       >
         My Latest Creations
       </h2>
-      <p className="text-[17px]" style={{ color: "#666", marginTop: "8px" }}>
+      <p className="text-[18px]" style={{ color: "#666", marginTop: "8px" }}>
         A showcase of my recent projects and exploration
       </p>
 

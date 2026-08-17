@@ -145,7 +145,7 @@ export default function Playground() {
           My Creative Play
         </h2>
       </div>
-      <p className="text-[17px] leading-relaxed mb-5" style={{ color: "var(--muted)" }}>
+      <p className="text-[18px] leading-relaxed mb-5" style={{ color: "var(--muted)" }}>
         While product design is my main gig, I love experimenting with motion design and 3D.
       </p>
 

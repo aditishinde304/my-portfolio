@@ -35,7 +35,7 @@ export default function CaseStudyNav({ sections }: { sections: NavSection[] }) {
     >
       <Link
         href="/"
-        className="inline-flex items-center gap-1.5 text-[13px] uppercase tracking-[0.08em] mb-10"
+        className="inline-flex items-center gap-1.5 text-[14px] uppercase tracking-[0.08em] mb-10"
         style={{ color: "var(--muted)" }}
       >
         <span aria-hidden>←</span> Go back

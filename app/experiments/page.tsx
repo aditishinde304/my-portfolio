@@ -42,7 +42,7 @@ export default function Experiments() {
       <div className="mb-12">
         <Link
           href="/"
-          className="text-[13px] mb-8 inline-block link-dashed"
+          className="text-[14px] mb-8 inline-block link-dashed"
           style={{ color: "var(--muted)" }}
         >
           ← Back
@@ -85,7 +85,7 @@ export default function Experiments() {
                 {exp.name}
               </span>
               {exp.wip && (
-                <span className="text-[13px] font-normal" style={{ color: "var(--muted)", fontFamily: "var(--font-shantell)" }}>
+                <span className="text-[14px] font-normal" style={{ color: "var(--muted)", fontFamily: "var(--font-shantell)" }}>
                   (WIP)
                 </span>
               )}

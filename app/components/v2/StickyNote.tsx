@@ -18,7 +18,7 @@ export default function StickyNote({ title, items, bg, headerBg, rotate }: Stick
       }}
     >
       <div
-        className="px-5 py-3 text-[15px] font-semibold"
+        className="px-5 py-3 text-[16px] font-semibold"
         style={{ background: headerBg, borderRadius: "4px 4px 0 0", color: "#1a1a1a" }}
       >
         {title}
