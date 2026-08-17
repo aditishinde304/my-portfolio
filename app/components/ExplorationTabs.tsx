@@ -6,6 +6,8 @@ import Image from "next/image";
 export interface ExplorationIteration {
   tabLabel: string;
   image: string;
+  imageWidth: number;
+  imageHeight: number;
   alt: string;
   title: string;
   idea: string;
@@ -24,11 +26,14 @@ export default function ExplorationTabs({
   const current = iterations[active];
 
   return (
-    <div>
+    <div
+      className="rounded-2xl p-3 md:p-4"
+      style={{ background: "var(--background)", border: "1px solid var(--border)" }}
+    >
       {/* Tab bar */}
       <div
         className="inline-flex w-full rounded-full p-1 mb-6"
-        style={{ background: "var(--hover-bg)", border: "1px solid var(--border)" }}
+        style={{ background: "var(--hover-bg)" }}
         role="tablist"
         aria-label="Exploration iterations"
       >
@@ -51,21 +56,16 @@ export default function ExplorationTabs({
       </div>
 
       {/* Content */}
-      <div
-        className="rounded-2xl p-6 md:p-8"
-        style={{ background: "var(--background)", border: "1px solid var(--border)" }}
-      >
-        <div className="grid grid-cols-1 md:grid-cols-[380px_1fr] gap-10 items-start">
-          <div className="rounded-2xl overflow-hidden" style={{ background: "var(--hover-bg)" }}>
-            <Image
-              src={current.image}
-              alt={current.alt}
-              width={1071}
-              height={1474}
-              quality={100}
-              className="w-full h-auto block"
-            />
-          </div>
+      <div className="px-2 pb-2 md:px-4 md:pb-4">
+        <div className="grid grid-cols-1 md:grid-cols-[380px_1fr] gap-10 items-center">
+          <Image
+            src={current.image}
+            alt={current.alt}
+            width={current.imageWidth}
+            height={current.imageHeight}
+            quality={100}
+            className="w-full h-auto block"
+          />
 
           <div className="flex flex-col gap-6">
             <div>
