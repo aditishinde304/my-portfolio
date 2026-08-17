@@ -67,8 +67,8 @@ export default function ExplorationTabs({
             className="w-full h-auto block"
           />
 
-          <div className="flex flex-col gap-6">
-            <div>
+          <div className="flex flex-col">
+            <div className="pb-6">
               <p className="text-[13px] font-medium tracking-[0.04em] uppercase mb-2" style={{ color: "#3B82F6" }}>
                 Idea
               </p>
@@ -80,7 +80,7 @@ export default function ExplorationTabs({
               </p>
             </div>
 
-            <div>
+            <div className="py-6" style={{ borderTop: "1px solid var(--border)" }}>
               <p className="text-[13px] font-medium tracking-[0.04em] uppercase mb-2" style={{ color: "#16A34A" }}>
                 Why I explored it
               </p>
@@ -92,7 +92,7 @@ export default function ExplorationTabs({
               </p>
             </div>
 
-            <div>
+            <div className="pt-6" style={{ borderTop: "1px solid var(--border)" }}>
               <p className="text-[13px] font-medium tracking-[0.04em] uppercase mb-2" style={{ color: "#DC2626" }}>
                 Why I moved away
               </p>
