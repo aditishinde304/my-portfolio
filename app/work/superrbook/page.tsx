@@ -427,6 +427,66 @@ export default function SuperrbookCaseStudy() {
                   This exploration shifted my thinking from navigating between screens to switching within the same collection &mdash; like opening another folder in the same workspace.
                 </p>
               </div>
+
+              {/* Part 2 - Designing the Switcher */}
+              <div className="mt-12">
+                <p className="text-[16px] font-medium mb-3" style={{ color: "var(--foreground)" }}>
+                  Part 2 - Designing the Switcher
+                </p>
+                <p className="text-[14px] leading-relaxed mb-10" style={{ color: "var(--muted)" }}>
+                  What should appear when students open it?
+                </p>
+
+                <div
+                  className="rounded-2xl p-3 md:p-4"
+                  style={{ background: "var(--background)", border: "1px solid var(--border)" }}
+                >
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 p-2 md:p-4">
+                    {[
+                      { image: "/context-switching-part2-1.png", alt: "Switcher overlay covering the toolbar area" },
+                      { image: "/context-switching-part2-2.png", alt: "Switcher overlay anchored to the bottom of the page" },
+                      { image: "/context-switching-part2-3.png", alt: "Switcher shown as a bottom tab bar" },
+                    ].map((variant) => (
+                      <Image
+                        key={variant.image}
+                        src={variant.image}
+                        alt={variant.alt}
+                        width={556}
+                        height={805}
+                        quality={100}
+                        className="w-full h-auto block"
+                      />
+                    ))}
+                  </div>
+                </div>
+
+                <div className="mt-8">
+                  <p className="text-[16px] font-semibold mb-4" style={{ color: "#DC2626" }}>
+                    Why it didn&rsquo;t work
+                  </p>
+                  <div className="flex flex-col gap-6">
+                    {[
+                      {
+                        title: "1. Disconnected interaction",
+                        body: "The gesture opened the switcher, but the resulting UI felt separate from the workspace.",
+                      },
+                      {
+                        title: "2. Too app like",
+                        body: "Tabs and sheets introduced patterns that felt unfamiliar in a notebook first experience.",
+                      },
+                    ].map((reason) => (
+                      <div key={reason.title}>
+                        <p className="text-[16px] font-medium mb-1" style={{ color: "var(--foreground)" }}>
+                          {reason.title}
+                        </p>
+                        <p className="text-[14px] leading-relaxed" style={{ color: "var(--muted)" }}>
+                          {reason.body}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Final Direction */}
