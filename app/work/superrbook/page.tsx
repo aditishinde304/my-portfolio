@@ -458,32 +458,32 @@ export default function SuperrbookCaseStudy() {
                       />
                     ))}
                   </div>
-                </div>
 
-                <div className="mt-8">
-                  <p className="text-[16px] font-semibold mb-4" style={{ color: "#DC2626" }}>
-                    Why it didn&rsquo;t work
-                  </p>
-                  <div className="flex flex-col gap-6">
-                    {[
-                      {
-                        title: "1. Disconnected interaction",
-                        body: "The gesture opened the switcher, but the resulting UI felt separate from the workspace.",
-                      },
-                      {
-                        title: "2. Too app like",
-                        body: "Tabs and sheets introduced patterns that felt unfamiliar in a notebook first experience.",
-                      },
-                    ].map((reason) => (
-                      <div key={reason.title}>
-                        <p className="text-[16px] font-medium mb-1" style={{ color: "var(--foreground)" }}>
-                          {reason.title}
-                        </p>
-                        <p className="text-[14px] leading-relaxed" style={{ color: "var(--muted)" }}>
-                          {reason.body}
-                        </p>
-                      </div>
-                    ))}
+                  <div className="px-2 pb-2 pt-8 md:px-4 md:pb-4">
+                    <p className="text-[16px] font-semibold mb-4" style={{ color: "#DC2626" }}>
+                      Why it didn&rsquo;t work
+                    </p>
+                    <div className="flex flex-col gap-6">
+                      {[
+                        {
+                          title: "1. Disconnected interaction",
+                          body: "The gesture opened the switcher, but the resulting UI felt separate from the workspace.",
+                        },
+                        {
+                          title: "2. Too app like",
+                          body: "Tabs and sheets introduced patterns that felt unfamiliar in a notebook first experience.",
+                        },
+                      ].map((reason) => (
+                        <div key={reason.title}>
+                          <p className="text-[16px] font-medium mb-1" style={{ color: "var(--foreground)" }}>
+                            {reason.title}
+                          </p>
+                          <p className="text-[14px] leading-relaxed" style={{ color: "var(--muted)" }}>
+                            {reason.body}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
