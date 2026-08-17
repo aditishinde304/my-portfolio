@@ -43,7 +43,7 @@ export default function ExplorationTabs({
             role="tab"
             aria-selected={active === i}
             onClick={() => setActive(i)}
-            className="flex-1 text-[14px] font-medium rounded-full transition-colors"
+            className="flex-1 text-[16px] font-medium rounded-full transition-colors"
             style={{
               padding: "10px 16px",
               background: active === i ? "var(--foreground)" : "transparent",
@@ -69,7 +69,7 @@ export default function ExplorationTabs({
 
           <div className="flex flex-col">
             <div className="pb-6">
-              <p className="text-[14px] font-medium tracking-[0.04em] uppercase mb-2" style={{ color: "#3B82F6" }}>
+              <p className="text-[12px] font-medium tracking-[0.04em] uppercase mb-2" style={{ color: "#3B82F6" }}>
                 Idea
               </p>
               <p className="text-[18px] font-medium leading-snug mb-1" style={{ color: "var(--foreground)" }}>
@@ -81,7 +81,7 @@ export default function ExplorationTabs({
             </div>
 
             <div className="py-6" style={{ borderTop: "1px solid var(--border)" }}>
-              <p className="text-[14px] font-medium tracking-[0.04em] uppercase mb-2" style={{ color: "#16A34A" }}>
+              <p className="text-[12px] font-medium tracking-[0.04em] uppercase mb-2" style={{ color: "#16A34A" }}>
                 Why I explored it
               </p>
               <p className="text-[18px] font-medium leading-snug mb-1" style={{ color: "var(--foreground)" }}>
@@ -93,7 +93,7 @@ export default function ExplorationTabs({
             </div>
 
             <div className="pt-6" style={{ borderTop: "1px solid var(--border)" }}>
-              <p className="text-[14px] font-medium tracking-[0.04em] uppercase mb-2" style={{ color: "#DC2626" }}>
+              <p className="text-[12px] font-medium tracking-[0.04em] uppercase mb-2" style={{ color: "#DC2626" }}>
                 Why I moved away
               </p>
               <p className="text-[18px] font-medium leading-snug mb-1" style={{ color: "var(--foreground)" }}>

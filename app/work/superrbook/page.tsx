@@ -365,21 +365,24 @@ export default function SuperrbookCaseStudy() {
               <p className="text-[16px] font-medium mb-6" style={{ color: "var(--foreground)" }}>Exploration</p>
 
               {/* Challenge */}
-              <div className="mb-10">
-                <p className="text-[14px] tracking-[0.06em] uppercase mb-2" style={{ color: "var(--muted)" }}>
-                  Challenge
-                </p>
-                <p className="text-[16px] leading-relaxed italic" style={{ color: "var(--foreground)" }}>
-                  &ldquo;Design a lightweight resource switcher that students could access quickly without interrupting their learning flow.&rdquo;
-                </p>
+              <div className="mb-10 rounded-2xl p-5 flex gap-4" style={{ background: "#EFF6FF" }}>
+                <div className="shrink-0 rounded-full" style={{ width: "2px", background: "#9CA3AF" }} />
+                <div>
+                  <p className="text-[16px] font-semibold mb-2" style={{ color: "var(--foreground)" }}>
+                    Challenge
+                  </p>
+                  <p className="text-[16px] leading-relaxed italic" style={{ color: "var(--foreground)" }}>
+                    &ldquo;Design a lightweight resource switcher that students could access quickly without interrupting their learning flow.&rdquo;
+                  </p>
+                </div>
               </div>
 
-              {/* Part 1 — Finding the right entry point */}
+              {/* Part 1 - Finding the right entry point */}
               <div>
                 <p className="text-[16px] font-medium mb-3" style={{ color: "var(--foreground)" }}>
-                  Part 1 — Finding the right entry point
+                  Part 1 - Finding the right entry point
                 </p>
-                <p className="text-[16px] leading-relaxed mb-6" style={{ color: "var(--muted)" }}>
+                <p className="text-[18px] leading-relaxed mb-6" style={{ color: "var(--muted)" }}>
                   How should students open the switcher?
                 </p>
 
