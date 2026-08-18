@@ -4,6 +4,7 @@ import Image from "next/image";
 import VideoPlayer from "@/app/components/VideoPlayer";
 import CaseStudyNav from "@/app/components/CaseStudyNav";
 import ExplorationTabs from "@/app/components/ExplorationTabs";
+import DesignTabs from "@/app/components/DesignTabs";
 
 const navSections = [
   { id: "overview", label: "Overview" },
@@ -437,55 +438,59 @@ export default function SuperrbookCaseStudy() {
                   What should appear when students open it?
                 </p>
 
-                <div
-                  className="rounded-2xl p-3 md:p-4"
-                  style={{ background: "var(--background)", border: "1px solid var(--border)" }}
-                >
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 p-2 md:p-4">
-                    {[
-                      { image: "/context-switching-part2-1.png", alt: "Switcher overlay covering the toolbar area" },
-                      { image: "/context-switching-part2-2.png", alt: "Switcher overlay anchored to the bottom of the page" },
-                      { image: "/context-switching-part2-3.png", alt: "Switcher shown as a bottom tab bar" },
-                    ].map((variant) => (
-                      <Image
-                        key={variant.image}
-                        src={variant.image}
-                        alt={variant.alt}
-                        width={556}
-                        height={805}
-                        quality={100}
-                        className="w-full h-auto block"
-                      />
-                    ))}
-                  </div>
-
-                  <div className="px-2 pb-2 pt-8 md:px-4 md:pb-4">
-                    <p className="text-[16px] font-semibold mb-4" style={{ color: "#DC2626" }}>
-                      Why it didn&rsquo;t work
-                    </p>
-                    <div className="flex flex-col gap-6">
-                      {[
-                        {
-                          title: "1. Disconnected interaction",
-                          body: "The gesture opened the switcher, but the resulting UI felt separate from the workspace.",
-                        },
-                        {
-                          title: "2. Too app like",
-                          body: "Tabs and sheets introduced patterns that felt unfamiliar in a notebook first experience.",
-                        },
-                      ].map((reason) => (
-                        <div key={reason.title}>
-                          <p className="text-[16px] font-medium mb-1" style={{ color: "var(--foreground)" }}>
-                            {reason.title}
-                          </p>
-                          <p className="text-[14px] leading-relaxed" style={{ color: "var(--muted)" }}>
-                            {reason.body}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
+                <DesignTabs
+                  iterations={[
+                    {
+                      tabLabel: "Iteration 1",
+                      image: "/switcher-iteration-1.png",
+                      imageWidth: 1048,
+                      imageHeight: 1518,
+                      alt: "Iteration 1: switcher grid overlaying the toolbar",
+                    },
+                    {
+                      tabLabel: "Iteration 2",
+                      image: "/switcher-iteration-2.png",
+                      imageWidth: 1048,
+                      imageHeight: 1518,
+                      alt: "Iteration 2: switcher grid anchored to the bottom of the page",
+                    },
+                    {
+                      tabLabel: "Iteration 3",
+                      image: "/switcher-iteration-3.png",
+                      imageWidth: 1048,
+                      imageHeight: 1518,
+                      alt: "Iteration 3: switcher shown as a bottom tab bar",
+                    },
+                  ]}
+                  footer={
+                    <>
+                      <p className="text-[16px] font-semibold mb-4" style={{ color: "#DC2626" }}>
+                        Why it didn&rsquo;t work
+                      </p>
+                      <div className="flex flex-col gap-6">
+                        {[
+                          {
+                            title: "1. Disconnected interaction",
+                            body: "The gesture opened the switcher, but the resulting UI felt separate from the workspace.",
+                          },
+                          {
+                            title: "2. Too app like",
+                            body: "Tabs and sheets introduced patterns that felt unfamiliar in a notebook first experience.",
+                          },
+                        ].map((reason) => (
+                          <div key={reason.title}>
+                            <p className="text-[16px] font-medium mb-1" style={{ color: "var(--foreground)" }}>
+                              {reason.title}
+                            </p>
+                            <p className="text-[14px] leading-relaxed" style={{ color: "var(--muted)" }}>
+                              {reason.body}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    </>
+                  }
+                />
               </div>
             </div>
 
