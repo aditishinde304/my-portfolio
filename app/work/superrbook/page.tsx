@@ -463,11 +463,11 @@ export default function SuperrbookCaseStudy() {
                   ].map((item, i) => (
                     <div
                       key={item.title}
-                      className="pl-0 sm:pl-6"
+                      className="flex flex-col items-start text-left pl-0 sm:pl-6"
                       style={i > 0 ? { borderLeft: "1px solid var(--border)" } : undefined}
                     >
                       <div
-                        className="rounded-full flex items-center justify-center mb-3"
+                        className="shrink-0 rounded-full flex items-center justify-center mb-3"
                         style={{ width: "40px", height: "40px", background: "#EDE9FE" }}
                       >
                         <Image src={item.icon} alt="" width={18} height={18} />
