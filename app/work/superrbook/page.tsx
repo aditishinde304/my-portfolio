@@ -482,16 +482,43 @@ export default function SuperrbookCaseStudy() {
                   ))}
                 </div>
 
-                <div className="rounded-2xl overflow-hidden flex justify-center p-6" style={{ background: "var(--hover-bg)" }}>
-                  <Image
-                    src="/final-entry-point-mockup.png"
-                    alt="Final entry point mockup: two-finger swipe down with Control Center access"
-                    width={528}
-                    height={518}
-                    quality={100}
-                    className="w-full h-auto block"
-                    style={{ maxWidth: "420px" }}
-                  />
+                <div className="rounded-2xl flex justify-center px-6 pb-6 pt-20" style={{ background: "var(--hover-bg)" }}>
+                  <div className="relative w-full" style={{ maxWidth: "420px" }}>
+                    <p
+                      className="absolute text-[14px] font-semibold text-center leading-snug"
+                      style={{ color: "var(--foreground)", top: "-78px", right: "-8px", width: "168px" }}
+                    >
+                      Switcher access from Control Center
+                    </p>
+                    <svg
+                      viewBox="0 0 420 160"
+                      fill="none"
+                      className="absolute pointer-events-none"
+                      style={{ top: "-70px", left: 0, width: "100%", height: "170px", overflow: "visible" }}
+                    >
+                      <path
+                        d="M 388 46 C 356 20, 316 26, 314 56 C 312 82, 344 92, 356 72 C 366 55, 342 42, 330 58 C 316 76, 320 108, 300 128 C 285 143, 275 148, 266 152"
+                        stroke="#4F3EBB"
+                        strokeWidth="2.5"
+                        strokeLinecap="round"
+                      />
+                      <path
+                        d="M 266 152 L 278 141 M 266 152 L 280 158"
+                        stroke="#4F3EBB"
+                        strokeWidth="2.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                    <Image
+                      src="/final-entry-point-mockup.png"
+                      alt="Final entry point mockup: two-finger swipe down with Control Center access, annotated to show the switcher icon in Control Center"
+                      width={528}
+                      height={518}
+                      quality={100}
+                      className="w-full h-auto block"
+                    />
+                  </div>
                 </div>
               </div>
 
