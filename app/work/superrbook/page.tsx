@@ -430,20 +430,20 @@ export default function SuperrbookCaseStudy() {
 
               {/* Final entry point decision */}
               <div className="mt-12">
-                <p className="text-[16px] font-semibold mb-2" style={{ color: "#4F3EBB" }}>
+                <p className="text-[12px] font-medium tracking-[0.04em] uppercase mb-2" style={{ color: "#4F3EBB" }}>
                   Final entry point decision
                 </p>
-                <p className="text-[28px] font-semibold leading-[38px] mb-4" style={{ color: "var(--foreground)" }}>
+                <p className="text-[16px] font-medium mb-2" style={{ color: "var(--foreground)" }}>
                   Two finger swipe down + Control Center access
                 </p>
-                <p className="text-[18px] leading-[30px] mb-10" style={{ color: "var(--muted)" }}>
+                <p className="text-[16px] leading-relaxed mb-8" style={{ color: "var(--muted)" }}>
                   The switcher opens with a two-finger swipe down from the top edge, with a direct entry point from Control Center when needed.
                 </p>
 
-                <p className="text-[22px] font-semibold mb-6" style={{ color: "var(--foreground)" }}>
+                <p className="text-[16px] font-medium mb-4" style={{ color: "var(--foreground)" }}>
                   Why this direction?
                 </p>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-10">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
                   {[
                     {
                       icon: "/icons/cs-fast-access.svg",
@@ -463,19 +463,19 @@ export default function SuperrbookCaseStudy() {
                   ].map((item, i) => (
                     <div
                       key={item.title}
-                      className="pl-0 sm:pl-8"
+                      className="pl-0 sm:pl-6"
                       style={i > 0 ? { borderLeft: "1px solid var(--border)" } : undefined}
                     >
                       <div
-                        className="rounded-full flex items-center justify-center mb-4"
-                        style={{ width: "68px", height: "68px", background: "#EDE9FE" }}
+                        className="rounded-full flex items-center justify-center mb-3"
+                        style={{ width: "40px", height: "40px", background: "#EDE9FE" }}
                       >
-                        <Image src={item.icon} alt="" width={32} height={32} />
+                        <Image src={item.icon} alt="" width={18} height={18} />
                       </div>
-                      <p className="text-[18px] font-semibold mb-1" style={{ color: "var(--foreground)" }}>
+                      <p className="text-[16px] font-medium mb-1" style={{ color: "var(--foreground)" }}>
                         {item.title}
                       </p>
-                      <p className="text-[16px] leading-relaxed" style={{ color: "var(--muted)" }}>
+                      <p className="text-[14px] leading-relaxed" style={{ color: "var(--muted)" }}>
                         {item.body}
                       </p>
                     </div>
