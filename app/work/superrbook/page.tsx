@@ -463,7 +463,7 @@ export default function SuperrbookCaseStudy() {
                   ].map((item, i) => (
                     <div
                       key={item.title}
-                      className="flex flex-col items-start text-left pl-0 sm:pl-6"
+                      className={`flex flex-col items-start text-left ${i > 0 ? "pl-6" : "pl-0"}`}
                       style={i > 0 ? { borderLeft: "1px solid var(--border)" } : undefined}
                     >
                       <div
