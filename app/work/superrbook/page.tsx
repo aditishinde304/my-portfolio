@@ -527,7 +527,7 @@ export default function SuperrbookCaseStudy() {
                 <p className="text-[16px] font-medium mb-3" style={{ color: "var(--foreground)" }}>
                   Part 2 - Designing the Switcher
                 </p>
-                <p className="text-[14px] leading-relaxed mb-10" style={{ color: "var(--muted)" }}>
+                <p className="text-[16px] leading-relaxed mb-10" style={{ color: "var(--muted)" }}>
                   What should appear when students open it?
                 </p>
 
@@ -547,8 +547,12 @@ export default function SuperrbookCaseStudy() {
                         title: "Keep important resources close",
                         label: "Favourites",
                       },
-                    ].map((item) => (
-                      <div key={item.title} className="flex items-start gap-4">
+                    ].map((item, i) => (
+                      <div
+                        key={item.title}
+                        className={`flex items-start gap-4 ${i > 0 ? "pl-6" : "pl-0"}`}
+                        style={i > 0 ? { borderLeft: "1px solid var(--border)" } : undefined}
+                      >
                         <div
                           className="shrink-0 rounded-full flex items-center justify-center"
                           style={{ width: "40px", height: "40px", background: "#EDE9FE" }}
