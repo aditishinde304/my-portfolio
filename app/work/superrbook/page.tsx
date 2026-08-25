@@ -531,6 +531,43 @@ export default function SuperrbookCaseStudy() {
                   What should appear when students open it?
                 </p>
 
+                <div className="mb-10">
+                  <p className="text-[16px] font-medium mb-6" style={{ color: "var(--foreground)" }}>
+                    Students primarily switched resources for two reasons
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    {[
+                      {
+                        icon: "/icons/cs-recently-used.svg",
+                        title: "Continue where they left off",
+                        label: "Recently Used",
+                      },
+                      {
+                        icon: "/icons/cs-favourites.svg",
+                        title: "Keep important resources close",
+                        label: "Favourites",
+                      },
+                    ].map((item) => (
+                      <div key={item.title} className="flex items-start gap-4">
+                        <div
+                          className="shrink-0 rounded-full flex items-center justify-center"
+                          style={{ width: "40px", height: "40px", background: "#EDE9FE" }}
+                        >
+                          <Image src={item.icon} alt="" width={18} height={18} />
+                        </div>
+                        <div>
+                          <p className="text-[16px] font-medium mb-1" style={{ color: "var(--foreground)" }}>
+                            {item.title}
+                          </p>
+                          <p className="text-[14px]" style={{ color: "var(--muted)" }}>
+                            {item.label}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
                 <div
                   className="rounded-2xl p-3 md:p-4"
                   style={{ background: "var(--background)", border: "1px solid var(--border)" }}
