@@ -532,42 +532,18 @@ export default function SuperrbookCaseStudy() {
                 </p>
 
                 <div className="mb-10">
-                  <p className="text-[16px] font-medium mb-6" style={{ color: "var(--foreground)" }}>
+                  <p className="text-[16px] font-medium mb-4" style={{ color: "var(--foreground)" }}>
                     Students primarily switched resources for two reasons
                   </p>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div className="flex flex-col gap-2">
                     {[
-                      {
-                        icon: "/icons/cs-recently-used.svg",
-                        title: "Continue where they left off",
-                        label: "Recently Used",
-                      },
-                      {
-                        icon: "/icons/cs-favourites.svg",
-                        title: "Keep important resources close",
-                        label: "Favourites",
-                      },
+                      { title: "Continue where they left off", label: "Recently Used" },
+                      { title: "Keep important resources close", label: "Favourites" },
                     ].map((item, i) => (
-                      <div
-                        key={item.title}
-                        className={`flex items-start gap-4 ${i > 0 ? "pl-6" : "pl-0"}`}
-                        style={i > 0 ? { borderLeft: "1px solid var(--border)" } : undefined}
-                      >
-                        <div
-                          className="shrink-0 rounded-full flex items-center justify-center"
-                          style={{ width: "40px", height: "40px", background: "#EDE9FE" }}
-                        >
-                          <Image src={item.icon} alt="" width={18} height={18} />
-                        </div>
-                        <div>
-                          <p className="text-[16px] font-medium mb-1" style={{ color: "var(--foreground)" }}>
-                            {item.title}
-                          </p>
-                          <p className="text-[14px]" style={{ color: "var(--muted)" }}>
-                            {item.label}
-                          </p>
-                        </div>
-                      </div>
+                      <p key={item.title} className="text-[16px] leading-relaxed" style={{ color: "var(--foreground)" }}>
+                        {i + 1}. {item.title}{" "}
+                        <span style={{ color: "var(--muted)" }}>({item.label})</span>
+                      </p>
                     ))}
                   </div>
                 </div>
