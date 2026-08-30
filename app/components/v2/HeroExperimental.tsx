@@ -90,7 +90,7 @@ export default function HeroExperimental() {
         style={{
           left: "50%",
           transform: "translateX(-50%)",
-          top: "60px",
+          top: "36px",
           width: "1017px",
           height: "720px",
           backgroundImage: "url(/hero-grid.svg)",
