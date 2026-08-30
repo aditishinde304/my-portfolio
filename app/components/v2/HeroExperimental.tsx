@@ -155,9 +155,9 @@ export default function HeroExperimental() {
               className="absolute pointer-events-none"
               style={{
                 left: "-2%",
-                bottom: "-0.16em",
+                bottom: "-0.2em",
                 width: "104%",
-                height: "0.22em",
+                height: "0.32em",
                 backgroundImage: "url(/hero-squiggle.svg)",
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "100% 100%",
