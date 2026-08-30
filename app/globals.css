@@ -448,3 +448,42 @@ body {
 .figma-about-cta:hover {
   opacity: 0.75;
 }
+
+/* ── Experimental hero (HeroExperimental.tsx) ── */
+
+.hero-x-inner {
+  padding-top: 168px;
+  padding-bottom: 130px;
+}
+
+.hero-x-stack {
+  outline: none;
+  cursor: pointer;
+}
+
+.hero-x-photo {
+  transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 420ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.hero-x-grid {
+  opacity: 0.9;
+}
+
+@media (max-width: 640px) {
+  .hero-x-grid {
+    display: none;
+  }
+
+  .hero-x-inner {
+    padding-top: 64px;
+    padding-bottom: 80px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-x-photo {
+    transition: none;
+  }
+}

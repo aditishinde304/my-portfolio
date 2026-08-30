@@ -4,11 +4,15 @@ import {
   FlowerScribble,
 } from "./components/v2/Doodles";
 import Workspace from "./components/v2/Workspace";
+import HeroExperimental from "./components/v2/HeroExperimental";
 import Projects from "./components/v2/Projects";
 import About from "./components/v2/About";
 import Experiments from "./components/v2/Experiments";
 import Playground from "./components/Playground";
 import Footer from "./components/v2/Footer";
+
+// Hero A/B switch — flip to false to bring the original hero back.
+const USE_EXPERIMENTAL_HERO = true;
 
 export default function Home() {
   return (
@@ -47,7 +51,11 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Hero */}
+      {/* Hero — experimental (Figma 919-42038) */}
+      {USE_EXPERIMENTAL_HERO && <HeroExperimental />}
+
+      {/* Hero — original. Kept intact for comparison; not rendered while the experiment is live. */}
+      {!USE_EXPERIMENTAL_HERO && (
       <section
         className="mx-auto grid grid-cols-1 md:grid-cols-[445px_1fr] px-6 sm:px-0"
         style={{ maxWidth: "1014px", gap: "60px", paddingTop: "82px", paddingBottom: "80px", alignItems: "start" }}
@@ -107,6 +115,7 @@ export default function Home() {
           <Workspace />
         </div>
       </section>
+      )}
 
       <Projects />
       {/* <About /> */}
