@@ -167,39 +167,60 @@ export default function Projects() {
         ))}
       </div>
 
-      <div className="flex items-center justify-center" style={{ marginTop: "40px", gap: "10px" }}>
-        <svg width="90" height="60" viewBox="0 0 90 60" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ transform: "scaleY(-1)" }}>
-          <path
-            d="M6 8C34 8 62 24 78 44"
-            stroke="#4b4b4b"
-            strokeWidth="2.5"
-            strokeLinecap="round"
-          />
-          <path
-            d="M60 40L79 45L72 26"
-            stroke="#4b4b4b"
-            strokeWidth="2.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-        <a
-          href="#"
-          className="inline-flex items-center justify-center"
+      <a
+        href="#"
+        className="flex items-center justify-center"
+        style={{ marginTop: "40px", gap: "24px" }}
+      >
+        <span
           style={{
-            border: "1px solid #dbdbdb",
-            borderRadius: "32px",
-            padding: "12px 20px",
-            boxShadow: "2px 2px 6px 0px rgba(0,0,0,0.1)",
-            fontFamily: "'Inter', sans-serif",
-            fontWeight: 600,
-            fontSize: "18px",
+            fontFamily: "var(--font-fraunces), Georgia, serif",
+            fontSize: "28px",
             color: "#111",
           }}
         >
-          View all projects
-        </a>
-      </div>
+          More
+        </span>
+        <MoreWorkFolderIcon />
+        <span
+          style={{
+            fontFamily: "var(--font-fraunces), Georgia, serif",
+            fontSize: "28px",
+            color: "#111",
+          }}
+        >
+          Work
+        </span>
+      </a>
     </section>
+  );
+}
+
+function MoreWorkFolderIcon() {
+  return (
+    <svg width="80" height="70" viewBox="0 0 120 106" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="mwFolderBack" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor="#e4e4e2" />
+          <stop offset="1" stopColor="#d4d4d1" />
+        </linearGradient>
+        <linearGradient id="mwFolderFront" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor="#fbfbfa" />
+          <stop offset="1" stopColor="#eeeeec" />
+        </linearGradient>
+      </defs>
+      <rect x="21" y="8" width="60" height="34" rx="6" fill="#fdf6df" transform="rotate(-6 51 25)" />
+      <rect x="38" y="6" width="60" height="34" rx="6" fill="#e4e7fb" transform="rotate(5 68 23)" />
+      <path
+        d="M8 20C8 16.686 10.686 14 14 14H46C48.2091 14 50.2 15.147 51.3251 17L54.6749 22.5C55.8 24.353 57.7909 25.5 60 25.5H106C109.314 25.5 112 28.186 112 31.5V90C112 93.314 109.314 96 106 96H14C10.686 96 8 93.314 8 90V20Z"
+        fill="url(#mwFolderBack)"
+      />
+      <rect x="4" y="36" width="112" height="60" rx="12" fill="url(#mwFolderFront)" stroke="#e2e2df" />
+      <g transform="translate(48, 56)" opacity="0.55">
+        <rect x="0" y="0" width="24" height="20" rx="4" stroke="#8a8a86" strokeWidth="2.2" />
+        <circle cx="6.5" cy="6.5" r="2.2" stroke="#8a8a86" strokeWidth="2" />
+        <path d="M1 16L8.5 10L14 14.5L19 9L23 13.5" stroke="#8a8a86" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+      </g>
+    </svg>
   );
 }
