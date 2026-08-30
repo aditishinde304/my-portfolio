@@ -496,17 +496,20 @@ body {
   }
 }
 
-.hero-x-highlight {
-  animation: heroXWipe 520ms cubic-bezier(0.65, 0, 0.35, 1) 350ms both;
+/* Scoped to .hero-x-play, which JS adds on mount and on bfcache restore.
+   Without it the marks just render in place — so no JS means no animation,
+   never a missing highlight. */
+.hero-x-play .hero-x-highlight {
+  animation: heroXWipe 780ms cubic-bezier(0.65, 0, 0.35, 1) 400ms both;
 }
 
-.hero-x-squiggle {
-  animation: heroXWipe 560ms cubic-bezier(0.65, 0, 0.35, 1) 780ms both;
+.hero-x-play .hero-x-squiggle {
+  animation: heroXWipe 850ms cubic-bezier(0.65, 0, 0.35, 1) 1100ms both;
 }
 
-.hero-x-sparkles {
+.hero-x-play .hero-x-sparkles {
   transform-origin: bottom left;
-  animation: heroXPop 420ms cubic-bezier(0.34, 1.56, 0.64, 1) 1240ms both;
+  animation: heroXPop 520ms cubic-bezier(0.34, 1.56, 0.64, 1) 1800ms both;
 }
 
 @media (max-width: 640px) {
@@ -525,9 +528,9 @@ body {
     transition: none;
   }
 
-  .hero-x-highlight,
-  .hero-x-squiggle,
-  .hero-x-sparkles {
+  .hero-x-play .hero-x-highlight,
+  .hero-x-play .hero-x-squiggle,
+  .hero-x-play .hero-x-sparkles {
     animation: none;
   }
 }

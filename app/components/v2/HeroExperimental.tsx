@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 
 // Experimental center-aligned hero (Figma: node 919-42038).
@@ -81,6 +81,30 @@ function PhotoStack() {
 }
 
 export default function HeroExperimental() {
+  const titleRef = useRef<HTMLHeadingElement>(null);
+
+  // The marker strokes animate only once this class is added, so without JS
+  // they simply render in place. Re-triggered on bfcache restore (back button)
+  // so the sequence plays again rather than staying finished.
+  useEffect(() => {
+    const el = titleRef.current;
+    if (!el) return;
+
+    const play = () => {
+      el.classList.remove("hero-x-play");
+      void el.offsetWidth; // force reflow so the animation restarts
+      el.classList.add("hero-x-play");
+    };
+
+    play();
+
+    const onPageShow = (e: PageTransitionEvent) => {
+      if (e.persisted) play();
+    };
+    window.addEventListener("pageshow", onPageShow);
+    return () => window.removeEventListener("pageshow", onPageShow);
+  }, []);
+
   return (
     <section className="hero-x relative" style={{ overflow: "clip" }}>
       {/* faint grid backdrop */}
@@ -113,6 +137,7 @@ export default function HeroExperimental() {
         </p>
 
         <h1
+          ref={titleRef}
           className="hero-x-title"
           style={{
             fontFamily: "var(--font-petrona), Georgia, serif",
