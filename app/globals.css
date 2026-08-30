@@ -471,6 +471,44 @@ body {
   opacity: 0.9;
 }
 
+/* Marker strokes draw themselves in, left to right, after the text lands. */
+@keyframes heroXWipe {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes heroXPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.4) rotate(-14deg);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.14) rotate(5deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.hero-x-highlight {
+  animation: heroXWipe 520ms cubic-bezier(0.65, 0, 0.35, 1) 350ms both;
+}
+
+.hero-x-squiggle {
+  animation: heroXWipe 560ms cubic-bezier(0.65, 0, 0.35, 1) 780ms both;
+}
+
+.hero-x-sparkles {
+  transform-origin: bottom left;
+  animation: heroXPop 420ms cubic-bezier(0.34, 1.56, 0.64, 1) 1240ms both;
+}
+
 @media (max-width: 640px) {
   .hero-x-grid {
     display: none;
@@ -485,5 +523,11 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .hero-x-photo {
     transition: none;
+  }
+
+  .hero-x-highlight,
+  .hero-x-squiggle,
+  .hero-x-sparkles {
+    animation: none;
   }
 }

@@ -127,7 +127,7 @@ export default function HeroExperimental() {
           <span className="relative inline-block">
             <span
               aria-hidden
-              className="absolute pointer-events-none"
+              className="hero-x-highlight absolute pointer-events-none"
               style={{
                 left: "-8%",
                 top: "16%",
@@ -152,7 +152,7 @@ export default function HeroExperimental() {
             </span>
             <span
               aria-hidden
-              className="absolute pointer-events-none"
+              className="hero-x-squiggle absolute pointer-events-none"
               style={{
                 left: "-2%",
                 bottom: "-0.2em",
@@ -167,10 +167,11 @@ export default function HeroExperimental() {
               aria-hidden
               className="hero-x-sparkles absolute pointer-events-none"
               style={{
-                left: "calc(100% + 0.16em)",
-                top: "-0.24em",
-                width: "0.55em",
-                height: "0.69em",
+                // tucked into the top-right corner of the final "l"
+                left: "calc(100% - 0.06em)",
+                top: "-0.02em",
+                width: "0.44em",
+                height: "0.55em",
                 backgroundImage: "url(/hero-sparkles.svg)",
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "100% 100%",
@@ -185,7 +186,7 @@ export default function HeroExperimental() {
           style={{
             color: "#5c5c5c",
             lineHeight: "32px",
-            marginTop: "26px",
+            marginTop: "23px",
             maxWidth: "536px",
           }}
         >
