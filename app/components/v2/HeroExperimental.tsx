@@ -145,7 +145,7 @@ export default function HeroExperimental() {
             fontSize: "clamp(2rem, 4.4vw, 3rem)",
             lineHeight: 1.29,
             color: "#000",
-            marginTop: "14px",
+            marginTop: "10px",
           }}
         >
           I{" "}
