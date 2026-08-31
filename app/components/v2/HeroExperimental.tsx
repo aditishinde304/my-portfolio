@@ -21,19 +21,26 @@ const slots = [
 ];
 
 function PhotoStack() {
+  const [front, setFront] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
 
-  // Hovering brings the next photo forward; leaving reverts to the default
-  // stack immediately — this is a preview, not a persistent cycle.
-  const front = isHovered ? 1 : 0;
+  // Each hover advances the stack one photo forward, permanently — the
+  // sequence only ever moves forward and never resets on mouse leave.
+  const advance = () => setFront((f) => (f + 1) % photos.length);
 
   return (
     <div
       className="hero-x-stack relative"
       style={{ width: "210px", height: "150px" }}
-      onMouseEnter={() => setIsHovered(true)}
+      onMouseEnter={() => {
+        setIsHovered(true);
+        advance();
+      }}
       onMouseLeave={() => setIsHovered(false)}
-      onFocus={() => setIsHovered(true)}
+      onFocus={() => {
+        setIsHovered(true);
+        advance();
+      }}
       onBlur={() => setIsHovered(false)}
       tabIndex={0}
       role="img"
@@ -42,25 +49,25 @@ function PhotoStack() {
       <div
         aria-hidden
         className={`hero-x-note absolute${isHovered ? " hero-x-note-visible" : ""}`}
-        style={{ right: "-22px", top: "-14px" }}
+        style={{ left: "216px", top: "12px" }}
       >
         <svg
           className="hero-x-note-arrow"
-          width="34"
-          height="30"
-          viewBox="0 0 34 30"
+          width="30"
+          height="24"
+          viewBox="0 0 30 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            d="M28 4C25 12 16 16 6 20"
+            d="M29 13C21 6 12 8 6 12"
             stroke="#9a9a9a"
             strokeWidth="1.4"
             strokeLinecap="round"
             fill="none"
           />
           <path
-            d="M11 17.5L5.5 20.5L7 14.5"
+            d="M11.5 7.5L5 12L11 16.5"
             stroke="#9a9a9a"
             strokeWidth="1.4"
             strokeLinecap="round"
@@ -203,15 +210,9 @@ export default function HeroExperimental() {
               design
             </span>
           </span>
-          ,{" "}
-          <span className="hero-x-build relative inline-block" tabIndex={0}>
-            <span
-              aria-hidden
-              className="hero-x-build-tag absolute pointer-events-none"
-            >
-              &lt;build /&gt;
-            </span>
-            build
+          , build
+          <span aria-hidden className="hero-x-build-tag">
+            &lt; /&gt;
           </span>{" "}
           &amp;
           <br />
@@ -220,19 +221,6 @@ export default function HeroExperimental() {
             <span className="relative" style={{ zIndex: 1 }}>
               delightful
             </span>
-            <span
-              aria-hidden
-              className="hero-x-squiggle absolute pointer-events-none"
-              style={{
-                left: "-2%",
-                bottom: "-0.2em",
-                width: "104%",
-                height: "0.32em",
-                backgroundImage: "url(/hero-squiggle.svg)",
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "100% 100%",
-              }}
-            />
             <span
               aria-hidden
               className="hero-x-sparkles absolute pointer-events-none"
@@ -256,7 +244,7 @@ export default function HeroExperimental() {
           style={{
             color: "#5c5c5c",
             lineHeight: "32px",
-            marginTop: "23px",
+            marginTop: "15px",
             maxWidth: "536px",
           }}
         >
@@ -276,13 +264,13 @@ export default function HeroExperimental() {
 
         <div
           className="hero-x-status inline-flex items-center"
-          style={{ marginTop: "56px" }}
+          style={{ marginTop: "20px" }}
         >
           <span className="hero-x-status-dot" aria-hidden>
             <span className="hero-x-status-dot-ping" />
             <span className="hero-x-status-dot-core" />
           </span>
-          <span className="hero-x-status-text">open to full-time opportunities</span>
+          <span className="hero-x-status-text">open to opportunities</span>
         </div>
       </div>
     </section>

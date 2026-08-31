@@ -486,7 +486,7 @@ body {
 
 .hero-x-note-arrow {
   flex-shrink: 0;
-  margin-top: 14px;
+  margin-top: 4px;
 }
 
 .hero-x-note-text {
@@ -495,55 +495,37 @@ body {
   color: #333;
   white-space: nowrap;
   line-height: 1;
+  margin-top: 2px;
 }
 
-.hero-x-build {
-  cursor: default;
-  outline: none;
-}
-
+/* Static reveal, not a hover tooltip: fades in once, right after the
+   "design" highlight finishes drawing, then stays put. */
 .hero-x-build-tag {
-  left: 50%;
-  bottom: calc(100% + 6px);
-  transform: translate(-50%, 3px);
-  padding: 2px 6px;
-  border-radius: 4px;
-  background: #fff;
-  border: 1px solid #ececea;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  display: inline-block;
+  margin-left: 0.15em;
   font-family: var(--font-geist-mono), ui-monospace, monospace;
-  font-size: 12px;
+  font-size: 0.4em;
   font-weight: 400;
   letter-spacing: -0.01em;
   color: #8a8a86;
-  white-space: nowrap;
-  opacity: 0;
-  transition: opacity 200ms ease, transform 200ms cubic-bezier(0.22, 1, 0.36, 1);
+  vertical-align: middle;
+  /* No base opacity/transform here on purpose: without JS (or with the
+     animation disabled below) it should just render in place, matching
+     the highlight/sparkles fallback — never a permanently-hidden mark. */
 }
 
-.hero-x-build-tag::after {
-  content: "";
-  display: inline-block;
-  width: 1px;
-  height: 10px;
-  margin-left: 2px;
-  vertical-align: -1px;
-  background: #8a8a86;
-  animation: heroXCaretBlink 1s step-end infinite;
+.hero-x-play .hero-x-build-tag {
+  animation: heroXFadeIn 320ms ease 1200ms both;
 }
 
-.hero-x-build:hover .hero-x-build-tag,
-.hero-x-build:focus-visible .hero-x-build-tag {
-  opacity: 1;
-  transform: translate(-50%, 0);
-}
-
-@keyframes heroXCaretBlink {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
+@keyframes heroXFadeIn {
+  from {
     opacity: 0;
+    transform: translateX(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
@@ -599,13 +581,9 @@ body {
   animation: heroXWipe 780ms cubic-bezier(0.65, 0, 0.35, 1) 400ms both;
 }
 
-.hero-x-play .hero-x-squiggle {
-  animation: heroXWipe 850ms cubic-bezier(0.65, 0, 0.35, 1) 1100ms both;
-}
-
 .hero-x-play .hero-x-sparkles {
   transform-origin: bottom left;
-  animation: heroXPop 520ms cubic-bezier(0.34, 1.56, 0.64, 1) 1800ms both;
+  animation: heroXPop 520ms cubic-bezier(0.34, 1.56, 0.64, 1) 1500ms both;
 }
 
 @media (max-width: 640px) {
@@ -629,7 +607,7 @@ body {
 
 .hero-x-status-text {
   font-size: 13px;
-  color: #6b6b6b;
+  color: #16a34a;
   line-height: 1;
 }
 
@@ -685,8 +663,8 @@ body {
   }
 
   .hero-x-play .hero-x-highlight,
-  .hero-x-play .hero-x-squiggle,
-  .hero-x-play .hero-x-sparkles {
+  .hero-x-play .hero-x-sparkles,
+  .hero-x-play .hero-x-build-tag {
     animation: none;
   }
 
@@ -697,13 +675,5 @@ body {
 
   .hero-x-note {
     transition: none;
-  }
-
-  .hero-x-build-tag {
-    transition: none;
-  }
-
-  .hero-x-build-tag::after {
-    animation: none;
   }
 }
