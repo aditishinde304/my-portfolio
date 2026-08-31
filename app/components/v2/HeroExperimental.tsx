@@ -228,6 +228,22 @@ export default function HeroExperimental() {
           . Currently building, experimenting, and shipping things that excite
           me.
         </p>
+
+        <a
+          href="mailto:aditi.shinde304@gmail.com"
+          className="hero-x-status group inline-flex items-baseline"
+          style={{ marginTop: "56px", color: "#7C3AED" }}
+        >
+          <span aria-hidden className="hero-x-status-mark">
+            ✦
+          </span>
+          <span className="hero-x-status-text">
+            &nbsp;open to full-time opportunities
+          </span>
+          <span aria-hidden className="hero-x-status-more">
+            &nbsp;&mdash; let&rsquo;s talk ↗
+          </span>
+        </a>
       </div>
     </section>
   );
