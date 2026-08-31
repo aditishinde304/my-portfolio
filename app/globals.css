@@ -497,6 +497,56 @@ body {
   line-height: 1;
 }
 
+.hero-x-build {
+  cursor: default;
+  outline: none;
+}
+
+.hero-x-build-tag {
+  left: 50%;
+  bottom: calc(100% + 6px);
+  transform: translate(-50%, 3px);
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: #fff;
+  border: 1px solid #ececea;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: #8a8a86;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 200ms ease, transform 200ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hero-x-build-tag::after {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 10px;
+  margin-left: 2px;
+  vertical-align: -1px;
+  background: #8a8a86;
+  animation: heroXCaretBlink 1s step-end infinite;
+}
+
+.hero-x-build:hover .hero-x-build-tag,
+.hero-x-build:focus-visible .hero-x-build-tag {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+@keyframes heroXCaretBlink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
 .hero-x-grid {
   opacity: 0.9;
   /* The grid lines are opaque greys, so they'd otherwise cut off in a hard
@@ -647,5 +697,13 @@ body {
 
   .hero-x-note {
     transition: none;
+  }
+
+  .hero-x-build-tag {
+    transition: none;
+  }
+
+  .hero-x-build-tag::after {
+    animation: none;
   }
 }

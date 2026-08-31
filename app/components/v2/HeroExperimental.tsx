@@ -203,7 +203,17 @@ export default function HeroExperimental() {
               design
             </span>
           </span>
-          , build &amp;
+          ,{" "}
+          <span className="hero-x-build relative inline-block" tabIndex={0}>
+            <span
+              aria-hidden
+              className="hero-x-build-tag absolute pointer-events-none"
+            >
+              &lt;build /&gt;
+            </span>
+            build
+          </span>{" "}
+          &amp;
           <br />
           make products{" "}
           <span className="relative inline-block">
