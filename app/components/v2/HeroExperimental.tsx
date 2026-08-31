@@ -67,7 +67,7 @@ function PhotoStack() {
             fill="none"
           />
           <path
-            d="M11.5 7.5L5 12L11 16.5"
+            d="M12.9 10.9L6 12L9.6 6"
             stroke="#9a9a9a"
             strokeWidth="1.4"
             strokeLinecap="round"
@@ -210,9 +210,13 @@ export default function HeroExperimental() {
               design
             </span>
           </span>
-          , build
-          <span aria-hidden className="hero-x-build-tag">
-            &lt; /&gt;
+          ,{" "}
+          <span aria-hidden className="hero-x-build-bracket">
+            &lt;
+          </span>{" "}
+          build{" "}
+          <span aria-hidden className="hero-x-build-bracket">
+            /&gt;
           </span>{" "}
           &amp;
           <br />
@@ -225,9 +229,9 @@ export default function HeroExperimental() {
               aria-hidden
               className="hero-x-sparkles absolute pointer-events-none"
               style={{
-                // tucked into the top-right corner of the final "l"
-                left: "calc(100% - 0.06em)",
-                top: "-0.02em",
+                // tucked right at the top-right corner of the final "l"
+                left: "calc(100% - 0.14em)",
+                top: "-0.06em",
                 width: "0.44em",
                 height: "0.55em",
                 backgroundImage: "url(/hero-sparkles.svg)",
@@ -244,7 +248,7 @@ export default function HeroExperimental() {
           style={{
             color: "#5c5c5c",
             lineHeight: "32px",
-            marginTop: "15px",
+            marginTop: "3px",
             maxWidth: "536px",
           }}
         >

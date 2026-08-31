@@ -500,21 +500,19 @@ body {
 
 /* Static reveal, not a hover tooltip: fades in once, right after the
    "design" highlight finishes drawing, then stays put. */
-.hero-x-build-tag {
+.hero-x-build-bracket {
   display: inline-block;
-  margin-left: 0.15em;
-  font-family: var(--font-geist-mono), ui-monospace, monospace;
-  font-size: 0.4em;
-  font-weight: 400;
-  letter-spacing: -0.01em;
-  color: #8a8a86;
-  vertical-align: middle;
+  font-family: var(--font-caveat), cursive;
+  font-size: 1.05em;
+  font-weight: 600;
+  color: #3B82F6;
+  vertical-align: baseline;
   /* No base opacity/transform here on purpose: without JS (or with the
      animation disabled below) it should just render in place, matching
      the highlight/sparkles fallback — never a permanently-hidden mark. */
 }
 
-.hero-x-play .hero-x-build-tag {
+.hero-x-play .hero-x-build-bracket {
   animation: heroXFadeIn 320ms ease 1200ms both;
 }
 
@@ -664,7 +662,7 @@ body {
 
   .hero-x-play .hero-x-highlight,
   .hero-x-play .hero-x-sparkles,
-  .hero-x-play .hero-x-build-tag {
+  .hero-x-play .hero-x-build-bracket {
     animation: none;
   }
 
