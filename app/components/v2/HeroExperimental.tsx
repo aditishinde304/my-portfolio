@@ -21,21 +21,56 @@ const slots = [
 ];
 
 function PhotoStack() {
-  const [front, setFront] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
 
-  // Hovering the stack promotes the next photo to the front.
-  const advance = () => setFront((f) => (f + 1) % photos.length);
+  // Hovering brings the next photo forward; leaving reverts to the default
+  // stack immediately — this is a preview, not a persistent cycle.
+  const front = isHovered ? 1 : 0;
 
   return (
     <div
       className="hero-x-stack relative"
       style={{ width: "210px", height: "150px" }}
-      onMouseEnter={advance}
-      onFocus={advance}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      onFocus={() => setIsHovered(true)}
+      onBlur={() => setIsHovered(false)}
       tabIndex={0}
       role="img"
       aria-label="Photos of Aditi"
     >
+      <div
+        aria-hidden
+        className={`hero-x-note absolute${isHovered ? " hero-x-note-visible" : ""}`}
+        style={{ right: "-22px", top: "-14px" }}
+      >
+        <svg
+          className="hero-x-note-arrow"
+          width="34"
+          height="30"
+          viewBox="0 0 34 30"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M28 4C25 12 16 16 6 20"
+            stroke="#9a9a9a"
+            strokeWidth="1.4"
+            strokeLinecap="round"
+            fill="none"
+          />
+          <path
+            d="M11 17.5L5.5 20.5L7 14.5"
+            stroke="#9a9a9a"
+            strokeWidth="1.4"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            fill="none"
+          />
+        </svg>
+        <span className="hero-x-note-text">Yeah, that&rsquo;s me :)</span>
+      </div>
+
       {photos.map((photo, i) => {
         const slot = slots[(i - front + photos.length) % photos.length];
         return (
@@ -229,21 +264,16 @@ export default function HeroExperimental() {
           me.
         </p>
 
-        <a
-          href="mailto:aditi.shinde304@gmail.com"
-          className="hero-x-status group inline-flex items-baseline"
-          style={{ marginTop: "56px", color: "#7C3AED" }}
+        <div
+          className="hero-x-status inline-flex items-center"
+          style={{ marginTop: "56px" }}
         >
-          <span aria-hidden className="hero-x-status-mark">
-            ✦
+          <span className="hero-x-status-dot" aria-hidden>
+            <span className="hero-x-status-dot-ping" />
+            <span className="hero-x-status-dot-core" />
           </span>
-          <span className="hero-x-status-text">
-            &nbsp;open to full-time opportunities
-          </span>
-          <span aria-hidden className="hero-x-status-more">
-            &nbsp;&mdash; let&rsquo;s talk ↗
-          </span>
-        </a>
+          <span className="hero-x-status-text">open to full-time opportunities</span>
+        </div>
       </div>
     </section>
   );
