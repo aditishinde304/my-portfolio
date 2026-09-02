@@ -175,7 +175,7 @@ export default function HeroExperimental() {
           className="text-[18px]"
           style={{ color: "#111011", marginTop: "34px" }}
         >
-          <span style={{ color: "#505050" }}>Yo🤘</span>, I&rsquo;m Aditi Shinde
+          <span style={{ color: "#505050" }}>Hey</span>, I&rsquo;m Aditi Shinde
         </p>
 
         <h1
@@ -211,11 +211,11 @@ export default function HeroExperimental() {
             </span>
           </span>
           ,{" "}
-          <span aria-hidden className="hero-x-build-bracket">
+          <span aria-hidden className="hero-x-build-bracket hero-x-build-bracket-open">
             &lt;
           </span>{" "}
           build{" "}
-          <span aria-hidden className="hero-x-build-bracket">
+          <span aria-hidden className="hero-x-build-bracket hero-x-build-bracket-close">
             /&gt;
           </span>{" "}
           &amp;
@@ -231,7 +231,7 @@ export default function HeroExperimental() {
               style={{
                 // tucked right at the top-right corner of the final "l"
                 left: "calc(100% - 0.14em)",
-                top: "-0.06em",
+                top: "calc(-0.06em - 3px)",
                 width: "0.44em",
                 height: "0.55em",
                 backgroundImage: "url(/hero-sparkles.svg)",

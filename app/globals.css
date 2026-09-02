@@ -498,8 +498,8 @@ body {
   margin-top: 2px;
 }
 
-/* Static reveal, not a hover tooltip: fades in once, right after the
-   "design" highlight finishes drawing, then stays put. */
+/* Static marks, not animated — always there alongside "build". Only the
+   "design" highlight and the "delightful" sparkles animate in. */
 .hero-x-build-bracket {
   display: inline-block;
   font-family: var(--font-caveat), cursive;
@@ -507,24 +507,14 @@ body {
   font-weight: 600;
   color: #3B82F6;
   vertical-align: baseline;
-  /* No base opacity/transform here on purpose: without JS (or with the
-     animation disabled below) it should just render in place, matching
-     the highlight/sparkles fallback — never a permanently-hidden mark. */
 }
 
-.hero-x-play .hero-x-build-bracket {
-  animation: heroXFadeIn 320ms ease 1200ms both;
+.hero-x-build-bracket-open {
+  margin-left: -2px;
 }
 
-@keyframes heroXFadeIn {
-  from {
-    opacity: 0;
-    transform: translateX(-4px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+.hero-x-build-bracket-close {
+  margin-left: -2px;
 }
 
 .hero-x-grid {
@@ -661,8 +651,7 @@ body {
   }
 
   .hero-x-play .hero-x-highlight,
-  .hero-x-play .hero-x-sparkles,
-  .hero-x-play .hero-x-build-bracket {
+  .hero-x-play .hero-x-sparkles {
     animation: none;
   }
 
