@@ -76,7 +76,7 @@ export default function Home() {
           <h1
             className="relative w-full md:w-[460px]"
             style={{
-              fontFamily: "var(--font-fraunces), Georgia, serif",
+              fontFamily: "var(--font-petrona), Georgia, serif",
               fontWeight: 500,
               fontSize: "clamp(2.2rem, 5vw, 3.375rem)",
               lineHeight: "1.375",

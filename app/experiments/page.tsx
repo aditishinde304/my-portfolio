@@ -49,7 +49,7 @@ export default function Experiments() {
         </Link>
         <h1
           className="text-[16px] font-semibold tracking-[-0.01em] mb-4"
-          style={{ color: "var(--foreground)" }}
+          style={{ color: "var(--foreground)", fontFamily: "var(--font-petrona), Georgia, serif" }}
         >
           Experiments
         </h1>

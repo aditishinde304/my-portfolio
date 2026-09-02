@@ -81,7 +81,7 @@ export default function SuperrbookCaseStudy() {
         <div className="mb-16" id="overview">
           <h1
             className="text-[32px] md:text-[40px] font-semibold leading-tight tracking-[-0.02em] mb-4"
-            style={{ color: "var(--foreground)" }}
+            style={{ color: "var(--foreground)", fontFamily: "var(--font-petrona), Georgia, serif" }}
           >
             Designing better digital<br />classroom experiences
           </h1>
@@ -133,7 +133,7 @@ export default function SuperrbookCaseStudy() {
         <section id="role" className="mb-16" style={{ borderTop: "1px solid var(--border)", paddingTop: "48px" }}>
           <h2
             className="text-[18px] font-medium mb-6"
-            style={{ color: "var(--foreground)" }}
+            style={{ color: "var(--foreground)", fontFamily: "var(--font-petrona), Georgia, serif" }}
           >
             My Role
           </h2>
@@ -170,7 +170,7 @@ export default function SuperrbookCaseStudy() {
         <section id="ownership" className="mb-16" style={{ borderTop: "1px solid var(--border)", paddingTop: "48px" }}>
           <h2
             className="text-[18px] font-medium mb-8"
-            style={{ color: "var(--foreground)" }}
+            style={{ color: "var(--foreground)", fontFamily: "var(--font-petrona), Georgia, serif" }}
           >
             Areas of Ownership
           </h2>
@@ -216,7 +216,7 @@ export default function SuperrbookCaseStudy() {
         <section id="approach" className="mb-16" style={{ borderTop: "1px solid var(--border)", paddingTop: "48px" }}>
           <h2
             className="text-[18px] font-medium mb-6"
-            style={{ color: "var(--foreground)" }}
+            style={{ color: "var(--foreground)", fontFamily: "var(--font-petrona), Georgia, serif" }}
           >
             How I approach design
           </h2>
@@ -240,7 +240,7 @@ export default function SuperrbookCaseStudy() {
           <div className="flex items-baseline justify-between mb-12">
             <h2
               className="text-[18px] font-medium"
-              style={{ color: "var(--foreground)" }}
+              style={{ color: "var(--foreground)", fontFamily: "var(--font-petrona), Georgia, serif" }}
             >
               Context Switching Between Learning Resources
             </h2>
@@ -677,7 +677,7 @@ export default function SuperrbookCaseStudy() {
 
             {/* Live Quizzes */}
             <div style={{ borderTop: "1px solid var(--border)", paddingTop: "48px" }}>
-              <h3 className="text-[18px] font-medium mb-4" style={{ color: "var(--foreground)" }}>{liveQuizItem.title}</h3>
+              <h3 className="text-[18px] font-medium mb-4" style={{ color: "var(--foreground)", fontFamily: "var(--font-petrona), Georgia, serif" }}>{liveQuizItem.title}</h3>
               <p className="text-[16px] leading-relaxed mb-6" style={{ color: "var(--muted)" }}>{liveQuizItem.description}</p>
               <p className="text-[16px] font-medium mb-3" style={{ color: "var(--foreground)" }}>Focused on</p>
               <ul className="flex flex-col gap-2 mb-8">
@@ -702,7 +702,7 @@ export default function SuperrbookCaseStudy() {
           <div className="flex items-baseline justify-between mb-12">
             <h2
               className="text-[18px] font-medium"
-              style={{ color: "var(--foreground)" }}
+              style={{ color: "var(--foreground)", fontFamily: "var(--font-petrona), Georgia, serif" }}
             >
               Geometry Tools: Making Digital Tools Feel Physical
             </h2>
@@ -911,7 +911,7 @@ export default function SuperrbookCaseStudy() {
           <div className="flex items-baseline justify-between mb-12">
             <h2
               className="text-[18px] font-medium"
-              style={{ color: "var(--foreground)" }}
+              style={{ color: "var(--foreground)", fontFamily: "var(--font-petrona), Georgia, serif" }}
             >
               Helping school admins manage devices better
             </h2>
@@ -1033,7 +1033,7 @@ export default function SuperrbookCaseStudy() {
           </p>
           <h2
             className="text-[18px] font-semibold leading-tight tracking-[-0.01em] mb-10"
-            style={{ color: "var(--foreground)" }}
+            style={{ color: "var(--foreground)", fontFamily: "var(--font-petrona), Georgia, serif" }}
           >
             What I learned
           </h2>

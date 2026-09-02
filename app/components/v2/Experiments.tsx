@@ -13,7 +13,7 @@ export default function Experiments() {
       <div className="flex items-baseline justify-between flex-wrap gap-3 mb-3">
         <h2
           style={{
-            fontFamily: "var(--font-fraunces), Georgia, serif",
+            fontFamily: "var(--font-petrona), Georgia, serif",
             fontWeight: 500,
             fontSize: "clamp(1.4rem, 2.4vw, 1.7rem)",
             color: "#111",

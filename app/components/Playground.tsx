@@ -136,7 +136,7 @@ export default function Playground() {
       <div className="flex items-baseline justify-between mb-1.5">
         <h2
           style={{
-            fontFamily: "var(--font-fraunces), Georgia, serif",
+            fontFamily: "var(--font-petrona), Georgia, serif",
             fontWeight: 500,
             fontSize: "clamp(1.4rem, 2.4vw, 1.7rem)",
             color: "var(--foreground)",

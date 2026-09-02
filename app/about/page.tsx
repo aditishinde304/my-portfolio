@@ -23,7 +23,7 @@ export default function AboutPage() {
           <div>
             <h1
               style={{
-                fontFamily: "var(--font-fraunces), Georgia, serif",
+                fontFamily: "var(--font-petrona), Georgia, serif",
                 fontWeight: 500,
                 fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)",
                 color: "#111",

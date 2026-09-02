@@ -31,7 +31,7 @@ export default function Footer() {
       <div className="mx-auto px-6 sm:px-0 text-center" style={{ maxWidth: "1014px", paddingTop: "56px", paddingBottom: "36px" }}>
         <h2
           style={{
-            fontFamily: "var(--font-fraunces), Georgia, serif",
+            fontFamily: "var(--font-petrona), Georgia, serif",
             fontWeight: 600,
             fontSize: "clamp(1.3rem, 2.4vw, 1.6rem)",
             color: "#fff",

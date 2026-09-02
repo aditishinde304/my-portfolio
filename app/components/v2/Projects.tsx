@@ -66,7 +66,7 @@ export default function Projects() {
     <section id="work" className="mx-auto px-6 sm:px-0" style={{ maxWidth: "1014px", paddingTop: "20px", paddingBottom: "100px" }}>
       <h2
         style={{
-          fontFamily: "var(--font-fraunces), Georgia, serif",
+          fontFamily: "var(--font-petrona), Georgia, serif",
           fontWeight: 500,
           fontSize: "clamp(1.4rem, 2.4vw, 1.7rem)",
           color: "#111",
@@ -97,7 +97,7 @@ export default function Projects() {
               <div>
                 <h3
                   style={{
-                    fontFamily: "var(--font-fraunces), Georgia, serif",
+                    fontFamily: "var(--font-petrona), Georgia, serif",
                     fontWeight: 500,
                     fontSize: "clamp(1.3rem, 2.2vw, 1.55rem)",
                     lineHeight: 1.35,

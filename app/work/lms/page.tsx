@@ -120,7 +120,7 @@ export default function LMSCaseStudy() {
         <div className="mb-16" id="overview">
           <h1
             className="text-[32px] md:text-[40px] font-semibold leading-tight tracking-[-0.02em] mb-4"
-            style={{ color: "var(--foreground)" }}
+            style={{ color: "var(--foreground)", fontFamily: "var(--font-petrona), Georgia, serif" }}
           >
             Designing a scalable LMS<br />for classrooms
           </h1>
@@ -168,7 +168,7 @@ export default function LMSCaseStudy() {
         <section id="role" className="mb-16" style={{ borderTop: "1px solid var(--border)", paddingTop: "48px" }}>
           <h2
             className="text-[18px] font-medium mb-6"
-            style={{ color: "var(--foreground)" }}
+            style={{ color: "var(--foreground)", fontFamily: "var(--font-petrona), Georgia, serif" }}
           >
             My Role
           </h2>
@@ -189,7 +189,7 @@ export default function LMSCaseStudy() {
         <section id="approach" className="mb-16" style={{ borderTop: "1px solid var(--border)", paddingTop: "48px" }}>
           <h2
             className="text-[18px] font-medium mb-8"
-            style={{ color: "var(--foreground)" }}
+            style={{ color: "var(--foreground)", fontFamily: "var(--font-petrona), Georgia, serif" }}
           >
             Approach
           </h2>
@@ -225,7 +225,7 @@ export default function LMSCaseStudy() {
         <section id="designed" className="mb-16" style={{ borderTop: "1px solid var(--border)", paddingTop: "48px" }}>
           <h2
             className="text-[18px] font-medium mb-12"
-            style={{ color: "var(--foreground)" }}
+            style={{ color: "var(--foreground)", fontFamily: "var(--font-petrona), Georgia, serif" }}
           >
             What I designed
           </h2>
@@ -235,7 +235,7 @@ export default function LMSCaseStudy() {
                 <div className="flex items-baseline justify-between mb-4">
                   <h3
                     className="text-[18px] font-medium"
-                    style={{ color: "var(--foreground)" }}
+                    style={{ color: "var(--foreground)", fontFamily: "var(--font-petrona), Georgia, serif" }}
                   >
                     {item.title}
                   </h3>
@@ -311,7 +311,7 @@ export default function LMSCaseStudy() {
           </p>
           <h2
             className="text-[18px] font-semibold leading-tight tracking-[-0.01em] mb-10"
-            style={{ color: "var(--foreground)" }}
+            style={{ color: "var(--foreground)", fontFamily: "var(--font-petrona), Georgia, serif" }}
           >
             What I learned
           </h2>

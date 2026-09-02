@@ -72,7 +72,7 @@ export default function About() {
           <div className="flex flex-col items-center" style={{ gap: "8px", padding: "26.6px 32px 27.61px" }}>
             <h2
               style={{
-                fontFamily: "var(--font-domine), Georgia, serif",
+                fontFamily: "var(--font-petrona), Georgia, serif",
                 fontWeight: 700,
                 fontSize: "28px",
                 lineHeight: "39.2px",
@@ -178,7 +178,7 @@ export default function About() {
           <div className="flex flex-col items-center" style={{ gap: "8px", padding: "26.6px 32px 27.61px" }}>
             <h2
               style={{
-                fontFamily: "var(--font-domine), Georgia, serif",
+                fontFamily: "var(--font-petrona), Georgia, serif",
                 fontWeight: 700,
                 fontSize: "26px",
                 lineHeight: "36px",
