@@ -550,23 +550,30 @@ body {
 @keyframes heroXPop {
   0% {
     opacity: 0;
-    transform: scale(0.4) rotate(-14deg);
+    transform: scale(0.4) rotate(-20deg);
   }
   60% {
     opacity: 1;
-    transform: scale(1.14) rotate(5deg);
+    transform: scale(1.14) rotate(-2deg);
   }
   100% {
     opacity: 1;
-    transform: scale(1) rotate(0deg);
+    transform: scale(1) rotate(-8deg);
   }
 }
 
 /* Scoped to .hero-x-play, which JS adds on mount and on bfcache restore.
    Without it the marks just render in place — so no JS means no animation,
-   never a missing highlight. */
-.hero-x-play .hero-x-highlight {
-  animation: heroXWipe 780ms cubic-bezier(0.65, 0, 0.35, 1) 400ms both;
+   never a missing highlight.
+   Two passes, timed back to back like a real highlighter: the first
+   (thinner, narrower) stroke draws in, then the second (thicker, fuller)
+   stroke picks up right after and finishes covering the word. */
+.hero-x-play .hero-x-highlight-a {
+  animation: heroXWipe 340ms cubic-bezier(0.65, 0, 0.35, 1) 400ms both;
+}
+
+.hero-x-play .hero-x-highlight-b {
+  animation: heroXWipe 520ms cubic-bezier(0.65, 0, 0.35, 1) 700ms both;
 }
 
 .hero-x-play .hero-x-sparkles {
@@ -650,7 +657,8 @@ body {
     transition: none;
   }
 
-  .hero-x-play .hero-x-highlight,
+  .hero-x-play .hero-x-highlight-a,
+  .hero-x-play .hero-x-highlight-b,
   .hero-x-play .hero-x-sparkles {
     animation: none;
   }
