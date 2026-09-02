@@ -192,32 +192,15 @@ export default function HeroExperimental() {
         >
           I{" "}
           <span className="relative inline-block">
-            {/* Two overlapping passes, timed to draw in one after another
-                like a real highlighter: the first thin stroke lands, then
-                the second, thicker pass continues over it. */}
             <span
               aria-hidden
-              className="hero-x-highlight hero-x-highlight-a absolute pointer-events-none"
+              className="hero-x-highlight absolute pointer-events-none"
               style={{
                 left: "-8%",
                 top: "16%",
                 width: "116%",
                 height: "82%",
-                backgroundImage: "url(/hero-highlight-a.svg)",
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "100% 100%",
-                zIndex: 0,
-              }}
-            />
-            <span
-              aria-hidden
-              className="hero-x-highlight hero-x-highlight-b absolute pointer-events-none"
-              style={{
-                left: "-8%",
-                top: "16%",
-                width: "116%",
-                height: "82%",
-                backgroundImage: "url(/hero-highlight-b.svg)",
+                backgroundImage: "url(/hero-highlight.svg)",
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "100% 100%",
                 zIndex: 0,
