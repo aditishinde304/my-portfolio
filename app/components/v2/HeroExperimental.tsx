@@ -230,8 +230,8 @@ export default function HeroExperimental() {
               className="hero-x-sparkles absolute pointer-events-none"
               style={{
                 // tucked right at the top-right corner of the final "l"
-                left: "calc(100% - 0.14em)",
-                top: "calc(-0.06em - 3px)",
+                left: "calc(100% - 0.14em - 1px)",
+                top: "calc(-0.06em - 6px)",
                 width: "0.44em",
                 height: "0.55em",
                 backgroundImage: "url(/hero-sparkles.svg)",
