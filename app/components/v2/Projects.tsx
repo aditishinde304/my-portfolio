@@ -67,7 +67,7 @@ export default function Projects() {
       <h2
         style={{
           fontFamily: "var(--font-petrona), Georgia, serif",
-          fontWeight: 500,
+          fontWeight: 600,
           fontSize: "clamp(1.4rem, 2.4vw, 1.7rem)",
           color: "#111",
         }}
@@ -98,7 +98,7 @@ export default function Projects() {
                 <h3
                   style={{
                     fontFamily: "var(--font-petrona), Georgia, serif",
-                    fontWeight: 500,
+                    fontWeight: 600,
                     fontSize: "clamp(1.3rem, 2.2vw, 1.55rem)",
                     lineHeight: 1.35,
                     letterSpacing: "-0.02em",

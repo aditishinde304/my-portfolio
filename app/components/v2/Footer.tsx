@@ -32,7 +32,7 @@ export default function Footer() {
         <h2
           style={{
             fontFamily: "var(--font-petrona), Georgia, serif",
-            fontWeight: 500,
+            fontWeight: 600,
             fontSize: "clamp(1.3rem, 2.4vw, 1.6rem)",
             color: "#fff",
           }}

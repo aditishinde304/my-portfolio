@@ -183,7 +183,7 @@ export default function HeroExperimental() {
           className="hero-x-title"
           style={{
             fontFamily: "var(--font-petrona), Georgia, serif",
-            fontWeight: 500,
+            fontWeight: 600,
             fontSize: "clamp(2rem, 4.4vw, 3rem)",
             lineHeight: 1.29,
             color: "#000",

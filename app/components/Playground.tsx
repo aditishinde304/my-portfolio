@@ -137,7 +137,7 @@ export default function Playground() {
         <h2
           style={{
             fontFamily: "var(--font-petrona), Georgia, serif",
-            fontWeight: 500,
+            fontWeight: 600,
             fontSize: "clamp(1.4rem, 2.4vw, 1.7rem)",
             color: "var(--foreground)",
           }}
