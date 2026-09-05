@@ -181,14 +181,7 @@ export default function Projects() {
         >
           More
         </span>
-        <Image
-          src="/folder-projects.png"
-          alt=""
-          aria-hidden
-          width={80}
-          height={67}
-          style={{ filter: "drop-shadow(0 1px 2px rgba(17,17,17,0.18)) drop-shadow(0 8px 14px rgba(17,17,17,0.2))" }}
-        />
+        <MoreWorkFolder />
         <span
           style={{
             fontFamily: "var(--font-fraunces), Georgia, serif",
@@ -200,5 +193,42 @@ export default function Projects() {
         </span>
       </a>
     </section>
+  );
+}
+
+// Three project thumbnails tucked behind the folder icon in the "More
+// Work" link above: barely peeking out by default, rising into a fanned
+// spread on hover. Thumbnails always sit at a lower z-index than the
+// folder image, so the portion of each that overlaps the folder's
+// silhouette reads as tucked behind it throughout the animation.
+const moreWorkThumbs = [
+  { id: "greenscape", src: "/thumb-greenscape.png", alt: "", width: 42, height: 51, className: "more-work-thumb-a" },
+  { id: "adventour", src: "/thumb-adventour.png", alt: "", width: 42, height: 53, className: "more-work-thumb-b" },
+  { id: "homelygrub", src: "/thumb-homelygrub.png", alt: "", width: 42, height: 58, className: "more-work-thumb-c" },
+];
+
+function MoreWorkFolder() {
+  return (
+    <span className="more-work-folder-wrap">
+      {moreWorkThumbs.map((thumb) => (
+        <Image
+          key={thumb.id}
+          src={thumb.src}
+          alt={thumb.alt}
+          aria-hidden
+          width={thumb.width}
+          height={thumb.height}
+          className={`more-work-thumb ${thumb.className}`}
+        />
+      ))}
+      <Image
+        src="/folder-projects.png"
+        alt=""
+        aria-hidden
+        width={80}
+        height={67}
+        className="more-work-folder-img"
+      />
+    </span>
   );
 }

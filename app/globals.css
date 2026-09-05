@@ -673,3 +673,82 @@ body {
     transition: none;
   }
 }
+
+/* Folder + peeking thumbnails inside the "More Work" link. Scaled-down
+   version of the same technique: thumbnails sit centered behind the
+   folder, always at a lower z-index, poking out a few px by default and
+   rising into a fanned spread on hover. The wrap's own box matches the
+   folder's size exactly (no reserved hover space) so it doesn't throw
+   off the flex row's vertical centering with the "More"/"Work" text --
+   the risen thumbnails simply overflow above it, which is harmless
+   since nothing here clips overflow. */
+.more-work-folder-wrap {
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 67px;
+  /* This flex item's only children are position:absolute, so it has no
+     in-flow content -- without a hard flex-basis some browsers collapse
+     it to 0 width despite the explicit width above. */
+  flex: none;
+  min-width: 80px;
+}
+
+.more-work-thumb {
+  position: absolute;
+  left: 50%;
+  top: -4px;
+  border-radius: 4px;
+  transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 420ms cubic-bezier(0.22, 1, 0.36, 1);
+  filter: drop-shadow(0 2px 3px rgba(17, 17, 17, 0.1));
+  will-change: transform;
+}
+
+.more-work-thumb-a {
+  z-index: 1;
+  transform: translateX(-50%) translateX(-14px) rotate(-9deg);
+}
+
+.more-work-thumb-b {
+  z-index: 3;
+  transform: translateX(-50%) translateX(0) rotate(0deg);
+}
+
+.more-work-thumb-c {
+  z-index: 2;
+  transform: translateX(-50%) translateX(14px) rotate(9deg);
+}
+
+.more-work-folder-wrap:hover .more-work-thumb-a {
+  transform: translateX(-50%) translateX(-22px) translateY(-38px) rotate(-14deg);
+  transition-delay: 40ms;
+  filter: drop-shadow(0 8px 12px rgba(17, 17, 17, 0.2));
+}
+
+.more-work-folder-wrap:hover .more-work-thumb-b {
+  transform: translateX(-50%) translateX(0) translateY(-46px) rotate(-2deg);
+  transition-delay: 0ms;
+  filter: drop-shadow(0 10px 14px rgba(17, 17, 17, 0.22));
+}
+
+.more-work-folder-wrap:hover .more-work-thumb-c {
+  transform: translateX(-50%) translateX(22px) translateY(-38px) rotate(14deg);
+  transition-delay: 80ms;
+  filter: drop-shadow(0 8px 12px rgba(17, 17, 17, 0.2));
+}
+
+.more-work-folder-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  pointer-events: none;
+  filter: drop-shadow(0 1px 2px rgba(17, 17, 17, 0.18)) drop-shadow(0 8px 14px rgba(17, 17, 17, 0.2));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .more-work-thumb {
+    transition: none;
+  }
+}
