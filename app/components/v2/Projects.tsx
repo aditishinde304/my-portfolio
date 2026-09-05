@@ -181,7 +181,14 @@ export default function Projects() {
         >
           More
         </span>
-        <MoreWorkFolderIcon />
+        <Image
+          src="/folder-projects.png"
+          alt=""
+          aria-hidden
+          width={80}
+          height={67}
+          style={{ filter: "drop-shadow(0 1px 2px rgba(17,17,17,0.18)) drop-shadow(0 8px 14px rgba(17,17,17,0.2))" }}
+        />
         <span
           style={{
             fontFamily: "var(--font-fraunces), Georgia, serif",
@@ -193,34 +200,5 @@ export default function Projects() {
         </span>
       </a>
     </section>
-  );
-}
-
-function MoreWorkFolderIcon() {
-  return (
-    <svg width="80" height="70" viewBox="0 0 120 106" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="mwFolderBack" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="#e4e4e2" />
-          <stop offset="1" stopColor="#d4d4d1" />
-        </linearGradient>
-        <linearGradient id="mwFolderFront" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="#fbfbfa" />
-          <stop offset="1" stopColor="#eeeeec" />
-        </linearGradient>
-      </defs>
-      <rect x="21" y="8" width="60" height="34" rx="6" fill="#fdf6df" transform="rotate(-6 51 25)" />
-      <rect x="38" y="6" width="60" height="34" rx="6" fill="#e4e7fb" transform="rotate(5 68 23)" />
-      <path
-        d="M8 20C8 16.686 10.686 14 14 14H46C48.2091 14 50.2 15.147 51.3251 17L54.6749 22.5C55.8 24.353 57.7909 25.5 60 25.5H106C109.314 25.5 112 28.186 112 31.5V90C112 93.314 109.314 96 106 96H14C10.686 96 8 93.314 8 90V20Z"
-        fill="url(#mwFolderBack)"
-      />
-      <rect x="4" y="36" width="112" height="60" rx="12" fill="url(#mwFolderFront)" stroke="#e2e2df" />
-      <g transform="translate(48, 56)" opacity="0.55">
-        <rect x="0" y="0" width="24" height="20" rx="4" stroke="#8a8a86" strokeWidth="2.2" />
-        <circle cx="6.5" cy="6.5" r="2.2" stroke="#8a8a86" strokeWidth="2" />
-        <path d="M1 16L8.5 10L14 14.5L19 9L23 13.5" stroke="#8a8a86" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-      </g>
-    </svg>
   );
 }

@@ -6,7 +6,6 @@ import {
 import Workspace from "./components/v2/Workspace";
 import HeroExperimental from "./components/v2/HeroExperimental";
 import Projects from "./components/v2/Projects";
-import ProjectFolder from "./components/v2/ProjectFolder";
 import About from "./components/v2/About";
 import Experiments from "./components/v2/Experiments";
 import Playground from "./components/Playground";
@@ -119,7 +118,6 @@ export default function Home() {
       )}
 
       <Projects />
-      <ProjectFolder />
       {/* <About /> */}
       <Experiments />
 
