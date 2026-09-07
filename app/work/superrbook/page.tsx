@@ -785,10 +785,10 @@ export default function SuperrbookCaseStudy() {
                   { title: "Draw", body: "Where would they expect to start an arc or circle?" },
                   { title: "Measure", body: "What feedback should appear while measuring?" },
                 ].map((item) => (
-                  <div key={item.title}>
-                    <p className="text-[16px] font-semibold mb-0.5" style={{ color: "var(--cs-fg)" }}>{item.title}</p>
-                    <p className="text-[17px] leading-relaxed" style={{ color: "var(--cs-secondary)" }}>{item.body}</p>
-                  </div>
+                  <p key={item.title} className="text-[17px] leading-relaxed">
+                    <span className="font-semibold" style={{ color: "var(--cs-fg)" }}>{item.title}</span>
+                    <span style={{ color: "var(--cs-secondary)" }}> - {item.body}</span>
+                  </p>
                 ))}
               </div>
             </div>
