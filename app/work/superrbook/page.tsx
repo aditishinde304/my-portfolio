@@ -778,7 +778,7 @@ export default function SuperrbookCaseStudy() {
               <p className="text-[17px] leading-relaxed mb-4" style={{ color: "var(--cs-secondary)" }}>
                 Instead of inventing entirely new interactions, I started with behaviors students already understood.
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="flex flex-col gap-2">
                 {[
                   { title: "Move", body: "How would a student naturally reposition a ruler?" },
                   { title: "Rotate", body: "How would they expect a protractor to turn?" },
