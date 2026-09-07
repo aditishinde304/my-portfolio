@@ -25,7 +25,7 @@ export default function Home() {
           </span>
           <nav className="hidden sm:flex items-center" style={{ gap: "40px" }}>
             {[
-              { label: "About", href: "#about" },
+              { label: "About", href: "/about" },
               { label: "Work", href: "#work" },
               { label: "Contact", href: "#contact" },
             ].map((item) => (
