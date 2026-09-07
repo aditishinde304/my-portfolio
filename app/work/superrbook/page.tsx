@@ -258,7 +258,7 @@ export default function SuperrbookCaseStudy() {
             <div>
               <p className="text-[18px] font-semibold mb-1" style={{ color: "var(--cs-fg)" }}>TL;DR</p>
               <p className="text-[17px] leading-relaxed" style={{ color: "var(--cs-secondary)" }}>
-                Designed a lightweight resource switcher that lets students move between textbooks and notebooks without breaking their learning flow.
+                Designed a resource switcher that lets students move between textbooks and notebooks without breaking their learning flow.
               </p>
             </div>
 
@@ -318,7 +318,7 @@ export default function SuperrbookCaseStudy() {
                 </div>
                 <div className="flex flex-col" style={{ paddingTop: "12px", marginLeft: "-20px" }}>
                   <p className="text-[18px] font-semibold mb-5" style={{ color: "var(--cs-fg)" }}>Pain Points</p>
-                  <div className="flex flex-col gap-2">
+                  <div className="flex flex-col gap-4">
                     {[
                       "Breaks concentration",
                       "Adds unnecessary steps",
@@ -326,7 +326,7 @@ export default function SuperrbookCaseStudy() {
                     ].map((point, i) => (
                       <p
                         key={point}
-                        className="text-[14px] font-medium whitespace-nowrap"
+                        className="text-[17px] font-medium whitespace-nowrap"
                         style={{ color: "var(--cs-red)" }}
                       >
                         {i + 1}. {point}
@@ -353,7 +353,7 @@ export default function SuperrbookCaseStudy() {
                     style={{ background: "var(--cs-yellow-bg)", border: "1.5px solid var(--cs-yellow-border)" }}
                   >
                     <Image src={goal.icon} alt="" width={22} height={22} />
-                    <p className="text-[18px] font-semibold leading-snug mt-2" style={{ color: "var(--cs-yellow-text)" }}>{goal.title}</p>
+                    <p className="text-[16px] font-bold leading-snug mt-2" style={{ color: "var(--cs-yellow-text)" }}>{goal.title}</p>
                     <p className="text-[14px] leading-snug mt-1" style={{ color: "var(--cs-yellow-subtext)" }}>{goal.subtitle}</p>
                   </div>
                 ))}
@@ -482,39 +482,13 @@ export default function SuperrbookCaseStudy() {
                   ))}
                 </div>
 
-                <div className="rounded-2xl flex justify-center px-6 pb-6 pt-20" style={{ background: "var(--cs-hover-bg)" }}>
-                  <div className="relative w-full" style={{ maxWidth: "420px" }}>
-                    <p
-                      className="absolute text-[14px] font-semibold text-center leading-snug"
-                      style={{ color: "var(--cs-fg)", top: "-78px", right: "-8px", width: "168px" }}
-                    >
-                      Switcher access from Control Center
-                    </p>
-                    <svg
-                      viewBox="0 0 420 160"
-                      fill="none"
-                      className="absolute pointer-events-none"
-                      style={{ top: "-70px", left: 0, width: "100%", height: "170px", overflow: "visible" }}
-                    >
-                      <path
-                        d="M 388 46 C 356 20, 316 26, 314 56 C 312 82, 344 92, 356 72 C 366 55, 342 42, 330 58 C 316 76, 320 108, 300 128 C 285 143, 275 148, 266 152"
-                        stroke="var(--cs-secondary)"
-                        strokeWidth="2.5"
-                        strokeLinecap="round"
-                      />
-                      <path
-                        d="M 266 152 L 278 141 M 266 152 L 280 158"
-                        stroke="var(--cs-secondary)"
-                        strokeWidth="2.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
+                <div className="rounded-2xl flex justify-center p-6" style={{ background: "var(--cs-hover-bg)" }}>
+                  <div className="relative w-full" style={{ maxWidth: "480px" }}>
                     <Image
-                      src="/final-entry-point-mockup.png"
+                      src="/Control center entry point.png"
                       alt="Final entry point mockup: two-finger swipe down with Control Center access, annotated to show the switcher icon in Control Center"
-                      width={528}
-                      height={518}
+                      width={827}
+                      height={515}
                       quality={100}
                       className="w-full h-auto block"
                     />
@@ -540,10 +514,13 @@ export default function SuperrbookCaseStudy() {
                       { title: "Continue where they left off", label: "Recently Used" },
                       { title: "Keep important resources close", label: "Favourites" },
                     ].map((item, i) => (
-                      <p key={item.title} className="text-[17px] leading-relaxed" style={{ color: "var(--cs-fg)" }}>
-                        {i + 1}. {item.title}{" "}
-                        <span style={{ color: "var(--cs-secondary)" }}>({item.label})</span>
-                      </p>
+                      <div key={item.title} className="flex items-baseline text-[17px] leading-relaxed" style={{ color: "var(--cs-fg)" }}>
+                        <span className="shrink-0" style={{ width: "22px" }}>{i + 1}.</span>
+                        <span>
+                          {item.title}{" "}
+                          <span style={{ color: "var(--cs-secondary)" }}>({item.label})</span>
+                        </span>
+                      </div>
                     ))}
                   </div>
                 </div>
@@ -586,7 +563,7 @@ export default function SuperrbookCaseStudy() {
                         },
                       ].map((reason) => (
                         <div key={reason.title}>
-                          <p className="text-[18px] font-semibold mb-1" style={{ color: "var(--cs-fg)" }}>
+                          <p className="text-[17px] font-semibold mb-1" style={{ color: "var(--cs-fg)" }}>
                             {reason.title}
                           </p>
                           <p className="text-[14px] leading-relaxed" style={{ color: "var(--cs-secondary)" }}>
@@ -604,7 +581,7 @@ export default function SuperrbookCaseStudy() {
             <div>
               <p className="text-[18px] font-semibold mb-4" style={{ color: "var(--cs-fg)" }}>Final Direction</p>
               <p className="text-[17px] leading-relaxed mb-6" style={{ color: "var(--cs-secondary)" }}>
-                A switcher accessed through <span style={{ fontWeight: 600 }}>a two-finger swipe down or directly from the Control Center</span>, combining Recents and Favorites within a single surface.
+                A switcher accessed through <span style={{ fontWeight: 600, color: "#292929" }}>a two-finger swipe down or directly from the Control Center</span>, combining Recents and Favorites within a single surface.
               </p>
 
               <div className="rounded-2xl overflow-hidden mb-4">
@@ -636,67 +613,82 @@ export default function SuperrbookCaseStudy() {
             </div>
 
             {/* Edge Cases */}
-            <div>
+            <div style={{ marginTop: "16px" }}>
               <p className="text-[18px] font-semibold mb-4" style={{ color: "var(--cs-fg)" }}>Designing for Edge Cases</p>
               <p className="text-[17px] leading-relaxed mb-6" style={{ color: "var(--cs-secondary)" }}>
                 A big part of this project was thinking beyond the ideal flow. The resource system had to work across different states without making the everyday experience feel more complicated.
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <ul className="flex flex-col gap-4">
                 {[
                   { title: "Current resource in Recents", body: "Deciding whether the resource a student is currently viewing should appear in their recently accessed list." },
                   { title: "Deleted notebooks", body: "Handling previously accessed content that is no longer available." },
                   { title: "Empty Recents and Favorites", body: "Making empty states still feel intentional rather than broken." },
                   { title: "Preserving reading position", body: "Helping students pick up where they left off without unnecessary effort." },
                 ].map((item) => (
-                  <div key={item.title}>
-                    <p className="text-[18px] font-semibold mb-1" style={{ color: "var(--cs-fg)" }}>{item.title}</p>
-                    <p className="text-[17px] leading-relaxed" style={{ color: "var(--cs-secondary)" }}>{item.body}</p>
-                  </div>
+                  <li key={item.title} className="flex items-start gap-3">
+                    <span
+                      className="shrink-0 rounded-full"
+                      style={{ width: "4px", height: "4px", background: "var(--cs-secondary)", display: "inline-block", marginTop: "9px" }}
+                    />
+                    <div>
+                      <p className="text-[16px] font-semibold mb-0.5" style={{ color: "var(--cs-fg)" }}>{item.title}</p>
+                      <p className="text-[16px] leading-relaxed" style={{ color: "var(--cs-secondary)" }}>{item.body}</p>
+                    </div>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
 
             {/* What I'll be measuring next */}
-            <div>
+            <div style={{ marginTop: "32px" }}>
               <p className="text-[18px] font-semibold mb-4" style={{ color: "var(--cs-fg)" }}>What I&rsquo;ll be measuring next</p>
               <p className="text-[17px] leading-relaxed mb-6" style={{ color: "var(--cs-secondary)" }}>
                 The experience is currently being prepared for launch, so I don&rsquo;t have user metrics to share yet. Once it&rsquo;s live, I&rsquo;ll be looking closely at:
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <ul className="flex flex-col gap-4">
                 {[
                   { title: "Feature adoption", body: "How many students start using the resource switcher?" },
                   { title: "Return usage", body: "Do students come back to previously accessed resources?" },
                   { title: "Time to find content", body: "Can students get to what they need faster?" },
                   { title: "Reading continuity", body: "Does preserving position make it easier to pick up where they left off?" },
                   { title: "Qualitative feedback", body: "What feels intuitive, confusing or unexpectedly useful?" },
-                ].map((item) => (
-                  <div key={item.title}>
-                    <p className="text-[18px] font-semibold mb-1" style={{ color: "var(--cs-fg)" }}>{item.title}</p>
-                    <p className="text-[17px] leading-relaxed" style={{ color: "var(--cs-secondary)" }}>{item.body}</p>
-                  </div>
+                ].map((item, i) => (
+                  <li key={item.title} className="flex items-start gap-3">
+                    <span className="shrink-0 text-[16px] font-semibold" style={{ width: "20px", color: "var(--cs-fg)" }}>{i + 1}.</span>
+                    <div>
+                      <p className="text-[16px] font-semibold mb-0.5" style={{ color: "var(--cs-fg)" }}>{item.title}</p>
+                      <p className="text-[16px] leading-relaxed" style={{ color: "var(--cs-secondary)" }}>{item.body}</p>
+                    </div>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
 
             {/* Reflection */}
-            <div>
+            <div style={{ marginTop: "32px" }}>
               <p className="text-[18px] font-semibold mb-4" style={{ color: "var(--cs-fg)" }}>Reflection</p>
               <p className="text-[17px] leading-relaxed mb-6" style={{ color: "var(--cs-secondary)" }}>
                 A few things I learned while working through this:
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <ul className="flex flex-col gap-4">
                 {[
                   { title: "The fastest interaction isn't always the best one.", body: "The pull down gesture was quick, but it conflicted with system level gestures and introduced unnecessary friction." },
                   { title: "Small entry point decisions can have a big impact.", body: "Where and how students access their resources shaped the entire daily learning flow." },
                   { title: "Physical metaphors helped make the experience easier to understand.", body: "Concepts like notebooks, folders and collections felt more intuitive than introducing another set of tabs or modals." },
                   { title: "Handling edge cases early helped keep the core experience simple.", body: "Thinking through empty, deleted and returning states prevented complexity from showing up later." },
                 ].map((item) => (
-                  <div key={item.title}>
-                    <p className="text-[18px] font-semibold mb-1" style={{ color: "var(--cs-fg)" }}>{item.title}</p>
-                    <p className="text-[17px] leading-relaxed" style={{ color: "var(--cs-secondary)" }}>{item.body}</p>
-                  </div>
+                  <li key={item.title} className="flex items-start gap-3">
+                    <span
+                      className="shrink-0 rounded-full"
+                      style={{ width: "4px", height: "4px", background: "var(--cs-secondary)", display: "inline-block", marginTop: "9px" }}
+                    />
+                    <div>
+                      <p className="text-[16px] font-semibold mb-0.5" style={{ color: "var(--cs-fg)" }}>{item.title}</p>
+                      <p className="text-[16px] leading-relaxed" style={{ color: "var(--cs-secondary)" }}>{item.body}</p>
+                    </div>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
 
             {/* Live Quizzes */}
