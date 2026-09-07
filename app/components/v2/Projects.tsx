@@ -168,7 +168,7 @@ export default function Projects() {
       </div>
 
       <a
-        href="#"
+        href="/work/more"
         className="flex items-center justify-center"
         style={{ marginTop: "68px", gap: "24px" }}
       >
