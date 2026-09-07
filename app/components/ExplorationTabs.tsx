@@ -72,7 +72,7 @@ export default function ExplorationTabs({
               <p className="text-[12px] font-semibold tracking-[0.08em] uppercase mb-2" style={{ color: "var(--cs-blue)" }}>
                 Idea
               </p>
-              <p className="text-[18px] font-semibold leading-snug mb-1" style={{ color: "var(--cs-fg)" }}>
+              <p className="text-[18px] font-medium leading-snug mb-1" style={{ color: "var(--cs-fg)" }}>
                 {current.title}
               </p>
               <p className="text-[17px] leading-relaxed" style={{ color: "var(--cs-secondary)" }}>
@@ -84,7 +84,7 @@ export default function ExplorationTabs({
               <p className="text-[12px] font-semibold tracking-[0.08em] uppercase mb-2" style={{ color: "var(--cs-green)" }}>
                 Why I explored it
               </p>
-              <p className="text-[18px] font-semibold leading-snug mb-1" style={{ color: "var(--cs-fg)" }}>
+              <p className="text-[18px] font-medium leading-snug mb-1" style={{ color: "var(--cs-fg)" }}>
                 {current.whyTitle}
               </p>
               <p className="text-[17px] leading-relaxed" style={{ color: "var(--cs-secondary)" }}>
@@ -96,7 +96,7 @@ export default function ExplorationTabs({
               <p className="text-[12px] font-semibold tracking-[0.08em] uppercase mb-2" style={{ color: "var(--cs-red)" }}>
                 Why I moved away
               </p>
-              <p className="text-[18px] font-semibold leading-snug mb-1" style={{ color: "var(--cs-fg)" }}>
+              <p className="text-[18px] font-medium leading-snug mb-1" style={{ color: "var(--cs-fg)" }}>
                 {current.moveAwayTitle}
               </p>
               <p className="text-[17px] leading-relaxed" style={{ color: "var(--cs-secondary)" }}>

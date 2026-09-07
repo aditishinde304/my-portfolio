@@ -316,7 +316,7 @@ export default function SuperrbookCaseStudy() {
                     Repeated many times during every study session.
                   </p>
                 </div>
-                <div className="flex flex-col" style={{ paddingTop: "12px", marginLeft: "-20px" }}>
+                <div className="flex flex-col" style={{ marginLeft: "-20px" }}>
                   <p className="text-[18px] font-medium mb-5" style={{ color: "var(--cs-fg)" }}>Pain Points</p>
                   <div className="flex flex-col gap-4">
                     {[
@@ -327,7 +327,7 @@ export default function SuperrbookCaseStudy() {
                     ].map((point, i) => (
                       <p
                         key={point}
-                        className="text-[17px] font-medium"
+                        className={`text-[17px] font-normal ${i === 0 ? "whitespace-nowrap" : ""}`}
                         style={{ color: "var(--cs-red)" }}
                       >
                         {i + 1}. {point}
@@ -354,7 +354,7 @@ export default function SuperrbookCaseStudy() {
                     style={{ background: "var(--cs-yellow-bg)", border: "1.5px solid var(--cs-yellow-border)" }}
                   >
                     <Image src={goal.icon} alt="" width={22} height={22} />
-                    <p className="text-[16px] font-semibold leading-snug mt-2" style={{ color: "var(--cs-yellow-text)" }}>{goal.title}</p>
+                    <p className="text-[16px] font-medium leading-snug mt-2" style={{ color: "var(--cs-yellow-text)" }}>{goal.title}</p>
                     <p className="text-[14px] leading-snug mt-1" style={{ color: "var(--cs-yellow-subtext)" }}>{goal.subtitle}</p>
                   </div>
                 ))}
@@ -419,15 +419,17 @@ export default function SuperrbookCaseStudy() {
                 />
               </div>
 
-              {/* Key Insight */}
-              <div className="rounded-2xl p-5 mt-8" style={{ background: "var(--cs-blue-bg)", border: "1px solid var(--cs-blue-border)" }}>
-                <p className="text-[12px] font-semibold uppercase tracking-[0.08em] mb-2" style={{ color: "var(--cs-blue)" }}>
-                  Key Insight
-                </p>
-                <p className="text-[17px] leading-relaxed font-medium" style={{ color: "var(--cs-blue-text)" }}>
-                  This exploration shifted my thinking from navigating between screens to switching within the same collection &mdash; like opening another folder in the same workspace.
-                </p>
-              </div>
+              {/* Key Insight -- hidden for now (not deleted), per request */}
+              {false && (
+                <div className="rounded-2xl p-5 mt-8" style={{ background: "var(--cs-blue-bg)", border: "1px solid var(--cs-blue-border)" }}>
+                  <p className="text-[12px] font-semibold uppercase tracking-[0.08em] mb-2" style={{ color: "var(--cs-blue)" }}>
+                    Key Insight
+                  </p>
+                  <p className="text-[17px] leading-relaxed font-medium" style={{ color: "var(--cs-blue-text)" }}>
+                    This exploration shifted my thinking from navigating between screens to switching within the same collection &mdash; like opening another folder in the same workspace.
+                  </p>
+                </div>
+              )}
 
               {/* Final entry point decision */}
               <div className="mt-12">
@@ -438,7 +440,7 @@ export default function SuperrbookCaseStudy() {
                   The switcher opens with a two-finger swipe down from the top edge, with a direct entry point from Control Center when needed.
                 </p>
 
-                <p className="text-[18px] font-medium mb-4" style={{ color: "var(--cs-blue)" }}>
+                <p className="text-[18px] font-medium mb-4" style={{ color: "var(--cs-fg)" }}>
                   Why this direction?
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
@@ -614,7 +616,7 @@ export default function SuperrbookCaseStudy() {
 
             {/* What I'll be measuring next */}
             <div style={{ marginTop: "32px" }}>
-              <p className="text-[18px] font-semibold mb-4" style={{ color: "var(--cs-fg)" }}>What I&rsquo;ll be measuring next</p>
+              <p className="text-[18px] font-semibold mb-4" style={{ color: "var(--cs-fg)" }}>What I&rsquo;ll be measuring next (Metrics)</p>
               <p className="text-[17px] leading-relaxed mb-6" style={{ color: "var(--cs-secondary)" }}>
                 The experience is currently being prepared for launch, so I don&rsquo;t have user metrics to share yet. Once it&rsquo;s live, I&rsquo;ll be looking closely at:
               </p>
@@ -647,7 +649,6 @@ export default function SuperrbookCaseStudy() {
                 {[
                   { title: "The fastest interaction isn't always the best one.", body: "The pull down gesture was quick, but it conflicted with system level gestures and introduced unnecessary friction." },
                   { title: "Small entry point decisions can have a big impact.", body: "Where and how students access their resources shaped the entire daily learning flow." },
-                  { title: "Physical metaphors helped make the experience easier to understand.", body: "Concepts like notebooks, folders and collections felt more intuitive than introducing another set of tabs or modals." },
                   { title: "Handling edge cases early helped keep the core experience simple.", body: "Thinking through empty, deleted and returning states prevented complexity from showing up later." },
                 ].map((item) => (
                   <li key={item.title} className="flex items-start gap-3">
@@ -666,7 +667,7 @@ export default function SuperrbookCaseStudy() {
 
             {/* Live Quizzes */}
             <div style={{ borderTop: "1px solid var(--cs-border)", paddingTop: "48px" }}>
-              <h3 className="text-[24px] font-semibold mb-4" style={{ color: "var(--cs-fg)" }}>{liveQuizItem.title}</h3>
+              <h3 className="text-[24px] font-semibold mb-4" style={{ color: "var(--cs-fg)", fontFamily: "var(--font-petrona), Georgia, serif" }}>{liveQuizItem.title}</h3>
               <p className="text-[17px] leading-relaxed mb-6" style={{ color: "var(--cs-secondary)" }}>{liveQuizItem.description}</p>
               <p className="text-[18px] font-medium mb-3" style={{ color: "var(--cs-fg)" }}>Focused on</p>
               <ul className="flex flex-col gap-2 mb-8">
