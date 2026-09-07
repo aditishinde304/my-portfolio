@@ -59,9 +59,12 @@
   --cs-red: #DC2626;
 
   --cs-yellow-bg: #FFF6C7;
-  --cs-yellow-border: #E8C93A;
+  --cs-yellow-border: #F0E1A0;
   --cs-yellow-text: #171717;
   --cs-yellow-subtext: #5A4E1F;
+
+  /* Decorative icon-badge fill only (not a semantic accent). */
+  --cs-purple-bg: #EDE9FE;
 }
 
 html {

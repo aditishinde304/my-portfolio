@@ -256,7 +256,7 @@ export default function SuperrbookCaseStudy() {
 
             {/* TL;DR */}
             <div>
-              <p className="text-[20px] font-semibold mb-1" style={{ color: "var(--cs-fg)" }}>TL;DR</p>
+              <p className="text-[18px] font-semibold mb-1" style={{ color: "var(--cs-fg)" }}>TL;DR</p>
               <p className="text-[17px] leading-relaxed" style={{ color: "var(--cs-secondary)" }}>
                 Designed a lightweight resource switcher that lets students move between textbooks and notebooks without breaking their learning flow.
               </p>
@@ -264,7 +264,7 @@ export default function SuperrbookCaseStudy() {
 
             {/* Problem */}
             <div>
-              <p className="text-[20px] font-semibold mb-1" style={{ color: "var(--cs-fg)" }}>Problem</p>
+              <p className="text-[18px] font-semibold mb-1" style={{ color: "var(--cs-fg)" }}>Problem</p>
               <p className="text-[17px] leading-relaxed mb-6" style={{ color: "var(--cs-secondary)" }}>
                 Learning often required jumping between different resources. Every switch interrupted focus.
               </p>
@@ -318,19 +318,19 @@ export default function SuperrbookCaseStudy() {
                 </div>
                 <div className="flex flex-col" style={{ paddingTop: "12px", marginLeft: "-20px" }}>
                   <p className="text-[18px] font-semibold mb-5" style={{ color: "var(--cs-fg)" }}>Pain Points</p>
-                  <div className="flex flex-col gap-3">
+                  <div className="flex flex-col gap-2">
                     {[
                       "Breaks concentration",
                       "Adds unnecessary steps",
                       "Interrupts note taking",
-                    ].map((point) => (
-                      <div
+                    ].map((point, i) => (
+                      <p
                         key={point}
-                        className="rounded-xl px-4 py-3 whitespace-nowrap"
-                        style={{ background: "var(--cs-hover-bg)" }}
+                        className="text-[14px] font-medium whitespace-nowrap"
+                        style={{ color: "var(--cs-red)" }}
                       >
-                        <p className="text-[14px] font-medium" style={{ color: "var(--cs-fg)" }}>{point}</p>
-                      </div>
+                        {i + 1}. {point}
+                      </p>
                     ))}
                   </div>
                 </div>
@@ -339,7 +339,7 @@ export default function SuperrbookCaseStudy() {
 
             {/* Design Goals */}
             <div>
-              <p className="text-[20px] font-semibold mb-4" style={{ color: "var(--cs-fg)" }}>Design Goals</p>
+              <p className="text-[18px] font-semibold mb-4" style={{ color: "var(--cs-fg)" }}>Design Goals</p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {[
                   { icon: "/icons/dg-faster-switching.svg", title: "Faster switching", subtitle: "Reduce navigation steps" },
@@ -362,14 +362,14 @@ export default function SuperrbookCaseStudy() {
 
             {/* Exploration */}
             <div>
-              <p className="text-[20px] font-semibold mb-6" style={{ color: "var(--cs-fg)" }}>Exploration</p>
+              <p className="text-[18px] font-semibold mb-6" style={{ color: "var(--cs-fg)" }}>Exploration</p>
 
               {/* Part 1 - Finding the right entry point */}
               <div>
-                <p className="text-[20px] font-semibold mb-3" style={{ color: "var(--cs-fg)" }}>
+                <p className="text-[18px] font-semibold mb-3" style={{ color: "var(--cs-fg)" }}>
                   Part 1 - Finding the right entry point
                 </p>
-                <p className="text-[14px] leading-relaxed mb-10" style={{ color: "var(--cs-muted)" }}>
+                <p className="text-[17px] leading-relaxed mb-10" style={{ color: "var(--cs-muted)" }}>
                   How should students open the switcher?
                 </p>
 
@@ -433,14 +433,14 @@ export default function SuperrbookCaseStudy() {
                 <p className="text-[12px] font-semibold tracking-[0.08em] uppercase mb-2" style={{ color: "var(--cs-muted)" }}>
                   Final entry point decision
                 </p>
-                <p className="text-[20px] font-semibold mb-2" style={{ color: "var(--cs-fg)" }}>
+                <p className="text-[18px] font-semibold mb-2" style={{ color: "var(--cs-fg)" }}>
                   Two finger swipe down + Control Center access
                 </p>
                 <p className="text-[17px] leading-relaxed mb-8" style={{ color: "var(--cs-secondary)" }}>
                   The switcher opens with a two-finger swipe down from the top edge, with a direct entry point from Control Center when needed.
                 </p>
 
-                <p className="text-[20px] font-semibold mb-4" style={{ color: "var(--cs-fg)" }}>
+                <p className="text-[18px] font-semibold mb-4" style={{ color: "var(--cs-fg)" }}>
                   Why this direction?
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
@@ -468,7 +468,7 @@ export default function SuperrbookCaseStudy() {
                     >
                       <div
                         className="shrink-0 rounded-full flex items-center justify-center mb-3"
-                        style={{ width: "40px", height: "40px", background: "var(--cs-green-bg)" }}
+                        style={{ width: "40px", height: "40px", background: "var(--cs-purple-bg)" }}
                       >
                         <Image src={item.icon} alt="" width={18} height={18} />
                       </div>
@@ -524,7 +524,7 @@ export default function SuperrbookCaseStudy() {
 
               {/* Part 2 - Designing the Switcher */}
               <div className="mt-12">
-                <p className="text-[20px] font-semibold mb-3" style={{ color: "var(--cs-fg)" }}>
+                <p className="text-[18px] font-semibold mb-3" style={{ color: "var(--cs-fg)" }}>
                   Part 2 - Designing the Switcher
                 </p>
                 <p className="text-[17px] leading-relaxed mb-10" style={{ color: "var(--cs-secondary)" }}>
@@ -532,7 +532,7 @@ export default function SuperrbookCaseStudy() {
                 </p>
 
                 <div className="mb-10">
-                  <p className="text-[20px] font-semibold mb-4" style={{ color: "var(--cs-fg)" }}>
+                  <p className="text-[18px] font-semibold mb-4" style={{ color: "var(--cs-fg)" }}>
                     Students primarily switched resources for two reasons
                   </p>
                   <div className="flex flex-col gap-2">
@@ -571,7 +571,7 @@ export default function SuperrbookCaseStudy() {
                   </div>
 
                   <div className="px-2 pb-2 pt-8 md:px-4 md:pb-4">
-                    <p className="text-[18px] font-semibold mb-4" style={{ color: "var(--cs-red)" }}>
+                    <p className="text-[12px] font-semibold uppercase tracking-[0.08em] mb-4" style={{ color: "var(--cs-red)" }}>
                       Why it didn&rsquo;t work
                     </p>
                     <div className="flex flex-col gap-6">
@@ -602,7 +602,7 @@ export default function SuperrbookCaseStudy() {
 
             {/* Final Direction */}
             <div>
-              <p className="text-[20px] font-semibold mb-4" style={{ color: "var(--cs-fg)" }}>Final Direction</p>
+              <p className="text-[18px] font-semibold mb-4" style={{ color: "var(--cs-fg)" }}>Final Direction</p>
               <p className="text-[17px] leading-relaxed mb-6" style={{ color: "var(--cs-secondary)" }}>
                 A switcher accessed through <span style={{ fontWeight: 600 }}>a two-finger swipe down or directly from the Control Center</span>, combining Recents and Favorites within a single surface.
               </p>
@@ -637,21 +637,42 @@ export default function SuperrbookCaseStudy() {
 
             {/* Edge Cases */}
             <div>
-              <p className="text-[20px] font-semibold mb-4" style={{ color: "var(--cs-fg)" }}>Designing for Edge Cases</p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <p className="text-[18px] font-semibold mb-4" style={{ color: "var(--cs-fg)" }}>Designing for Edge Cases</p>
+              <p className="text-[17px] leading-relaxed mb-6" style={{ color: "var(--cs-secondary)" }}>
+                A big part of this project was thinking beyond the ideal flow. The resource system had to work across different states without making the everyday experience feel more complicated.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {[
-                  "Current resource appearing in Recents",
-                  "Deleted notebooks",
-                  "Empty Recents / Favorites states",
-                  "Preserving reading position",
-                ].map((q) => (
-                  <div
-                    key={q}
-                    className="rounded-xl px-4 py-3 flex items-center gap-3"
-                    style={{ background: "var(--cs-hover-bg)" }}
-                  >
-                    <span className="shrink-0 rounded-full" style={{ width: "4px", height: "4px", background: "var(--cs-secondary)", display: "inline-block" }} />
-                    <p className="text-[14px] font-medium" style={{ color: "var(--cs-fg)" }}>{q}</p>
+                  { title: "Current resource in Recents", body: "Deciding whether the resource a student is currently viewing should appear in their recently accessed list." },
+                  { title: "Deleted notebooks", body: "Handling previously accessed content that is no longer available." },
+                  { title: "Empty Recents and Favorites", body: "Making empty states still feel intentional rather than broken." },
+                  { title: "Preserving reading position", body: "Helping students pick up where they left off without unnecessary effort." },
+                ].map((item) => (
+                  <div key={item.title}>
+                    <p className="text-[18px] font-semibold mb-1" style={{ color: "var(--cs-fg)" }}>{item.title}</p>
+                    <p className="text-[17px] leading-relaxed" style={{ color: "var(--cs-secondary)" }}>{item.body}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* What I'll be measuring next */}
+            <div>
+              <p className="text-[18px] font-semibold mb-4" style={{ color: "var(--cs-fg)" }}>What I&rsquo;ll be measuring next</p>
+              <p className="text-[17px] leading-relaxed mb-6" style={{ color: "var(--cs-secondary)" }}>
+                The experience is currently being prepared for launch, so I don&rsquo;t have user metrics to share yet. Once it&rsquo;s live, I&rsquo;ll be looking closely at:
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {[
+                  { title: "Feature adoption", body: "How many students start using the resource switcher?" },
+                  { title: "Return usage", body: "Do students come back to previously accessed resources?" },
+                  { title: "Time to find content", body: "Can students get to what they need faster?" },
+                  { title: "Reading continuity", body: "Does preserving position make it easier to pick up where they left off?" },
+                  { title: "Qualitative feedback", body: "What feels intuitive, confusing or unexpectedly useful?" },
+                ].map((item) => (
+                  <div key={item.title}>
+                    <p className="text-[18px] font-semibold mb-1" style={{ color: "var(--cs-fg)" }}>{item.title}</p>
+                    <p className="text-[17px] leading-relaxed" style={{ color: "var(--cs-secondary)" }}>{item.body}</p>
                   </div>
                 ))}
               </div>
@@ -659,17 +680,20 @@ export default function SuperrbookCaseStudy() {
 
             {/* Reflection */}
             <div>
-              <p className="text-[20px] font-semibold mb-4" style={{ color: "var(--cs-fg)" }}>Reflection</p>
+              <p className="text-[18px] font-semibold mb-4" style={{ color: "var(--cs-fg)" }}>Reflection</p>
+              <p className="text-[17px] leading-relaxed mb-6" style={{ color: "var(--cs-secondary)" }}>
+                A few things I learned while working through this:
+              </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {[
-                  "The fastest interaction isn't always the best — the pull-down gesture was quick but conflicted with system-level gestures.",
-                  "Physical metaphors like folders and collections made the switcher easier to understand than app-like tabs or modals.",
-                  "Avoiding persistent UI kept textbooks and notebooks free of visual clutter.",
-                  "The entry-point decision had an outsized impact on daily learning flow.",
-                ].map((lesson, i) => (
-                  <div key={i} className="flex items-start gap-3">
-                    <span className="shrink-0 rounded-full mt-[8px]" style={{ width: "4px", height: "4px", background: "var(--cs-secondary)", display: "inline-block" }} />
-                    <p className="text-[17px] leading-relaxed" style={{ color: "var(--cs-secondary)" }}>{lesson}</p>
+                  { title: "The fastest interaction isn't always the best one.", body: "The pull down gesture was quick, but it conflicted with system level gestures and introduced unnecessary friction." },
+                  { title: "Small entry point decisions can have a big impact.", body: "Where and how students access their resources shaped the entire daily learning flow." },
+                  { title: "Physical metaphors helped make the experience easier to understand.", body: "Concepts like notebooks, folders and collections felt more intuitive than introducing another set of tabs or modals." },
+                  { title: "Handling edge cases early helped keep the core experience simple.", body: "Thinking through empty, deleted and returning states prevented complexity from showing up later." },
+                ].map((item) => (
+                  <div key={item.title}>
+                    <p className="text-[18px] font-semibold mb-1" style={{ color: "var(--cs-fg)" }}>{item.title}</p>
+                    <p className="text-[17px] leading-relaxed" style={{ color: "var(--cs-secondary)" }}>{item.body}</p>
                   </div>
                 ))}
               </div>
@@ -679,7 +703,7 @@ export default function SuperrbookCaseStudy() {
             <div style={{ borderTop: "1px solid var(--cs-border)", paddingTop: "48px" }}>
               <h3 className="text-[24px] font-semibold mb-4" style={{ color: "var(--cs-fg)" }}>{liveQuizItem.title}</h3>
               <p className="text-[17px] leading-relaxed mb-6" style={{ color: "var(--cs-secondary)" }}>{liveQuizItem.description}</p>
-              <p className="text-[20px] font-semibold mb-3" style={{ color: "var(--cs-fg)" }}>Focused on</p>
+              <p className="text-[18px] font-semibold mb-3" style={{ color: "var(--cs-fg)" }}>Focused on</p>
               <ul className="flex flex-col gap-2 mb-8">
                 {liveQuizItem.focusedOn.map((point) => (
                   <li key={point} className="text-[17px] leading-relaxed flex items-start gap-3" style={{ color: "var(--cs-secondary)" }}>
@@ -717,7 +741,7 @@ export default function SuperrbookCaseStudy() {
           <div className="flex flex-col gap-8">
             {/* The Challenge */}
             <div>
-              <p className="text-[20px] font-semibold mb-3" style={{ color: "var(--cs-fg)" }}>
+              <p className="text-[18px] font-semibold mb-3" style={{ color: "var(--cs-fg)" }}>
                 The Challenge
               </p>
               <div className="space-y-3">
@@ -735,7 +759,7 @@ export default function SuperrbookCaseStudy() {
 
             {/* Understanding Existing Patterns */}
             <div>
-              <p className="text-[20px] font-semibold mb-3" style={{ color: "var(--cs-fg)" }}>
+              <p className="text-[18px] font-semibold mb-3" style={{ color: "var(--cs-fg)" }}>
                 Understanding Existing Patterns
               </p>
               <div className="space-y-3">
@@ -762,7 +786,7 @@ export default function SuperrbookCaseStudy() {
 
             {/* Designing Around Physical Behaviors */}
             <div>
-              <p className="text-[20px] font-semibold mb-3" style={{ color: "var(--cs-fg)" }}>
+              <p className="text-[18px] font-semibold mb-3" style={{ color: "var(--cs-fg)" }}>
                 Designing Around Physical Behaviors
               </p>
               <div className="space-y-3">
@@ -795,7 +819,7 @@ export default function SuperrbookCaseStudy() {
 
             {/* Prototyping Interactions in Code */}
             <div>
-              <p className="text-[20px] font-semibold mb-3" style={{ color: "var(--cs-fg)" }}>
+              <p className="text-[18px] font-semibold mb-3" style={{ color: "var(--cs-fg)" }}>
                 Prototyping Interactions in Code
               </p>
               <div className="space-y-3">
@@ -829,7 +853,7 @@ export default function SuperrbookCaseStudy() {
 
             {/* Designing for Edge Cases */}
             <div>
-              <p className="text-[20px] font-semibold mb-3" style={{ color: "var(--cs-fg)" }}>
+              <p className="text-[18px] font-semibold mb-3" style={{ color: "var(--cs-fg)" }}>
                 Designing for Edge Cases
               </p>
               <div className="space-y-3">
@@ -858,7 +882,7 @@ export default function SuperrbookCaseStudy() {
 
             {/* Key Decisions */}
             <div>
-              <p className="text-[20px] font-semibold mb-5" style={{ color: "var(--cs-fg)" }}>
+              <p className="text-[18px] font-semibold mb-5" style={{ color: "var(--cs-fg)" }}>
                 Key Decisions
               </p>
               <div className="flex flex-col gap-6">
@@ -890,7 +914,7 @@ export default function SuperrbookCaseStudy() {
 
             {/* Outcome */}
             <div>
-              <p className="text-[20px] font-semibold mb-3" style={{ color: "var(--cs-fg)" }}>
+              <p className="text-[18px] font-semibold mb-3" style={{ color: "var(--cs-fg)" }}>
                 Outcome
               </p>
               <div className="space-y-3">
@@ -927,7 +951,7 @@ export default function SuperrbookCaseStudy() {
             {/* Problem */}
             <div>
               <p
-                className="text-[20px] font-semibold mb-3"
+                className="text-[18px] font-semibold mb-3"
                 style={{ color: "var(--cs-fg)" }}
               >
                 Problem
@@ -945,7 +969,7 @@ export default function SuperrbookCaseStudy() {
             {/* Approach */}
             <div>
               <p
-                className="text-[20px] font-semibold mb-3"
+                className="text-[18px] font-semibold mb-3"
                 style={{ color: "var(--cs-fg)" }}
               >
                 Approach
@@ -963,7 +987,7 @@ export default function SuperrbookCaseStudy() {
             {/* Focus Areas */}
             <div>
               <p
-                className="text-[20px] font-semibold mb-3"
+                className="text-[18px] font-semibold mb-3"
                 style={{ color: "var(--cs-fg)" }}
               >
                 Focus Areas
