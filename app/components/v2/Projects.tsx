@@ -170,7 +170,7 @@ export default function Projects() {
       <a
         href="#"
         className="flex items-center justify-center"
-        style={{ marginTop: "40px", gap: "24px" }}
+        style={{ marginTop: "68px", gap: "24px" }}
       >
         <span
           style={{
@@ -196,20 +196,31 @@ export default function Projects() {
   );
 }
 
-// Three project thumbnails tucked behind the folder icon in the "More
-// Work" link above: barely peeking out by default, rising into a fanned
-// spread on hover. Thumbnails always sit at a lower z-index than the
-// folder image, so the portion of each that overlaps the folder's
-// silhouette reads as tucked behind it throughout the animation.
+// Three project thumbnails tucked inside the folder icon in the "More
+// Work" link above: barely peeking out of its top opening by default,
+// sliding further out on hover. The folder is split into two layers
+// (the source asset has a natural back-flap/front-pocket seam) so the
+// thumbnails render between them -- behind the back flap, in front of
+// it, but always behind the front pocket panel where they overlap it.
+// That's what makes them read as stored inside the folder rather than
+// stuck to its back.
 const moreWorkThumbs = [
-  { id: "greenscape", src: "/thumb-greenscape.png", alt: "", width: 42, height: 51, className: "more-work-thumb-a" },
-  { id: "adventour", src: "/thumb-adventour.png", alt: "", width: 42, height: 53, className: "more-work-thumb-b" },
-  { id: "homelygrub", src: "/thumb-homelygrub.png", alt: "", width: 42, height: 58, className: "more-work-thumb-c" },
+  { id: "greenscape", src: "/thumb-greenscape.png", alt: "", width: 53, height: 64, className: "more-work-thumb-a" },
+  { id: "adventour", src: "/thumb-adventour.png", alt: "", width: 53, height: 67, className: "more-work-thumb-b" },
+  { id: "homelygrub", src: "/thumb-homelygrub.png", alt: "", width: 53, height: 73, className: "more-work-thumb-c" },
 ];
 
 function MoreWorkFolder() {
   return (
     <span className="more-work-folder-wrap">
+      <Image
+        src="/folder-projects.png"
+        alt=""
+        aria-hidden
+        width={100}
+        height={83}
+        className="more-work-folder-back"
+      />
       {moreWorkThumbs.map((thumb) => (
         <Image
           key={thumb.id}
@@ -222,12 +233,12 @@ function MoreWorkFolder() {
         />
       ))}
       <Image
-        src="/folder-projects.png"
+        src="/folder-front.png"
         alt=""
         aria-hidden
-        width={80}
-        height={67}
-        className="more-work-folder-img"
+        width={100}
+        height={83}
+        className="more-work-folder-front"
       />
     </span>
   );
