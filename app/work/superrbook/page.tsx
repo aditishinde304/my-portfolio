@@ -100,7 +100,7 @@ export default function SuperrbookCaseStudy() {
 
         {/* ── TLDR ── */}
         <section className="mb-16">
-          <div className="space-y-5 text-[18px] leading-relaxed" style={{ color: "var(--cs-secondary)", lineHeight: "1.6" }}>
+          <div className="space-y-5 text-[17px] leading-relaxed" style={{ color: "var(--cs-secondary)", lineHeight: "1.6" }}>
             <p>
               Superr is an edtech company building tools that support{" "}
               <Bold>teaching, learning and classroom operations</Bold> for schools.
