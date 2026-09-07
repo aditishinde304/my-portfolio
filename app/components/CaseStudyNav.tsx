@@ -35,8 +35,8 @@ export default function CaseStudyNav({ sections }: { sections: NavSection[] }) {
     >
       <Link
         href="/"
-        className="inline-flex items-center gap-1.5 text-[14px] uppercase tracking-[0.08em] mb-10"
-        style={{ color: "var(--muted)" }}
+        className="inline-flex items-center gap-1.5 text-[12px] uppercase tracking-[0.08em] font-semibold mb-10"
+        style={{ color: "var(--cs-muted)" }}
       >
         <span aria-hidden>←</span> Go back
       </Link>
@@ -45,9 +45,9 @@ export default function CaseStudyNav({ sections }: { sections: NavSection[] }) {
           <li key={section.id}>
             <a
               href={`#${section.id}`}
-              className="text-[14px] block"
+              className="text-[15px] block"
               style={{
-                color: active === section.id ? "var(--foreground)" : "var(--muted)",
+                color: active === section.id ? "var(--cs-fg)" : "var(--cs-secondary)",
                 fontWeight: active === section.id ? 600 : 400,
                 transition: "color 150ms ease, font-weight 150ms ease",
               }}

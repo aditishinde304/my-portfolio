@@ -81,7 +81,7 @@ function DesktopFrame({ src }: { src: string }) {
   return (
     <div
       className="rounded-2xl flex items-center justify-center"
-      style={{ background: "var(--hover-bg)", padding: "24px 16px 16px 16px" }}
+      style={{ background: "var(--cs-hover-bg)", padding: "24px 16px 16px 16px" }}
     >
       <div style={{ width: "100%", filter: "drop-shadow(0 16px 40px rgba(0,0,0,0.2))" }}>
         <div style={{ background: "#1a1a1a", borderRadius: "10px 10px 0 0", padding: "8px 8px 0 8px" }}>
@@ -100,7 +100,7 @@ function DesktopFrame({ src }: { src: string }) {
 
 export default function LMSCaseStudy() {
   return (
-    <div style={{ background: "var(--background)", minHeight: "100vh" }}>
+    <div className="case-study" style={{ background: "var(--cs-bg)", minHeight: "100vh" }}>
       <div className="mx-auto px-6 sm:px-10 py-20 md:py-28 flex flex-col lg:flex-row gap-16 items-start" style={{ maxWidth: "1214px" }}>
 
         <CaseStudyNav sections={navSections} />
@@ -108,8 +108,8 @@ export default function LMSCaseStudy() {
         {/* Mobile back link (sidebar handles it on desktop) */}
         <Link
           href="/"
-          className="lg:hidden text-[14px] inline-block mb-16 link-dashed"
-          style={{ color: "var(--muted)" }}
+          className="lg:hidden text-[15px] inline-block mb-16 link-dashed"
+          style={{ color: "var(--cs-secondary)" }}
         >
           ← Back
         </Link>
@@ -119,14 +119,14 @@ export default function LMSCaseStudy() {
         {/* ── HERO ── */}
         <div className="mb-16" id="overview">
           <h1
-            className="text-[32px] md:text-[40px] font-semibold leading-tight tracking-[-0.02em] mb-4"
-            style={{ color: "var(--foreground)", fontFamily: "var(--font-petrona), Georgia, serif" }}
+            className="text-[34px] md:text-[48px] font-semibold tracking-[-0.02em] mb-4"
+            style={{ color: "var(--cs-fg)", fontFamily: "var(--font-petrona), Georgia, serif", lineHeight: "1.12" }}
           >
             Designing a scalable LMS<br />for classrooms
           </h1>
           <p
             className="text-[14px] tracking-[0.04em]"
-            style={{ color: "var(--muted)" }}
+            style={{ color: "var(--cs-muted)" }}
           >
             Superr &nbsp;|&nbsp; 2025
           </p>
@@ -134,8 +134,8 @@ export default function LMSCaseStudy() {
 
         {/* ── TLDR ── */}
         <section className="mb-16">
-          <div className="space-y-5 text-[16px] leading-relaxed" style={{ color: "var(--muted)" }}>
-            <p className="text-[22px] font-semibold tracking-[-0.01em]" style={{ color: "var(--foreground)", lineHeight: "1.6" }}>
+          <div className="space-y-5 text-[18px] leading-relaxed" style={{ color: "var(--cs-secondary)", lineHeight: "1.6" }}>
+            <p className="text-[22px] font-semibold tracking-[-0.01em]" style={{ color: "var(--cs-fg)", lineHeight: "1.6" }}>
               How might we simplify classroom management through one centralized platform?
             </p>
             <p>
@@ -165,14 +165,14 @@ export default function LMSCaseStudy() {
         </div>
 
         {/* ── MY ROLE ── */}
-        <section id="role" className="mb-16" style={{ borderTop: "1px solid var(--border)", paddingTop: "48px" }}>
+        <section id="role" className="mb-16" style={{ borderTop: "1px solid var(--cs-border)", paddingTop: "48px" }}>
           <h2
-            className="text-[18px] font-medium mb-6"
-            style={{ color: "var(--foreground)", fontFamily: "var(--font-petrona), Georgia, serif" }}
+            className="text-[28px] font-semibold mb-6"
+            style={{ color: "var(--cs-fg)", fontFamily: "var(--font-petrona), Georgia, serif", lineHeight: "1.3" }}
           >
             My Role
           </h2>
-          <div className="space-y-4 text-[16px] leading-relaxed" style={{ color: "var(--muted)" }}>
+          <div className="space-y-4 text-[17px] leading-relaxed" style={{ color: "var(--cs-secondary)" }}>
             <p>
               Worked closely with PMs, engineers, and designers to shape core
               LMS workflows across notes, assignments, whiteboards, files, and
@@ -186,10 +186,10 @@ export default function LMSCaseStudy() {
         </section>
 
         {/* ── APPROACH ── */}
-        <section id="approach" className="mb-16" style={{ borderTop: "1px solid var(--border)", paddingTop: "48px" }}>
+        <section id="approach" className="mb-16" style={{ borderTop: "1px solid var(--cs-border)", paddingTop: "48px" }}>
           <h2
-            className="text-[18px] font-medium mb-8"
-            style={{ color: "var(--foreground)", fontFamily: "var(--font-petrona), Georgia, serif" }}
+            className="text-[28px] font-semibold mb-8"
+            style={{ color: "var(--cs-fg)", fontFamily: "var(--font-petrona), Georgia, serif", lineHeight: "1.3" }}
           >
             Approach
           </h2>
@@ -198,20 +198,20 @@ export default function LMSCaseStudy() {
               <div key={item.title} className="flex gap-5">
                 <span
                   className="text-[14px] tabular-nums shrink-0 mt-0.5"
-                  style={{ color: "var(--muted)" }}
+                  style={{ color: "var(--cs-muted)" }}
                 >
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <div>
                   <p
-                    className="text-[16px] font-medium mb-1"
-                    style={{ color: "var(--foreground)" }}
+                    className="text-[18px] font-semibold mb-1"
+                    style={{ color: "var(--cs-fg)" }}
                   >
                     {item.title}
                   </p>
                   <p
-                    className="text-[16px] leading-relaxed"
-                    style={{ color: "var(--muted)" }}
+                    className="text-[17px] leading-relaxed"
+                    style={{ color: "var(--cs-secondary)" }}
                   >
                     {item.description}
                   </p>
@@ -222,10 +222,10 @@ export default function LMSCaseStudy() {
         </section>
 
         {/* ── FEATURE SECTIONS ── */}
-        <section id="designed" className="mb-16" style={{ borderTop: "1px solid var(--border)", paddingTop: "48px" }}>
+        <section id="designed" className="mb-16" style={{ borderTop: "1px solid var(--cs-border)", paddingTop: "48px" }}>
           <h2
-            className="text-[18px] font-medium mb-12"
-            style={{ color: "var(--foreground)", fontFamily: "var(--font-petrona), Georgia, serif" }}
+            className="text-[28px] font-semibold mb-12"
+            style={{ color: "var(--cs-fg)", fontFamily: "var(--font-petrona), Georgia, serif", lineHeight: "1.3" }}
           >
             What I designed
           </h2>
@@ -234,21 +234,21 @@ export default function LMSCaseStudy() {
               <div key={item.title}>
                 <div className="flex items-baseline justify-between mb-4">
                   <h3
-                    className="text-[18px] font-medium"
-                    style={{ color: "var(--foreground)", fontFamily: "var(--font-petrona), Georgia, serif" }}
+                    className="text-[24px] font-semibold"
+                    style={{ color: "var(--cs-fg)" }}
                   >
                     {item.title}
                   </h3>
                   <span
                     className="text-[14px] tabular-nums shrink-0 ml-6"
-                    style={{ color: "var(--muted)" }}
+                    style={{ color: "var(--cs-muted)" }}
                   >
                     {String(i + 1).padStart(2, "0")} / {String(featureSections.length).padStart(2, "0")}
                   </span>
                 </div>
                 <p
-                  className="text-[16px] leading-relaxed mb-6"
-                  style={{ color: "var(--muted)" }}
+                  className="text-[17px] leading-relaxed mb-6"
+                  style={{ color: "var(--cs-secondary)" }}
                 >
                   {item.description}
                 </p>
@@ -258,7 +258,7 @@ export default function LMSCaseStudy() {
                 ) : "desktopImage" in item && item.desktopImage ? (
                   <div
                     className="rounded-2xl flex items-center justify-center"
-                    style={{ background: "var(--hover-bg)", padding: "24px 16px 16px 16px" }}
+                    style={{ background: "var(--cs-hover-bg)", padding: "24px 16px 16px 16px" }}
                   >
                     <div style={{ width: "100%", filter: "drop-shadow(0 16px 40px rgba(0,0,0,0.2))" }}>
                       <div style={{ background: "#1a1a1a", borderRadius: "10px 10px 0 0", padding: "8px 8px 0 8px" }}>
@@ -281,7 +281,7 @@ export default function LMSCaseStudy() {
                 ) : (
                   <div
                     className="rounded-2xl overflow-hidden relative"
-                    style={{ height: "360px", background: "var(--hover-bg)" }}
+                    style={{ height: "360px", background: "var(--cs-hover-bg)" }}
                   >
                     <div className="absolute" style={{ inset: "20px" }}>
                       <div className="relative w-full h-full">
@@ -302,51 +302,51 @@ export default function LMSCaseStudy() {
         </section>
 
         {/* ── REFLECTION ── */}
-        <section id="reflection" className="mb-16" style={{ borderTop: "1px solid var(--border)", paddingTop: "48px" }}>
+        <section id="reflection" className="mb-16" style={{ borderTop: "1px solid var(--cs-border)", paddingTop: "48px" }}>
           <p
-            className="text-[18px] font-medium mb-6"
-            style={{ color: "var(--foreground)" }}
+            className="text-[18px] font-semibold mb-6"
+            style={{ color: "var(--cs-fg)" }}
           >
             Reflection
           </p>
           <h2
-            className="text-[18px] font-semibold leading-tight tracking-[-0.01em] mb-10"
-            style={{ color: "var(--foreground)", fontFamily: "var(--font-petrona), Georgia, serif" }}
+            className="text-[28px] font-semibold tracking-[-0.01em] mb-10"
+            style={{ color: "var(--cs-fg)", fontFamily: "var(--font-petrona), Georgia, serif", lineHeight: "1.3" }}
           >
             What I learned
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-8">
             <div>
               <p
-                className="text-[16px] font-medium leading-snug mb-3"
-                style={{ color: "var(--foreground)" }}
+                className="text-[18px] font-semibold leading-snug mb-3"
+                style={{ color: "var(--cs-fg)" }}
               >
                 {reflectionItems[0].title}
               </p>
-              <p className="text-[16px] leading-relaxed" style={{ color: "var(--muted)" }}>
+              <p className="text-[17px] leading-relaxed" style={{ color: "var(--cs-secondary)" }}>
                 {reflectionItems[0].description}
               </p>
             </div>
             <div>
               <p
-                className="text-[16px] font-medium leading-snug mb-3"
-                style={{ color: "var(--foreground)" }}
+                className="text-[18px] font-semibold leading-snug mb-3"
+                style={{ color: "var(--cs-fg)" }}
               >
                 {reflectionItems[1].title}
               </p>
-              <p className="text-[16px] leading-relaxed" style={{ color: "var(--muted)" }}>
+              <p className="text-[17px] leading-relaxed" style={{ color: "var(--cs-secondary)" }}>
                 {reflectionItems[1].description}
               </p>
             </div>
           </div>
           <div>
             <p
-              className="text-[16px] font-medium leading-snug mb-3"
-              style={{ color: "var(--foreground)" }}
+              className="text-[18px] font-semibold leading-snug mb-3"
+              style={{ color: "var(--cs-fg)" }}
             >
               {reflectionItems[2].title}
             </p>
-            <p className="text-[16px] leading-relaxed" style={{ color: "var(--muted)" }}>
+            <p className="text-[17px] leading-relaxed" style={{ color: "var(--cs-secondary)" }}>
               {reflectionItems[2].description}
             </p>
           </div>
@@ -355,9 +355,9 @@ export default function LMSCaseStudy() {
         {/* ── FOOTER ── */}
         <footer
           className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-0 pt-6"
-          style={{ borderTop: "1px solid var(--border)" }}
+          style={{ borderTop: "1px solid var(--cs-border)" }}
         >
-          <span className="text-[14px]" style={{ color: "var(--muted)" }}>
+          <span className="text-[14px]" style={{ color: "var(--cs-secondary)" }}>
             Designed + Coded with{" "}
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="12" height="12" fill="currentColor" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ display: "inline", verticalAlign: "middle", marginBottom: "1px" }}>
               <path d="M10.4107 19.9677C7.58942 17.858 2 13.0348 2 8.69444C2 5.82563 4.10526 3.5 7 3.5C8.5 3.5 10 4 12 6C14 4 15.5 3.5 17 3.5C19.8947 3.5 22 5.82563 22 8.69444C22 13.0348 16.4106 17.858 13.5893 19.9677C12.6399 20.6776 11.3601 20.6776 10.4107 19.9677Z" />
@@ -367,8 +367,8 @@ export default function LMSCaseStudy() {
           <div className="flex items-center gap-5">
             <a
               href="mailto:aditi.shinde304@gmail.com"
-              className="text-[14px] link-dashed"
-              style={{ color: "var(--muted)" }}
+              className="text-[15px] link-dashed"
+              style={{ color: "var(--cs-secondary)" }}
             >
               Email
             </a>
@@ -376,8 +376,8 @@ export default function LMSCaseStudy() {
               href="https://x.com/AditiShinde30"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[14px] link-dashed"
-              style={{ color: "var(--muted)" }}
+              className="text-[15px] link-dashed"
+              style={{ color: "var(--cs-secondary)" }}
             >
               X
             </a>
@@ -385,8 +385,8 @@ export default function LMSCaseStudy() {
               href="https://www.linkedin.com/in/aditi-shinde-5415681b7/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[14px] link-dashed"
-              style={{ color: "var(--muted)" }}
+              className="text-[15px] link-dashed"
+              style={{ color: "var(--cs-secondary)" }}
             >
               LinkedIn
             </a>
@@ -394,8 +394,8 @@ export default function LMSCaseStudy() {
               href="https://drive.google.com/file/d/1mbuBG-T9t_Rxmam4UcLlDq3tveGxfSit/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[14px] link-dashed"
-              style={{ color: "var(--muted)" }}
+              className="text-[15px] link-dashed"
+              style={{ color: "var(--cs-secondary)" }}
             >
               Resume
             </a>

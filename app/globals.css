@@ -33,6 +33,37 @@
   --callout-label: #4a6fa5;
 }
 
+/* Case-study typography/colour system — scoped to .case-study so it never
+   touches the rest of the site's var(--foreground) etc. Neutral base plus
+   four semantic accents (blue/green/red/yellow), each used for one meaning
+   only: blue = ideas & key insights, green = positive reasoning / why
+   something worked, red = problems & rejected directions, yellow = design
+   goals. */
+.case-study {
+  --cs-bg: #F7F7F5;
+  --cs-fg: #292929;
+  --cs-secondary: #62666B;
+  --cs-muted: #8A8D91;
+  --cs-border: #E2E2DE;
+  --cs-surface: #FAFAF9;
+  --cs-hover-bg: #F1F1EE;
+
+  --cs-blue: #3B82F6;
+  --cs-blue-bg: #EFF6FF;
+  --cs-blue-border: #BFDBFE;
+  --cs-blue-text: #1E3A8A;
+
+  --cs-green: #16A34A;
+  --cs-green-bg: #DCFCE7;
+
+  --cs-red: #DC2626;
+
+  --cs-yellow-bg: #FFF6C7;
+  --cs-yellow-border: #E8C93A;
+  --cs-yellow-text: #171717;
+  --cs-yellow-subtext: #5A4E1F;
+}
+
 html {
   scroll-behavior: smooth;
 }
