@@ -258,7 +258,7 @@ export default function SuperrbookCaseStudy() {
             <div>
               <p className="text-[18px] font-semibold mb-1" style={{ color: "var(--cs-fg)" }}>TL;DR</p>
               <p className="text-[17px] leading-relaxed" style={{ color: "var(--cs-secondary)" }}>
-                Designed a resource switcher that lets students move between textbooks and notebooks without breaking their learning flow.
+                Designed a <span style={{ fontWeight: 700, color: "var(--cs-fg)" }}>resource switcher that lets students move between textbooks and notebooks</span> without breaking their learning flow.
               </p>
             </div>
 
@@ -320,9 +320,9 @@ export default function SuperrbookCaseStudy() {
                   <p className="text-[18px] font-semibold mb-5" style={{ color: "var(--cs-fg)" }}>Pain Points</p>
                   <div className="flex flex-col gap-4">
                     {[
-                      "Breaks concentration",
-                      "Adds unnecessary steps",
-                      "Interrupts note taking",
+                      "Too many steps to switch",
+                      "Breaks study flow",
+                      "Interrupts note-taking",
                     ].map((point, i) => (
                       <p
                         key={point}
@@ -353,7 +353,7 @@ export default function SuperrbookCaseStudy() {
                     style={{ background: "var(--cs-yellow-bg)", border: "1.5px solid var(--cs-yellow-border)" }}
                   >
                     <Image src={goal.icon} alt="" width={22} height={22} />
-                    <p className="text-[16px] font-bold leading-snug mt-2" style={{ color: "var(--cs-yellow-text)" }}>{goal.title}</p>
+                    <p className="text-[16px] font-semibold leading-snug mt-2" style={{ color: "var(--cs-yellow-text)" }}>{goal.title}</p>
                     <p className="text-[14px] leading-snug mt-1" style={{ color: "var(--cs-yellow-subtext)" }}>{goal.subtitle}</p>
                   </div>
                 ))}
@@ -430,11 +430,8 @@ export default function SuperrbookCaseStudy() {
 
               {/* Final entry point decision */}
               <div className="mt-12">
-                <p className="text-[12px] font-semibold tracking-[0.08em] uppercase mb-2" style={{ color: "var(--cs-muted)" }}>
-                  Final entry point decision
-                </p>
                 <p className="text-[18px] font-semibold mb-2" style={{ color: "var(--cs-fg)" }}>
-                  Two finger swipe down + Control Center access
+                  Final entry point - Two finger swipe down + Control Center access
                 </p>
                 <p className="text-[17px] leading-relaxed mb-8" style={{ color: "var(--cs-secondary)" }}>
                   The switcher opens with a two-finger swipe down from the top edge, with a direct entry point from Control Center when needed.
@@ -482,17 +479,15 @@ export default function SuperrbookCaseStudy() {
                   ))}
                 </div>
 
-                <div className="rounded-2xl flex justify-center p-6" style={{ background: "var(--cs-hover-bg)" }}>
-                  <div className="relative w-full" style={{ maxWidth: "480px" }}>
-                    <Image
-                      src="/Control center entry point.png"
-                      alt="Final entry point mockup: two-finger swipe down with Control Center access, annotated to show the switcher icon in Control Center"
-                      width={827}
-                      height={515}
-                      quality={100}
-                      className="w-full h-auto block"
-                    />
-                  </div>
+                <div className="rounded-2xl overflow-hidden">
+                  <Image
+                    src="/Control center entry point.png"
+                    alt="Final entry point mockup: two-finger swipe down with Control Center access, annotated to show the switcher icon in Control Center"
+                    width={827}
+                    height={515}
+                    quality={100}
+                    className="w-full h-auto block"
+                  />
                 </div>
               </div>
 
@@ -518,7 +513,7 @@ export default function SuperrbookCaseStudy() {
                         <span className="shrink-0" style={{ width: "22px" }}>{i + 1}.</span>
                         <span>
                           {item.title}{" "}
-                          <span style={{ color: "var(--cs-secondary)" }}>({item.label})</span>
+                          <span style={{ color: "var(--cs-blue)" }}>({item.label})</span>
                         </span>
                       </div>
                     ))}
@@ -566,7 +561,7 @@ export default function SuperrbookCaseStudy() {
                           <p className="text-[17px] font-semibold mb-1" style={{ color: "var(--cs-fg)" }}>
                             {reason.title}
                           </p>
-                          <p className="text-[14px] leading-relaxed" style={{ color: "var(--cs-secondary)" }}>
+                          <p className="text-[17px] leading-relaxed" style={{ color: "var(--cs-secondary)" }}>
                             {reason.body}
                           </p>
                         </div>
@@ -584,31 +579,8 @@ export default function SuperrbookCaseStudy() {
                 A switcher accessed through <span style={{ fontWeight: 600, color: "#292929" }}>a two-finger swipe down or directly from the Control Center</span>, combining Recents and Favorites within a single surface.
               </p>
 
-              <div className="rounded-2xl overflow-hidden mb-4">
+              <div className="rounded-2xl overflow-hidden">
                 <VideoPlayer src="/Final Context Switching.mov" className="w-full h-auto block" />
-              </div>
-              <p className="text-[14px] leading-relaxed mb-6" style={{ color: "var(--cs-secondary)" }}>
-                Recents and Favorites became sections inside the same collection instead of separate screens.
-              </p>
-
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                {[
-                  "Preserved learning flow",
-                  "Reduced navigation",
-                  "Familiar folder metaphor",
-                  "No persistent UI",
-                ].map((chip) => (
-                  <div
-                    key={chip}
-                    className="rounded-xl px-3.5 py-3 flex items-start gap-2"
-                    style={{ border: "1px solid var(--cs-border)" }}
-                  >
-                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" className="shrink-0 mt-[3px]" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M3 8.5L6.2 11.5L13 4.5" stroke="var(--cs-green)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                    <p className="text-[14px] font-medium leading-snug" style={{ color: "var(--cs-fg)" }}>{chip}</p>
-                  </div>
-                ))}
               </div>
             </div>
 
@@ -630,10 +602,10 @@ export default function SuperrbookCaseStudy() {
                       className="shrink-0 rounded-full"
                       style={{ width: "4px", height: "4px", background: "var(--cs-secondary)", display: "inline-block", marginTop: "9px" }}
                     />
-                    <div>
-                      <p className="text-[16px] font-semibold mb-0.5" style={{ color: "var(--cs-fg)" }}>{item.title}</p>
-                      <p className="text-[16px] leading-relaxed" style={{ color: "var(--cs-secondary)" }}>{item.body}</p>
-                    </div>
+                    <p className="text-[16px] leading-relaxed">
+                      <span className="font-semibold" style={{ color: "var(--cs-fg)" }}>{item.title}</span>
+                      <span style={{ color: "var(--cs-secondary)" }}> - {item.body}</span>
+                    </p>
                   </li>
                 ))}
               </ul>
