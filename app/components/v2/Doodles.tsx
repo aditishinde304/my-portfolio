@@ -65,6 +65,32 @@ export function MusicNotesDoodle({ className, style }: { className?: string; sty
   );
 }
 
+// Hand-drawn wiggly underline for nav-link hovers. `pathLength="1"` normalizes
+// the path so a CSS stroke-dasharray/dashoffset of 1 draws the whole thing,
+// regardless of how long the underlying curve actually is.
+export function NavWiggleUnderline({ className, color = "#EC4899", style }: { className?: string; color?: string; style?: React.CSSProperties }) {
+  return (
+    <svg
+      className={className}
+      style={style}
+      viewBox="0 0 100 10"
+      preserveAspectRatio="none"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden
+    >
+      <path
+        d="M2 6 C 10 2, 18 9, 26 5 C 34 1, 42 9, 50 5 C 58 1, 66 9, 74 5 C 82 1, 90 8, 98 4"
+        stroke={color}
+        strokeWidth="2.2"
+        strokeLinecap="round"
+        fill="none"
+        pathLength="1"
+      />
+    </svg>
+  );
+}
+
 export function ScribbleUnderline({ className, color = "#7C3AED", style }: { className?: string; color?: string; style?: React.CSSProperties }) {
   return (
     <svg className={className} style={style} width="140" height="14" viewBox="0 0 140 14" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">

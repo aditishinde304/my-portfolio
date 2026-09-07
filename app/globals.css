@@ -203,6 +203,37 @@ body {
   opacity: 0.85;
 }
 
+/* Nav links with the hand-drawn wiggly underline (About / Work / Contact) —
+   suppress the plain straight-line ::after used by other .hero-nav-link
+   instances (e.g. "View more") in favor of the animated SVG doodle. */
+.nav-wiggle-link::after {
+  display: none;
+}
+
+.nav-wiggle-svg path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  opacity: 0;
+  transition: stroke-dashoffset 380ms ease, opacity 200ms ease;
+}
+
+.nav-wiggle-link:hover .nav-wiggle-svg path {
+  stroke-dashoffset: 0;
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-wiggle-svg path {
+    transition: opacity 150ms ease;
+  }
+}
+
+@media (hover: none) {
+  .nav-wiggle-svg {
+    display: none;
+  }
+}
+
 .hero-polaroid {
   transform: rotate(0deg);
   transition: transform 350ms ease, box-shadow 350ms ease;
