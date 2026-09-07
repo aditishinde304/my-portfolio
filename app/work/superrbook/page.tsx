@@ -5,6 +5,11 @@ import VideoPlayer from "@/app/components/VideoPlayer";
 import CaseStudyNav from "@/app/components/CaseStudyNav";
 import ExplorationTabs from "@/app/components/ExplorationTabs";
 
+// Inline emphasis for the key phrases highlighted in the source copy doc.
+function Bold({ children }: { children: React.ReactNode }) {
+  return <span style={{ fontWeight: 600, color: "var(--cs-fg)" }}>{children}</span>;
+}
+
 const navSections = [
   { id: "overview", label: "Overview" },
   { id: "role", label: "My Role" },
@@ -97,25 +102,22 @@ export default function SuperrbookCaseStudy() {
         <section className="mb-16">
           <div className="space-y-5 text-[18px] leading-relaxed" style={{ color: "var(--cs-secondary)", lineHeight: "1.6" }}>
             <p>
-              Superr is an edtech company building tools that support teaching,
-              learning and classroom operations for schools.
+              Superr is an edtech company building tools that support{" "}
+              <Bold>teaching, learning and classroom operations</Bold> for schools.
             </p>
             <p>
-              Over my time at Superr, I worked across Superrbook and the Admin
-              Portal, designing experiences for students, teachers, and school
-              administrators. My focus was on simplifying complex classroom
-              workflows, improving information architecture and creating intuitive
-              experiences across the platform.
+              Over my time at Superr, I worked across <Bold>Superrbook and the Admin Portal</Bold>, designing
+              experiences for <Bold>students, teachers and school administrators</Bold>. My focus was on{" "}
+              <Bold>simplifying complex classroom workflows</Bold>, improving information architecture and creating
+              intuitive experiences across the platform.
             </p>
             <p>
-              For interaction heavy features, I often used Cursor to prototype
-              behaviors, validate edge cases, refine motion and micro-interactions
-              directly in code before development.
+              For interaction heavy features, I often used <Bold>Cursor to prototype behaviours directly in code</Bold>,
+              validate edge cases and refine <Bold>motion and micro interactions</Bold> before development.
             </p>
             <p>
-              This case study highlights a collection of the features, systems
-              and interaction patterns I helped design and ship while building a
-              more connected digital classroom experience.
+              This case study highlights a collection of the <Bold>features, systems and interaction patterns</Bold> I
+              helped design and ship while building a more connected digital classroom experience.
             </p>
           </div>
         </section>
@@ -139,14 +141,24 @@ export default function SuperrbookCaseStudy() {
           </h2>
           <ul className="flex flex-col gap-3">
             {[
-              "Designed and shipped experiences across Superrbook and the Admin Portal for students, teachers, and school administrators.",
-              "Simplified classroom workflows through navigation, information architecture and interaction design.",
-              "Designed learning experiences including assignments, quizzes, notebooks, whiteboards and collaborative classroom tools.",
-              "Created operational workflows and dashboards for school device management and administration.",
-              "Collaborated closely with product managers and engineers from concept to implementation.",
-            ].map((item) => (
+              <>
+                <Bold>Designed and shipped experiences across Superrbook and the Admin Portal</Bold> for students, teachers and school administrators.
+              </>,
+              <>
+                Simplified complex classroom workflows through <Bold>navigation, information architecture and interaction design</Bold>.
+              </>,
+              <>
+                Designed learning experiences including <Bold>assignments, quizzes, notebooks, whiteboards and collaborative tools</Bold>.
+              </>,
+              <>
+                Created <Bold>workflows and dashboards</Bold> for school device management and administration.
+              </>,
+              <>
+                Collaborated closely with <Bold>product managers and engineers from concept to implementation</Bold>.
+              </>,
+            ].map((item, i) => (
               <li
-                key={item}
+                key={i}
                 className="text-[17px] leading-relaxed flex items-start gap-3"
                 style={{ color: "var(--cs-secondary)" }}
               >
@@ -160,7 +172,7 @@ export default function SuperrbookCaseStudy() {
                     marginTop: "9px",
                   }}
                 />
-                {item}
+                <span>{item}</span>
               </li>
             ))}
           </ul>
@@ -222,15 +234,15 @@ export default function SuperrbookCaseStudy() {
           </h2>
           <div className="space-y-5 text-[17px] leading-relaxed" style={{ color: "var(--cs-secondary)" }}>
             <p>
-              I enjoy working on systems where interaction, usability, and structure
-              come together. My process usually involves understanding workflows
-              deeply, simplifying complexity, exploring multiple interaction patterns,
-              and prototyping ideas quickly to test assumptions early.
+              I enjoy working on systems where <Bold>interaction, usability and structure come together</Bold>. My
+              process usually involves <Bold>understanding workflows deeply</Bold>, simplifying complexity, exploring
+              multiple interaction patterns and <Bold>prototyping ideas quickly</Bold> to test assumptions early.
             </p>
             <p>
-              Lately, I&rsquo;ve also been experimenting heavily with AI-assisted
-              workflows and code-based prototyping to iterate faster and explore
-              interaction details beyond static screens.
+              Lately, I&rsquo;ve been using <Bold>AI-assisted workflows with tools like Cursor and Claude Code</Bold> to
+              prototype interactions, explore ideas beyond static screens and iterate faster. I also use them to{" "}
+              <Bold>build and ship small features</Bold>, helping me test ideas more directly and understand
+              implementation constraints earlier in the process.
             </p>
           </div>
         </section>
