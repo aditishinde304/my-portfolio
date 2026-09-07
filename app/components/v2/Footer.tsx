@@ -84,7 +84,7 @@ export default function Footer() {
         </div>
 
         <p className="text-[12.5px]" style={{ color: "#6b6b68" }}>
-          Crafted with dedication, buildspace encouragement and a touch of last-minute tweaks.✨
+          Made with a lot of curiosity, countless iterations and probably too much coffee. ✨
         </p>
       </div>
     </footer>

@@ -486,7 +486,7 @@ body {
 /* ── Experimental hero (HeroExperimental.tsx) ── */
 
 .hero-x-inner {
-  padding-top: 144px;
+  padding-top: 128px;
   padding-bottom: 130px;
 }
 
@@ -746,7 +746,7 @@ body {
 
 .more-work-folder-back {
   z-index: 1;
-  filter: drop-shadow(0 1px 2px rgba(17, 17, 17, 0.18)) drop-shadow(0 8px 14px rgba(17, 17, 17, 0.2));
+  filter: drop-shadow(0 1px 2px rgba(17, 17, 17, 0.1)) drop-shadow(0 6px 10px rgba(17, 17, 17, 0.12));
 }
 
 .more-work-folder-front {
@@ -757,9 +757,10 @@ body {
   position: absolute;
   left: 50%;
   /* The pocket opening sits ~14px down (17% of the 83px folder); resting
-     with the thumbnail top 6px above that line leaves most of the
-     thumbnail hidden behind the front panel. */
-  top: 8px;
+     with the thumbnail top higher above that line leaves most of the
+     thumbnail hidden behind the front panel, and keeps the tallest
+     thumbnail's bottom edge clear of the folder's own bottom edge. */
+  top: 2px;
   border-radius: 4px;
   transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1),
     filter 420ms cubic-bezier(0.22, 1, 0.36, 1);
@@ -803,5 +804,31 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .more-work-thumb {
     transition: none;
+  }
+}
+
+/* Cursor-following "View" pill on Experiments cards. */
+.experiments-view-pill {
+  gap: 6px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: #111;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  z-index: 5;
+  transition: opacity 150ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .experiments-view-pill {
+    transition: none;
+  }
+}
+
+@media (hover: none) {
+  .experiments-view-pill {
+    display: none;
   }
 }

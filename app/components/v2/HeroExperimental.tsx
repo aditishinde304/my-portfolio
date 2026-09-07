@@ -156,7 +156,7 @@ export default function HeroExperimental() {
         style={{
           left: "50%",
           transform: "translateX(-50%)",
-          top: "36px",
+          top: "20px",
           width: "1017px",
           height: "720px",
           backgroundImage: "url(/hero-grid.svg)",
@@ -262,8 +262,8 @@ export default function HeroExperimental() {
           >
             Superr
           </a>
-          . Currently building, experimenting, and shipping things that excite
-          me.
+          . Designing thoughtful experiences, exploring ideas, and
+          occasionally building them too.
         </p>
 
         <div
