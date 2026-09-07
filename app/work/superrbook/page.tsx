@@ -258,7 +258,7 @@ export default function SuperrbookCaseStudy() {
             <div>
               <p className="text-[18px] font-semibold mb-1" style={{ color: "var(--cs-fg)" }}>TL;DR</p>
               <p className="text-[17px] leading-relaxed" style={{ color: "var(--cs-secondary)" }}>
-                Designed a <span style={{ fontWeight: 700, color: "var(--cs-fg)" }}>resource switcher that lets students move between textbooks and notebooks</span> without breaking their learning flow.
+                Designed a <span style={{ fontWeight: 500, color: "var(--cs-fg)" }}>resource switcher that lets students move between textbooks and notebooks</span> without breaking their learning flow.
               </p>
             </div>
 
@@ -317,16 +317,17 @@ export default function SuperrbookCaseStudy() {
                   </p>
                 </div>
                 <div className="flex flex-col" style={{ paddingTop: "12px", marginLeft: "-20px" }}>
-                  <p className="text-[18px] font-semibold mb-5" style={{ color: "var(--cs-fg)" }}>Pain Points</p>
+                  <p className="text-[18px] font-medium mb-5" style={{ color: "var(--cs-fg)" }}>Pain Points</p>
                   <div className="flex flex-col gap-4">
                     {[
                       "Too many steps to switch",
                       "Breaks study flow",
                       "Interrupts note-taking",
+                      "Hard to resume where you left off",
                     ].map((point, i) => (
                       <p
                         key={point}
-                        className="text-[17px] font-medium whitespace-nowrap"
+                        className="text-[17px] font-medium"
                         style={{ color: "var(--cs-red)" }}
                       >
                         {i + 1}. {point}
@@ -437,7 +438,7 @@ export default function SuperrbookCaseStudy() {
                   The switcher opens with a two-finger swipe down from the top edge, with a direct entry point from Control Center when needed.
                 </p>
 
-                <p className="text-[18px] font-semibold mb-4" style={{ color: "var(--cs-fg)" }}>
+                <p className="text-[18px] font-medium mb-4" style={{ color: "var(--cs-blue)" }}>
                   Why this direction?
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
@@ -481,7 +482,7 @@ export default function SuperrbookCaseStudy() {
 
                 <div className="rounded-2xl overflow-hidden">
                   <Image
-                    src="/Control center entry point.png"
+                    src="/Context switching entry point1.png"
                     alt="Final entry point mockup: two-finger swipe down with Control Center access, annotated to show the switcher icon in Control Center"
                     width={827}
                     height={515}
@@ -501,7 +502,7 @@ export default function SuperrbookCaseStudy() {
                 </p>
 
                 <div className="mb-10">
-                  <p className="text-[18px] font-semibold mb-4" style={{ color: "var(--cs-fg)" }}>
+                  <p className="text-[18px] font-medium mb-4" style={{ color: "var(--cs-fg)" }}>
                     Students primarily switched resources for two reasons
                   </p>
                   <div className="flex flex-col gap-2">
@@ -667,7 +668,7 @@ export default function SuperrbookCaseStudy() {
             <div style={{ borderTop: "1px solid var(--cs-border)", paddingTop: "48px" }}>
               <h3 className="text-[24px] font-semibold mb-4" style={{ color: "var(--cs-fg)" }}>{liveQuizItem.title}</h3>
               <p className="text-[17px] leading-relaxed mb-6" style={{ color: "var(--cs-secondary)" }}>{liveQuizItem.description}</p>
-              <p className="text-[18px] font-semibold mb-3" style={{ color: "var(--cs-fg)" }}>Focused on</p>
+              <p className="text-[18px] font-medium mb-3" style={{ color: "var(--cs-fg)" }}>Focused on</p>
               <ul className="flex flex-col gap-2 mb-8">
                 {liveQuizItem.focusedOn.map((point) => (
                   <li key={point} className="text-[17px] leading-relaxed flex items-start gap-3" style={{ color: "var(--cs-secondary)" }}>

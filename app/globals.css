@@ -40,7 +40,7 @@
    something worked, red = problems & rejected directions, yellow = design
    goals. */
 .case-study {
-  --cs-bg: #F7F7F5;
+  --cs-bg: #FFFFFF;
   --cs-fg: #292929;
   --cs-secondary: #62666B;
   --cs-muted: #8A8D91;
