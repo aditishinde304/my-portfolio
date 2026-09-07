@@ -716,7 +716,7 @@ export default function SuperrbookCaseStudy() {
             </span>
           </div>
 
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-14">
             {/* The Challenge */}
             <div>
               <p className="text-[18px] font-semibold mb-3" style={{ color: "var(--cs-fg)" }}>
