@@ -434,7 +434,7 @@ export default function SuperrbookCaseStudy() {
               {/* Final entry point decision */}
               <div className="mt-12">
                 <p className="text-[18px] font-semibold mb-2" style={{ color: "var(--cs-fg)" }}>
-                  Final entry point - Two finger swipe down + Control Center access
+                  Final entry point (Two finger swipe down + Control Center access)
                 </p>
                 <p className="text-[17px] leading-relaxed mb-8" style={{ color: "var(--cs-secondary)" }}>
                   The switcher opens with a two-finger swipe down from the top edge, with a direct entry point from Control Center when needed.
@@ -468,11 +468,11 @@ export default function SuperrbookCaseStudy() {
                     >
                       <div
                         className="shrink-0 rounded-full flex items-center justify-center mb-3"
-                        style={{ width: "40px", height: "40px", background: "var(--cs-purple-bg)" }}
+                        style={{ width: "40px", height: "40px", background: "var(--cs-blue-bg)" }}
                       >
                         <Image src={item.icon} alt="" width={18} height={18} />
                       </div>
-                      <p className="text-[18px] font-semibold mb-1" style={{ color: "var(--cs-fg)" }}>
+                      <p className="text-[18px] font-medium mb-1" style={{ color: "var(--cs-fg)" }}>
                         {item.title}
                       </p>
                       <p className="text-[14px] leading-relaxed" style={{ color: "var(--cs-secondary)" }}>
