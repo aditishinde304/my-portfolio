@@ -136,8 +136,8 @@ export default function LMSCaseStudy() {
 
         {/* ── TLDR ── */}
         <section className="mb-16">
-          <div className="space-y-5 text-[18px] leading-relaxed" style={{ color: "var(--cs-secondary)", lineHeight: "1.6" }}>
-            <p className="text-[22px] font-semibold tracking-[-0.01em]" style={{ color: "var(--cs-fg)", lineHeight: "1.6" }}>
+          <div className="space-y-5 text-[17px] leading-relaxed" style={{ color: "var(--cs-secondary)", lineHeight: "1.8" }}>
+            <p className="text-[22px] font-semibold tracking-[-0.01em]" style={{ color: "var(--cs-fg)", lineHeight: "1.4" }}>
               How might we simplify classroom management through one centralized platform?
             </p>
             <p>

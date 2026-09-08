@@ -188,7 +188,7 @@ export default function SuperrbookCaseStudy() {
           >
             Areas of Ownership
           </h2>
-          <ul className="flex flex-col gap-4">
+          <ul className="flex flex-col gap-6">
             {[
               { title: "Learning Experiences", description: "Assignments, quizzes, notebooks, whiteboards, reports and classroom collaboration." },
               { title: "Systems & Information Architecture", description: "Navigation structures, content organisation and workflow simplification across the platform." },
@@ -209,7 +209,7 @@ export default function SuperrbookCaseStudy() {
                 />
                 <div>
                   <p
-                    className="text-[18px] font-semibold mb-0.5"
+                    className="text-[17px] font-semibold mb-0.5"
                     style={{ color: "var(--cs-fg)" }}
                   >
                     {item.title}
