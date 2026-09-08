@@ -139,7 +139,7 @@ export default function Workspace() {
               type="button"
               className="workspace-folder absolute flex flex-col items-center"
               style={{ ...f.pos, zIndex: isActive ? 30 : 5 }}
-              aria-label={`${f.name} — ${f.note}`}
+              aria-label={`${f.name}, ${f.note}`}
               onMouseEnter={() => setActive(f.id)}
               onMouseLeave={() => setActive((a) => (a === f.id ? null : a))}
               onFocus={() => setActive(f.id)}

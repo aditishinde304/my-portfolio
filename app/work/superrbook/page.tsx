@@ -440,7 +440,7 @@ export default function SuperrbookCaseStudy() {
                     Key Insight
                   </p>
                   <p className="text-[17px] leading-relaxed font-medium" style={{ color: "var(--cs-blue-text)" }}>
-                    This exploration shifted my thinking from navigating between screens to switching within the same collection &mdash; like opening another folder in the same workspace.
+                    This exploration shifted my thinking from navigating between screens to switching within the same collection, like opening another folder in the same workspace.
                   </p>
                 </div>
               )}
