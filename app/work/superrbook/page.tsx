@@ -758,14 +758,10 @@ export default function SuperrbookCaseStudy() {
                   ))}
                 </ul>
               </div>
-              {/* Design Principle — callout card */}
               <div
-                className="rounded-2xl px-5 py-4 flex flex-col gap-2 mt-4"
+                className="rounded-2xl px-5 py-4 mt-4"
                 style={{ background: "var(--cs-blue-bg)", border: "1px solid var(--cs-blue-border)" }}
               >
-                <p className="text-[12px] font-semibold uppercase tracking-[0.08em]" style={{ color: "var(--cs-blue)" }}>
-                  Design Principle
-                </p>
                 <p className="text-[17px] leading-relaxed font-medium" style={{ color: "var(--cs-blue-text)" }}>
                   If a student already knows how the tool works on paper, the digital version should behave as closely as possible to that mental model.
                 </p>
@@ -1123,10 +1119,10 @@ export default function SuperrbookCaseStudy() {
               className="text-[17px] leading-relaxed font-medium"
               style={{ color: "var(--cs-blue-text)" }}
             >
-              A large part of the work involved interconnected features and
-              evolving systems, so I&rsquo;d be happy to walk through deeper
-              explorations, iterations, prototypes, and shipped decisions in
-              conversation.
+              A large part of this work involved interconnected features and
+              evolving systems. I&rsquo;d be happy to walk you through the
+              deeper explorations, iterations, prototypes and shipped
+              decisions in a conversation or on a call.
             </p>
           </div>
         </section>
