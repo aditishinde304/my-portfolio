@@ -85,18 +85,14 @@ body {
   color: #fff;
 }
 
-/* Only show a focus ring for keyboard navigation — a mouse click or a
+/* No focus/click outline anywhere on the site — a mouse click or a
    double-click that selects text inside a link shouldn't leave a blue
-   focus rectangle around it. */
+   rectangle around it. */
 a:focus,
-button:focus {
-  outline: none;
-}
-
 a:focus-visible,
+button:focus,
 button:focus-visible {
-  outline: 2px solid #3b82f6;
-  outline-offset: 2px;
+  outline: none;
 }
 
 .hover-surface:hover {
@@ -476,21 +472,8 @@ button:focus-visible {
   transition: color 150ms ease;
 }
 
-.footer-social-link::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -3px;
-  width: 100%;
-  height: 1px;
-  background: #fff;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 200ms ease;
-}
-
-.footer-social-link:hover::after {
-  transform: scaleX(1);
+.footer-social-link:hover {
+  color: #fff;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -859,8 +842,8 @@ button:focus-visible {
   top: 56%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 14px;
-  height: 14px;
+  width: 20px;
+  height: 20px;
   background-color: #d4d4d0;
   -webkit-mask-image: url(/Union.png);
   mask-image: url(/Union.png);

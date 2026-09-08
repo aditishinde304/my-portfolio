@@ -91,6 +91,23 @@ export function NavWiggleUnderline({ className, color = "#BE185D", strokeWidth =
   );
 }
 
+export function BackArrowIcon({ className, style }: { className?: string; style?: React.CSSProperties }) {
+  return (
+    <svg
+      className={className}
+      style={style}
+      width="14"
+      height="14"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden
+    >
+      <path d="M19 12H5M5 12L11 18M5 12L11 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
 export function ScribbleUnderline({ className, color = "#7C3AED", style }: { className?: string; color?: string; style?: React.CSSProperties }) {
   return (
     <svg className={className} style={style} width="140" height="14" viewBox="0 0 140 14" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">

@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import VideoPlayer from "@/app/components/VideoPlayer";
 import CaseStudyNav from "@/app/components/CaseStudyNav";
+import { BackArrowIcon } from "@/app/components/v2/Doodles";
 
 const navSections = [
   { id: "overview", label: "Overview" },
@@ -108,10 +109,10 @@ export default function LMSCaseStudy() {
         {/* Mobile back link (sidebar handles it on desktop) */}
         <Link
           href="/"
-          className="lg:hidden text-[15px] inline-block mb-16"
+          className="lg:hidden inline-flex items-center gap-1.5 text-[15px] mb-16"
           style={{ color: "var(--cs-secondary)" }}
         >
-          Back
+          <BackArrowIcon /> Back
         </Link>
 
       <main className="min-w-0 flex-1" style={{ maxWidth: "1014px" }}>

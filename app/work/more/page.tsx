@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { BackArrowIcon } from "@/app/components/v2/Doodles";
 
 type OldProject = {
   id: string;
@@ -54,10 +55,10 @@ export default function MoreWork() {
       <div style={{ marginBottom: "48px" }}>
         <Link
           href="/"
-          className="text-[14px] mb-8 inline-block"
+          className="inline-flex items-center gap-1.5 text-[14px] mb-8"
           style={{ color: "var(--muted)" }}
         >
-          Back
+          <BackArrowIcon /> Back
         </Link>
         <h1
           style={{
@@ -69,7 +70,7 @@ export default function MoreWork() {
         >
           More Work
         </h1>
-        <p className="text-[18px]" style={{ color: "#666", marginTop: "8px" }}>
+        <p className="text-[18px]" style={{ color: "#666", marginTop: "0px" }}>
           A few older projects from earlier in my journey.
         </p>
       </div>

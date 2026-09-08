@@ -53,7 +53,7 @@ export default function AboutPage() {
               target="_blank"
               rel="noopener noreferrer"
               className="hero-resume-btn text-[15px] font-medium inline-flex items-center"
-              style={{ background: "#111", color: "#fff", padding: "9px 20px", borderRadius: "999px", lineHeight: 1 }}
+              style={{ background: "#111", color: "#fff", padding: "11px 20px", borderRadius: "999px", lineHeight: 1 }}
             >
               Resume
             </a>

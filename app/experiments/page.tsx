@@ -2,6 +2,7 @@ import Link from "next/link";
 import VideoPlayer from "@/app/components/VideoPlayer";
 import Image from "next/image";
 import ScrollToHash from "@/app/components/ScrollToHash";
+import { BackArrowIcon } from "@/app/components/v2/Doodles";
 
 const experiments = [
   {
@@ -48,10 +49,10 @@ export default function Experiments() {
       <div className="mb-12">
         <Link
           href="/"
-          className="text-[14px] mb-8 inline-block"
+          className="inline-flex items-center gap-1.5 text-[14px] mb-8"
           style={{ color: "var(--muted)" }}
         >
-          Back
+          <BackArrowIcon /> Back
         </Link>
         <h1
           className="font-semibold tracking-[-0.01em] mb-4"

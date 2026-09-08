@@ -263,7 +263,6 @@ export default function HeroExperimental() {
           >
             Superr
             <NavWiggleUnderline
-              color="#DA1DDA"
               strokeWidth={3}
               style={{
                 position: "absolute",

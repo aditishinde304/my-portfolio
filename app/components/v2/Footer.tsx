@@ -1,3 +1,5 @@
+import { NavWiggleUnderline } from "./Doodles";
+
 function Sparkle({ style, size = 14 }: { style?: React.CSSProperties; size?: number }) {
   return (
     <svg
@@ -75,10 +77,20 @@ export default function Footer() {
               href={s.href}
               target={s.href.startsWith("http") ? "_blank" : undefined}
               rel="noopener noreferrer"
-              className="footer-social-link text-[14px]"
+              className="footer-social-link nav-wiggle-link text-[14px] relative inline-block"
               style={{ color: "#e4e4e2" }}
             >
               {s.label}
+              <NavWiggleUnderline
+                className="nav-wiggle-svg"
+                style={{
+                  position: "absolute",
+                  left: 0,
+                  bottom: "-7px",
+                  width: "100%",
+                  height: "8px",
+                }}
+              />
             </a>
           ))}
         </div>

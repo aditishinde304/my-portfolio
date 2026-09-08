@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { BackArrowIcon } from "./v2/Doodles";
 
 type NavSection = { id: string; label: string };
 
@@ -35,10 +36,10 @@ export default function CaseStudyNav({ sections }: { sections: NavSection[] }) {
     >
       <Link
         href="/"
-        className="inline-block text-[12px] uppercase tracking-[0.08em] font-semibold mb-10"
+        className="inline-flex items-center gap-1.5 text-[12px] uppercase tracking-[0.08em] font-semibold mb-10"
         style={{ color: "var(--cs-muted)" }}
       >
-        Back
+        <BackArrowIcon /> Back
       </Link>
       <ul className="flex flex-col gap-3.5">
         {sections.map((section) => (

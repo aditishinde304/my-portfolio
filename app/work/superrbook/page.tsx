@@ -4,6 +4,7 @@ import Image from "next/image";
 import VideoPlayer from "@/app/components/VideoPlayer";
 import CaseStudyNav from "@/app/components/CaseStudyNav";
 import ExplorationTabs from "@/app/components/ExplorationTabs";
+import { BackArrowIcon } from "@/app/components/v2/Doodles";
 
 // Inline emphasis for the key phrases highlighted in the source copy doc.
 function Bold({ children }: { children: React.ReactNode }) {
@@ -74,10 +75,10 @@ export default function SuperrbookCaseStudy() {
         {/* Mobile back link (sidebar handles it on desktop) */}
         <Link
           href="/"
-          className="lg:hidden text-[15px] inline-block mb-16"
+          className="lg:hidden inline-flex items-center gap-1.5 text-[15px] mb-16"
           style={{ color: "var(--cs-secondary)" }}
         >
-          Back
+          <BackArrowIcon /> Back
         </Link>
 
       <main className="min-w-0 flex-1" style={{ maxWidth: "1014px" }}>
