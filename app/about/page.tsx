@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { NavWiggleUnderline } from "./../components/v2/Doodles";
 
 // Collage photos — placeholders from existing site assets for now, easy to
 // swap for real ones later. Each carries its own size/rotation/offset so
@@ -20,31 +21,43 @@ export default function AboutPage() {
           <a href="/" className="text-[18px] font-semibold" style={{ color: "#111" }}>
             Aditi Shinde
           </a>
-          <nav className="hidden sm:flex items-center" style={{ gap: "40px" }}>
-            {[
-              { label: "About", href: "/about" },
-              { label: "Work", href: "/#work" },
-              { label: "Contact", href: "/#contact" },
-            ].map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className="hero-nav-link text-[16px]"
-                style={{ color: "#333" }}
-              >
-                {item.label}
-              </a>
-            ))}
-          </nav>
-          <a
-            href="https://drive.google.com/file/d/1mbuBG-T9t_Rxmam4UcLlDq3tveGxfSit/view?usp=sharing"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hero-resume-btn text-[16px] font-medium"
-            style={{ background: "#111", color: "#fff", padding: "11px 24px", borderRadius: "999px" }}
-          >
-            Resume
-          </a>
+          <div className="hidden sm:flex items-center" style={{ gap: "32px" }}>
+            <nav className="flex items-center" style={{ gap: "32px" }}>
+              {[
+                { label: "About", href: "/about", active: true },
+                { label: "Work", href: "/#work" },
+                { label: "Contact", href: "/#contact" },
+              ].map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  className="hero-nav-link nav-wiggle-link text-[16px] relative inline-block"
+                  style={{ color: item.active ? "#111" : "#333", fontWeight: item.active ? 600 : 400 }}
+                >
+                  {item.label}
+                  <NavWiggleUnderline
+                    className="nav-wiggle-svg"
+                    style={{
+                      position: "absolute",
+                      left: 0,
+                      bottom: "-7px",
+                      width: "100%",
+                      height: "8px",
+                    }}
+                  />
+                </a>
+              ))}
+            </nav>
+            <a
+              href="https://drive.google.com/file/d/1mbuBG-T9t_Rxmam4UcLlDq3tveGxfSit/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hero-resume-btn text-[15px] font-medium inline-flex items-center"
+              style={{ background: "#111", color: "#fff", padding: "9px 20px", borderRadius: "999px", lineHeight: 1 }}
+            >
+              Resume
+            </a>
+          </div>
         </div>
       </header>
 

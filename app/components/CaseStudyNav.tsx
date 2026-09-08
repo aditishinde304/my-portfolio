@@ -35,10 +35,10 @@ export default function CaseStudyNav({ sections }: { sections: NavSection[] }) {
     >
       <Link
         href="/"
-        className="inline-flex items-center gap-1.5 text-[12px] uppercase tracking-[0.08em] font-semibold mb-10"
+        className="inline-block text-[12px] uppercase tracking-[0.08em] font-semibold mb-10"
         style={{ color: "var(--cs-muted)" }}
       >
-        <span aria-hidden>←</span> Go back
+        Back
       </Link>
       <ul className="flex flex-col gap-3.5">
         {sections.map((section) => (

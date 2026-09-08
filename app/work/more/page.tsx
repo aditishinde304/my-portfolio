@@ -54,10 +54,10 @@ export default function MoreWork() {
       <div style={{ marginBottom: "48px" }}>
         <Link
           href="/"
-          className="text-[14px] mb-8 inline-block link-dashed"
+          className="text-[14px] mb-8 inline-block"
           style={{ color: "var(--muted)" }}
         >
-          ← Back
+          Back
         </Link>
         <h1
           style={{

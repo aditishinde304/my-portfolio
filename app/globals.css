@@ -85,6 +85,20 @@ body {
   color: #fff;
 }
 
+/* Only show a focus ring for keyboard navigation — a mouse click or a
+   double-click that selects text inside a link shouldn't leave a blue
+   focus rectangle around it. */
+a:focus,
+button:focus {
+  outline: none;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
 .hover-surface:hover {
   background: var(--hover-bg);
 }
@@ -842,6 +856,11 @@ body {
 .more-work-sparkle {
   position: absolute;
   z-index: 6;
+  top: 56%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 14px;
+  height: 14px;
   background-color: #d4d4d0;
   -webkit-mask-image: url(/Union.png);
   mask-image: url(/Union.png);
@@ -852,40 +871,7 @@ body {
   -webkit-mask-position: center;
   mask-position: center;
   pointer-events: none;
-  animation: moreWorkSparkleTwinkle 2.6s ease-in-out infinite;
-}
-
-.more-work-sparkle-a {
-  top: -8px;
-  right: 6px;
-  width: 16px;
-  height: 16px;
-}
-
-.more-work-sparkle-b {
-  bottom: 2px;
-  left: -8px;
-  width: 11px;
-  height: 11px;
-  animation-delay: 1.1s;
-}
-
-@keyframes moreWorkSparkleTwinkle {
-  0%, 100% {
-    opacity: 0.45;
-    transform: scale(0.85);
-  }
-  50% {
-    opacity: 0.9;
-    transform: scale(1.05);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .more-work-sparkle {
-    animation: none;
-    opacity: 0.6;
-  }
+  opacity: 0.7;
 }
 
 /* Uniform media height across the Experiments grid — the source videos
@@ -893,7 +879,7 @@ body {
    the same row (e.g. the game vs. the postcard) render at different
    heights. */
 .experiments-card-media {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 2;
   height: auto;
   object-fit: cover;
 }

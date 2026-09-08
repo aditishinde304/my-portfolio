@@ -108,10 +108,10 @@ export default function LMSCaseStudy() {
         {/* Mobile back link (sidebar handles it on desktop) */}
         <Link
           href="/"
-          className="lg:hidden text-[15px] inline-block mb-16 link-dashed"
+          className="lg:hidden text-[15px] inline-block mb-16"
           style={{ color: "var(--cs-secondary)" }}
         >
-          ← Back
+          Back
         </Link>
 
       <main className="min-w-0 flex-1" style={{ maxWidth: "1014px" }}>

@@ -213,8 +213,7 @@ const moreWorkThumbs = [
 function MoreWorkFolder() {
   return (
     <span className="more-work-folder-wrap">
-      <span className="more-work-sparkle more-work-sparkle-a" aria-hidden />
-      <span className="more-work-sparkle more-work-sparkle-b" aria-hidden />
+      <span className="more-work-sparkle" aria-hidden />
       <Image
         src="/folder-projects.png"
         alt=""

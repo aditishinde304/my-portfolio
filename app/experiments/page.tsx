@@ -48,14 +48,14 @@ export default function Experiments() {
       <div className="mb-12">
         <Link
           href="/"
-          className="text-[14px] mb-8 inline-block link-dashed"
+          className="text-[14px] mb-8 inline-block"
           style={{ color: "var(--muted)" }}
         >
-          ← Back
+          Back
         </Link>
         <h1
-          className="text-[16px] font-semibold tracking-[-0.01em] mb-4"
-          style={{ color: "var(--foreground)", fontFamily: "var(--font-petrona), Georgia, serif" }}
+          className="font-semibold tracking-[-0.01em] mb-4"
+          style={{ color: "var(--foreground)", fontFamily: "var(--font-petrona), Georgia, serif", fontSize: "28px" }}
         >
           Experiments
         </h1>

@@ -15,90 +15,36 @@ import Footer from "./components/v2/Footer";
 // Hero A/B switch — flip to false to bring the original hero back.
 const USE_EXPERIMENTAL_HERO = true;
 
-const NAV_HEIGHT = 56;
-
-function NavAboutIcon() {
-  return (
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="12" cy="12" r="9.5" stroke="currentColor" strokeWidth="1.6" />
-      <circle cx="9" cy="10.5" r="1.1" fill="currentColor" />
-      <circle cx="15" cy="10.5" r="1.1" fill="currentColor" />
-      <path d="M8.5 14.5C9.5 16 14.5 16 15.5 14.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-    </svg>
-  );
-}
-
-function NavWorkIcon() {
-  return (
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M3 8.5C3 7.67 3.67 7 4.5 7H9L11 9H19.5C20.33 9 21 9.67 21 10.5V17.5C21 18.33 20.33 19 19.5 19H4.5C3.67 19 3 18.33 3 17.5V8.5Z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
-function NavPlaygroundIcon() {
-  return (
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="2.5" y="5" width="13" height="13" rx="2" stroke="currentColor" strokeWidth="1.6" />
-      <rect x="8.5" y="2.5" width="13" height="13" rx="2" fill="#fcfcfb" stroke="currentColor" strokeWidth="1.6" />
-    </svg>
-  );
-}
-
-function NavContactIcon() {
-  return (
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="2.5" y="4.5" width="19" height="15" rx="2.4" stroke="currentColor" strokeWidth="1.6" />
-      <path d="M3.5 6L12 12.5L20.5 6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
-const navItems = [
-  { label: "About", href: "/about", icon: NavAboutIcon },
-  { label: "Work", href: "#work", icon: NavWorkIcon },
-  { label: "Playground", href: "#playground", icon: NavPlaygroundIcon },
-  { label: "Contact", href: "#contact", icon: NavContactIcon },
-];
-
 export default function Home() {
   return (
     <div style={{ background: "#fcfcfb", color: "#111", minHeight: "100vh", overflowX: "clip" }}>
       {/* Nav */}
-      <header className="mx-auto" style={{ maxWidth: "1014px", padding: "24px 0" }}>
+      <header className="mx-auto" style={{ maxWidth: "1014px", padding: "38px 0" }}>
         <div className="flex items-center justify-between px-6 sm:px-0">
           <span className="text-[18px] font-semibold" style={{ color: "#111" }}>
             Aditi Shinde
           </span>
-          <div className="hidden sm:flex items-center" style={{ gap: "12px" }}>
-            <nav
-              className="flex items-center"
-              style={{
-                height: `${NAV_HEIGHT}px`,
-                background: "#fff",
-                border: "1px solid #ececea",
-                borderRadius: "999px",
-                padding: "0 6px",
-                gap: "2px",
-              }}
-            >
-              {navItems.map((item) => (
+          <div className="hidden sm:flex items-center" style={{ gap: "32px" }}>
+            <nav className="flex items-center" style={{ gap: "32px" }}>
+              {[
+                { label: "About", href: "/about" },
+                { label: "Work", href: "#work" },
+                { label: "Contact", href: "#contact" },
+              ].map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
-                  className="hero-nav-link nav-wiggle-link nav-pill-link relative inline-flex items-center"
-                  style={{ height: "40px", padding: "0 14px", borderRadius: "999px", color: "#333", gap: "6px" }}
+                  className="hero-nav-link nav-wiggle-link text-[16px] relative inline-block"
+                  style={{ color: "#333" }}
                 >
-                  <item.icon />
-                  <span className="text-[14.5px]">{item.label}</span>
+                  {item.label}
                   <NavWiggleUnderline
                     className="nav-wiggle-svg"
                     style={{
                       position: "absolute",
-                      left: "14px",
-                      right: "14px",
-                      width: "auto",
-                      bottom: "5px",
+                      left: 0,
+                      bottom: "-7px",
+                      width: "100%",
                       height: "8px",
                     }}
                   />
@@ -109,19 +55,8 @@ export default function Home() {
               href="https://drive.google.com/file/d/1mbuBG-T9t_Rxmam4UcLlDq3tveGxfSit/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
-              className="hero-resume-btn text-[15px] font-medium"
-              style={{
-                height: `${NAV_HEIGHT}px`,
-                display: "inline-flex",
-                alignItems: "center",
-                justifyContent: "center",
-                background: "#111",
-                color: "#fff",
-                padding: "0 22px",
-                borderRadius: "999px",
-                lineHeight: 1,
-                whiteSpace: "nowrap",
-              }}
+              className="hero-resume-btn text-[15px] font-medium inline-flex items-center"
+              style={{ background: "#111", color: "#fff", padding: "9px 20px", borderRadius: "999px", lineHeight: 1 }}
             >
               Resume
             </a>
