@@ -81,8 +81,8 @@ body {
 }
 
 ::selection {
-  background: var(--foreground);
-  color: var(--background);
+  background: #3b82f6;
+  color: #fff;
 }
 
 .hover-surface:hover {
@@ -208,6 +208,15 @@ body {
    instances (e.g. "View more") in favor of the animated SVG doodle. */
 .nav-wiggle-link::after {
   display: none;
+}
+
+.nav-pill-link {
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+.nav-pill-link:hover {
+  background: #f5f5f3;
+  color: #111;
 }
 
 .nav-wiggle-svg path {
@@ -602,19 +611,11 @@ body {
   );
 }
 
-/* A single continuous stroke, left to right, after the text lands.
-   The mid-stop briefly eases off before finishing, the way a hand
-   drawing a highlighter line naturally varies speed rather than
-   moving at one constant rate — without ever breaking the line. */
+/* A single continuous stroke, left to right, after the text lands —
+   one smooth motion with no mid-stroke pause. */
 @keyframes heroXWipe {
   0% {
     clip-path: inset(0 100% 0 0);
-  }
-  62% {
-    clip-path: inset(0 34% 0 0);
-  }
-  78% {
-    clip-path: inset(0 28% 0 0);
   }
   100% {
     clip-path: inset(0 0 0 0);
@@ -640,7 +641,7 @@ body {
    Without it the mark just renders in place — so no JS means no
    animation, never a missing highlight. */
 .hero-x-play .hero-x-highlight {
-  animation: heroXWipe 820ms cubic-bezier(0.4, 0, 0.2, 1) 400ms both;
+  animation: heroXWipe 700ms cubic-bezier(0.65, 0, 0.35, 1) 400ms both;
 }
 
 .hero-x-play .hero-x-sparkles {
@@ -836,6 +837,65 @@ body {
   .more-work-thumb {
     transition: none;
   }
+}
+
+.more-work-sparkle {
+  position: absolute;
+  z-index: 6;
+  background-color: #d4d4d0;
+  -webkit-mask-image: url(/Union.png);
+  mask-image: url(/Union.png);
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  pointer-events: none;
+  animation: moreWorkSparkleTwinkle 2.6s ease-in-out infinite;
+}
+
+.more-work-sparkle-a {
+  top: -8px;
+  right: 6px;
+  width: 16px;
+  height: 16px;
+}
+
+.more-work-sparkle-b {
+  bottom: 2px;
+  left: -8px;
+  width: 11px;
+  height: 11px;
+  animation-delay: 1.1s;
+}
+
+@keyframes moreWorkSparkleTwinkle {
+  0%, 100% {
+    opacity: 0.45;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.05);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .more-work-sparkle {
+    animation: none;
+    opacity: 0.6;
+  }
+}
+
+/* Uniform media height across the Experiments grid — the source videos
+   have different intrinsic aspect ratios, which otherwise makes cards in
+   the same row (e.g. the game vs. the postcard) render at different
+   heights. */
+.experiments-card-media {
+  aspect-ratio: 4 / 3;
+  height: auto;
+  object-fit: cover;
 }
 
 /* Cursor-following "View" pill on Experiments cards. */

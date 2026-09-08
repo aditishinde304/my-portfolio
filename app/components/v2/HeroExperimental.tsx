@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import { NavWiggleUnderline } from "./Doodles";
 
 // Experimental center-aligned hero (Figma: node 919-42038).
 // Rendered alongside the original hero, which is currently hidden in page.tsx.
@@ -257,10 +258,21 @@ export default function HeroExperimental() {
             href="https://www.superr.ai/"
             target="_blank"
             rel="noopener noreferrer"
-            className="underline"
-            style={{ color: "#5c5c5c", textUnderlineOffset: "2px" }}
+            className="relative inline-block"
+            style={{ color: "#000" }}
           >
             Superr
+            <NavWiggleUnderline
+              color="#BE185D"
+              strokeWidth={3}
+              style={{
+                position: "absolute",
+                left: 0,
+                bottom: "-5px",
+                width: "100%",
+                height: "7px",
+              }}
+            />
           </a>
           . Designing thoughtful experiences, exploring ideas, and
           occasionally building them too.

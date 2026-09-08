@@ -1,9 +1,11 @@
 import Link from "next/link";
 import VideoPlayer from "@/app/components/VideoPlayer";
 import Image from "next/image";
+import ScrollToHash from "@/app/components/ScrollToHash";
 
 const experiments = [
   {
+    id: "carousel",
     name: "Interactive Project Carousel",
     description: "A premium interactive hero that transforms scrolling into a project exploration experience. Created using Claude to experiment with AI powered prototyping and frontend interactions.",
     image: "/Cursor to do.png",
@@ -11,6 +13,7 @@ const experiments = [
     href: "#",
   },
   {
+    id: "postcard",
     name: "Postcard",
     description: "A digital keepsake experience built with love, exploring how travel memories can feel more personal and emotional online. Focused on tactile interactions, paper-like textures, soft motion, and nostalgic visual craft using Vercel v0. (Currently in progress.)",
     image: "/Postcard.png",
@@ -19,6 +22,7 @@ const experiments = [
     wip: true,
   },
   {
+    id: "game",
     name: "Pixel Game",
     description: "A retro-style browser game built in a few hours to explore interactions, movement physics, and playful visual feedback. Created using HTML, CSS, JavaScript, and Google AI Studio while experimenting with vibe coding workflows.",
     image: "/Game design.png",
@@ -26,6 +30,7 @@ const experiments = [
     href: "https://aistudio.google.com/apps/d15c50fe-e2ee-4d69-a962-d47bda824e79?showPreview=true&showAssistant=true&project=gen-lang-client-0080565783&fullscreenApplet=true",
   },
   {
+    id: "focus-mode",
     name: "Focus Widget",
     description: "A minimal focus session widget exploring calm UI, subtle motion, and distraction-free interactions for deep work sessions. Built using Vercel v0 while experimenting with minimal visual systems and real-time interactions.",
     image: "/Focus mode.png",
@@ -37,6 +42,7 @@ const experiments = [
 export default function Experiments() {
   return (
     <main className="max-w-[1014px] mx-auto px-6 sm:px-10 py-20 md:py-28">
+      <ScrollToHash />
 
       {/* Header */}
       <div className="mb-12">
@@ -64,7 +70,15 @@ export default function Experiments() {
       {/* List */}
       <div className="flex flex-col" style={{ gap: "72px" }}>
         {experiments.map((exp) => (
-          <a key={exp.name} href={exp.href} target={exp.href !== "#" ? "_blank" : undefined} rel="noopener noreferrer" className="group block">
+          <a
+            key={exp.name}
+            id={exp.id}
+            href={exp.href}
+            target={exp.href !== "#" ? "_blank" : undefined}
+            rel="noopener noreferrer"
+            className="group block"
+            style={{ scrollMarginTop: "24px" }}
+          >
             <div
               className="w-full rounded-2xl mb-5 p-3 flex items-center justify-center"
               style={{ background: "var(--hover-bg)" }}
@@ -79,8 +93,8 @@ export default function Experiments() {
             </div>
             <p className="text-[16px] font-medium leading-snug mb-2 flex items-center gap-2">
               <span
-                className={exp.href !== "#" ? "link-dashed" : ""}
-                style={exp.href === "#" ? { color: "var(--foreground)" } : undefined}
+                className={exp.href !== "#" ? "underline" : ""}
+                style={{ color: "var(--foreground)", textUnderlineOffset: "3px" }}
               >
                 {exp.name}
               </span>

@@ -30,19 +30,21 @@ export default function Experiments() {
           style={{
             fontFamily: "var(--font-petrona), Georgia, serif",
             fontWeight: 600,
-            fontSize: "clamp(1.4rem, 2.4vw, 1.7rem)",
+            fontSize: "28px",
             color: "#111",
           }}
         >
           Experiments
         </h2>
-        <a
-          href="/experiments"
-          className="hero-nav-link text-[16px]"
-          style={{ color: "#666" }}
-        >
-          View more
-        </a>
+        {false && (
+          <a
+            href="/experiments"
+            className="hero-nav-link text-[16px]"
+            style={{ color: "#666" }}
+          >
+            View more
+          </a>
+        )}
       </div>
       <p className="text-[18px]" style={{ color: "#666", marginTop: "-8px", marginBottom: "48px" }}>
         Small builds and interaction explorations outside of work.
@@ -52,7 +54,7 @@ export default function Experiments() {
         {experiments.map((exp) => (
           <a
             key={exp.id}
-            href="/experiments"
+            href={`/experiments#${exp.id}`}
             className="projects-row group block relative"
             style={{ background: "#eeeeec", borderRadius: "18px", padding: "10px" }}
             onMouseEnter={() => setHoveredId(exp.id)}
@@ -65,7 +67,7 @@ export default function Experiments() {
             <div className="projects-card relative overflow-hidden rounded-2xl">
               <VideoPlayer
                 src={exp.video}
-                className="projects-card-img w-full h-auto block"
+                className="projects-card-img experiments-card-media w-full block"
               />
             </div>
             <span
