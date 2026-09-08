@@ -49,10 +49,39 @@ const petrona = Petrona({
   display: "swap",
 });
 
+const siteUrl = "https://www.aditibuilds.com";
+const title = "Aditi Shinde, Product Designer";
+const description =
+  "Product designer building education products at Superr. Focused on experiences that feel simple, playful, and human.";
+const ogImage = {
+  url: "/og-image.png",
+  width: 1200,
+  height: 630,
+  alt: title,
+};
+
 export const metadata: Metadata = {
-  title: "Aditi Shinde, Product Designer",
-  description:
-    "Product designer building education products at Superr. Focused on experiences that feel simple, playful, and human.",
+  metadataBase: new URL(siteUrl),
+  title,
+  description,
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title,
+    description,
+    url: siteUrl,
+    siteName: "Aditi Shinde",
+    type: "website",
+    locale: "en_US",
+    images: [ogImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: [ogImage],
+  },
 };
 
 export default function RootLayout({
