@@ -484,7 +484,7 @@ export default function SuperrbookCaseStudy() {
                         className="shrink-0 rounded-full flex items-center justify-center mb-3"
                         style={{ width: "40px", height: "40px", background: "var(--cs-blue-bg)" }}
                       >
-                        <Image src={item.icon} alt="" width={18} height={18} />
+                        <Image src={item.icon} alt="" width={24} height={24} />
                       </div>
                       <p className="text-[18px] font-medium mb-1" style={{ color: "var(--cs-fg)" }}>
                         {item.title}
@@ -1115,15 +1115,20 @@ export default function SuperrbookCaseStudy() {
               </p>
             </div>
           </div>
-          <p
-            className="text-[17px] font-medium leading-relaxed"
-            style={{ color: "var(--cs-fg)" }}
+          <div
+            className="rounded-2xl px-5 py-4"
+            style={{ background: "var(--cs-blue-bg)", border: "1px solid var(--cs-blue-border)" }}
           >
-            A large part of the work involved interconnected features and
-            evolving systems, so I&rsquo;d be happy to walk through deeper
-            explorations, iterations, prototypes, and shipped decisions in
-            conversation.
-          </p>
+            <p
+              className="text-[17px] leading-relaxed font-medium"
+              style={{ color: "var(--cs-blue-text)" }}
+            >
+              A large part of the work involved interconnected features and
+              evolving systems, so I&rsquo;d be happy to walk through deeper
+              explorations, iterations, prototypes, and shipped decisions in
+              conversation.
+            </p>
+          </div>
         </section>
 
       </main>
