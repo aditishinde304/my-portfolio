@@ -22,9 +22,9 @@ function Sparkle({ style, size = 14 }: { style?: React.CSSProperties; size?: num
 const socials = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/aditi-shinde-5415681b7/" },
   { label: "Twitter", href: "https://x.com/AditiShinde30" },
-  { label: "Dribbble", href: "#" },
-  { label: "Behance", href: "#" },
-  { label: "Medium", href: "#" },
+  { label: "Dribbble", href: "https://dribbble.com/aditi301" },
+  { label: "Behance", href: "https://www.behance.net/aditishinde2" },
+  { label: "Medium", href: "https://medium.com/@aditi.shinde304" },
 ];
 
 export default function Footer() {
