@@ -484,6 +484,36 @@ button:focus-visible {
 
 /* About section */
 
+/* About-page photo collage: rotation and stacking order come in as CSS
+   custom properties (set inline per-photo) so hover can add a lift on
+   top of the existing rotation instead of overriding it. */
+.about-collage-photo {
+  transform: rotate(var(--photo-rotate));
+  z-index: var(--photo-z);
+  transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1), z-index 0s;
+}
+
+.about-collage-photo:hover {
+  transform: rotate(var(--photo-rotate)) translateY(-14px);
+  z-index: 20;
+}
+
+.about-collage-inner {
+  box-shadow: 0px 12px 24px rgba(17, 17, 17, 0.12), 0px 2px 6px rgba(17, 17, 17, 0.06);
+  transition: box-shadow 300ms ease;
+}
+
+.about-collage-photo:hover .about-collage-inner {
+  box-shadow: 0px 24px 40px rgba(17, 17, 17, 0.2), 0px 4px 10px rgba(17, 17, 17, 0.1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-collage-photo,
+  .about-collage-inner {
+    transition: none;
+  }
+}
+
 .about-snap {
   transition: transform 250ms ease;
 }

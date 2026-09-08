@@ -5,12 +5,31 @@ import { NavWiggleUnderline } from "./../components/v2/Doodles";
 // swap for real ones later. Each carries its own size/rotation/offset so
 // the row reads as an overlapping, hand-arranged strip rather than a grid.
 const collagePhotos = [
-  { src: "/about-painting.jpg", alt: "Aditi painting a portrait", width: 148, rotate: -7, top: 18, tag: "brush in hand" },
-  { src: "/about-library.jpg", alt: "Aditi picking a book off a shelf", width: 158, rotate: 4, top: 0 },
+  { src: "/about-painting.jpg", alt: "Aditi painting a portrait", width: 148, rotate: -7, top: 18 },
+  { src: "/about-white-top.jpg", alt: "Aditi on a mountain viewpoint", width: 158, rotate: 4, top: 0 },
   { src: "/about-red-top.jpg", alt: "Aditi at a hilltop cafe", width: 170, rotate: -2, top: 26 },
-  { src: "/about-white-top.jpg", alt: "Aditi on a mountain viewpoint", width: 158, rotate: 6, top: 6 },
-  { src: "/about-pottery.jpg", alt: "Aditi working on a pottery wheel", width: 148, rotate: -5, top: 22, tag: "clay hands" },
+  { src: "/about-library.jpg", alt: "Aditi picking a book off a shelf", width: 158, rotate: 6, top: 6 },
+  { src: "/about-pottery.jpg", alt: "Aditi working on a pottery wheel", width: 148, rotate: -5, top: 22 },
 ];
+
+// Section eyebrow label used to break up the bio into named sections,
+// matching the reference layout's monospace uppercase headings + divider.
+function SectionLabel({ children }: { children: React.ReactNode }) {
+  return (
+    <p
+      style={{
+        fontFamily: "var(--font-geist-mono), monospace",
+        fontSize: "12px",
+        fontWeight: 600,
+        letterSpacing: "0.06em",
+        textTransform: "uppercase",
+        color: "#999",
+      }}
+    >
+      {children}
+    </p>
+  );
+}
 
 export default function AboutPage() {
   return (
@@ -77,7 +96,7 @@ export default function AboutPage() {
           </h1>
           <p
             className="text-[18px]"
-            style={{ color: "#666", marginTop: "12px" }}
+            style={{ color: "#666", marginTop: "4px" }}
           >
             Curious, creative, and probably in the middle of learning or
             making something new.
@@ -99,42 +118,21 @@ export default function AboutPage() {
             return (
               <div
                 key={photo.src}
-                className="absolute"
+                className="absolute about-collage-photo"
                 style={{
                   left: `calc(50% + ${left}px)`,
                   top: `${photo.top}px`,
                   width: `${photo.width}px`,
                   height: `${photo.width * 1.2}px`,
-                  transform: `rotate(${photo.rotate}deg)`,
-                  zIndex: i,
-                }}
+                  ["--photo-rotate" as string]: `${photo.rotate}deg`,
+                  ["--photo-z" as string]: i,
+                } as React.CSSProperties}
               >
-                {photo.tag && (
-                  <span
-                    className="absolute inline-block text-[13px]"
-                    style={{
-                      top: "-30px",
-                      left: photo.rotate < 0 ? "-6px" : "auto",
-                      right: photo.rotate >= 0 ? "-6px" : "auto",
-                      background: "#fff",
-                      color: "#333",
-                      padding: "6px 12px",
-                      borderRadius: "999px",
-                      border: "1px solid #ededec",
-                      boxShadow: "0px 1px 2px 0px rgba(0,0,0,0.05)",
-                      transform: `rotate(${-photo.rotate}deg)`,
-                      whiteSpace: "nowrap",
-                    }}
-                  >
-                    {photo.tag}
-                  </span>
-                )}
                 <div
-                  className="relative w-full h-full overflow-hidden"
+                  className="about-collage-inner relative w-full h-full overflow-hidden"
                   style={{
                     borderRadius: "12px",
                     background: "#fff",
-                    boxShadow: "0px 12px 24px rgba(17,17,17,0.12), 0px 2px 6px rgba(17,17,17,0.06)",
                   }}
                 >
                   <Image src={photo.src} alt={photo.alt} fill sizes="200px" className="object-cover" />
@@ -165,7 +163,7 @@ export default function AboutPage() {
         {/* Bio content */}
         <div
           className="mx-auto text-[16px] leading-relaxed"
-          style={{ maxWidth: "640px", marginTop: "72px", color: "#555", display: "flex", flexDirection: "column", gap: "16px" }}
+          style={{ maxWidth: "640px", marginTop: "40px", color: "#555", display: "flex", flexDirection: "column", gap: "16px" }}
         >
           <p>
             I&rsquo;m a Product Designer currently at{" "}
@@ -188,59 +186,76 @@ export default function AboutPage() {
             The best part is when something that initially feels confusing
             starts to feel obvious.
           </p>
-          <p>
-            At Superr, I work on education products and experiences across
-            the learning journey. A lot of my work involves thinking
-            through complex flows, different user needs, edge cases and
-            all the little details that come together to make a product
-            feel simple. I enjoy being involved throughout the process
-            &mdash; from figuring out the problem to exploring ideas to
-            refining the experience and seeing it come to life.
-          </p>
-          <p>
-            Lately, I&rsquo;ve also been getting closer to the building
-            side of things. I&rsquo;ve shipped a few small features using
-            Cursor and Antigravity, which has been a fun way to understand
-            how ideas actually come together beyond the design file. And
-            once something is being built, I like getting into the details
-            through design QA &mdash; making sure the final product feels
-            as good as the intended design. Sometimes that means catching
-            tiny inconsistencies, refining interactions or pushing for
-            those little details that make an experience feel more
-            delightful and pixel-perfect.
-          </p>
-          <p>
-            I&rsquo;ve also been spending a lot of time exploring the space
-            between design and code &mdash; experimenting with tools like
-            Cursor, Claude Code and v0, building little ideas and
-            prototypes that help me think beyond static screens. I&rsquo;m
-            still figuring things out, but honestly, that&rsquo;s part of
-            what makes it fun.
-          </p>
-          <p>
-            When I&rsquo;m not designing, you&rsquo;ll probably find me
-            sketching or painting something, chasing good coffee, planning
-            my next trip, or starting another side project that may or may
-            not get finished :) I also enjoy experimenting with motion,
-            interactions and random creative things just because I find
-            them fun.
-          </p>
-          <p style={{ marginTop: "8px" }}>
-            Always happy to talk about design, interesting ideas, side
-            projects or cool opportunities &mdash; reach me at{" "}
-            <a href="mailto:aditi.shinde304@gmail.com" className="link-dashed" style={{ color: "#111" }}>
-              aditi.shinde304@gmail.com
-            </a>
-            , on{" "}
-            <a href="https://x.com/AditiShinde30" target="_blank" rel="noopener noreferrer" className="link-dashed" style={{ color: "#111" }}>
-              Twitter
-            </a>
-            , or on{" "}
-            <a href="https://www.linkedin.com/in/aditi-shinde-5415681b7/" target="_blank" rel="noopener noreferrer" className="link-dashed" style={{ color: "#111" }}>
-              LinkedIn
-            </a>
-            .
-          </p>
+
+          <div style={{ borderTop: "1px solid #ececec", marginTop: "12px", paddingTop: "28px", display: "flex", flexDirection: "column", gap: "16px" }}>
+            <SectionLabel>In my current role</SectionLabel>
+            <p>
+              At Superr, I work on education products and experiences
+              across the learning journey. A lot of my work involves
+              thinking through complex flows, different user needs, edge
+              cases and all the little details that come together to make
+              a product feel simple. I enjoy being involved throughout the
+              process &mdash; from figuring out the problem to exploring
+              ideas to refining the experience and seeing it come to life.
+            </p>
+            <p>
+              Lately, I&rsquo;ve also been getting closer to the building
+              side of things. I&rsquo;ve shipped a few small features
+              using Cursor and Antigravity, which has been a fun way to
+              understand how ideas actually come together beyond the
+              design file. And once something is being built, I like
+              getting into the details through design QA &mdash; making
+              sure the final product feels as good as the intended
+              design. Sometimes that means catching tiny inconsistencies,
+              refining interactions or pushing for those little details
+              that make an experience feel more delightful and
+              pixel-perfect.
+            </p>
+          </div>
+
+          <div style={{ borderTop: "1px solid #ececec", marginTop: "12px", paddingTop: "28px", display: "flex", flexDirection: "column", gap: "16px" }}>
+            <SectionLabel>Beyond Figma</SectionLabel>
+            <p>
+              I&rsquo;ve also been spending a lot of time exploring the
+              space between design and code &mdash; experimenting with
+              tools like Cursor, Claude Code and v0, building little ideas
+              and prototypes that help me think beyond static screens.
+              I&rsquo;m still figuring things out, but honestly,
+              that&rsquo;s part of what makes it fun.
+            </p>
+          </div>
+
+          <div style={{ borderTop: "1px solid #ececec", marginTop: "12px", paddingTop: "28px", display: "flex", flexDirection: "column", gap: "16px" }}>
+            <SectionLabel>When I&rsquo;m not designing</SectionLabel>
+            <p>
+              You&rsquo;ll probably find me sketching or painting
+              something, chasing good coffee, planning my next trip, or
+              starting another side project that may or may not get
+              finished :) I also enjoy experimenting with motion,
+              interactions and random creative things just because I find
+              them fun.
+            </p>
+          </div>
+
+          <div style={{ borderTop: "1px solid #ececec", marginTop: "12px", paddingTop: "28px", display: "flex", flexDirection: "column", gap: "16px" }}>
+            <SectionLabel>Let&rsquo;s chat?</SectionLabel>
+            <p>
+              Always happy to talk about design, interesting ideas, side
+              projects or cool opportunities &mdash; reach me at{" "}
+              <a href="mailto:aditi.shinde304@gmail.com" className="link-dashed" style={{ color: "#111" }}>
+                aditi.shinde304@gmail.com
+              </a>
+              , on{" "}
+              <a href="https://x.com/AditiShinde30" target="_blank" rel="noopener noreferrer" className="link-dashed" style={{ color: "#111" }}>
+                Twitter
+              </a>
+              , or on{" "}
+              <a href="https://www.linkedin.com/in/aditi-shinde-5415681b7/" target="_blank" rel="noopener noreferrer" className="link-dashed" style={{ color: "#111" }}>
+                LinkedIn
+              </a>
+              .
+            </p>
+          </div>
         </div>
       </main>
     </div>
