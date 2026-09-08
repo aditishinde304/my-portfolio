@@ -514,6 +514,22 @@ button:focus-visible {
   }
 }
 
+.about-art-tile {
+  box-shadow: 0px 4px 10px rgba(17, 17, 17, 0.06);
+  transition: transform 250ms ease, box-shadow 250ms ease;
+}
+
+.about-art-tile:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0px 14px 24px rgba(17, 17, 17, 0.16);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-art-tile {
+    transition: none;
+  }
+}
+
 .about-snap {
   transition: transform 250ms ease;
 }

@@ -12,23 +12,40 @@ const collagePhotos = [
   { src: "/about-pottery.jpg", alt: "Aditi working on a pottery wheel", width: 148, rotate: -5, top: 22 },
 ];
 
-// Section eyebrow label used to break up the bio into named sections,
-// matching the reference layout's monospace uppercase headings + divider.
+// A few of Aditi's own paintings/sketches, shown alongside the "When I'm
+// not designing" section as proof of the hobby mentioned there.
+const paintingPhotos = [
+  { src: "/about-art-saree.png", alt: "Acrylic painting of a woman in a saree" },
+  { src: "/about-art-portrait-elder.jpg", alt: "Pencil portrait of a woman in a shawl" },
+  { src: "/about-art-lighthouse.jpg", alt: "Pencil sketch of a lighthouse and staircase" },
+  { src: "/about-art-girl-flowers.jpg", alt: "Pencil sketch of a girl with flowers in her hair" },
+  { src: "/about-art-kingfisher.jpg", alt: "Colored pencil drawing of a kingfisher" },
+  { src: "/about-art-radha-krishna.jpg", alt: "Acrylic painting of Radha and Krishna" },
+  { src: "/about-art-beach.jpg", alt: "Acrylic painting of a beach with palm trees" },
+  { src: "/about-art-fluid.jpg", alt: "Blue fluid art painting" },
+  { src: "/about-art-seashell.jpg", alt: "Textured seashell beach art" },
+  { src: "/about-art-portrait-glam.jpg", alt: "Colored pencil portrait" },
+  { src: "/about-art-deer.jpg", alt: "Colored pencil drawing of a fawn in a meadow" },
+];
+
+// Section heading used to break up the bio into named sections.
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
     <p
       style={{
-        fontFamily: "var(--font-geist-mono), monospace",
-        fontSize: "12px",
+        fontSize: "17px",
         fontWeight: 600,
-        letterSpacing: "0.06em",
-        textTransform: "uppercase",
-        color: "#999",
+        color: "#111",
       }}
     >
       {children}
     </p>
   );
+}
+
+// Inline emphasis for key phrases within the bio paragraphs.
+function Semibold({ children }: { children: React.ReactNode }) {
+  return <span style={{ fontWeight: 600, color: "#333" }}>{children}</span>;
 }
 
 export default function AboutPage() {
@@ -166,7 +183,7 @@ export default function AboutPage() {
           style={{ maxWidth: "640px", marginTop: "40px", color: "#555", display: "flex", flexDirection: "column", gap: "16px" }}
         >
           <p>
-            I&rsquo;m a Product Designer currently at{" "}
+            I&rsquo;m a <Semibold>Product Designer</Semibold> currently at{" "}
             <a href="https://www.superr.ai/" target="_blank" rel="noopener noreferrer" className="link-dashed font-medium" style={{ color: "#111" }}>
               Superr
             </a>
@@ -178,54 +195,63 @@ export default function AboutPage() {
           <p>
             Over the years, I&rsquo;ve designed for tablets, mobile, web,
             dashboards, SaaS products and design systems. I enjoy getting
-            into the messy part of a problem &mdash; understanding the
-            flows, asking too many questions, thinking through edge cases
-            and slowly making sense of it all.
-          </p>
-          <p>
-            The best part is when something that initially feels confusing
-            starts to feel obvious.
+            into the messy part of a problem,{" "}
+            <Semibold>
+              understanding the flows, asking too many questions, thinking
+              through edge cases and slowly making sense of it all.
+            </Semibold>
           </p>
 
-          <div style={{ borderTop: "1px solid #ececec", marginTop: "12px", paddingTop: "28px", display: "flex", flexDirection: "column", gap: "16px" }}>
+          <div style={{ marginTop: "12px", display: "flex", flexDirection: "column", gap: "16px" }}>
             <SectionLabel>In my current role</SectionLabel>
             <p>
-              At Superr, I work on education products and experiences
-              across the learning journey. A lot of my work involves
-              thinking through complex flows, different user needs, edge
-              cases and all the little details that come together to make
-              a product feel simple. I enjoy being involved throughout the
-              process &mdash; from figuring out the problem to exploring
-              ideas to refining the experience and seeing it come to life.
+              At Superr, I work on education products across the learning
+              journey. My work involves thinking through{" "}
+              <Semibold>
+                complex flows, different user needs, edge cases and the
+                little details
+              </Semibold>{" "}
+              that make a product feel simple.
+            </p>
+            <p>
+              I enjoy being involved throughout the process{" "}
+              <Semibold>
+                from understanding the problem and exploring ideas to
+                refining the experience and seeing it come to life.
+              </Semibold>
             </p>
             <p>
               Lately, I&rsquo;ve also been getting closer to the building
-              side of things. I&rsquo;ve shipped a few small features
-              using Cursor and Antigravity, which has been a fun way to
-              understand how ideas actually come together beyond the
-              design file. And once something is being built, I like
-              getting into the details through design QA &mdash; making
-              sure the final product feels as good as the intended
-              design. Sometimes that means catching tiny inconsistencies,
-              refining interactions or pushing for those little details
-              that make an experience feel more delightful and
-              pixel-perfect.
+              side. I&rsquo;ve{" "}
+              <Semibold>
+                shipped a few small features using Cursor and Antigravity
+              </Semibold>
+              , which has helped me understand implementation and bring
+              ideas beyond the design file.
+            </p>
+            <p>
+              I also enjoy getting into the details through{" "}
+              <Semibold>design QA</Semibold>, catching inconsistencies,
+              refining interactions and making sure the final product
+              feels as good as the intended design.
             </p>
           </div>
 
-          <div style={{ borderTop: "1px solid #ececec", marginTop: "12px", paddingTop: "28px", display: "flex", flexDirection: "column", gap: "16px" }}>
+          <div style={{ marginTop: "12px", display: "flex", flexDirection: "column", gap: "16px" }}>
             <SectionLabel>Beyond Figma</SectionLabel>
             <p>
               I&rsquo;ve also been spending a lot of time exploring the
-              space between design and code &mdash; experimenting with
-              tools like Cursor, Claude Code and v0, building little ideas
-              and prototypes that help me think beyond static screens.
-              I&rsquo;m still figuring things out, but honestly,
-              that&rsquo;s part of what makes it fun.
+              space between design and code,{" "}
+              <Semibold>
+                experimenting with tools like Cursor, Claude Code and v0
+              </Semibold>
+              , building little ideas and prototypes that help me think
+              beyond static screens. I&rsquo;m still figuring things out,
+              but honestly, that&rsquo;s part of what makes it fun.
             </p>
           </div>
 
-          <div style={{ borderTop: "1px solid #ececec", marginTop: "12px", paddingTop: "28px", display: "flex", flexDirection: "column", gap: "16px" }}>
+          <div style={{ marginTop: "12px", display: "flex", flexDirection: "column", gap: "16px" }}>
             <SectionLabel>When I&rsquo;m not designing</SectionLabel>
             <p>
               You&rsquo;ll probably find me sketching or painting
@@ -237,11 +263,23 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div style={{ borderTop: "1px solid #ececec", marginTop: "12px", paddingTop: "28px", display: "flex", flexDirection: "column", gap: "16px" }}>
+          <div className="grid grid-cols-2 sm:grid-cols-3" style={{ gap: "12px", marginTop: "4px" }}>
+            {paintingPhotos.map((art) => (
+              <div
+                key={art.src}
+                className="about-art-tile relative overflow-hidden"
+                style={{ aspectRatio: "1 / 1", borderRadius: "12px", background: "#f1f1ee" }}
+              >
+                <Image src={art.src} alt={art.alt} fill sizes="220px" className="object-cover" />
+              </div>
+            ))}
+          </div>
+
+          <div style={{ marginTop: "12px", display: "flex", flexDirection: "column", gap: "16px" }}>
             <SectionLabel>Let&rsquo;s chat?</SectionLabel>
             <p>
               Always happy to talk about design, interesting ideas, side
-              projects or cool opportunities &mdash; reach me at{" "}
+              projects or cool opportunities. Reach me at{" "}
               <a href="mailto:aditi.shinde304@gmail.com" className="link-dashed" style={{ color: "#111" }}>
                 aditi.shinde304@gmail.com
               </a>
