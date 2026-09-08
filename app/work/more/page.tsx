@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { BackArrowIcon } from "@/app/components/v2/Doodles";
+import Footer from "@/app/components/v2/Footer";
 
 type OldProject = {
   id: string;
@@ -51,6 +52,7 @@ function ArrowIcon() {
 
 export default function MoreWork() {
   return (
+    <>
     <main className="max-w-[1014px] mx-auto px-6 sm:px-0" style={{ paddingTop: "82px", paddingBottom: "100px" }}>
       <div style={{ marginBottom: "48px" }}>
         <Link
@@ -158,5 +160,7 @@ export default function MoreWork() {
         ))}
       </div>
     </main>
+    <Footer />
+    </>
   );
 }

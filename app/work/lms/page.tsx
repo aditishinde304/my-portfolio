@@ -3,6 +3,7 @@ import Image from "next/image";
 import VideoPlayer from "@/app/components/VideoPlayer";
 import CaseStudyNav from "@/app/components/CaseStudyNav";
 import { BackArrowIcon } from "@/app/components/v2/Doodles";
+import Footer from "@/app/components/v2/Footer";
 
 const navSections = [
   { id: "overview", label: "Overview" },
@@ -406,6 +407,8 @@ export default function LMSCaseStudy() {
       </main>
 
       </div>
+
+      <Footer />
     </div>
   );
 }

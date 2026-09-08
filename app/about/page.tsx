@@ -1,10 +1,13 @@
 import Image from "next/image";
 import { NavWiggleUnderline } from "./../components/v2/Doodles";
+import Footer from "../components/v2/Footer";
+
+type FanPhoto = { src: string; alt: string; width: number; rotate: number; top: number };
 
 // Collage photos — placeholders from existing site assets for now, easy to
 // swap for real ones later. Each carries its own size/rotation/offset so
 // the row reads as an overlapping, hand-arranged strip rather than a grid.
-const collagePhotos = [
+const collagePhotos: FanPhoto[] = [
   { src: "/about-painting.jpg", alt: "Aditi painting a portrait", width: 148, rotate: -7, top: 18 },
   { src: "/about-white-top.jpg", alt: "Aditi on a mountain viewpoint", width: 158, rotate: 4, top: 0 },
   { src: "/about-red-top.jpg", alt: "Aditi at a hilltop cafe", width: 170, rotate: -2, top: 26 },
@@ -13,20 +16,78 @@ const collagePhotos = [
 ];
 
 // A few of Aditi's own paintings/sketches, shown alongside the "When I'm
-// not designing" section as proof of the hobby mentioned there.
-const paintingPhotos = [
-  { src: "/about-art-saree.png", alt: "Acrylic painting of a woman in a saree" },
-  { src: "/about-art-portrait-elder.jpg", alt: "Pencil portrait of a woman in a shawl" },
-  { src: "/about-art-lighthouse.jpg", alt: "Pencil sketch of a lighthouse and staircase" },
-  { src: "/about-art-girl-flowers.jpg", alt: "Pencil sketch of a girl with flowers in her hair" },
-  { src: "/about-art-kingfisher.jpg", alt: "Colored pencil drawing of a kingfisher" },
-  { src: "/about-art-radha-krishna.jpg", alt: "Acrylic painting of Radha and Krishna" },
-  { src: "/about-art-beach.jpg", alt: "Acrylic painting of a beach with palm trees" },
-  { src: "/about-art-fluid.jpg", alt: "Blue fluid art painting" },
-  { src: "/about-art-seashell.jpg", alt: "Textured seashell beach art" },
-  { src: "/about-art-portrait-glam.jpg", alt: "Colored pencil portrait" },
-  { src: "/about-art-deer.jpg", alt: "Colored pencil drawing of a fawn in a meadow" },
+// not designing" section as proof of the hobby mentioned there. Arranged
+// the same fanned, overlapping way as the photo collage up top.
+const paintingPhotos: FanPhoto[] = [
+  { src: "/about-art-kingfisher.jpg", alt: "Colored pencil drawing of a kingfisher", width: 140, rotate: -8, top: 20 },
+  { src: "/about-art-radha-krishna.jpg", alt: "Acrylic painting of Radha and Krishna", width: 160, rotate: 5, top: 2 },
+  { src: "/about-art-deer.jpg", alt: "Colored pencil drawing of a fawn in a meadow", width: 170, rotate: -2, top: 26 },
+  { src: "/about-art-saree.png", alt: "Acrylic painting of a woman in a saree", width: 150, rotate: 6, top: 8 },
+  { src: "/about-art-portrait-glam.jpg", alt: "Colored pencil portrait of Priyanka Chopra", width: 158, rotate: -5, top: 14 },
+  { src: "/about-art-portrait-elder.jpg", alt: "Pencil portrait of Aditi's grandmother", width: 148, rotate: 3, top: 22 },
 ];
+
+// Shared fanned/overlapping photo layout, used both for the intro collage
+// and the painting gallery. Desktop: absolutely positioned, rotated,
+// overlapping strip. Mobile: a simple horizontal scroll strip.
+function PhotoFan({ photos }: { photos: FanPhoto[] }) {
+  const totalWidth = photos.reduce((sum, p) => sum + p.width, 0);
+  const overlap = 34;
+  const rowWidth = totalWidth - overlap * (photos.length - 1);
+
+  return (
+    <>
+      <div className="relative mx-auto hidden sm:block" style={{ maxWidth: "860px", height: "300px" }}>
+        {photos.map((photo, i) => {
+          let left = -rowWidth / 2;
+          for (let j = 0; j < i; j++) left += photos[j].width - overlap;
+
+          return (
+            <div
+              key={photo.src}
+              className="absolute about-collage-photo"
+              style={{
+                left: `calc(50% + ${left}px)`,
+                top: `${photo.top}px`,
+                width: `${photo.width}px`,
+                height: `${photo.width * 1.2}px`,
+                ["--photo-rotate" as string]: `${photo.rotate}deg`,
+                ["--photo-z" as string]: i,
+              } as React.CSSProperties}
+            >
+              <div
+                className="about-collage-inner relative w-full h-full overflow-hidden"
+                style={{
+                  borderRadius: "12px",
+                  background: "#fff",
+                }}
+              >
+                <Image src={photo.src} alt={photo.alt} fill sizes="200px" className="object-cover" />
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="sm:hidden flex overflow-x-auto" style={{ gap: "12px", paddingBottom: "8px" }}>
+        {photos.map((photo) => (
+          <div
+            key={photo.src}
+            className="relative shrink-0 overflow-hidden"
+            style={{
+              width: "140px",
+              height: "168px",
+              borderRadius: "12px",
+              boxShadow: "0px 8px 16px rgba(17,17,17,0.1)",
+            }}
+          >
+            <Image src={photo.src} alt={photo.alt} fill sizes="140px" className="object-cover" />
+          </div>
+        ))}
+      </div>
+    </>
+  );
+}
 
 // Section heading used to break up the bio into named sections.
 function SectionLabel({ children }: { children: React.ReactNode }) {
@@ -45,7 +106,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 // Inline emphasis for key phrases within the bio paragraphs.
 function Semibold({ children }: { children: React.ReactNode }) {
-  return <span style={{ fontWeight: 600, color: "#333" }}>{children}</span>;
+  return <span style={{ fontWeight: 500, color: "#333" }}>{children}</span>;
 }
 
 export default function AboutPage() {
@@ -97,7 +158,7 @@ export default function AboutPage() {
         </div>
       </header>
 
-      <main className="mx-auto px-6 sm:px-0" style={{ maxWidth: "1014px", paddingTop: "48px", paddingBottom: "120px" }}>
+      <main className="mx-auto px-6 sm:px-0" style={{ maxWidth: "1014px", paddingTop: "48px", paddingBottom: "80px" }}>
         {/* Centered intro */}
         <div className="text-center mx-auto" style={{ maxWidth: "720px" }}>
           <h1
@@ -121,66 +182,14 @@ export default function AboutPage() {
         </div>
 
         {/* Photo collage */}
-        <div
-          className="relative mx-auto hidden sm:block"
-          style={{ maxWidth: "860px", height: "300px", marginTop: "64px" }}
-        >
-          {collagePhotos.map((photo, i) => {
-            const totalWidth = collagePhotos.reduce((sum, p) => sum + p.width, 0);
-            const overlap = 34;
-            const rowWidth = totalWidth - overlap * (collagePhotos.length - 1);
-            let left = -rowWidth / 2;
-            for (let j = 0; j < i; j++) left += collagePhotos[j].width - overlap;
-
-            return (
-              <div
-                key={photo.src}
-                className="absolute about-collage-photo"
-                style={{
-                  left: `calc(50% + ${left}px)`,
-                  top: `${photo.top}px`,
-                  width: `${photo.width}px`,
-                  height: `${photo.width * 1.2}px`,
-                  ["--photo-rotate" as string]: `${photo.rotate}deg`,
-                  ["--photo-z" as string]: i,
-                } as React.CSSProperties}
-              >
-                <div
-                  className="about-collage-inner relative w-full h-full overflow-hidden"
-                  style={{
-                    borderRadius: "12px",
-                    background: "#fff",
-                  }}
-                >
-                  <Image src={photo.src} alt={photo.alt} fill sizes="200px" className="object-cover" />
-                </div>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* mobile: simple horizontal scroll strip */}
-        <div className="sm:hidden flex overflow-x-auto" style={{ gap: "12px", marginTop: "48px", paddingBottom: "8px" }}>
-          {collagePhotos.map((photo) => (
-            <div
-              key={photo.src}
-              className="relative shrink-0 overflow-hidden"
-              style={{
-                width: "140px",
-                height: "168px",
-                borderRadius: "12px",
-                boxShadow: "0px 8px 16px rgba(17,17,17,0.1)",
-              }}
-            >
-              <Image src={photo.src} alt={photo.alt} fill sizes="140px" className="object-cover" />
-            </div>
-          ))}
+        <div style={{ marginTop: "64px" }}>
+          <PhotoFan photos={collagePhotos} />
         </div>
 
         {/* Bio content */}
         <div
-          className="mx-auto text-[16px] leading-relaxed"
-          style={{ maxWidth: "640px", marginTop: "40px", color: "#555", display: "flex", flexDirection: "column", gap: "16px" }}
+          className="mx-auto text-[16px]"
+          style={{ maxWidth: "640px", marginTop: "20px", color: "#555", lineHeight: 1.8, display: "flex", flexDirection: "column", gap: "16px" }}
         >
           <p>
             I&rsquo;m a <Semibold>Product Designer</Semibold> currently at{" "}
@@ -202,7 +211,7 @@ export default function AboutPage() {
             </Semibold>
           </p>
 
-          <div style={{ marginTop: "12px", display: "flex", flexDirection: "column", gap: "16px" }}>
+          <div style={{ marginTop: "40px", display: "flex", flexDirection: "column", gap: "16px" }}>
             <SectionLabel>In my current role</SectionLabel>
             <p>
               At Superr, I work on education products across the learning
@@ -237,7 +246,7 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div style={{ marginTop: "12px", display: "flex", flexDirection: "column", gap: "16px" }}>
+          <div style={{ marginTop: "40px", display: "flex", flexDirection: "column", gap: "16px" }}>
             <SectionLabel>Beyond Figma</SectionLabel>
             <p>
               I&rsquo;ve also been spending a lot of time exploring the
@@ -251,7 +260,7 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div style={{ marginTop: "12px", display: "flex", flexDirection: "column", gap: "16px" }}>
+          <div style={{ marginTop: "40px", display: "flex", flexDirection: "column", gap: "16px" }}>
             <SectionLabel>When I&rsquo;m not designing</SectionLabel>
             <p>
               You&rsquo;ll probably find me sketching or painting
@@ -263,19 +272,11 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3" style={{ gap: "12px", marginTop: "4px" }}>
-            {paintingPhotos.map((art) => (
-              <div
-                key={art.src}
-                className="about-art-tile relative overflow-hidden"
-                style={{ aspectRatio: "1 / 1", borderRadius: "12px", background: "#f1f1ee" }}
-              >
-                <Image src={art.src} alt={art.alt} fill sizes="220px" className="object-cover" />
-              </div>
-            ))}
+          <div style={{ marginTop: "40px" }}>
+            <PhotoFan photos={paintingPhotos} />
           </div>
 
-          <div style={{ marginTop: "12px", display: "flex", flexDirection: "column", gap: "16px" }}>
+          <div style={{ marginTop: "40px", display: "flex", flexDirection: "column", gap: "16px" }}>
             <SectionLabel>Let&rsquo;s chat?</SectionLabel>
             <p>
               Always happy to talk about design, interesting ideas, side
@@ -296,6 +297,8 @@ export default function AboutPage() {
           </div>
         </div>
       </main>
+
+      <Footer />
     </div>
   );
 }

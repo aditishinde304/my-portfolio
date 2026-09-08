@@ -3,6 +3,7 @@ import VideoPlayer from "@/app/components/VideoPlayer";
 import Image from "next/image";
 import ScrollToHash from "@/app/components/ScrollToHash";
 import { BackArrowIcon } from "@/app/components/v2/Doodles";
+import Footer from "@/app/components/v2/Footer";
 
 const experiments = [
   {
@@ -42,6 +43,7 @@ const experiments = [
 
 export default function Experiments() {
   return (
+    <>
     <main className="max-w-[1014px] mx-auto px-6 sm:px-10 py-20 md:py-28">
       <ScrollToHash />
 
@@ -113,5 +115,7 @@ export default function Experiments() {
       </div>
 
     </main>
+    <Footer />
+    </>
   );
 }

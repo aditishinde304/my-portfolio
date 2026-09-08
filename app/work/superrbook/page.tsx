@@ -5,6 +5,7 @@ import VideoPlayer from "@/app/components/VideoPlayer";
 import CaseStudyNav from "@/app/components/CaseStudyNav";
 import ExplorationTabs from "@/app/components/ExplorationTabs";
 import { BackArrowIcon } from "@/app/components/v2/Doodles";
+import Footer from "@/app/components/v2/Footer";
 
 // Inline emphasis for the key phrases highlighted in the source copy doc.
 function Bold({ children }: { children: React.ReactNode }) {
@@ -1178,6 +1179,8 @@ export default function SuperrbookCaseStudy() {
       </main>
 
       </div>
+
+      <Footer />
     </div>
   );
 }
