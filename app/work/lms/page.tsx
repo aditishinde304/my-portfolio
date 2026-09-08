@@ -354,56 +354,6 @@ export default function LMSCaseStudy() {
           </div>
         </section>
 
-        {/* ── FOOTER ── */}
-        <footer
-          className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-0 pt-6"
-          style={{ borderTop: "1px solid var(--cs-border)" }}
-        >
-          <span className="text-[14px]" style={{ color: "var(--cs-secondary)" }}>
-            Designed + Coded with{" "}
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="12" height="12" fill="currentColor" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ display: "inline", verticalAlign: "middle", marginBottom: "1px" }}>
-              <path d="M10.4107 19.9677C7.58942 17.858 2 13.0348 2 8.69444C2 5.82563 4.10526 3.5 7 3.5C8.5 3.5 10 4 12 6C14 4 15.5 3.5 17 3.5C19.8947 3.5 22 5.82563 22 8.69444C22 13.0348 16.4106 17.858 13.5893 19.9677C12.6399 20.6776 11.3601 20.6776 10.4107 19.9677Z" />
-            </svg>
-            {" "}by Aditi
-          </span>
-          <div className="flex items-center gap-5">
-            <a
-              href="mailto:aditi.shinde304@gmail.com"
-              className="text-[15px] link-dashed"
-              style={{ color: "var(--cs-secondary)" }}
-            >
-              Email
-            </a>
-            <a
-              href="https://x.com/AditiShinde30"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[15px] link-dashed"
-              style={{ color: "var(--cs-secondary)" }}
-            >
-              X
-            </a>
-            <a
-              href="https://www.linkedin.com/in/aditi-shinde-5415681b7/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[15px] link-dashed"
-              style={{ color: "var(--cs-secondary)" }}
-            >
-              LinkedIn
-            </a>
-            <a
-              href="https://drive.google.com/file/d/1mbuBG-T9t_Rxmam4UcLlDq3tveGxfSit/view?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[15px] link-dashed"
-              style={{ color: "var(--cs-secondary)" }}
-            >
-              Resume
-            </a>
-          </div>
-        </footer>
-
       </main>
 
       </div>

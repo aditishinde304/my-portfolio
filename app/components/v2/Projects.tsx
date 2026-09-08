@@ -13,7 +13,7 @@ type Project = {
 const projects: Project[] = [
   {
     id: "superrbook",
-    title: "Making learning more interactive through thoughtful design",
+    title: "Making learning more interactive and fun through thoughtful design",
     description: (
       <>
         Owned and shipped product experiences that helped teachers and
@@ -26,11 +26,11 @@ const projects: Project[] = [
   },
   {
     id: "lms",
-    title: "A platform for managing classrooms better",
+    title: "Simplifying everyday classroom workflows",
     description: (
       <>
-        Built a centralized system for assignments, notebooks and classroom
-        workflows.
+        Designed a centralised platform for managing assignments, notebooks
+        and classroom workflows.
       </>
     ),
     image: "/LMS.png",
@@ -39,11 +39,11 @@ const projects: Project[] = [
   },
   {
     id: "poll",
-    title: "Designing engaging poll experiences",
+    title: "Making classroom participation more engaging",
     description: (
       <>
-        Exploring how voting and feedback interactions can feel more
-        intuitive and expressive.
+        Designed playful poll interactions that encourage students to
+        respond, express themselves and stay engaged.
       </>
     ),
     image: "/29894143-8e6b-48de-bb1c-4c8536376d0e (1).png",

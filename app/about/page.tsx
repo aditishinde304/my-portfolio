@@ -263,12 +263,14 @@ export default function AboutPage() {
           <div style={{ marginTop: "40px", display: "flex", flexDirection: "column", gap: "16px" }}>
             <SectionLabel>When I&rsquo;m not designing</SectionLabel>
             <p>
-              You&rsquo;ll probably find me sketching or painting
-              something, chasing good coffee, planning my next trip, or
-              starting another side project that may or may not get
-              finished :) I also enjoy experimenting with motion,
-              interactions and random creative things just because I find
-              them fun.
+              You&rsquo;ll probably find me{" "}
+              <Semibold>sketching or painting something</Semibold>,{" "}
+              <Semibold>chasing good coffee</Semibold>,{" "}
+              <Semibold>planning my next trip</Semibold>, or{" "}
+              <Semibold>starting another side project</Semibold> that may
+              or may not get finished :) I also enjoy experimenting with{" "}
+              <Semibold>motion</Semibold>, <Semibold>interactions</Semibold>{" "}
+              and random creative things just because I find them fun.
             </p>
           </div>
 
@@ -276,7 +278,7 @@ export default function AboutPage() {
             <PhotoFan photos={paintingPhotos} />
           </div>
 
-          <div style={{ marginTop: "40px", display: "flex", flexDirection: "column", gap: "16px" }}>
+          <div style={{ marginTop: "-8px", display: "flex", flexDirection: "column", gap: "16px" }}>
             <SectionLabel>Let&rsquo;s chat?</SectionLabel>
             <p>
               Always happy to talk about design, interesting ideas, side

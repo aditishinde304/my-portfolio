@@ -17,7 +17,7 @@ const projects: OldProject[] = [
     id: "homelygrub",
     title: "HomelyGrub",
     description:
-      "HomelyGrub is an app that simplifies the problem of finding healthy, homemade food. It empowers home chefs by connecting them with food lovers who seek nutritious, home-cooked meals.",
+      "Designed a food discovery experience that connects home chefs with people looking for fresh, homemade meals.",
     image: "/Homelygrub.png",
     alt: "HomelyGrub app screen",
     href: "https://www.behance.net/gallery/197852237/HomelyGrub-Homemade-food-app",
@@ -26,7 +26,7 @@ const projects: OldProject[] = [
     id: "adventour",
     title: "Adventour",
     description:
-      "Adventour is the go-to app for solo travelers, tourists, and explorers. It simplifies trip planning by creating itineraries, connecting users with travel communities, and guiding them to discover new destinations, food joints, and more.",
+      "Designed a travel experience to help people discover destinations, plan trips and explore with ease.",
     image: "/Adventour.png",
     alt: "Adventour app screen",
     href: "https://www.behance.net/gallery/198183295/Adventour-Travel-Planner-App-UiUx-case-study",
@@ -35,7 +35,7 @@ const projects: OldProject[] = [
     id: "greenscape",
     title: "GreenScape",
     description:
-      "GreenScape is a conceptual brand focused on transforming outdoor spaces into vibrant, eco-friendly green havens. It includes in-depth research, a custom-designed logo, a comprehensive brand book, and creative media designs tailored to the target audience.",
+      "A brand identity and visual exploration focused on creating greener, more inviting outdoor spaces.",
     image: "/Greenscape.png",
     alt: "GreenScape brand card",
     href: "https://www.figma.com/deck/X6Sa57ybXpehfv0qCEAKGG/Brand-Book---Greenscape?node-id=2092-659&viewport=-49%2C-75%2C0.44&t=x9WXhSjO4BAhku9W-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1",

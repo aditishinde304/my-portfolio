@@ -36,7 +36,7 @@ export default function CaseStudyNav({ sections }: { sections: NavSection[] }) {
     >
       <Link
         href="/"
-        className="inline-flex items-center gap-1.5 text-[12px] uppercase tracking-[0.08em] font-semibold mb-10"
+        className="inline-flex items-center gap-1.5 text-[12px] tracking-[0.08em] font-semibold mb-10"
         style={{ color: "var(--cs-muted)" }}
       >
         <BackArrowIcon /> Back
