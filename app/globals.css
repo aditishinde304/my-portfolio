@@ -85,6 +85,61 @@ body {
   color: #fff;
 }
 
+/* Mobile/tablet gate — the full portfolio is desktop-only for now.
+   Pure CSS so there's no flash of real content before JS runs: the
+   gate and the site are both always in the DOM, and only one is ever
+   visible at a given viewport width. */
+.mobile-gate {
+  display: none;
+}
+
+.desktop-only-content {
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  .mobile-gate {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+    background: #fcfcfb;
+  }
+
+  .desktop-only-content {
+    display: none;
+  }
+}
+
+.mobile-gate-inner {
+  max-width: 380px;
+  text-align: center;
+}
+
+.mobile-gate-sparkle {
+  font-size: 28px;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.mobile-gate-title {
+  font-family: var(--font-petrona), Georgia, serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.35;
+  color: #111;
+}
+
+.mobile-gate-body {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #666;
+  margin-top: 12px;
+}
+
 /* No focus/click outline anywhere on the site — a mouse click or a
    double-click that selects text inside a link shouldn't leave a blue
    rectangle around it. */

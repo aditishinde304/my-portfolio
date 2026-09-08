@@ -84,8 +84,23 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full">
-        <NavBar />
-        {children}
+        <div className="mobile-gate">
+          <div className="mobile-gate-inner">
+            <p className="mobile-gate-sparkle">✨</p>
+            <h1 className="mobile-gate-title">
+              A better view awaits on a bigger screen
+            </h1>
+            <p className="mobile-gate-body">
+              The mobile version is still getting some love. For now,
+              please visit from a desktop or laptop.
+            </p>
+          </div>
+        </div>
+
+        <div className="desktop-only-content">
+          <NavBar />
+          {children}
+        </div>
         <Analytics />
       </body>
     </html>
