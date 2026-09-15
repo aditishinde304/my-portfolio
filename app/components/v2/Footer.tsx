@@ -59,7 +59,7 @@ export default function Footer() {
             className="footer-connect-btn inline-flex items-center justify-center"
             style={{
               fontFamily: "var(--font-geist-sans), sans-serif",
-              fontSize: "14px",
+              fontSize: "16px",
               fontWeight: 500,
               color: "#fff",
               padding: "11px 26px",
