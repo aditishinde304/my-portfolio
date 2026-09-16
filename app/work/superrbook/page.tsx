@@ -87,7 +87,7 @@ export default function SuperrbookCaseStudy() {
         {/* ── HEADING ── */}
         <div className="mb-16" id="overview">
           <h1
-            className="cs-hero-title text-[34px] md:text-[48px] font-semibold tracking-[-0.02em] mb-4"
+            className="text-[34px] md:text-[48px] font-semibold tracking-[-0.02em] mb-4"
             style={{ color: "var(--cs-fg)", fontFamily: "var(--font-petrona), Georgia, serif", lineHeight: "1.12" }}
           >
             Designing better digital<br />classroom experiences
@@ -101,7 +101,7 @@ export default function SuperrbookCaseStudy() {
         </div>
 
         {/* ── TLDR ── */}
-        <section className="mb-16">
+        <section className="cs-mobile-hide mb-16">
           <div className="space-y-5 text-[17px] leading-relaxed" style={{ color: "var(--cs-secondary)", lineHeight: "1.6" }}>
             <p>
               Superr is an edtech company building tools that support{" "}
@@ -125,7 +125,7 @@ export default function SuperrbookCaseStudy() {
         </section>
 
         {/* ── FULL-WIDTH MEDIA ── */}
-        <div className="mb-16 rounded-2xl overflow-hidden">
+        <div className="cs-mobile-hide mb-16 rounded-2xl overflow-hidden">
           <VideoPlayer
             src="/Superrbook.mp4"
             className="w-full h-auto block"
@@ -134,7 +134,7 @@ export default function SuperrbookCaseStudy() {
         </div>
 
         {/* ── MY ROLE ── */}
-        <section id="role" className="mb-16" style={{ borderTop: "1px solid var(--cs-border)", paddingTop: "48px" }}>
+        <section id="role" className="cs-mobile-hide mb-16" style={{ borderTop: "1px solid var(--cs-border)", paddingTop: "48px" }}>
           <h2
             className="text-[28px] font-semibold mb-6"
             style={{ color: "var(--cs-fg)", fontFamily: "var(--font-petrona), Georgia, serif", lineHeight: "1.3" }}
@@ -181,7 +181,7 @@ export default function SuperrbookCaseStudy() {
         </section>
 
         {/* ── AREAS OF OWNERSHIP ── */}
-        <section id="ownership" className="mb-16" style={{ borderTop: "1px solid var(--cs-border)", paddingTop: "48px" }}>
+        <section id="ownership" className="cs-mobile-hide mb-16" style={{ borderTop: "1px solid var(--cs-border)", paddingTop: "48px" }}>
           <h2
             className="text-[28px] font-semibold mb-8"
             style={{ color: "var(--cs-fg)", fontFamily: "var(--font-petrona), Georgia, serif", lineHeight: "1.3" }}
@@ -277,7 +277,7 @@ export default function SuperrbookCaseStudy() {
             </div>
 
             {/* Problem */}
-            <div>
+            <div className="cs-mobile-hide">
               <p className="text-[18px] font-semibold mb-1" style={{ color: "var(--cs-fg)" }}>Problem</p>
               <p className="text-[17px] leading-relaxed mb-6" style={{ color: "var(--cs-secondary)" }}>
                 Learning often required jumping between different resources. Every switch interrupted focus.
@@ -353,7 +353,7 @@ export default function SuperrbookCaseStudy() {
             </div>
 
             {/* Design Goals */}
-            <div>
+            <div className="cs-mobile-hide">
               <p className="text-[18px] font-semibold mb-4" style={{ color: "var(--cs-fg)" }}>Design Goals</p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {[
@@ -376,7 +376,7 @@ export default function SuperrbookCaseStudy() {
             </div>
 
             {/* Exploration */}
-            <div>
+            <div className="cs-mobile-hide">
               <p className="text-[18px] font-semibold mb-6" style={{ color: "var(--cs-fg)" }}>Exploration</p>
 
               {/* Part 1 - Finding the right entry point */}
@@ -602,7 +602,7 @@ export default function SuperrbookCaseStudy() {
             </div>
 
             {/* Edge Cases */}
-            <div style={{ marginTop: "16px" }}>
+            <div className="cs-mobile-hide" style={{ marginTop: "16px" }}>
               <p className="text-[18px] font-semibold mb-4" style={{ color: "var(--cs-fg)" }}>Designing for Edge Cases</p>
               <p className="text-[17px] leading-relaxed mb-6" style={{ color: "var(--cs-secondary)" }}>
                 A big part of this project was thinking beyond the ideal flow. The resource system had to work across different states without making the everyday experience feel more complicated.
@@ -629,7 +629,7 @@ export default function SuperrbookCaseStudy() {
             </div>
 
             {/* What I'll be measuring next */}
-            <div style={{ marginTop: "32px" }}>
+            <div className="cs-mobile-hide" style={{ marginTop: "32px" }}>
               <p className="text-[18px] font-semibold mb-4" style={{ color: "var(--cs-fg)" }}>What I&rsquo;ll be measuring next (Metrics)</p>
               <p className="text-[17px] leading-relaxed mb-6" style={{ color: "var(--cs-secondary)" }}>
                 The experience is currently being prepared for launch, so I don&rsquo;t have user metrics to share yet. Once it&rsquo;s live, I&rsquo;ll be looking closely at:
@@ -654,7 +654,7 @@ export default function SuperrbookCaseStudy() {
             </div>
 
             {/* Reflection */}
-            <div style={{ marginTop: "32px" }}>
+            <div className="cs-mobile-hide" style={{ marginTop: "32px" }}>
               <p className="text-[18px] font-semibold mb-4" style={{ color: "var(--cs-fg)" }}>Reflection</p>
               <p className="text-[17px] leading-relaxed mb-6" style={{ color: "var(--cs-secondary)" }}>
                 A few things I learned while working through this:
@@ -680,7 +680,7 @@ export default function SuperrbookCaseStudy() {
             </div>
 
             {/* Live Quizzes */}
-            <div style={{ borderTop: "1px solid var(--cs-border)", paddingTop: "48px" }}>
+            <div className="cs-mobile-hide" style={{ borderTop: "1px solid var(--cs-border)", paddingTop: "48px" }}>
               <h3 className="text-[24px] font-semibold mb-4" style={{ color: "var(--cs-fg)", fontFamily: "var(--font-petrona), Georgia, serif" }}>{liveQuizItem.title}</h3>
               <p className="text-[17px] leading-relaxed mb-6" style={{ color: "var(--cs-secondary)" }}>{liveQuizItem.description}</p>
               <p className="text-[18px] font-medium mb-3" style={{ color: "var(--cs-fg)" }}>Focused on</p>
@@ -702,7 +702,7 @@ export default function SuperrbookCaseStudy() {
         </section>
 
         {/* ── SECTION 02: GEOMETRY TOOLS ── */}
-        <section id="geometry-tools" className="mb-16" style={{ borderTop: "1px solid var(--cs-border)", paddingTop: "48px" }}>
+        <section id="geometry-tools" className="cs-mobile-hide mb-16" style={{ borderTop: "1px solid var(--cs-border)", paddingTop: "48px" }}>
           <div className="flex items-baseline justify-between mb-12">
             <h2
               className="text-[28px] font-semibold"
@@ -945,7 +945,7 @@ export default function SuperrbookCaseStudy() {
         </section>
 
         {/* ── SECTION 03: HELPING SCHOOL ADMINS MANAGE DEVICES BETTER ── */}
-        <section id="admin" className="mb-16" style={{ borderTop: "1px solid var(--cs-border)", paddingTop: "48px" }}>
+        <section id="admin" className="cs-mobile-hide mb-16" style={{ borderTop: "1px solid var(--cs-border)", paddingTop: "48px" }}>
           <div className="flex items-baseline justify-between mb-12">
             <h2
               className="text-[28px] font-semibold"
@@ -963,7 +963,7 @@ export default function SuperrbookCaseStudy() {
 
           <div className="flex flex-col gap-8">
             {/* Problem */}
-            <div>
+            <div className="cs-mobile-hide">
               <p
                 className="text-[18px] font-semibold mb-3"
                 style={{ color: "var(--cs-fg)" }}
@@ -1062,7 +1062,7 @@ export default function SuperrbookCaseStudy() {
         </section>
 
         {/* ── REFLECTION ── */}
-        <section id="reflection" className="mb-16" style={{ borderTop: "1px solid var(--cs-border)", paddingTop: "48px" }}>
+        <section id="reflection" className="cs-mobile-hide mb-16" style={{ borderTop: "1px solid var(--cs-border)", paddingTop: "48px" }}>
           <p
             className="text-[18px] font-semibold mb-6"
             style={{ color: "var(--cs-fg)" }}
@@ -1126,6 +1126,10 @@ export default function SuperrbookCaseStudy() {
             </p>
           </div>
         </section>
+
+        <p className="cs-mobile-only-note text-[16px]" style={{ color: "var(--cs-secondary)" }}>
+          To view the full case study, please open the link on a desktop :)
+        </p>
 
       </main>
 

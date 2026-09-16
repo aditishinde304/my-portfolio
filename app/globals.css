@@ -301,8 +301,10 @@ button:focus-visible {
 .site-mobile-menu-nav {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  padding: 4px 24px 20px;
+  align-items: flex-end;
+  width: fit-content;
+  margin-right: auto;
+  padding: 0 24px;
   gap: 2px;
 }
 
@@ -314,6 +316,8 @@ button:focus-visible {
   min-height: 40px;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
+  text-align: right;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -322,7 +326,7 @@ button:focus-visible {
 }
 
 .site-mobile-menu-resume {
-  align-self: flex-start;
+  align-self: flex-end;
   width: auto;
   margin-top: 8px;
   background: #111;
@@ -720,15 +724,6 @@ button:focus-visible {
   }
 }
 
-/* Case study heading — 2x line-height on mobile so the two lines (the
-   heading always wraps via a literal <br>) get real breathing room.
-   Desktop line-height (set inline) is untouched. */
-@media (max-width: 640px) {
-  .cs-hero-title {
-    line-height: 2.24 !important;
-  }
-}
-
 /* Case study "current workflow" step labels — desktop keeps the original
    single-line layout; on phones the labels wrap onto two lines instead
    of bleeding into the next step's icon. */
@@ -737,6 +732,29 @@ button:focus-visible {
     white-space: normal !important;
     width: 84px;
     font-size: 12px;
+  }
+}
+
+/* Superrbook case study on mobile: the full write-up is desktop-length,
+   so only a short path (Approach -> Context Switching -> TL;DR -> Final
+   Direction) is shown, ending in a note pointing back to desktop for the
+   rest. Desktop is untouched -- both are always in the DOM, only display
+   differs. */
+@media (max-width: 640px) {
+  .cs-mobile-hide {
+    display: none !important;
+  }
+}
+
+.cs-mobile-only-note {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .cs-mobile-only-note {
+    display: block;
+    text-align: center;
+    margin-top: 16px;
   }
 }
 
