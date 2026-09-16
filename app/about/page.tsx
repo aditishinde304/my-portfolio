@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { NavWiggleUnderline } from "./../components/v2/Doodles";
+import SiteHeader from "../components/v2/SiteHeader";
 import Footer from "../components/v2/Footer";
 
 type FanPhoto = { src: string; alt: string; width: number; rotate: number; top: number };
@@ -113,50 +114,7 @@ export default function AboutPage() {
   return (
     <div style={{ background: "#fcfcfb", color: "#111", minHeight: "100vh", overflowX: "clip" }}>
       {/* Nav — same header as the homepage, adapted for a non-home route */}
-      <header className="mx-auto" style={{ maxWidth: "1014px", padding: "38px 0" }}>
-        <div className="flex items-center justify-between px-6 sm:px-0">
-          <a href="/" className="text-[18px] font-semibold" style={{ color: "#111" }}>
-            Aditi Shinde
-          </a>
-          <div className="hidden sm:flex items-center" style={{ gap: "32px" }}>
-            <nav className="flex items-center" style={{ gap: "32px" }}>
-              {[
-                { label: "About", href: "/about", active: true },
-                { label: "Work", href: "/#work" },
-                { label: "Contact", href: "/#contact" },
-              ].map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  className="hero-nav-link nav-wiggle-link text-[16px] relative inline-block"
-                  style={{ color: item.active ? "#111" : "#333", fontWeight: item.active ? 600 : 400 }}
-                >
-                  {item.label}
-                  <NavWiggleUnderline
-                    className="nav-wiggle-svg"
-                    style={{
-                      position: "absolute",
-                      left: 0,
-                      bottom: "-7px",
-                      width: "100%",
-                      height: "8px",
-                    }}
-                  />
-                </a>
-              ))}
-            </nav>
-            <a
-              href="https://drive.google.com/file/d/1mbuBG-T9t_Rxmam4UcLlDq3tveGxfSit/view?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hero-resume-btn text-[15px] font-medium inline-flex items-center"
-              style={{ background: "#111", color: "#fff", padding: "11px 20px", borderRadius: "999px", lineHeight: 1 }}
-            >
-              Resume
-            </a>
-          </div>
-        </div>
-      </header>
+      <SiteHeader activeLabel="About" />
 
       <main className="mx-auto px-6 sm:px-0" style={{ maxWidth: "1014px", paddingTop: "48px", paddingBottom: "80px" }}>
         {/* Centered intro */}

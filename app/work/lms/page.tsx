@@ -124,7 +124,7 @@ export default function LMSCaseStudy() {
             className="text-[34px] md:text-[48px] font-semibold tracking-[-0.02em] mb-4"
             style={{ color: "var(--cs-fg)", fontFamily: "var(--font-petrona), Georgia, serif", lineHeight: "1.12" }}
           >
-            Designing a scalable LMS<br />for classrooms
+            Designing a scalable LMS<br className="hidden sm:inline" /> for classrooms
           </h1>
           <p
             className="text-[14px] tracking-[0.04em]"

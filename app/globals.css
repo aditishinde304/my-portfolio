@@ -85,10 +85,11 @@ body {
   color: #fff;
 }
 
-/* Mobile/tablet gate — the full portfolio is desktop-only for now.
-   Pure CSS so there's no flash of real content before JS runs: the
-   gate and the site are both always in the DOM, and only one is ever
-   visible at a given viewport width. */
+/* Tablet gate — phones now get the real responsive site (see the
+   per-component mobile styles throughout this file); tablets are still
+   gated until that pass happens separately. Pure CSS so there's no
+   flash of real content before JS runs: the gate and the site are both
+   always in the DOM, and only one is ever visible at a given width. */
 .mobile-gate {
   display: none;
 }
@@ -97,7 +98,7 @@ body {
   display: block;
 }
 
-@media (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .mobile-gate {
     display: flex;
     position: fixed;
@@ -228,6 +229,66 @@ button:focus-visible {
   .playground-marquee-track {
     animation: none;
   }
+}
+
+/* Mobile nav — hamburger button + dropdown panel, hidden at sm and above
+   where the existing desktop nav takes over. */
+.site-mobile-menu-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid #ececea;
+}
+
+.site-mobile-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 12px 24px 0;
+  padding: 8px;
+  background: #fff;
+  border: 1px solid #ececea;
+  border-radius: 16px;
+  box-shadow: 0 12px 24px rgba(17, 17, 17, 0.08);
+  animation: siteMobileMenuIn 160ms ease;
+}
+
+@keyframes siteMobileMenuIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-mobile-menu {
+    animation: none;
+  }
+}
+
+.site-mobile-menu-link {
+  font-size: 16px;
+  padding: 12px 12px;
+  border-radius: 10px;
+}
+
+.site-mobile-menu-link:active {
+  background: #f5f5f3;
+}
+
+.site-mobile-menu-resume {
+  margin-top: 6px;
+  background: #111;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 12px;
+  border-radius: 999px;
 }
 
 /* Hero (old portfolio clone) */
@@ -566,6 +627,17 @@ button:focus-visible {
   .about-collage-photo,
   .about-collage-inner {
     transition: none;
+  }
+}
+
+/* Case study "current workflow" step labels — desktop keeps the original
+   single-line layout; on phones the labels wrap onto two lines instead
+   of bleeding into the next step's icon. */
+@media (max-width: 640px) {
+  .cs-workflow-label {
+    white-space: normal !important;
+    width: 84px;
+    font-size: 12px;
   }
 }
 

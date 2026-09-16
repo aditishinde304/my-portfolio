@@ -311,7 +311,7 @@ export default function SuperrbookCaseStudy() {
                         >
                           <Image src={step.icon} alt="" width={48} height={48} />
                           <p
-                            className="absolute text-[14px] leading-snug text-center whitespace-nowrap"
+                            className="cs-workflow-label absolute text-[14px] leading-snug text-center whitespace-nowrap"
                             style={{ color: "var(--cs-fg)", top: "76px", left: "50%", transform: "translateX(-50%)" }}
                           >
                             {step.label}

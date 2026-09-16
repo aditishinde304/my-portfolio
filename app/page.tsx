@@ -2,8 +2,8 @@ import {
   AvatarDoodle,
   ScribbleUnderline,
   FlowerScribble,
-  NavWiggleUnderline,
 } from "./components/v2/Doodles";
+import SiteHeader from "./components/v2/SiteHeader";
 import Workspace from "./components/v2/Workspace";
 import HeroExperimental from "./components/v2/HeroExperimental";
 import Projects from "./components/v2/Projects";
@@ -19,50 +19,7 @@ export default function Home() {
   return (
     <div style={{ background: "#fcfcfb", color: "#111", minHeight: "100vh", overflowX: "clip" }}>
       {/* Nav */}
-      <header className="mx-auto" style={{ maxWidth: "1014px", padding: "38px 0" }}>
-        <div className="flex items-center justify-between px-6 sm:px-0">
-          <span className="text-[18px] font-semibold" style={{ color: "#111" }}>
-            Aditi Shinde
-          </span>
-          <div className="hidden sm:flex items-center" style={{ gap: "32px" }}>
-            <nav className="flex items-center" style={{ gap: "32px" }}>
-              {[
-                { label: "About", href: "/about" },
-                { label: "Work", href: "#work" },
-                { label: "Contact", href: "#contact" },
-              ].map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  className="hero-nav-link nav-wiggle-link text-[16px] relative inline-block"
-                  style={{ color: "#333" }}
-                >
-                  {item.label}
-                  <NavWiggleUnderline
-                    className="nav-wiggle-svg"
-                    style={{
-                      position: "absolute",
-                      left: 0,
-                      bottom: "-7px",
-                      width: "100%",
-                      height: "8px",
-                    }}
-                  />
-                </a>
-              ))}
-            </nav>
-            <a
-              href="https://drive.google.com/file/d/1mbuBG-T9t_Rxmam4UcLlDq3tveGxfSit/view?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hero-resume-btn text-[15px] font-medium inline-flex items-center"
-              style={{ background: "#111", color: "#fff", padding: "11px 20px", borderRadius: "999px", lineHeight: 1 }}
-            >
-              Resume
-            </a>
-          </div>
-        </div>
-      </header>
+      <SiteHeader isHome />
 
       {/* Hero — experimental (Figma 919-42038) */}
       {USE_EXPERIMENTAL_HERO && <HeroExperimental />}
