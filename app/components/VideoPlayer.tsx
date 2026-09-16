@@ -18,9 +18,16 @@ interface VideoPlayerProps {
   // the network is slow, etc. Without this the card is blank until
   // playback actually begins.
   poster?: string;
+  // Fixed-box layout: the video and its poster both absolutely fill the
+  // wrapper (className/style go on the wrapper), guaranteeing something
+  // paints even if the <video> element itself fails to render a frame.
+  // Use for cards with an externally-set size (object-fit: cover grids).
+  // Leave false (default) for a video that should size itself naturally
+  // from its own dimensions (className/style go straight on the <video>).
+  fill?: boolean;
 }
 
-export default function VideoPlayer({ src, className, style, alwaysPlay, poster }: VideoPlayerProps) {
+export default function VideoPlayer({ src, className, style, alwaysPlay, poster, fill }: VideoPlayerProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -46,6 +53,23 @@ export default function VideoPlayer({ src, className, style, alwaysPlay, poster 
     observer.observe(video);
     return () => observer.disconnect();
   }, [alwaysPlay]);
+
+  if (!fill) {
+    return (
+      <video
+        ref={videoRef}
+        src={src}
+        poster={poster}
+        loop
+        muted
+        playsInline
+        autoPlay
+        preload="auto"
+        className={className}
+        style={style}
+      />
+    );
+  }
 
   return (
     <div className={className} style={{ position: "relative", ...style }}>

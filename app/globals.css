@@ -235,7 +235,7 @@ button:focus-visible {
    where the existing desktop nav takes over. */
 .site-mobile-menu-btn {
   position: relative;
-  z-index: 20;
+  z-index: 50;
   width: 48px;
   height: 48px;
   border-radius: 999px;
@@ -243,10 +243,20 @@ button:focus-visible {
   border: 1px solid #ececea;
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: pointer;
 }
 
 .site-mobile-menu-btn svg {
   pointer-events: none;
+}
+
+@media (max-width: 640px) {
+  .projects-card-title {
+    margin-bottom: 11px !important;
+  }
 }
 
 .site-mobile-menu {

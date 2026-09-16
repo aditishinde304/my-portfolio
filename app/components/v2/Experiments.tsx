@@ -69,6 +69,7 @@ export default function Experiments() {
                 src={exp.video}
                 poster={exp.poster}
                 className="projects-card-img experiments-card-media w-full block"
+                fill
               />
             </div>
             <span

@@ -12,6 +12,7 @@ const experiments = [
     description: "A premium interactive hero that transforms scrolling into a project exploration experience. Created using Claude to experiment with AI powered prototyping and frontend interactions.",
     image: "/Cursor to do.png",
     video: "/Scroll animation architecture website (2).mp4",
+    poster: "/posters/scroll-animation-architecture-website--2-.jpg",
     href: "#",
   },
   {
@@ -20,6 +21,7 @@ const experiments = [
     description: "A digital keepsake experience built with love, exploring how travel memories can feel more personal and emotional online. Focused on tactile interactions, paper-like textures, soft motion, and nostalgic visual craft using Vercel v0. (Currently in progress.)",
     image: "/Postcard.png",
     video: "/Postcard.mp4",
+    poster: "/posters/postcard.jpg",
     href: "https://v0-travel-postcard-project.vercel.app/",
     wip: true,
   },
@@ -29,6 +31,7 @@ const experiments = [
     description: "A retro-style browser game built in a few hours to explore interactions, movement physics, and playful visual feedback. Created using HTML, CSS, JavaScript, and Google AI Studio while experimenting with vibe coding workflows.",
     image: "/Game design.png",
     video: "/Pixel Game Portfolio.mp4",
+    poster: "/posters/pixel-game-portfolio.jpg",
     href: "https://aistudio.google.com/apps/d15c50fe-e2ee-4d69-a962-d47bda824e79?showPreview=true&showAssistant=true&project=gen-lang-client-0080565783&fullscreenApplet=true",
   },
   {
@@ -37,6 +40,7 @@ const experiments = [
     description: "A minimal focus session widget exploring calm UI, subtle motion, and distraction-free interactions for deep work sessions. Built using Vercel v0 while experimenting with minimal visual systems and real-time interactions.",
     image: "/Focus mode.png",
     video: "/Focus Mode.mp4",
+    poster: "/posters/focus-mode.jpg",
     href: "https://v0-focus-widget-design-imou032sn.vercel.app/",
   },
 ];
@@ -89,6 +93,8 @@ export default function Experiments() {
               <div className="rounded-xl overflow-hidden">
                 <VideoPlayer
                   src={exp.video}
+                  poster={exp.poster}
+                  alwaysPlay
                   className="h-auto block mx-auto"
                   style={{ maxWidth: "100%" }}
                 />

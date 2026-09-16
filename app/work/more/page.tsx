@@ -89,11 +89,12 @@ export default function MoreWork() {
             }}
           >
             <div
-              className="flex flex-col justify-between px-5 pt-3 pb-5 md:p-[27px]"
+              className="flex flex-col justify-between px-5 pt-6 pb-5 md:p-[27px]"
               style={{ flex: "0 0 auto", width: "100%", maxWidth: "380px" }}
             >
               <div>
                 <h2
+                  className="projects-card-title"
                   style={{
                     fontFamily: "var(--font-petrona), Georgia, serif",
                     fontWeight: 600,
