@@ -101,7 +101,7 @@ export default function SuperrbookCaseStudy() {
         </div>
 
         {/* ── TLDR ── */}
-        <section className="cs-mobile-hide mb-16">
+        <section className="mb-16">
           <div className="space-y-5 text-[17px] leading-relaxed" style={{ color: "var(--cs-secondary)", lineHeight: "1.6" }}>
             <p>
               Superr is an edtech company building tools that support{" "}
@@ -125,7 +125,7 @@ export default function SuperrbookCaseStudy() {
         </section>
 
         {/* ── FULL-WIDTH MEDIA ── */}
-        <div className="cs-mobile-hide mb-16 rounded-2xl overflow-hidden">
+        <div className="mb-16 rounded-2xl overflow-hidden">
           <VideoPlayer
             src="/Superrbook.mp4"
             className="w-full h-auto block"
@@ -134,7 +134,7 @@ export default function SuperrbookCaseStudy() {
         </div>
 
         {/* ── MY ROLE ── */}
-        <section id="role" className="cs-mobile-hide mb-16" style={{ borderTop: "1px solid var(--cs-border)", paddingTop: "48px" }}>
+        <section id="role" className="mb-16" style={{ borderTop: "1px solid var(--cs-border)", paddingTop: "48px" }}>
           <h2
             className="text-[28px] font-semibold mb-6"
             style={{ color: "var(--cs-fg)", fontFamily: "var(--font-petrona), Georgia, serif", lineHeight: "1.3" }}
@@ -181,7 +181,7 @@ export default function SuperrbookCaseStudy() {
         </section>
 
         {/* ── AREAS OF OWNERSHIP ── */}
-        <section id="ownership" className="cs-mobile-hide mb-16" style={{ borderTop: "1px solid var(--cs-border)", paddingTop: "48px" }}>
+        <section id="ownership" className="mb-16" style={{ borderTop: "1px solid var(--cs-border)", paddingTop: "48px" }}>
           <h2
             className="text-[28px] font-semibold mb-8"
             style={{ color: "var(--cs-fg)", fontFamily: "var(--font-petrona), Georgia, serif", lineHeight: "1.3" }}
@@ -250,7 +250,7 @@ export default function SuperrbookCaseStudy() {
         </section>
 
         {/* ── SECTION 01: CONTEXT SWITCHING ── */}
-        <section id="context-switching" className="mb-16" style={{ borderTop: "1px solid var(--cs-border)", paddingTop: "48px" }}>
+        <section id="context-switching" className="cs-mobile-hide mb-16" style={{ borderTop: "1px solid var(--cs-border)", paddingTop: "48px" }}>
           <div className="flex items-baseline justify-between mb-12">
             <h2
               className="text-[28px] font-semibold"
@@ -1127,8 +1127,8 @@ export default function SuperrbookCaseStudy() {
           </div>
         </section>
 
-        <p className="cs-mobile-only-note text-[16px]" style={{ color: "var(--cs-secondary)" }}>
-          To view the full case study, please open the link on a desktop :)
+        <p className="cs-mobile-only-note text-[16px] font-semibold" style={{ color: "var(--cs-fg)" }}>
+          To view the full case study, please open the link on a desktop 🙂
         </p>
 
       </main>
