@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { NavWiggleUnderline } from "./Doodles";
 
@@ -19,17 +19,19 @@ function MenuIcon({ open }: { open: boolean }) {
   );
 }
 
-function MobileMenuOverlay({
+function MobileMenuPanel({
   navItems,
   activeLabel,
+  topOffset,
   onClose,
 }: {
   navItems: { label: string; href: string }[];
   activeLabel?: string;
+  topOffset: number;
   onClose: () => void;
 }) {
-  // Lock background scroll while the overlay is open so the page
-  // underneath can't be scrolled or tapped through the overlay.
+  // Lock background scroll while the panel is open so the page behind it
+  // can't be scrolled while browsing the menu.
   useEffect(() => {
     const { overflow } = document.body.style;
     document.body.style.overflow = "hidden";
@@ -39,22 +41,12 @@ function MobileMenuOverlay({
   }, []);
 
   return createPortal(
-    <div className="site-mobile-menu-overlay sm:hidden" role="dialog" aria-modal="true">
-      <div className="site-mobile-menu-overlay-header">
-        <span className="text-[18px] font-semibold" style={{ color: "#111" }}>
-          Aditi Shinde
-        </span>
-        <button
-          type="button"
-          className="site-mobile-menu-btn inline-flex items-center justify-center shrink-0"
-          onClick={onClose}
-          aria-label="Close menu"
-          aria-expanded="true"
-        >
-          <MenuIcon open />
-        </button>
-      </div>
-
+    <div
+      className="site-mobile-menu-panel sm:hidden"
+      style={{ top: topOffset }}
+      role="dialog"
+      aria-modal="true"
+    >
       <nav className="site-mobile-menu-nav">
         {navItems.map((item) => (
           <a
@@ -83,12 +75,15 @@ function MobileMenuOverlay({
 }
 
 // Site header used on the homepage and About page. Desktop markup/styling
-// is untouched from before. On mobile the hamburger opens a full-screen
-// nav overlay rendered via a portal straight onto <body>, so it's never
-// nested inside the page's root `overflow: clip` wrapper -- WebKit is
-// known to mis-position/clip `position: fixed` elements nested inside an
-// ancestor with any `overflow` set, which would make a plain fixed
-// overlay unreliable on iOS Safari specifically.
+// is untouched from before. On mobile the hamburger toggles a nav panel
+// rendered via a portal straight onto <body> (never nested inside the
+// page's root `overflow: clip` wrapper -- WebKit is known to mis-position
+// `position: fixed` elements nested inside an ancestor with any
+// `overflow` set). The header itself never re-renders/repositions when
+// the panel opens -- only the icon inside its button swaps -- and the
+// panel is anchored just below the header's own measured height rather
+// than covering the full screen, so the page's background stays visible
+// beneath it.
 export default function SiteHeader({
   isHome,
   activeLabel,
@@ -97,6 +92,8 @@ export default function SiteHeader({
   activeLabel?: string;
 }) {
   const [open, setOpen] = useState(false);
+  const [panelTop, setPanelTop] = useState(0);
+  const headerRef = useRef<HTMLElement>(null);
   const prefix = isHome ? "" : "/";
   const navItems = [
     { label: "About", href: "/about" },
@@ -104,8 +101,17 @@ export default function SiteHeader({
     { label: "Contact", href: `${prefix}#contact` },
   ];
 
+  useEffect(() => {
+    const measure = () => {
+      if (headerRef.current) setPanelTop(headerRef.current.getBoundingClientRect().bottom);
+    };
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, [open]);
+
   return (
-    <header className="mx-auto relative" style={{ maxWidth: "1014px", padding: "38px 0" }}>
+    <header ref={headerRef} className="mx-auto relative" style={{ maxWidth: "1014px", padding: "38px 0" }}>
       <div className="flex items-center justify-between px-6 sm:px-0">
         {isHome ? (
           <span className="text-[18px] font-semibold" style={{ color: "#111" }}>
@@ -157,16 +163,21 @@ export default function SiteHeader({
         <button
           type="button"
           className="site-mobile-menu-btn sm:hidden inline-flex items-center justify-center shrink-0"
-          onClick={() => setOpen(true)}
-          aria-label="Open menu"
+          onClick={() => setOpen((o) => !o)}
+          aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
         >
-          <MenuIcon open={false} />
+          <MenuIcon open={open} />
         </button>
       </div>
 
       {open && (
-        <MobileMenuOverlay navItems={navItems} activeLabel={activeLabel} onClose={() => setOpen(false)} />
+        <MobileMenuPanel
+          navItems={navItems}
+          activeLabel={activeLabel}
+          topOffset={panelTop}
+          onClose={() => setOpen(false)}
+        />
       )}
     </header>
   );

@@ -46,7 +46,7 @@ export default function Experiments() {
           </a>
         )}
       </div>
-      <p className="text-[18px]" style={{ color: "#666", marginTop: "-8px", marginBottom: "48px" }}>
+      <p className="experiments-subheading text-[18px]" style={{ color: "#666", marginTop: "-8px", marginBottom: "48px" }}>
         Small builds and interaction explorations outside of work.
       </p>
 

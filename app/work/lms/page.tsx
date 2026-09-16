@@ -121,7 +121,7 @@ export default function LMSCaseStudy() {
         {/* ── HERO ── */}
         <div className="mb-16" id="overview">
           <h1
-            className="text-[34px] md:text-[48px] font-semibold tracking-[-0.02em] mb-4"
+            className="cs-hero-title text-[34px] md:text-[48px] font-semibold tracking-[-0.02em] mb-4"
             style={{ color: "var(--cs-fg)", fontFamily: "var(--font-petrona), Georgia, serif", lineHeight: "1.12" }}
           >
             Designing a scalable LMS<br className="hidden sm:inline" /> for classrooms

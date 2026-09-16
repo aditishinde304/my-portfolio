@@ -259,64 +259,59 @@ button:focus-visible {
   }
 }
 
-/* Full-screen mobile nav overlay. Rendered via a React portal straight
-   onto <body> (see SiteHeader) so it is never a descendant of the page's
-   root `overflow: clip` wrapper -- WebKit is known to mis-position/clip
+/* Mobile nav panel. Rendered via a React portal straight onto <body>
+   (see SiteHeader) so it is never a descendant of the page's root
+   `overflow: clip` wrapper -- WebKit is known to mis-position/clip
    `position: fixed` elements nested inside an ancestor that has any
-   `overflow` set, which would otherwise make this overlay unreliable on
-   iOS Safari specifically even though it behaves in every other browser. */
-.site-mobile-menu-overlay {
+   `overflow` set, which would otherwise make this unreliable on iOS
+   Safari specifically even though it behaves in every other browser.
+   It's anchored just below the header's own measured height (not a
+   full-screen cover) so the header never moves/re-renders when it
+   opens, and the page's own background stays visible below the panel. */
+.site-mobile-menu-panel {
   position: fixed;
-  inset: 0;
-  z-index: 2147483647;
-  display: flex;
-  flex-direction: column;
+  left: 0;
+  right: 0;
+  z-index: 45;
   background: #fcfcfb;
+  border-bottom: 1px solid #ececea;
+  box-shadow: 0 12px 24px rgba(17, 17, 17, 0.06);
   animation: siteMobileMenuIn 160ms ease;
-  /* Own stacking + touch context: guarantees taps land on the overlay,
-     never falling through to whatever is underneath it on the page. */
-  isolation: isolate;
   touch-action: manipulation;
   overscroll-behavior: contain;
-  -webkit-overflow-scrolling: touch;
-  overflow-y: auto;
 }
 
 @keyframes siteMobileMenuIn {
   from {
     opacity: 0;
+    transform: translateY(-6px);
   }
   to {
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .site-mobile-menu-overlay {
+  .site-mobile-menu-panel {
     animation: none;
   }
-}
-
-.site-mobile-menu-overlay-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 24px;
 }
 
 .site-mobile-menu-nav {
   display: flex;
   flex-direction: column;
-  padding: 8px 24px 24px;
-  gap: 4px;
+  align-items: flex-start;
+  padding: 4px 24px 20px;
+  gap: 2px;
 }
 
 .site-mobile-menu-link {
-  font-size: 22px;
+  font-size: 16px;
   font-weight: 500;
-  padding: 16px 4px;
+  padding: 10px 4px;
   border-radius: 10px;
-  min-height: 48px;
+  min-height: 40px;
   display: flex;
   align-items: center;
   -webkit-tap-highlight-color: transparent;
@@ -327,14 +322,16 @@ button:focus-visible {
 }
 
 .site-mobile-menu-resume {
-  margin-top: 12px;
+  align-self: flex-start;
+  width: auto;
+  margin-top: 8px;
   background: #111;
   color: #fff;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
-  padding: 16px;
+  padding: 10px 24px;
   border-radius: 999px;
-  min-height: 48px;
+  min-height: 40px;
 }
 
 /* Hero (old portfolio clone) */
@@ -682,7 +679,53 @@ button:focus-visible {
    it's overriding an inline style. */
 @media (max-width: 640px) {
   .hero-x-title {
-    line-height: 1.45 !important;
+    /* 1.45 minus ~1px at the mobile-floor font-size (32px, since the
+       clamp() never grows past its 2rem minimum below 640px). */
+    line-height: 1.42 !important;
+  }
+}
+
+/* "Yeah, that's me :)" note — on mobile the photo stack is centered in a
+   narrow viewport, so the desktop position (well to the right of the
+   stack) pushes it off-screen. Move it up and to the left instead, and
+   mirror the arrow (+ reverse the flex order) so it still visibly points
+   at the stack from its new side. Desktop position (set inline) is
+   untouched. */
+@media (max-width: 640px) {
+  .hero-x-note {
+    left: -40px !important;
+    top: -6px !important;
+    flex-direction: row-reverse;
+  }
+
+  .hero-x-note-arrow {
+    transform: scaleX(-1);
+  }
+}
+
+/* Section content moved 16px closer to its heading/subheading on mobile
+   (Experiments, My Latest Creations, My Creative Play). Desktop spacing
+   (set inline) is untouched. */
+@media (max-width: 640px) {
+  .experiments-subheading {
+    margin-bottom: 32px !important;
+  }
+
+  .projects-content-grid {
+    margin-top: 32px !important;
+  }
+
+  .playground-subheading {
+    margin-bottom: 32px !important;
+  }
+}
+
+/* Case study heading — 2x line-height on mobile so the two lines (the
+   heading always wraps via a literal <br>) get real breathing room.
+   Desktop line-height (set inline) is untouched. */
+@media (max-width: 640px) {
+  .cs-hero-title {
+    line-height: 2.24 !important;
   }
 }
 

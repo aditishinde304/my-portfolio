@@ -78,7 +78,7 @@ export default function Projects() {
         A showcase of my recent projects and exploration
       </p>
 
-      <div className="flex flex-col" style={{ gap: "32px", marginTop: "48px" }}>
+      <div className="projects-content-grid flex flex-col" style={{ gap: "32px", marginTop: "48px" }}>
         {projects.map((project) => (
           <div
             key={project.id}
