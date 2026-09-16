@@ -259,40 +259,67 @@ button:focus-visible {
   }
 }
 
-.site-mobile-menu {
+/* Full-screen mobile nav overlay. Rendered via a React portal straight
+   onto <body> (see SiteHeader) so it is never a descendant of the page's
+   root `overflow: clip` wrapper -- WebKit is known to mis-position/clip
+   `position: fixed` elements nested inside an ancestor that has any
+   `overflow` set, which would otherwise make this overlay unreliable on
+   iOS Safari specifically even though it behaves in every other browser. */
+.site-mobile-menu-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483647;
   display: flex;
   flex-direction: column;
-  gap: 2px;
-  margin: 12px 24px 0;
-  padding: 8px;
-  background: #fff;
-  border: 1px solid #ececea;
-  border-radius: 16px;
-  box-shadow: 0 12px 24px rgba(17, 17, 17, 0.08);
+  background: #fcfcfb;
   animation: siteMobileMenuIn 160ms ease;
+  /* Own stacking + touch context: guarantees taps land on the overlay,
+     never falling through to whatever is underneath it on the page. */
+  isolation: isolate;
+  touch-action: manipulation;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
 }
 
 @keyframes siteMobileMenuIn {
   from {
     opacity: 0;
-    transform: translateY(-6px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .site-mobile-menu {
+  .site-mobile-menu-overlay {
     animation: none;
   }
 }
 
+.site-mobile-menu-overlay-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px;
+}
+
+.site-mobile-menu-nav {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 24px 24px;
+  gap: 4px;
+}
+
 .site-mobile-menu-link {
-  font-size: 16px;
-  padding: 12px 12px;
+  font-size: 22px;
+  font-weight: 500;
+  padding: 16px 4px;
   border-radius: 10px;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .site-mobile-menu-link:active {
@@ -300,13 +327,14 @@ button:focus-visible {
 }
 
 .site-mobile-menu-resume {
-  margin-top: 6px;
+  margin-top: 12px;
   background: #111;
   color: #fff;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
-  padding: 12px;
+  padding: 16px;
   border-radius: 999px;
+  min-height: 48px;
 }
 
 /* Hero (old portfolio clone) */
