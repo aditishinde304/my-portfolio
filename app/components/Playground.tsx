@@ -88,7 +88,7 @@ function PlaygroundCard({ item, keyPrefix }: { item: PlaygroundItem; keyPrefix: 
           <Image src={item.src} alt={item.title ?? ""} fill className="object-cover" sizes="300px" />
         )}
         {item.type === "video" && item.src && (
-          <VideoPlayer src={item.src} className="w-full h-full object-cover" />
+          <VideoPlayer src={item.src} className="w-full h-full object-cover" alwaysPlay />
         )}
         {item.type === "placeholder" && (
           <div className="w-full h-full flex items-center justify-center">

@@ -92,7 +92,7 @@ export default function Projects() {
           >
             <div
               className="flex flex-col justify-between"
-              style={{ padding: "27px 8px 27px 27px", flex: "0 0 auto", width: "100%", maxWidth: "380px" }}
+              style={{ padding: "27px", flex: "0 0 auto", width: "100%", maxWidth: "380px" }}
             >
               <div>
                 <h3
@@ -146,7 +146,7 @@ export default function Projects() {
 
             <a
               href={project.href}
-              className="projects-row group block px-3 pb-3 md:pl-0 md:pr-3 md:py-3"
+              className="projects-row group block order-first md:order-none px-3 pt-3 pb-3 md:pl-0 md:pr-3 md:py-3"
               style={{ flex: "1 1 auto" }}
             >
               <div

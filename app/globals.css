@@ -630,6 +630,16 @@ button:focus-visible {
   }
 }
 
+/* Hero heading — mobile only gets slightly taller line-height for more
+   breathing room between the wrapped lines; desktop's line-height (set
+   inline) is untouched. !important is needed here specifically because
+   it's overriding an inline style. */
+@media (max-width: 640px) {
+  .hero-x-title {
+    line-height: 1.45 !important;
+  }
+}
+
 /* Case study "current workflow" step labels — desktop keeps the original
    single-line layout; on phones the labels wrap onto two lines instead
    of bleeding into the next step's icon. */

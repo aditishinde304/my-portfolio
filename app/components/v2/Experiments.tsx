@@ -30,7 +30,7 @@ export default function Experiments() {
           style={{
             fontFamily: "var(--font-petrona), Georgia, serif",
             fontWeight: 600,
-            fontSize: "28px",
+            fontSize: "clamp(1.4rem, 2.4vw, 1.7rem)",
             color: "#111",
           }}
         >
