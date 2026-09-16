@@ -89,7 +89,7 @@ export default function SiteHeader({
 
         <button
           type="button"
-          className="site-mobile-menu-btn sm:hidden inline-flex items-center justify-center"
+          className="site-mobile-menu-btn sm:hidden inline-flex items-center justify-center shrink-0"
           onClick={() => setOpen((o) => !o)}
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}

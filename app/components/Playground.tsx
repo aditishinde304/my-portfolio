@@ -7,6 +7,7 @@ export type PlaygroundItem = {
   tag?: string;
   type: "image" | "video" | "placeholder";
   src?: string;
+  poster?: string;
   href?: string;
   icon?: "sticker" | "motion" | "code" | "cube" | "frames" | "cursor";
 };
@@ -17,12 +18,12 @@ export type PlaygroundItem = {
  * title/tag are optional — omit them to show the media only.
  */
 export const playgroundItems: PlaygroundItem[] = [
-  { id: "screen-recording-1", type: "video", src: "/Screen Recording.mp4" },
-  { id: "screen-recording-2", type: "video", src: "/Screen Recording 2.mp4" },
-  { id: "screen-recording-3", type: "video", src: "/Screen Recording 3.mp4" },
-  { id: "screen-recording-4", type: "video", src: "/Screen Recording 4.mp4" },
-  { id: "screen-recording-5", type: "video", src: "/Screen Recording 5.mp4" },
-  { id: "screen-recording-6", type: "video", src: "/Screen Recording 6.mp4" },
+  { id: "screen-recording-1", type: "video", src: "/Screen Recording.mp4", poster: "/posters/screen-recording.jpg" },
+  { id: "screen-recording-2", type: "video", src: "/Screen Recording 2.mp4", poster: "/posters/screen-recording-2.jpg" },
+  { id: "screen-recording-3", type: "video", src: "/Screen Recording 3.mp4", poster: "/posters/screen-recording-3.jpg" },
+  { id: "screen-recording-4", type: "video", src: "/Screen Recording 4.mp4", poster: "/posters/screen-recording-4.jpg" },
+  { id: "screen-recording-5", type: "video", src: "/Screen Recording 5.mp4", poster: "/posters/screen-recording-5.jpg" },
+  { id: "screen-recording-6", type: "video", src: "/Screen Recording 6.mp4", poster: "/posters/screen-recording-6.jpg" },
 ];
 
 function PlaceholderIcon({ icon }: { icon: PlaygroundItem["icon"] }) {
@@ -88,7 +89,7 @@ function PlaygroundCard({ item, keyPrefix }: { item: PlaygroundItem; keyPrefix: 
           <Image src={item.src} alt={item.title ?? ""} fill className="object-cover" sizes="300px" />
         )}
         {item.type === "video" && item.src && (
-          <VideoPlayer src={item.src} className="w-full h-full object-cover" alwaysPlay />
+          <VideoPlayer src={item.src} poster={item.poster} className="w-full h-full object-cover" alwaysPlay />
         )}
         {item.type === "placeholder" && (
           <div className="w-full h-full flex items-center justify-center">

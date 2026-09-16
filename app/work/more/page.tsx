@@ -81,17 +81,16 @@ export default function MoreWork() {
         {projects.map((project) => (
           <div
             key={project.id}
-            className="flex flex-col md:flex-row"
+            className="flex flex-col md:flex-row gap-0 md:gap-6"
             style={{
               border: "1px solid #ededec",
               borderRadius: "24px",
               overflow: "hidden",
-              gap: "24px",
             }}
           >
             <div
-              className="flex flex-col justify-between"
-              style={{ padding: "27px", flex: "0 0 auto", width: "100%", maxWidth: "380px" }}
+              className="flex flex-col justify-between px-5 pt-3 pb-5 md:p-[27px]"
+              style={{ flex: "0 0 auto", width: "100%", maxWidth: "380px" }}
             >
               <div>
                 <h2
@@ -139,7 +138,7 @@ export default function MoreWork() {
               href={project.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="projects-row group block order-first md:order-none px-3 pt-3 pb-3 md:pl-0 md:pr-3 md:py-3"
+              className="projects-row group block order-first md:order-none px-5 pt-5 pb-0 md:pl-0 md:pr-3 md:py-3"
               style={{ flex: "1 1 auto" }}
             >
               <div

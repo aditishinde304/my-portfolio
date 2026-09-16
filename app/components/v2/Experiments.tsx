@@ -4,10 +4,10 @@ import { useState } from "react";
 import VideoPlayer from "../VideoPlayer";
 
 const experiments = [
-  { id: "game", video: "/Pixel Game Portfolio.mp4" },
-  { id: "postcard", video: "/Postcard.mp4" },
-  { id: "focus-mode", video: "/Focus Mode.mp4" },
-  { id: "carousel", video: "/Scroll animation architecture website (2).mp4" },
+  { id: "game", video: "/Pixel Game Portfolio.mp4", poster: "/posters/pixel-game-portfolio.jpg" },
+  { id: "postcard", video: "/Postcard.mp4", poster: "/posters/postcard.jpg" },
+  { id: "focus-mode", video: "/Focus Mode.mp4", poster: "/posters/focus-mode.jpg" },
+  { id: "carousel", video: "/Scroll animation architecture website (2).mp4", poster: "/posters/scroll-animation-architecture-website--2-.jpg" },
 ];
 
 function EyeIcon() {
@@ -67,6 +67,7 @@ export default function Experiments() {
             <div className="projects-card relative overflow-hidden rounded-2xl">
               <VideoPlayer
                 src={exp.video}
+                poster={exp.poster}
                 className="projects-card-img experiments-card-media w-full block"
               />
             </div>
