@@ -900,6 +900,25 @@ button:focus-visible {
   }
 }
 
+/* Case study pages (Superrbook, LMS) on mobile: pull the whole page up
+   closer to the "Back" link by shrinking the gap below it. Desktop
+   (which uses the sidebar nav instead of this link) is untouched. */
+@media (max-width: 640px) {
+  .cs-back-link {
+    margin-bottom: 8px !important;
+  }
+}
+
+/* LMS "What I learned" pointers -- more breathing room between them on
+   mobile, where the grid collapses to a single stacked column. Desktop
+   spacing (gap-8/mb-8) is untouched. */
+@media (max-width: 640px) {
+  .cs-learnings-grid {
+    gap: 40px !important;
+    margin-bottom: 40px !important;
+  }
+}
+
 /* Superrbook case study on mobile: the full write-up is desktop-length,
    so only a short path (Approach -> Context Switching -> TL;DR -> Final
    Direction) is shown, ending in a note pointing back to desktop for the

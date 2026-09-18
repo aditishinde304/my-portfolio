@@ -110,7 +110,7 @@ export default function LMSCaseStudy() {
         {/* Mobile back link (sidebar handles it on desktop) */}
         <Link
           href="/"
-          className="lg:hidden inline-flex items-center gap-1.5 text-[15px] mb-16"
+          className="cs-back-link lg:hidden inline-flex items-center gap-1.5 text-[15px] mb-16"
           style={{ color: "var(--cs-secondary)" }}
         >
           <BackArrowIcon /> Back
@@ -317,7 +317,7 @@ export default function LMSCaseStudy() {
           >
             What I learned
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-8">
+          <div className="cs-learnings-grid grid grid-cols-1 sm:grid-cols-2 gap-8 mb-8">
             <div>
               <p
                 className="text-[18px] font-semibold leading-snug mb-3"

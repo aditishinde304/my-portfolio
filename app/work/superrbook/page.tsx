@@ -76,7 +76,7 @@ export default function SuperrbookCaseStudy() {
         {/* Mobile back link (sidebar handles it on desktop) */}
         <Link
           href="/"
-          className="lg:hidden inline-flex items-center gap-1.5 text-[15px] mb-16"
+          className="cs-back-link lg:hidden inline-flex items-center gap-1.5 text-[15px] mb-16"
           style={{ color: "var(--cs-secondary)" }}
         >
           <BackArrowIcon /> Back
