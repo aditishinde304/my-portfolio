@@ -358,14 +358,14 @@ button:focus-visible {
   position: absolute;
   bottom: 67px;
   left: 50%;
-  width: 30px;
+  width: 44px;
   height: auto;
   transform: translateX(-50%) rotate(14deg);
 }
 
 .testimonials-doodle-heart-mobile {
   display: none;
-  width: 30px;
+  width: 42px;
   height: auto;
 }
 
