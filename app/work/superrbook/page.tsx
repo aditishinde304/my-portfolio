@@ -1127,7 +1127,7 @@ export default function SuperrbookCaseStudy() {
           </div>
         </section>
 
-        <p className="cs-mobile-only-note text-[16px] font-semibold" style={{ color: "var(--cs-fg)" }}>
+        <p className="cs-mobile-only-note text-[19px] font-semibold" style={{ color: "var(--cs-fg)" }}>
           To view the full case study, please open the link on a desktop 🙂
         </p>
 
