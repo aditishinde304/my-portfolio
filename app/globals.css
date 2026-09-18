@@ -231,6 +231,171 @@ button:focus-visible {
   }
 }
 
+/* Testimonials — "pinned sticky note" cards. Two independent layouts
+   (desktop row vs. mobile stack) share the same card/pin/quote styling;
+   only which wrapper is visible changes (see hidden/sm:flex classes in
+   the component), so nothing needs to be recalculated per breakpoint. */
+.testimonials-subheading {
+  /* matches .playground-subheading / .experiments-subheading */
+}
+
+@media (max-width: 640px) {
+  .testimonials-subheading {
+    margin-bottom: 32px !important;
+  }
+}
+
+.testimonials-board {
+  position: relative;
+}
+
+.testimonials-row {
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 28px;
+  padding: 20px 8px 40px;
+}
+
+.testimonials-row-card {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.testimonial-card {
+  position: relative;
+  background: #FDF3C7;
+  border-radius: 3px;
+  padding: 28px 22px 22px;
+  box-shadow: 0 14px 26px rgba(17, 17, 17, 0.10), 0 3px 8px rgba(17, 17, 17, 0.06);
+}
+
+/* Pin sits mostly on top of the paper (only its cap crosses the top
+   edge) with a soft ambient shadow plus a small, darker contact shadow
+   right where the point would meet the paper -- rather than one flat
+   drop-shadow floating the whole icon above the card. */
+.testimonial-pin {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  z-index: 2;
+  display: block;
+  filter: drop-shadow(0 2px 2px rgba(40, 10, 10, 0.28));
+}
+
+.testimonial-pin img {
+  display: block;
+  width: 42px;
+  height: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial-pin-shadow {
+  position: absolute;
+  left: 50%;
+  top: 27px;
+  width: 26px;
+  height: 8px;
+  background: radial-gradient(ellipse, rgba(30, 10, 10, 0.38) 0%, rgba(30, 10, 10, 0.16) 55%, rgba(30, 10, 10, 0) 80%);
+  transform: translateX(-50%);
+  filter: blur(1.5px);
+  z-index: 0;
+}
+
+.testimonial-quote {
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: #232016;
+  margin-bottom: 24px;
+  white-space: pre-line;
+}
+
+.testimonial-person {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.testimonial-avatar {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: #232016;
+  border: 1px solid rgba(17, 17, 17, 0.08);
+}
+
+.testimonial-name {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #1a1710;
+  line-height: 1.3;
+}
+
+.testimonial-role {
+  font-size: 13px;
+  color: #6b6656;
+  line-height: 1.3;
+  margin-top: 1px;
+}
+
+.testimonials-doodle-marks {
+  position: absolute;
+  top: -22px;
+  right: -1%;
+  width: 28px;
+  height: auto;
+  opacity: 0.85;
+}
+
+.testimonials-doodle-heart {
+  position: absolute;
+  bottom: 67px;
+  left: 50%;
+  width: 30px;
+  height: auto;
+  transform: translateX(-50%) rotate(14deg);
+}
+
+.testimonials-doodle-heart-mobile {
+  display: none;
+  width: 30px;
+  height: auto;
+}
+
+.testimonials-stack {
+  flex-direction: column;
+  gap: 40px;
+  padding: 8px 4px 16px;
+  align-items: center;
+}
+
+.testimonials-stack-card {
+  width: 100%;
+  max-width: 360px;
+}
+
+@media (max-width: 640px) {
+  .testimonials-doodle-marks {
+    display: none;
+  }
+
+  .testimonials-doodle-heart {
+    display: none;
+  }
+
+  .testimonials-doodle-heart-mobile {
+    display: block;
+    margin-top: 4px;
+  }
+}
+
 /* Mobile nav — hamburger button + dropdown panel, hidden at sm and above
    where the existing desktop nav takes over. */
 .site-mobile-menu-btn {

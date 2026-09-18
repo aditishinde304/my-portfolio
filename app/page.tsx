@@ -10,6 +10,7 @@ import Projects from "./components/v2/Projects";
 import About from "./components/v2/About";
 import Experiments from "./components/v2/Experiments";
 import Playground from "./components/Playground";
+import Testimonials from "./components/v2/Testimonials";
 import Footer from "./components/v2/Footer";
 
 // Hero A/B switch — flip to false to bring the original hero back.
@@ -93,6 +94,10 @@ export default function Home() {
 
       <div id="playground" className="mx-auto px-6 sm:px-0" style={{ maxWidth: "1014px", scrollMarginTop: "24px" }}>
         <Playground />
+      </div>
+
+      <div className="mx-auto px-6 sm:px-0" style={{ maxWidth: "1014px" }}>
+        <Testimonials />
       </div>
 
       <Footer />
