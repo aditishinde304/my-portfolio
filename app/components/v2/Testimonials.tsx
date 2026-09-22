@@ -12,13 +12,12 @@ type Testimonial = {
   name: string;
   role: string;
   company: string;
-  initials: string;
+  photo: string;
   // Desktop-only hand-composed placement: a small rotation + vertical
   // offset per card so the row reads as intentionally pinned rather
   // than perfectly aligned (card 2 sits lower, per the reference).
   rotate: number;
   translateY: number;
-  tint: string;
   pinRotate: number;
   pinOffsetX: number;
 };
@@ -31,10 +30,9 @@ const testimonials: Testimonial[] = [
     name: "Suhani Ashok",
     role: "Design Manager",
     company: "Superr",
-    initials: "SA",
+    photo: "/face-suhani.png",
     rotate: -1.5,
     translateY: 0,
-    tint: "#FBC7D4",
     pinRotate: 8,
     pinOffsetX: -4,
   },
@@ -45,10 +43,9 @@ const testimonials: Testimonial[] = [
     name: "Shalini Mookerjee",
     role: "Product Designer",
     company: "Superr",
-    initials: "SM",
+    photo: "/face-shalini.png",
     rotate: 2,
     translateY: 22,
-    tint: "#BFD7EA",
     pinRotate: -6,
     pinOffsetX: 5,
   },
@@ -59,10 +56,9 @@ const testimonials: Testimonial[] = [
     name: "Gauruv Singh",
     role: "Product Manager",
     company: "Superr",
-    initials: "GS",
+    photo: "/face-gauruv.png",
     rotate: -2,
     translateY: -4,
-    tint: "#C9E4C5",
     pinRotate: 10,
     pinOffsetX: -3,
   },
@@ -117,8 +113,8 @@ function TestimonialCard({
         <Pushpin rotate={t.pinRotate} offsetX={t.pinOffsetX} />
         <p className="testimonial-quote">&ldquo;{t.quote}&rdquo;</p>
         <div className="testimonial-person">
-          <span className="testimonial-avatar" style={{ background: t.tint }}>
-            {t.initials}
+          <span className={`testimonial-avatar${t.id === "shalini" ? " testimonial-avatar-shalini" : ""}`}>
+            <Image src={t.photo} alt="" width={40} height={40} className="testimonial-avatar-photo" />
           </span>
           <div>
             <p className="testimonial-name">{t.name}</p>
