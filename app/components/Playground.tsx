@@ -18,10 +18,12 @@ export type PlaygroundItem = {
  * title/tag are optional — omit them to show the media only.
  */
 export const playgroundItems: PlaygroundItem[] = [
-  { id: "screen-recording-1", type: "video", src: "/Screen Recording.mp4", poster: "/posters/screen-recording.jpg" },
-  { id: "screen-recording-2", type: "video", src: "/Screen Recording 2.mp4", poster: "/posters/screen-recording-2.jpg" },
-  { id: "screen-recording-3", type: "video", src: "/Screen Recording 3.mp4", poster: "/posters/screen-recording-3.jpg" },
   { id: "screen-recording-4", type: "video", src: "/Screen Recording 4.mp4", poster: "/posters/screen-recording-4.jpg" },
+  { id: "screen-recording-2", type: "video", src: "/Screen Recording 2.mp4", poster: "/posters/screen-recording-2.jpg" },
+  { id: "ai-wardrobe-1", type: "video", src: "/Ai wardrobe.mov", poster: "/posters/ai-wardrobe.jpg" },
+  { id: "ai-wardrobe-2", type: "video", src: "/Ai wardorbe 1.mov", poster: "/posters/ai-wardrobe-1.jpg" },
+  { id: "screen-recording-1", type: "video", src: "/Screen Recording.mp4", poster: "/posters/screen-recording.jpg" },
+  { id: "screen-recording-3", type: "video", src: "/Screen Recording 3.mp4", poster: "/posters/screen-recording-3.jpg" },
   { id: "screen-recording-5", type: "video", src: "/Screen Recording 5.mp4", poster: "/posters/screen-recording-5.jpg" },
   { id: "screen-recording-6", type: "video", src: "/Screen Recording 6.mp4", poster: "/posters/screen-recording-6.jpg" },
 ];
