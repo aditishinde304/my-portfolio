@@ -854,21 +854,11 @@ button:focus-visible {
   }
 }
 
-/* "Yeah, that's me :)" note — on mobile the photo stack is centered in a
-   narrow viewport, so the desktop position (well to the right of the
-   stack) pushes it off-screen. Move it up and to the left instead, and
-   mirror the arrow (+ reverse the flex order) so it still visibly points
-   at the stack from its new side. Desktop position (set inline) is
-   untouched. */
+/* "Yeah, that's me :)" note + its arrow — hidden entirely on mobile
+   (desktop position/behavior, set inline, is untouched). */
 @media (max-width: 640px) {
   .hero-x-note {
-    left: -40px !important;
-    top: -6px !important;
-    flex-direction: row-reverse;
-  }
-
-  .hero-x-note-arrow {
-    transform: scaleX(-1);
+    display: none !important;
   }
 }
 
