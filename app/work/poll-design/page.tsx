@@ -584,7 +584,7 @@ export default function PollDesignCaseStudy() {
             </div>
           </div>
 
-          <section id="iterations" className="mb-28">
+          <section id="iterations" className="cs-mobile-hide mb-28">
             <SectionLabel>How I got here &middot; Design iterations</SectionLabel>
             <h2 className="text-[28px] font-semibold mb-4" style={h2Style}>
               Exploring modal-based creation
@@ -645,7 +645,7 @@ export default function PollDesignCaseStudy() {
           </section>
 
           {/* ── 02 - EXPLORING A SPLIT LAYOUT ── */}
-          <section id="split-layout" className="mb-28">
+          <section id="split-layout" className="cs-mobile-hide mb-28">
             <h2 className="text-[28px] font-semibold mb-4" style={h2Style}>
               02 - Exploring a split layout
             </h2>
@@ -669,7 +669,7 @@ export default function PollDesignCaseStudy() {
           {/* ── BIGGEST CHALLENGE ── same blue callout treatment as "What I learned" */}
           <section
             id="biggest-challenge"
-            className="mb-28 rounded-2xl px-5 py-5 md:px-8 md:py-6"
+            className="cs-mobile-hide mb-28 rounded-2xl px-5 py-5 md:px-8 md:py-6"
             style={{ background: "var(--cs-blue-bg)", border: "1px solid var(--cs-blue-border)" }}
           >
             <div style={{ maxWidth: "800px" }}>
@@ -701,7 +701,7 @@ export default function PollDesignCaseStudy() {
 
           {/* ── 03 - FINAL DESIGN (TEACHER POV) ──
               */}
-          <section id="final-design" className="mb-28">
+          <section id="final-design" className="cs-mobile-hide mb-28">
             <SectionLabel>03 - Final design</SectionLabel>
             <h2 className="text-[28px] font-semibold mb-4" style={h2Style}>
               Designing the poll experience for teachers
@@ -752,7 +752,7 @@ export default function PollDesignCaseStudy() {
 
           {/* ── STUDENT POV ──
               */}
-          <section id="student-pov" className="mb-28">
+          <section id="student-pov" className="cs-mobile-hide mb-28">
             <h2 className="text-[28px] font-semibold mb-4" style={h2Style}>
               Student POV design
             </h2>
@@ -812,7 +812,7 @@ export default function PollDesignCaseStudy() {
             </div>
           </section>
           {/* ── WHAT I'LL BE MEASURING NEXT ── planned metrics only, no results */}
-          <section id="measuring" className="mb-28">
+          <section id="measuring" className="cs-mobile-hide mb-28">
             <h2 className="text-[28px] font-semibold mb-4" style={h2Style}>
               What I&rsquo;ll be measuring next
             </h2>
@@ -844,7 +844,7 @@ export default function PollDesignCaseStudy() {
           </section>
 
           {/* ── REFLECTION ── */}
-          <section id="reflection" className="mb-28">
+          <section id="reflection" className="cs-mobile-hide mb-28">
             <h2 className="text-[28px] font-semibold mb-4" style={h2Style}>
               Reflection
             </h2>

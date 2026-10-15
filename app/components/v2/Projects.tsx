@@ -25,19 +25,6 @@ const projects: Project[] = [
     href: "/work/superrbook",
   },
   {
-    id: "lms",
-    title: "Simplifying everyday classroom workflows",
-    description: (
-      <>
-        Designed a centralised platform for managing assignments, notebooks
-        and classroom workflows.
-      </>
-    ),
-    image: "/LMS.png",
-    alt: "LMS platform mockup",
-    href: "/work/lms",
-  },
-  {
     id: "poll",
     title: "Making classroom participation more engaging",
     description: (
@@ -49,6 +36,19 @@ const projects: Project[] = [
     image: "/29894143-8e6b-48de-bb1c-4c8536376d0e (1).png",
     alt: "Poll experience mockup",
     href: "/work/poll-design",
+  },
+  {
+    id: "lms",
+    title: "Simplifying everyday classroom workflows",
+    description: (
+      <>
+        Designed a centralised platform for managing assignments, notebooks
+        and classroom workflows.
+      </>
+    ),
+    image: "/LMS.png",
+    alt: "LMS platform mockup",
+    href: "/work/lms",
   },
 ];
 
