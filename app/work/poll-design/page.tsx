@@ -571,8 +571,8 @@ export default function PollDesignCaseStudy() {
           {/* Mobile-only note (visibility handled by the shared .cs-mobile-only-note class). */}
           <div className="cs-mobile-only-note mb-20">
             <div
-              className="mx-auto rounded-2xl px-6 py-7"
-              style={{ maxWidth: "320px", background: "var(--cs-surface)", border: "1px solid var(--cs-border)" }}
+              className="rounded-2xl px-6 py-7"
+              style={{ background: "var(--cs-surface)", border: "1px solid var(--cs-border)" }}
             >
               <p className="text-[19px] font-semibold leading-snug mb-3" style={{ color: "var(--cs-fg)" }}>
                 Curious to see the whole story?
