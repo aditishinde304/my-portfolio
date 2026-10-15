@@ -48,8 +48,7 @@ const projects: Project[] = [
     ),
     image: "/29894143-8e6b-48de-bb1c-4c8536376d0e (1).png",
     alt: "Poll experience mockup",
-    href: "#",
-    comingSoon: true,
+    href: "/work/poll-design",
   },
 ];
 
