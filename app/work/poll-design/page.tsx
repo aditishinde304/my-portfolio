@@ -568,6 +568,22 @@ export default function PollDesignCaseStudy() {
             </div>
           </section>
           {/* ── HOW I GOT HERE · DESIGN ITERATIONS ── */}
+          {/* Mobile-only note (visibility handled by the shared .cs-mobile-only-note class). */}
+          <div className="cs-mobile-only-note mb-20">
+            <div
+              className="mx-auto rounded-2xl px-6 py-7"
+              style={{ maxWidth: "320px", background: "var(--cs-surface)", border: "1px solid var(--cs-border)" }}
+            >
+              <p className="text-[19px] font-semibold leading-snug mb-3" style={{ color: "var(--cs-fg)" }}>
+                Curious to see the whole story?
+              </p>
+              <p className="text-[16px] leading-relaxed" style={{ color: "var(--cs-secondary)" }}>
+                This case study is best experienced on a bigger screen. Switch to your desktop to explore the full design
+                process, iterations and prototypes. <span aria-hidden="true">😊</span>
+              </p>
+            </div>
+          </div>
+
           <section id="iterations" className="mb-28">
             <SectionLabel>How I got here &middot; Design iterations</SectionLabel>
             <h2 className="text-[28px] font-semibold mb-4" style={h2Style}>
@@ -653,7 +669,7 @@ export default function PollDesignCaseStudy() {
           {/* ── BIGGEST CHALLENGE ── same blue callout treatment as "What I learned" */}
           <section
             id="biggest-challenge"
-            className="mb-28 rounded-2xl px-5 py-3 md:px-8 md:py-4"
+            className="mb-28 rounded-2xl px-5 py-5 md:px-8 md:py-6"
             style={{ background: "var(--cs-blue-bg)", border: "1px solid var(--cs-blue-border)" }}
           >
             <div style={{ maxWidth: "800px" }}>
