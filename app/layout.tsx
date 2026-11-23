@@ -9,13 +9,11 @@ import NavBar from "./components/NavBar";
 const shantellSans = Shantell_Sans({
   subsets: ["latin"],
   variable: "--font-shantell",
-  weight: ["400", "500"],
 });
 
 const fraunces = Fraunces({
   subsets: ["latin"],
   variable: "--font-fraunces",
-  weight: ["400", "500", "600"],
   style: ["normal", "italic"],
   display: "swap",
 });
@@ -23,21 +21,18 @@ const fraunces = Fraunces({
 const caveat = Caveat({
   subsets: ["latin"],
   variable: "--font-caveat",
-  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
 const domine = Domine({
   subsets: ["latin"],
   variable: "--font-domine",
-  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   variable: "--font-space-grotesk",
-  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -45,7 +40,6 @@ const spaceGrotesk = Space_Grotesk({
 const petrona = Petrona({
   subsets: ["latin"],
   variable: "--font-petrona",
-  weight: ["400", "500", "600"],
   display: "swap",
 });
 
