@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 const navItems = [
   { label: "Work", href: "/" },
   { label: "About", href: "/#about" },
-  { label: "Resume", href: "https://drive.google.com/file/d/1mbuBG-T9t_Rxmam4UcLlDq3tveGxfSit/view?usp=sharing", external: true },
+  { label: "Resume", href: "https://drive.google.com/file/d/1o2qxt27ijfR_PCSTDCoS0iF1yL_WCe-C/view?usp=sharing", external: true },
   { label: "Contact", href: "mailto:aditi.shinde304@gmail.com", external: true },
 ];
 

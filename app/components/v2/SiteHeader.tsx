@@ -5,7 +5,7 @@ import { createPortal } from "react-dom";
 import { NavWiggleUnderline } from "./Doodles";
 
 const RESUME_HREF =
-  "https://drive.google.com/file/d/1mbuBG-T9t_Rxmam4UcLlDq3tveGxfSit/view?usp=sharing";
+  "https://drive.google.com/file/d/1o2qxt27ijfR_PCSTDCoS0iF1yL_WCe-C/view?usp=sharing";
 
 function MenuIcon({ open }: { open: boolean }) {
   return (
