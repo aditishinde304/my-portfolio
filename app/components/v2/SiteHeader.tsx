@@ -111,7 +111,7 @@ export default function SiteHeader({
   }, [open]);
 
   return (
-    <header ref={headerRef} className="mx-auto relative" style={{ maxWidth: "1014px", padding: "38px 0" }}>
+    <header ref={headerRef} className="mx-auto relative site-header" style={{ maxWidth: "1014px" }}>
       <div className="flex items-center justify-between px-6 sm:px-0">
         {isHome ? (
           <span className="text-[18px] font-semibold" style={{ color: "#111" }}>

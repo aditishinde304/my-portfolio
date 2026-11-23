@@ -407,6 +407,16 @@ button:focus-visible {
   }
 }
 
+.site-header {
+  padding: 38px 0 16px;
+}
+
+@media (min-width: 640px) {
+  .site-header {
+    padding: 38px 0;
+  }
+}
+
 /* Mobile nav — hamburger button + dropdown panel, hidden at sm and above
    where the existing desktop nav takes over. */
 .site-mobile-menu-btn {
