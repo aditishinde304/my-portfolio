@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
-import { Shantell_Sans, Fraunces, Caveat, Domine, Space_Grotesk, Petrona } from "next/font/google";
+import { Shantell_Sans, Fraunces, Caveat, Domine, Space_Grotesk, Petrona, Schoolbell } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import NavBar from "./components/NavBar";
@@ -40,6 +40,13 @@ const spaceGrotesk = Space_Grotesk({
 const petrona = Petrona({
   subsets: ["latin"],
   variable: "--font-petrona",
+  display: "swap",
+});
+
+const schoolbell = Schoolbell({
+  subsets: ["latin"],
+  variable: "--font-schoolbell",
+  weight: "400",
   display: "swap",
 });
 
@@ -86,7 +93,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${GeistSans.variable} ${GeistMono.variable} ${shantellSans.variable} ${fraunces.variable} ${caveat.variable} ${domine.variable} ${spaceGrotesk.variable} ${petrona.variable} h-full antialiased`}
+      className={`${GeistSans.variable} ${GeistMono.variable} ${shantellSans.variable} ${fraunces.variable} ${caveat.variable} ${domine.variable} ${spaceGrotesk.variable} ${petrona.variable} ${schoolbell.variable} h-full antialiased`}
     >
       <head>
         <script

@@ -7,6 +7,41 @@ import { NavWiggleUnderline } from "./Doodles";
 const RESUME_HREF =
   "https://drive.google.com/file/d/1o2qxt27ijfR_PCSTDCoS0iF1yL_WCe-C/view?usp=sharing";
 
+const NAME_LETTER_COLORS: { char: string; color?: string }[] = [
+  { char: "A", color: "#ef4444" },
+  { char: "d", color: "#f97316" },
+  { char: "i", color: "#eab308" },
+  { char: "t", color: "#22c55e" },
+  { char: "i", color: "#14b8a6" },
+  { char: " " },
+  { char: "S", color: "#3b82f6" },
+  { char: "h", color: "#6366f1" },
+  { char: "i", color: "#8b5cf6" },
+  { char: "n", color: "#d946ef" },
+  { char: "d", color: "#ec4899" },
+  { char: "e", color: "#f43f5e" },
+];
+
+function ColorfulName() {
+  return (
+    <>
+      {NAME_LETTER_COLORS.map(({ char, color }, i) =>
+        color ? (
+          <span
+            key={i}
+            className="transition-colors duration-500 group-hover/name:text-[color:var(--letter-color)]"
+            style={{ "--letter-color": color } as React.CSSProperties}
+          >
+            {char}
+          </span>
+        ) : (
+          <span key={i}>{char}</span>
+        )
+      )}
+    </>
+  );
+}
+
 function MenuIcon({ open }: { open: boolean }) {
   return (
     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -114,12 +149,19 @@ export default function SiteHeader({
     <header ref={headerRef} className="mx-auto relative site-header" style={{ maxWidth: "1014px" }}>
       <div className="flex items-center justify-between px-6 sm:px-0">
         {isHome ? (
-          <span className="text-[18px] font-semibold" style={{ color: "#111" }}>
-            Aditi Shinde
+          <span
+            className="group/name cursor-default text-[20px]"
+            style={{ color: "#111", fontFamily: "var(--font-schoolbell)" }}
+          >
+            <ColorfulName />
           </span>
         ) : (
-          <a href="/" className="text-[18px] font-semibold" style={{ color: "#111" }}>
-            Aditi Shinde
+          <a
+            href="/"
+            className="group/name text-[20px]"
+            style={{ color: "#111", fontFamily: "var(--font-schoolbell)" }}
+          >
+            <ColorfulName />
           </a>
         )}
 
