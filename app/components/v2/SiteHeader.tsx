@@ -8,18 +8,18 @@ const RESUME_HREF =
   "https://drive.google.com/file/d/1o2qxt27ijfR_PCSTDCoS0iF1yL_WCe-C/view?usp=sharing";
 
 const NAME_LETTER_COLORS: { char: string; color?: string }[] = [
-  { char: "A", color: "#ef4444" },
-  { char: "d", color: "#f97316" },
-  { char: "i", color: "#eab308" },
-  { char: "t", color: "#22c55e" },
-  { char: "i", color: "#14b8a6" },
+  { char: "A", color: "#E0558A" }, // pink
+  { char: "d", color: "#F2B134" }, // yellow
+  { char: "i", color: "#4A90D9" }, // blue
+  { char: "t", color: "#E8622C" }, // orange
+  { char: "i", color: "#34A853" }, // green
   { char: " " },
-  { char: "S", color: "#3b82f6" },
-  { char: "h", color: "#6366f1" },
-  { char: "i", color: "#8b5cf6" },
-  { char: "n", color: "#d946ef" },
-  { char: "d", color: "#ec4899" },
-  { char: "e", color: "#f43f5e" },
+  { char: "S", color: "#E0558A" }, // pink
+  { char: "h", color: "#F2B134" }, // yellow
+  { char: "i", color: "#4A90D9" }, // blue
+  { char: "n", color: "#E8622C" }, // orange
+  { char: "d", color: "#34A853" }, // green
+  { char: "e", color: "#E0558A" }, // pink
 ];
 
 function ColorfulName() {
@@ -150,7 +150,7 @@ export default function SiteHeader({
       <div className="flex items-center justify-between px-6 sm:px-0">
         {isHome ? (
           <span
-            className="group/name cursor-default text-[20px]"
+            className="group/name cursor-default text-[24px] font-semibold"
             style={{ color: "#111", fontFamily: "var(--font-schoolbell)" }}
           >
             <ColorfulName />
@@ -158,7 +158,7 @@ export default function SiteHeader({
         ) : (
           <a
             href="/"
-            className="group/name text-[20px]"
+            className="group/name text-[24px] font-semibold"
             style={{ color: "#111", fontFamily: "var(--font-schoolbell)" }}
           >
             <ColorfulName />
