@@ -1,0 +1,20 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <g>
+    <g transform="rotate(0 32 32)">
+      <path d="M32 32 C23 29 18 18 23 9 C26 3 38 3 41 9 C46 18 41 29 32 32 Z" fill="#FA4702"/>
+    </g>
+    <g transform="rotate(72 32 32)">
+      <path d="M32 32 C23 29 18 18 23 9 C26 3 38 3 41 9 C46 18 41 29 32 32 Z" fill="#FA4702"/>
+    </g>
+    <g transform="rotate(144 32 32)">
+      <path d="M32 32 C23 29 18 18 23 9 C26 3 38 3 41 9 C46 18 41 29 32 32 Z" fill="#FA4702"/>
+    </g>
+    <g transform="rotate(216 32 32)">
+      <path d="M32 32 C23 29 18 18 23 9 C26 3 38 3 41 9 C46 18 41 29 32 32 Z" fill="#FA4702"/>
+    </g>
+    <g transform="rotate(288 32 32)">
+      <path d="M32 32 C23 29 18 18 23 9 C26 3 38 3 41 9 C46 18 41 29 32 32 Z" fill="#FA4702"/>
+    </g>
+    <circle cx="32" cy="32" r="9.5" fill="#FBC602"/>
+  </g>
+</svg>

@@ -21,6 +21,32 @@ const slots = [
   { x: -34, y: -16, rotate: -14.26, z: 1, scale: 1 },
 ];
 
+const HEY_INTRO_TEXT = "Hey, I’m Aditi Shinde";
+
+// Types the intro line out one letter at a time on mount, then stays put.
+function HeyIntro() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (count >= HEY_INTRO_TEXT.length) return;
+    const nextChar = HEY_INTRO_TEXT[count];
+    const delay = nextChar === " " || nextChar === "," ? 120 : 40 + Math.random() * 40;
+    const timer = setTimeout(() => setCount((c) => c + 1), delay);
+    return () => clearTimeout(timer);
+  }, [count]);
+
+  const visible = HEY_INTRO_TEXT.slice(0, count);
+
+  return (
+    <p
+      className="text-[24px] font-medium"
+      style={{ color: "#111011", marginTop: "34px", fontFamily: "var(--font-caveat)" }}
+    >
+      {visible}
+    </p>
+  );
+}
+
 function PhotoStack() {
   const [front, setFront] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
@@ -172,12 +198,7 @@ export default function HeroExperimental() {
       >
         <PhotoStack />
 
-        <p
-          className="text-[18px]"
-          style={{ color: "#111011", marginTop: "34px" }}
-        >
-          <span style={{ color: "#505050" }}>Hey</span>, I&rsquo;m Aditi Shinde
-        </p>
+        <HeyIntro />
 
         <h1
           ref={titleRef}
@@ -188,7 +209,7 @@ export default function HeroExperimental() {
             fontSize: "clamp(2rem, 4.4vw, 3rem)",
             lineHeight: 1.29,
             color: "#000",
-            marginTop: "10px",
+            marginTop: "4px",
           }}
         >
           I{" "}
